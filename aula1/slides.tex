@@ -1,0 +1,322 @@
+% !TeX document-id = {0be8c18c-9430-4e9a-bdd9-12beadebfebc}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[11pt]{beamer}
+\uselanguage{portuguese}
+\languagepath{portuguese}
+\deftranslation[to=portuguese]{Theorem}{Teorema}
+\deftranslation[to=portuguese]{theorem}{teorema}
+\deftranslation[to=portuguese]{Example}{Exemplo}
+\deftranslation[to=portuguese]{example}{exemplo}
+\deftranslation[to=portuguese]{Lemma}{Lema}
+\deftranslation[to=portuguese]{lemma}{Lema}
+\deftranslation[to=portuguese]{Corollary}{Corolário}
+\deftranslation[to=portuguese]{corollary}{corolário}
+%\deftranslation[to=portuguese]{and}{e}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%\usepackage{appendixnumberbeamer}
+
+\newenvironment{transitionframe}{
+	\setbeamercolor{background canvas}{bg=yellow}
+	\begin{frame}}{
+	\end{frame}
+}
+\usetheme{default}
+\usefonttheme{structuresmallcapsserif}
+
+%% I use a beige off white for my background
+\definecolor{MyBackground}{RGB}{255,253,218}
+\useinnertheme[shadow]{rounded}
+\setbeamercolor{block title}{bg=MyBackground}
+\setbeamercolor{block body}{bg=MyBackground}
+\setbeamercolor{example title}{bg=MyBackground}
+\setbeamercolor{example body}{bg=MyBackground}
+
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{page number in head/foot}[appendixframenumber]
+
+%\usepackage{graphics}
+\usepackage{graphicx}
+
+\definecolor{blue_emph}{RGB}{0,114,178}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+\definecolor{purple}{RGB}{204,121,167}
+\definecolor{orange}{RGB}{230,159,0}
+\definecolor{lightblue}{RGB}{86,180,233}
+
+%\setbeamercolor{frametitle}{fg=blue}
+%\setbeamercolor{title}{fg=blue}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{itemize items}{-}
+%\setbeamercolor{itemize item}{fg=blue}
+%\setbeamercolor{itemize subitem}{fg=blue}
+\setbeamertemplate{enumerate items}[default]
+%\setbeamercolor{enumerate subitem}{fg=blue}
+\setbeamercolor{button}{bg=MyBackground,fg=blue}
+\usefonttheme{structuresmallcapsserif}
+
+%\setbeamercolor{section in toc}{fg=blue}
+%\setbeamercolor{subsection in toc}{fg=red}
+\setbeamersize{text margin left=1em,text margin right=1em} 
+
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{bib.bib}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{halfwideitemize}{\itemize\addtolength{\itemsep}{0.5em}}{\enditemize}
+\newenvironment{halfwideenumerate}{\enumerate\addtolength{\itemsep}{0.5em}}{\endenumerate}
+
+
+\author{Luis A. F. Alvarez}
+\title{EAE1223: Econometria III}
+\subtitle{Aula 1 - Introdução}
+%\logo{}
+%\institute{}
+\date{\today}
+%\subject{}
+%\setbeamercovered{transparent}
+
+\begin{document}
+
+	\begin{frame}[plain]
+	\maketitle
+	\end{frame}
+	\begin{frame}{Amostragem e inferência}
+		\begin{halfwideitemize}
+			\item Nos cursos anteriores de Econometria, boa parte das aulas foi dedicada a tópicos de {\color{blue}inferência estatística}, i.e. a métodos de quantificação da {\color{blue}incerteza} referente a uma quantidade populacional.
+			\begin{halfwideitemize}
+				\item Cômputo de erros padrão, construção de testes de hipótese e intervalos de confiança.
+			\end{halfwideitemize}
+			\item A  incerteza, nesses cursos de Econometria, decorria fundamentalmente da {\color{blue}amostragem}.
+			\begin{halfwideitemize}
+				\item 	Observávamos somente uma amostra da população de interesse, de modo que gostaríamos de quantificar o quanto poderíamos falar da população, e o quanto seria contigente à amostra.
+			\end{halfwideitemize}
+		
+			\item As propriedades dos estimadores, testes e intervalos de confiança faziam referência ao experimento mental de amostras repetidas.
+			\begin{halfwideitemize}
+				\item Se repetíssemos a amostragem muitas vezes e calculássemos o estimador para cada amostra, na média das repetições o estimador acertaria parâmetro de interesse (ausência viés); ou as repetições não ficariam muito distantes de si (baixa variância amostral). 
+			\end{halfwideitemize}
+		\end{halfwideitemize}
+	\end{frame}
+	\begin{frame}{Amostragem aleatória simples}
+		\begin{halfwideitemize}
+			
+			\item Nos cursos anteriores, as propriedades dos estimadores, testes e intervalos de confiança foram derivadas sob a hipótese de {\color{blue}amostragem aleatória simples}.
+			\begin{halfwideitemize}
+				\item As observações na amostra eram independentes entre si, e cada uma seguia a mesma distribuição das variáveis na população.
+				\item Conceito serve como aproximação ao procedimento de se sortear $n$ elementos (indivíduos, firmas, países) de uma população grande e coletar as informações deles.
+				\item Em dados no formato de painel, sorteamos aleatoriamente $n$ indivíduos e acompanhamos suas variáveis por $T$ períodos, de modo que observações de indivíduos diferentes são independentes, e a sequência de variáveis de cada indivíduo tem a mesma distribuição da população.
+			\end{halfwideitemize}
+		\end{halfwideitemize}
+	\end{frame}
+	
+	\begin{frame}{Séries de tempo}
+		\begin{halfwideitemize}
+			\item Neste curso, estudaremos métodos estatísticos e econométricos para dados de {\color{blue}séries de tempo}.
+			\item Estes dados possuem uma estrutura especial, pois as variáveis possuem uma ordenação natural (tempo).
+			\begin{halfwideitemize}
+				\item Exemplo: observamos dados de inflação e atividade econômica mensais, de janeiro de 2003 a dezembro de 2022.
+			\end{halfwideitemize} 
+			\item Esta estrutura nos leva a uma nova sorte de problemas.
+		\end{halfwideitemize}
+	\end{frame}
+	\begin{frame}{Incerteza em séries de tempo}
+		\begin{halfwideitemize}
+			\item Primeiramente, o conceito de incerteza utilizado anteriormente necessita ser requalificado, pois é difícil ver uma série de tempo como uma amostra de uma população tal qual {\color{blue}naturalmente a pensamos}.
+			\begin{halfwideitemize}
+				\item Em séries de tempo, a incerteza de procedimentos estatísticos decorre fundamentalmente de não sermos capazes de observar o que acontecerá em todo o futuro, nem o que aconteceu num passado distante, {\color{blue}nem o que poderia ter acontecido no período da amostra e não ocorreu}. 
+				\item Essa incerteza {\color{blue}econômica} deve ser levada em conta, pois gostaríamos de separar o que é {\color{blue}contigente} ao período de análise do que é {\color{blue}essencial} na trajetória de uma série.
+				\item Propriedades dos estimadores devem ser pensadas como avaliadas em ``amostras repetidas'' desses cenários contrafactuais (``superpopulação'').
+			\end{halfwideitemize}
+		\end{halfwideitemize}
+	\end{frame}
+	\begin{frame}{O que muda}
+				\begin{halfwideitemize}
+					\item A estrutura das séries de tempo faz com que a hipótese de dados independentes e identicamente distribuídos deixe de ser atrativa.
+		\begin{halfwideitemize}
+			\item Esperamos que haja dependência do que ocorre com a inflação em $t$ e aquilo que ocorre com ela em $t-1$.
+			\item Além disso, em muitos cenários, é irrazoável supor que a distribuição de uma variável, que reflete o que contrafactualmente poderia ter ocorrido com ela, é a mesma em diferentes períodos.
+			\begin{halfwideitemize}
+				\item A distribuição do produto Brasileiro em 1950 e 2000 não parece ser a mesma.
+			\end{halfwideitemize} 
+			\item Precisamos de novos métodos para lidar com esses problemas.
+			
+		\end{halfwideitemize}
+							\item Por fim, a estrutura de séries de tempo requer cuidados adicionais na identificação e estimação de {\color{blue}efeitos causais}, pois devemos levar em conta as retroalimentações dos processos.
+			\end{halfwideitemize}
+	\end{frame}
+	
+	\begin{frame}{Causalidade e Econometria}
+		\begin{halfwideitemize}
+			\item O conceito de causalidade, em Econometria, reflete o experimento mental associado ao qualificador \textit{ceteris paribus}.
+			\item Em um sistema econômico com variáveis $(Y,X,U)$, o efeito causal de $X$ sobre $Y$ é {\color{blue}definido} como o efeito de se perturbar $X$ sobre $Y$, {\color{red}mantidas as demais causas de $Y$ constantes.}
+			\item Primeira etapa de uma análise causal é definir o sistema econômico ou modelo causal, explicitando quais variáveis causam o quê e os efeitos causais de interesse.
+			\begin{halfwideitemize}
+				\item Trata-se de {\color{blue}atividade puramente mental}, não dependente de amostra e envolvendo conhecimento prévio ou teoria econômica \citep{Heckman2022}.
+			\end{halfwideitemize}
+		\end{halfwideitemize}
+	\end{frame}
+	
+	\begin{frame}{Modelo econométrico causal linear}
+	\begin{halfwideitemize}
+		\item Vamos definir o seguinte modelo causal para uma variável $Y_T$ no período $t$.
+		
+		$$Y_T = X_t'\beta + U_t \, ,$$
+		onde $X_t$ é um vetor $k \times 1$ de \textbf{causas observadas} de $Y_T$, $\beta$ é um vetor $k\times 1$ {\color{orange}definido} como o efeito causal de se perturbar cada um dos elementos de $X_t$ sobre $Y_T$, e $U_t$ são as demais causas \textbf{não observadas} de $Y_T$.
+		
+		\item \textbf{Exemplo:} definimos a função resposta de um banco central como:
+		
+		$$i_t = (i^{\text{neutro}} + \pi^{\text{meta}}) + \gamma(\pi_{t-1}-\pi^{\text{meta}}) + u_t \, ,$$
+		onde $u_t$ são os determinantes não observados da regra de juros (choques monetários), e $\gamma$ é definido como o coeficiente (causal) de resposta da política monetária à inflação passada.
+	
+	\end{halfwideitemize}
+	\end{frame}
+	
+	\begin{frame}{Estimação do modelo causal linear}
+		\begin{halfwideitemize}
+			\item Suponha que tenhamos acesso a séries de tempo $\{(Y_s, X_s)\}_{s=1}^T$.
+			\item Podemos tentar estimar o parâmetro causal $\beta$ por MQO:
+			
+			$$\hat{\beta} = \left(\sum_{t=1}^T X_t X_t'\right)^{-1}\left(\sum_{t=1}^T X_t Y_T\right) $$
+			\item Mas:
+			$\hat{\beta}  = \left(\sum_{t=1}^T X_t X_t'\right)^{-1}\left(\sum_{t=1}^T X_t (X_t'\beta + U_t)\right)= \beta + \left(\frac{1}{T}\sum_{t=1}^T X_t X_t'\right)^{-1}\left(\frac{1}{T}\sum_{t=1}^T X_t U_t\right)  $
+			\item De Econometria I, sabemos que $\hat{\beta}$ será não viciado se {\color{blue_emph}$\mathbb{E}[U_s|X_1,X_2,\ldots, X_T]=0$} para $s=1,\ldots,T$.
+			\begin{halfwideitemize}
+				\item Em Econometria 1, como as observações eram independentes, $\mathbb{E}[U_s|X_1,X_2,\ldots, X_T] = \mathbb{E}[U_s|X_s]$, e a condição colapsava para $\mathbb{E}[U_s|X_s] = 0$.
+				\item Em séries de tempo, dependência implica que precisamos de $\mathbb{E}[U_s|X_1,X_2,\ldots, X_T] = 0 \implies \mathbb{E}[X_sU_t] = 0 \forall s,t $.
+			\end{halfwideitemize}
+		\end{halfwideitemize}
+	\end{frame}
+	\begin{frame}{Estimação do modelo causal linear (cont.)}
+		\begin{wideitemize}
+			\item A condição que impomos para estimar $\beta$ {\color{blue}sem viés} requer que $\mathbb{E}[X_sU_t] = 0, \quad \forall s,t$.
+			\begin{halfwideitemize}
+				\item Condição requer que os demais determinantes de $y$ não estejam sistematicamente associados com $x$, contemporânea ou extemporaneamente.
+				\item Não pode haver retroalimentação entre $X$ e $U$.
+				\item A essa condição damos nome de \textbf{exogeneidade estrita.}
+			\end{halfwideitemize}
+			\item Condição faz sentido no exemplo da regra monetária?
+		\end{wideitemize}
+	\end{frame}
+	\begin{frame}{Estimação do modelo causal linear (cont.)}
+		\begin{halfwideitemize}
+			\item Para estimar $\hat{\beta}$ {\color{blue}consistentemente} quando $T \to \infty$, precisamos das seguinte condições:
+		\begin{enumerate}
+			\item $\left(\frac{1}{T}\sum_{t=1}^T X_t X_t'\right)$ e $\left(\frac{1}{T}\sum_{t=1}^T X_t U_t\right)$ possuem limites em probabilidade.
+			\item O limite em probabilidade de $\left(\frac{1}{T}\sum_{t=1}^T X_t X_t'\right)$ tem posto cheio.
+			\item $\mathbb{E}[X_t U_t] = 0$ para todo $t$.
+		\end{enumerate}
+		\item Condição (1) é de natureza {\color{blue}estatística}: processos não podem explodir nem pode ser extremamente dependentes, de modo que as médias convirjam (deve valer uma lei dos grandes números).
+		\item Condição (2) versa sobre a {\color{blue}especificação} do modelo: não pode haver colinearidade perfeita em amostras grandes.
+		\item Condição (3) é de natureza {\color{blue}econômica}: \textbf{exogeneidade contemporânea}.
+		\begin{halfwideitemize}
+		\item Condição faz sentido no exemplo da regra monetária?
+		\end{halfwideitemize}
+	\end{halfwideitemize}
+	\end{frame}
+	
+	\begin{frame}{Melhor preditor linear}
+		\begin{halfwideitemize}
+			
+			\item E se não temos um modelo causal na cabeça? Ou se a hipótese de exogeneidade para consistência não vale? Será que o estimador de MQO estima consistentemente alguma coisa?
+		\end{halfwideitemize}
+		\begin{block}{Definição: melhor preditor linear}
+			Seja $Y$ uma variável aleatória escalar e $X$ um vetor $k\times 1$ de preditores. O {\color{blue}coeficiente do melhor preditor linear} de $Y$ como função de $X$ é {\color{red}definido} por:
+			
+			$$\gamma \in \operatorname{argmin}_{c \in \mathbb{R}^k} \mathbb{E}[(Y-c'X)^2]$$
+		\end{block}
+		\begin{halfwideitemize}
+			\item $\gamma$ é o coeficiente que minimiza erro quadrático esperado de se projetar $Y$ como função de $X$
+		\end{halfwideitemize}
+	\end{frame}
+	
+	\begin{frame}{Melhor preditor linear e modelo preditivo}
+			\begin{block}{Proposição}
+			\begin{enumerate}
+				\item 		Se $\mathbb{E}[XX']$ tem posto completo, temos que $\gamma$ é único e pode ser escrito como:
+				
+				$$\gamma = \mathbb{E}[XX']^{-1}\mathbb{E}[XY]$$
+				
+				\item Além disso, definindo o erro de projeção $\epsilon = Y- x'\gamma$, podemos escrever:
+				
+				$$Y = X'\gamma + \epsilon \, ,$$
+				onde, $\mathbb{E}[X \epsilon] = 0$ \textbf{por construção}.
+				
+			\end{enumerate}
+			
+		\end{block}
+	\end{frame}
+	\begin{frame}{Estimação de modelo preditivo}
+		\begin{halfwideitemize}
+			\item A fórmula de $\gamma$ é bastante parecida com a do estimador de MQO $\hat{\beta}$.
+			\begin{halfwideitemize}
+				\item Consequentemente, $\hat{\beta}$ estimará consistentemente o coeficiente $\gamma$ do melhor preditor linear de $Y$ em $X$ se, quando $T \to \infty$, $\frac{1}{T}\sum_{t=1}^T X_t X_t' \overset{p}{\to} \mathbb{E}[XX']$ e $\frac{1}{T}\sum_{t=1}^T X_t Y_t \overset{p}{\to} \mathbb{E}[X y]$.
+			\end{halfwideitemize}
+			\item Posto de outra forma, o problema de melhor prever $Y$ como função linear de $X$ define um {\color{blue}modelo preditivo linear}:
+			$$Y = X\gamma + \epsilon = 0$$
+			cujo erro satisfaz a condição de exogeneidade $\mathbb{E}[X\epsilon] = 0$ {\color{red}por construção}. Para consistência, bastará então uma LGN.
+		\end{halfwideitemize}
+			\begin{halfwideitemize}
+			\item Condições suficientes para que a lei dos grandes números que garante a consistência do estimador de MQO $\hat{\beta}$ para $\gamma$ valha são:
+			\begin{halfwideitemize}
+				\item[(a)] $\mathbb{E}[X_t X_t'] = \mathbb{E}[XX']$ e $\mathbb{E}[X_t Y_T]=\mathbb{E}[X Y]$.
+				\item[(b)] {\color{blue}As observações apresentam dependência fraca no tempo}, de modo que observações mais distantes no tempo se comportam cada vez mais como próximas de independentes.
+			\end{halfwideitemize}
+		\end{halfwideitemize}
+	\end{frame}
+	\begin{frame}{Estacionariedade e dependência fraca}
+		\begin{halfwideitemize}
+			\item As condições (a) e (b) garantem que uma lei dos grandes números valha, de modo $\frac{1}{T}\sum_{t=1}^T X_t X_t' \overset{p}{\to} \mathbb{E}[XX']$ e $\frac{1}{T}\sum_{t=1}^T X_t Y_t \overset{p}{\to} \mathbb{E}[X y]$.
+			\begin{halfwideitemize}
+				\item Condição (a) é uma versão de condição de {\color{blue}estacionariedade fraca}. Esta condição impõe estabilidade dos momentos de $X$ e $Y$, garantindo que os potenciais limites das médias amostrais existam.
+				\item Condição (b) garante que haja informação suficiente no problema para que haja convergência em probabilidade para os limites.
+			\end{halfwideitemize}
+			\item Uma boa parte do curso consistirá em prover ferramentas para testar se séries de tempo são estacionárias ou não, e a entender o que se deve fazer em caso negativo. 
+			\item Quanto ao item (b), não testaremos essa condição, embora seja importante saber que ela vale para processos bastante flexíveis \citep{Carrasco2002}.
+		\end{halfwideitemize}
+	\end{frame}
+	
+	\begin{frame}{Procedimento para avaliar consistência de estimador de MQO de modelo linear em séries de tempo}
+		\begin{halfwideenumerate}
+			\item Especificar a natureza da pergunta (preditiva ou causal). 
+			\item Postular e escrever o modelo correspondente.
+			\item Se o modelo é causal, avaliar a plausibilidade de exogeneidade contemporânea (teoria econômica). Se modelo é preditivo, exogeneidade contemporânea do erro do modelo vale por construção.
+			\item Se exogeneidade valer, e séries forem estacionárias (e fracamente dependentes), sabemos que estimador de MQO de $\hat{\beta}$ será consistente para o parâmetro do modelo postulado.
+
+		\end{halfwideenumerate}
+		\vspace{1em}
+			\textbf{Obs 1:} Se a série não for estacionária, veremos no curso o que podemos dizer/devemos fazer.
+			
+			\vspace{1em}
+			\textbf{Obs 2:} Além disso, veremos como fazer inferência sobre os parâmetros, levando em conta a dependência espacial na quantificação de incerteza.
+		\end{frame}
+	\begin{frame}[allowframebreaks]{Bibliografia}
+	\printbibliography
+	\end{frame}
+\end{document}

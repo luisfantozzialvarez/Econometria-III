@@ -1,0 +1,122 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{Carrasco2002}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a35d1fb4461f66bfbd032f6e90ad7bea}{%
+           family={Carrasco},
+           familyi={C\bibinitperiod},
+           given={Marine},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eaefa8dd180971cfee840787cf3b798b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Xiaohong},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{9f54a68a71eb36e8c318580472d84b6e}
+      \strng{fullhash}{9f54a68a71eb36e8c318580472d84b6e}
+      \strng{bibnamehash}{9f54a68a71eb36e8c318580472d84b6e}
+      \strng{authorbibnamehash}{9f54a68a71eb36e8c318580472d84b6e}
+      \strng{authornamehash}{9f54a68a71eb36e8c318580472d84b6e}
+      \strng{authorfullhash}{9f54a68a71eb36e8c318580472d84b6e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper first provides some useful results on a generalized random coefficient autoregressive model and a generalized hidden Markov model. These results simultaneously imply strict stationarity, existence of higher order moments, geometric ergodicity, and β-mixing with exponential decay rates, which are important properties for statistical inference. As applications, we then provide easy-to-verify sufficient conditions to ensure β-mixing and finite higher order moments for various linear and nonlinear GARCH(1,1), linear and power GARCH(p,q), stochastic volatility, and autoregressive conditional duration models. For many of these models, our sufficient conditions for existence of second moments and exponential β-mixing are also necessary. For several GARCH(1,1) models, our sufficient conditions for existence of higher order moments again coincide with the necessary ones in He and Terasvirta.}
+      \field{issn}{02664666, 14694360}
+      \field{journaltitle}{Econometric Theory}
+      \field{number}{1}
+      \field{title}{Mixing and Moment Properties of Various GARCH and Stochastic Volatility Models}
+      \field{urlday}{23}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{volume}{18}
+      \field{year}{2002}
+      \field{urldateera}{ce}
+      \field{pages}{17\bibrangedash 39}
+      \range{pages}{23}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/3533024
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/3533024
+      \endverb
+    \endentry
+    \entry{Heckman2022}{report}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b70b920520f54634a1f03f9312707db2}{%
+           family={Heckman},
+           familyi={H\bibinitperiod},
+           given={James\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=849dd9a14dde0cb5a20e04bb03796903}{%
+           family={Pinto},
+           familyi={P\bibinitperiod},
+           given={Rodrigo},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {National Bureau of Economic Research}%
+      }
+      \strng{namehash}{f8126b22853b3df532011c15ef351228}
+      \strng{fullhash}{f8126b22853b3df532011c15ef351228}
+      \strng{bibnamehash}{f8126b22853b3df532011c15ef351228}
+      \strng{authorbibnamehash}{f8126b22853b3df532011c15ef351228}
+      \strng{authornamehash}{f8126b22853b3df532011c15ef351228}
+      \strng{authorfullhash}{f8126b22853b3df532011c15ef351228}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper examines the econometric causal model for policy analysis developed by the seminal ideas of Ragnar Frisch and Trygve Haavelmo. We compare the econometric causal model with two popular causal frameworks: Neyman-Holland causal model and the do-calculus. The Neyman-Holland causal model is based on the language of potential outcomes and was largely developed by statisticians. The do-calculus, developed by Judea Pearl and co-authors, relies on Directed Acyclic Graphs (DAGs) and is a popular causal framework in computer science. We make the case that economists who uncritically use these approximating frameworks often discard the substantial benefits of the econometric causal model to the detriment of more informative economic policy analyses. We illustrate the versatility and capabilities of the econometric framework using causal models that are frequently studied by economists.}
+      \field{month}{2}
+      \field{number}{29787}
+      \field{series}{Working Paper Series}
+      \field{title}{Causality and Econometrics}
+      \field{type}{Working Paper}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.3386/w29787
+      \endverb
+      \verb{urlraw}
+      \verb http://www.nber.org/papers/w29787
+      \endverb
+      \verb{url}
+      \verb http://www.nber.org/papers/w29787
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
