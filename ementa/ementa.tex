@@ -1,3 +1,4 @@
+% !TeX TXS-program:bibliography = txs:///biber
 \documentclass[10pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -8,6 +9,16 @@
 \usepackage{xcolor}
 \usepackage{nameref}
 \usepackage{hyperref}
+\usepackage{color}
+
+\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+
 \title{\large EAE1223: Econometria III}
 \author{Professor Luis A. F. Alvarez}
 \date{}
@@ -41,5 +52,25 @@
 		\item Trabalho (20\%).
 	\end{enumerate}
 	
-	\paragraph{Bibliografia:} as notas de aula de curso, bem como os códigos apresentados em aula, serão 
+	\paragraph{Bibliografia:} as notas de aula de curso, bem como os códigos apresentados em aula, serão disponibilizados no repositório \url{https://github.com/luisfantozzialvarez/Econometria-III}. As notas são autocontidas, com referências a materiais auxiliares. A indicação de livro-texto é:
+	
+	\vspace{1em}
+	{\color{blue}\noindent\fullcite{Enders2014}}
+		\vspace{1em}
+		
+	Entretanto, este livro \textbf{não} contém todos os conteúdos vistos em aula. Apontamentos a outros livros serão feitos, quando necessários.
+	
+	Alguns materiais com implementações computacionais em R são:
+		\vspace{1em}
+	{\color{red}
+		\noindent\fullcite{Shumway2017}
+		
+		\vspace{1em}
+	\noindent\fullcite{Tsay2010}
+	
+			\vspace{1em}
+	\noindent\fullcite{Tsay2012}
+	
+	\vspace{1em}
+	\noindent\fullcite{Tsay2013}}
 \end{document}

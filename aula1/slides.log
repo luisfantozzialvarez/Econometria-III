@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  23 FEB 2024 15:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  23 FEB 2024 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1569,7 +1569,7 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  44038 strings out of 475735
- 1013219 string characters out of 5784785
+ 1013279 string characters out of 5784785
  1865759 words of memory out of 5000000
  63994 multiletter control sequences out of 15000+600000
  602161 words of font info for 92 fonts, out of 8000000 for 9000
@@ -1585,7 +1585,7 @@ c/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share
 /lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (17 pages, 239869 bytes).
+Output written on slides.pdf (17 pages, 239859 bytes).
 PDF statistics:
  242 PDF objects out of 1000 (max. 8388607)
  169 compressed objects within 2 object streams

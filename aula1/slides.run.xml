@@ -80,7 +80,7 @@
       <file>slides.bcf</file>
     </requires>
     <requires type="editable">
-      <file>bib.bib</file>
+      <file>../bibliography.bib</file>
     </requires>
   </external>
 </requests>
