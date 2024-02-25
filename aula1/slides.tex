@@ -185,9 +185,9 @@ natbib=true
 	
 	\begin{frame}{Modelo econométrico causal linear}
 	\begin{halfwideitemize}
-		\item Vamos definir o seguinte modelo causal para uma variável $Y_T$ no período $t$.
+		\item Vamos definir o seguinte modelo causal para uma variável $Y_t$ no período $t$.
 		
-		$$Y_T = X_t'\beta + U_t \, ,$$
+		$$Y_t = X_t'\beta + U_t \, ,$$
 		onde $X_t$ é um vetor $k \times 1$ de \textbf{causas observadas} de $Y_T$, $\beta$ é um vetor $k\times 1$ {\color{orange}definido} como o efeito causal de se perturbar cada um dos elementos de $X_t$ sobre $Y_T$, e $U_t$ são as demais causas \textbf{não observadas} de $Y_T$.
 		
 		\item \textbf{Exemplo:} definimos a função resposta de um banco central como:
@@ -217,7 +217,7 @@ natbib=true
 		\begin{wideitemize}
 			\item A condição que impomos para estimar $\beta$ {\color{blue}sem viés} requer que $\mathbb{E}[X_sU_t] = 0, \quad \forall s,t$.
 			\begin{halfwideitemize}
-				\item Condição requer que os demais determinantes de $y$ não estejam sistematicamente associados com $x$, contemporânea ou extemporaneamente.
+				\item Condição requer que os demais determinantes de $Y$ não estejam sistematicamente associados com $X$, contemporânea ou extemporaneamente.
 				\item Não pode haver retroalimentação entre $X$ e $U$.
 				\item A essa condição damos nome de \textbf{exogeneidade estrita.}
 			\end{halfwideitemize}
@@ -252,7 +252,7 @@ natbib=true
 			$$\gamma \in \operatorname{argmin}_{c \in \mathbb{R}^k} \mathbb{E}[(Y-c'X)^2]$$
 		\end{block}
 		\begin{halfwideitemize}
-			\item $\gamma$ é o coeficiente que minimiza erro quadrático esperado de se projetar $Y$ como função de $X$
+			\item $\gamma$ é o coeficiente que minimiza erro quadrático esperado de se projetar $Y$ como função linear de $X$.
 		\end{halfwideitemize}
 	\end{frame}
 	
@@ -292,7 +292,7 @@ natbib=true
 	\end{frame}
 	\begin{frame}{Estacionariedade e dependência fraca}
 		\begin{halfwideitemize}
-			\item As condições (a) e (b) garantem que uma lei dos grandes números valha, de modo $\frac{1}{T}\sum_{t=1}^T X_t X_t' \overset{p}{\to} \mathbb{E}[XX']$ e $\frac{1}{T}\sum_{t=1}^T X_t Y_t \overset{p}{\to} \mathbb{E}[X y]$.
+			\item As condições (a) e (b) garantem que uma lei dos grandes números valha, de modo que $\frac{1}{T}\sum_{t=1}^T X_t X_t' \overset{p}{\to} \mathbb{E}[XX']$ e $\frac{1}{T}\sum_{t=1}^T X_t Y_t \overset{p}{\to} \mathbb{E}[X y]$.
 			\begin{halfwideitemize}
 				\item Condição (a) é uma versão de condição de {\color{blue}estacionariedade fraca}. Esta condição impõe estabilidade dos momentos de $X$ e $Y$, garantindo que os potenciais limites das médias amostrais existam.
 				\item Condição (b) garante que haja informação suficiente no problema para que haja convergência em probabilidade para os limites.
@@ -314,7 +314,7 @@ natbib=true
 			\textbf{Obs 1:} Se a série não for estacionária, veremos no curso o que podemos dizer/devemos fazer.
 			
 			\vspace{1em}
-			\textbf{Obs 2:} Além disso, veremos como fazer inferência sobre os parâmetros, levando em conta a dependência espacial na quantificação de incerteza.
+			\textbf{Obs 2:} Além disso, veremos como fazer inferência sobre os parâmetros, levando em conta a dependência temporal na quantificação de incerteza.
 		\end{frame}
 	\begin{frame}[allowframebreaks]{Bibliografia}
 	\printbibliography
