@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'slides.blg'
-[77] biber-darwin:340> INFO - === Sun Feb 25, 2024, 14:35:33
-[96] Biber.pm:419> INFO - Reading 'slides.bcf'
-[194] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
-[211] Biber.pm:4419> INFO - Processing section 0
-[225] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
-[227] bibtex.pm:1713> INFO - LaTeX decoding ...
-[244] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
-[297] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[297] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[298] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[298] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
-[307] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[309] bbl.pm:763> INFO - Output to slides.bbl
-[310] Biber.pm:131> WARN - legacy month field 'February' in entry 'Heckman2022' is not an integer - this will probably not sort properly.
-[310] Biber.pm:133> INFO - WARNINGS: 1
+[54] biber:340> INFO - === seg fev 26, 2024, 09:12:17
+[66] Biber.pm:419> INFO - Reading 'slides.bcf'
+[113] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
+[122] Biber.pm:4419> INFO - Processing section 0
+[130] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
+[131] bibtex.pm:1713> INFO - LaTeX decoding ...
+[139] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
+[172] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[172] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[172] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[172] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[177] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
+[179] bbl.pm:763> INFO - Output to slides.bbl
+[180] Biber.pm:131> WARN - legacy month field 'February' in entry 'Heckman2022' is not an integer - this will probably not sort properly.
+[180] Biber.pm:133> INFO - WARNINGS: 1

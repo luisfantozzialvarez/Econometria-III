@@ -188,7 +188,7 @@ natbib=true
 		\item Vamos definir o seguinte modelo causal para uma variável $Y_t$ no período $t$.
 		
 		$$Y_t = X_t'\beta + U_t \, ,$$
-		onde $X_t$ é um vetor $k \times 1$ de \textbf{causas observadas} de $Y_T$, $\beta$ é um vetor $k\times 1$ {\color{orange}definido} como o efeito causal de se perturbar cada um dos elementos de $X_t$ sobre $Y_T$, e $U_t$ são as demais causas \textbf{não observadas} de $Y_T$.
+		onde $X_t$ é um vetor $k \times 1$ de \textbf{causas observadas} de $Y_t$, $\beta$ é um vetor $k\times 1$ {\color{orange}definido} como o efeito causal de se perturbar cada um dos elementos de $X_t$ sobre $Y_t$, e $U_t$ são as demais causas \textbf{não observadas} de $Y_t$.
 		
 		\item \textbf{Exemplo:} definimos a função resposta de um banco central como:
 		
@@ -203,7 +203,7 @@ natbib=true
 			\item Suponha que tenhamos acesso a séries de tempo $\{(Y_s, X_s)\}_{s=1}^T$.
 			\item Podemos tentar estimar o parâmetro causal $\beta$ por MQO:
 			
-			$$\hat{\beta} = \left(\sum_{t=1}^T X_t X_t'\right)^{-1}\left(\sum_{t=1}^T X_t Y_T\right) $$
+			$$\hat{\beta} = \left(\sum_{t=1}^T X_t X_t'\right)^{-1}\left(\sum_{t=1}^T X_t Y_t\right) $$
 			\item Mas:
 			$\hat{\beta}  = \left(\sum_{t=1}^T X_t X_t'\right)^{-1}\left(\sum_{t=1}^T X_t (X_t'\beta + U_t)\right)= \beta + \left(\frac{1}{T}\sum_{t=1}^T X_t X_t'\right)^{-1}\left(\frac{1}{T}\sum_{t=1}^T X_t U_t\right)  $
 			\item De Econometria I, sabemos que $\hat{\beta}$ será não viciado se {\color{blue_emph}$\mathbb{E}[U_s|X_1,X_2,\ldots, X_T]=0$} para $s=1,\ldots,T$.
@@ -279,13 +279,13 @@ natbib=true
 				\item Consequentemente, $\hat{\beta}$ estimará consistentemente o coeficiente $\gamma$ do melhor preditor linear de $Y$ em $X$ se, quando $T \to \infty$, $\frac{1}{T}\sum_{t=1}^T X_t X_t' \overset{p}{\to} \mathbb{E}[XX']$ e $\frac{1}{T}\sum_{t=1}^T X_t Y_t \overset{p}{\to} \mathbb{E}[X y]$.
 			\end{halfwideitemize}
 			\item Posto de outra forma, o problema de melhor prever $Y$ como função linear de $X$ define um {\color{blue}modelo preditivo linear}:
-			$$Y = X\gamma + \epsilon = 0$$
+			$$Y = X'\gamma + \epsilon = 0$$
 			cujo erro satisfaz a condição de exogeneidade $\mathbb{E}[X\epsilon] = 0$ {\color{red}por construção}. Para consistência, bastará então uma LGN.
 		\end{halfwideitemize}
 			\begin{halfwideitemize}
 			\item Condições suficientes para que a lei dos grandes números que garante a consistência do estimador de MQO $\hat{\beta}$ para $\gamma$ valha são:
 			\begin{halfwideitemize}
-				\item[(a)] $\mathbb{E}[X_t X_t'] = \mathbb{E}[XX']$ e $\mathbb{E}[X_t Y_T]=\mathbb{E}[X Y]$.
+				\item[(a)] $\mathbb{E}[X_t X_t'] = \mathbb{E}[XX']$ e $\mathbb{E}[X_t Y_t]=\mathbb{E}[X Y]$.
 				\item[(b)] {\color{blue}As observações apresentam dependência fraca no tempo}, de modo que observações mais distantes no tempo se comportam cada vez mais como próximas de independentes.
 			\end{halfwideitemize}
 		\end{halfwideitemize}
