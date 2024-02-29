@@ -216,7 +216,7 @@ natbib=true
 			\item Um processo $Z_t$, $t \in \mathbb{Z}$, é dito de média movel de ordem $q$, ou tão somente MA(q), se:
 			
 			$$Z_t = \mu + \epsilon_t + \sum_{j=1}^{q} \psi_j \epsilon_{t-j} \, ,$$
-			onde $\{\epsilon_t\}_t$ é um ruído branco com variância $\sigma^2_\epsilon$.
+			onde $\{\epsilon_t\}_{t \in \mathbb{Z}}$ é um ruído branco com variância $\sigma^2_\epsilon$.
 			\item Vamos verificar que o processo é (fracamente) estacionário. De fato
 			\begin{enumerate}
 				\item 			$\mathbb{E}[Z_t] = \mu $.
@@ -364,7 +364,7 @@ natbib=true
 \end{frame}
 \begin{frame}{Encontrando os coeficientes da representação MA($\infty$)}
 	\begin{itemize}
-		\item As propriedades do operador defasagem podem ser utilizadas para encontrar a representação MA($\infty$) de um AR($p$) estacionáriom.
+		\item As propriedades do operador defasagem podem ser utilizadas para encontrar a representação MA($\infty$) de um AR($p$) estacionário.
 		\item De fato, considere um AR($2$) estacionário:
 		$$(1-\beta_1 L - \beta_2 L^2)y_t = \alpha + u_t$$
 		\item Da fatoração de polinômios,  podemos escrever:
