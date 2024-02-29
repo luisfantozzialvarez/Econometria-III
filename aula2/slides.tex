@@ -107,10 +107,119 @@ natbib=true
 	\begin{frame}[plain]
 	\maketitle
 	\end{frame}
-	\begin{frame}{O arcabouço conceitual para a definição de incerteza}
+	\begin{frame}{Espaço de probabilidade}
+		\begin{itemize}
+			\item Formalmente, o conceito utilizado para se definir a noção de incerteza associada a um problema é o de {\color{blue}espaço de probabilidade}.
+			\item Um espaço de probabilidade é uma tripla $(\Omega, \Sigma, \mathbb{P})$, onde:
+			\begin{itemize}
+				\item $\Omega$ é um conjunto, denominado {\color{blue}espaço amostral}, contendo todos as possíveis realizações da incerteza.
+				\item $\Sigma$ é uma coleção de subconjuntos de $\Omega$, denominada {\color{blue}$\sigma$-álgebra}. A cada subconjunto de $\Omega$ pertencente a $\Sigma$  damos o nome de {\color{blue}evento}. Os elementos de $\Sigma$ são aqueles para os quais somos capazes de definir a incerteza.
+				\item uma {\color{blue}lei de probabilidade} $\mathbb{P}$ que atribui, a cada conjunto $E \in \Sigma$, um número $\mathbb{P}[E]$ entre $0$ e $1$. A lei de probabilidade satisfaz os {\color{blue}axiomas de Kolmogorov}.
+			\end{itemize}
+			\item Por que não definimos a probabilidade para todo subconjunto de $\Omega$?
+			\begin{halfwideitemize}
+				\item \textbf{Resposta:} se $\Omega$ é ``complexo'' (por exemplo, $[0,1]$), é impossível definir uma probabilidade que satisfaça todos os axiomas de Kolmogorov para todo subconjunto do espaço.
+			\end{halfwideitemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Exemplo}
+		\begin{halfwideitemize}
+			\item Considere um lançamento de um dado não viciado.
+			\item Nesse caso, espaço amostral é $\Omega = \{1,2,3,4,5,6\}$.
+			\item Como lançamento é não viciado, sabemos que:
+			$$\mathbb{P}[\{1\}]= \mathbb{P}[\{2\}] = \mathbb{P}[\{3\}] = \mathbb{P}[\{4\}] = \mathbb{P}[\{5\}] = \mathbb{P}[\{6\}] = 1/6 \,.$$
+			\item Pelos axiomas da probabilidade, segue que podemos tomar $\Sigma$ como o conjunto de todos os subconjuntos de $\Omega$, e, para qualquer $E\subset \Sigma$:
+			$$\mathbb{P}[E]= \mathbb{P}[\cup_{e \in E}\{e\}] = \sum_{e \in E}\mathbb{P}[\{e\}] = \frac{\# E}{6}\, ,$$
+			onde $\# E$ é o número de elementos de $E$.
+			\item Exemplo: probabilidade de que o lançamento de um número par é:
+			$$\mathbb{P}[\{2,4,6\}]= \frac{3}{6} = \frac{1}{2}$$
+		\end{halfwideitemize}
+	\end{frame}
+	
+	
+	\begin{frame}{Variável aleatória e processo estocástico}
+		\begin{halfwideitemize}
+			\item Uma {\color{blue}variável aleatória} $Z$ é uma {\color{blue}função}, com domínio no espaço amostral (onde definimos a incerteza), e valores em outro espaço (para nossos fins, os reais).
+			\begin{itemize}
+				\item Por exemplo, $(\Omega, \Sigma, \mathbb{P})$ um espaço de probabilidade descrevendo a incerteza associada aos retornos de ativos financeiros, e $Z: \Omega \mapsto \mathbb{R}$ é a variável aleatória que representa o retorno de um fundo.
+				\item Incerteza em $(\Omega, \Sigma, \mathbb{P})$ traduz-se em incerteza em $Z$, i.e. $Z$ é incerto pois o valor $\omega \in \Omega$ que ocorre é incerto.
+			\end{itemize}
+			\item Um {\color{blue} processo estocástico} é uma coleção de variáveis aleatórias $\{X_t: t \in \mathcal{T}\}$, com domínio no \textbf{mesmo} espaço de probabilidade e indexada por um conjunto $\mathcal{T}$
+			\item Uma {\color{blue}série de tempo} é um processo estocástico indexado no tempo, i.e. $\mathcal{T}$ é um conjunto de períodos.
+			\begin{halfwideitemize}
+				\item Como  tomaremos $\mathcal{T} = \mathbb{Z}$ ou $\mathcal{T}  =\mathbb{N}$.
+				\item Para cada $\omega \in \Omega$, $\{ X_t(\omega): t \in \mathcal{T} \}$ é uma possível trajetória da série de tempo. Para cada $t \in \mathcal{T}$, $X_t$ é uma variável aleatória.
+			\end{halfwideitemize}
+		\end{halfwideitemize}
+	\end{frame}
+	
+	\begin{frame}{Série de tempo estritamente estacionária}
+		\begin{itemize}
+			\item Uma série de tempo $\{X_t: t \in \mathcal{T}\}$ é dita estritamente estacionária se, para todo $t \in \mathcal{T}$, $j\in \mathbb{N}$:
+			
+			$$(X_t, X_{t+1}, \ldots, X_{t+j}) \overset{d}{=} (X_{t+h}, X_{t+1+h}, \ldots, X_{t+j+h})\,, \quad \forall h \geq 0 \, , $$
+			onde $\overset{d}{=}$ significa igualdade das distribuições conjuntas, i.e. ?
+			
+			\begin{align*}
+				\mathbb{P}[X_t \leq c_1, X_{t+1} \leq c_2, \ldots, X_{t+j} \leq c_j ] = \\ \mathbb{P}[X_{t+h} \leq c_1, X_{t+1+h} \leq c_2, \ldots, X_{t+j+h} \leq c_j ], \quad \forall c_1,c_2\ldots, c_j \, .
+			\end{align*}
+			
+			\item Estacionariedade estrita requer que distribuição de qualquer número finito de períodos do processo seja a mesma ao longo do tempo.
+		\end{itemize}
+	\end{frame}
+	
+		\begin{frame}{Série de tempo fracamente estacionária}
+
+	\end{frame}
+	
+	\begin{frame}{Função de autocovariância}
 		conteúdo...
 	\end{frame}
-	\begin{frame}[allowframebreaks]{Bibliografia}
-	\printbibliography
+	
+	\begin{frame}{Ruído branco}
+		conteúdo...
 	\end{frame}
+	
+	
+	\begin{frame}{Ruído branco (ilustração)}
+		conteúdo...
+	\end{frame}
+	
+	
+	\begin{frame}{Ruído branco (ilustração)}
+		conteúdo...
+	\end{frame}
+	
+		\begin{frame}{Processo MA(q)}
+		conteúdo...
+	\end{frame}
+	
+	\begin{frame}{Processo MA(q) (ilustração)}
+		conteúdo...
+	\end{frame}
+	
+		
+	\begin{frame}{Processo AR(1) estacionário}
+		conteúdo...
+	\end{frame}
+	
+	\begin{frame}{Processo AR(1) estacionário (ilustração)}
+		conteúdo...
+	\end{frame}
+	
+		\begin{frame}{Processo AR(p) estacionário}
+		conteúdo...
+	\end{frame}
+	
+	
+	\begin{frame}{Operador defasagem}
+		conteúdo...
+	\end{frame}
+	
+	\begin{frame}{Estacionariedade do AR(p)}
+		\end{frame}
+	%\begin{frame}[allowframebreaks]{Bibliografia}
+	%\printbibliography
+	%\end{frame}
 \end{document}
