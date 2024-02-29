@@ -382,7 +382,7 @@ natbib=true
 			\begin{aligned}
 				y_t = (1-\beta_1 L - \beta_2 L^2)^{-1}(\alpha + u_t) = \\ \left(1-\frac{1}{\lambda_2}L\right)^{-1}\left(1- \frac{1}{\lambda_1}L\right)^{-1}(\alpha+u_t) = \\
 				 \left(\sum_{i=0}^\infty \frac{1}{\lambda_2^i} L^i\right) \left(\sum_{j=0}^\infty \frac{1}{\lambda_1^j}L^j\right)(\alpha + u_t) =\\
-				 \frac{1}{(1-\lambda_1)(1-\lambda_2)}\alpha + \sum_{k=0}^\infty \omega_k u_{t-k} \end{aligned}
+				 \frac{1}{(1-\lambda_1^{-1})(1-\lambda_2^{-1})}\alpha + \sum_{k=0}^\infty \omega_k u_{t-k} \end{aligned}
 		\end{equation}
 		onde $\omega_k$ é a soma de termos $\frac{1}{\lambda^i_1 \lambda^j_2}$ tais que $i+j=k$. 
 	\end{halfwideitemize}
