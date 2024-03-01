@@ -1,0 +1,63 @@
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{color}
+
+\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+
+\title{\large EAE1223: Econometria III}
+\author{\normalsize Exercícios de revisão}
+\date{}
+\begin{document}
+	\maketitle
+	\paragraph{Questão 1:} Sejam $X_1,\ldots,X_m$ e $Y_1,\ldots, Y_n$ variáveis aleatórias, e $a,b,c \in \mathbb{R}$ números reais. Usando as propriedades de esperança:
+	
+	$$\mathbb{E}[X_1 + X_2] = X_1 + X_2 \, ,$$
+	$$\mathbb{E}[aX_1] = a + X_1 \, ,$$
+	$$\mathbb{E}[a] = a \, ,$$
+	e as definições de variância e covariância:
+		$$\mathbb{V}[X_1] = \mathbb{E}[X_1^2] - \mathbb{E}[X_1]^2\,,$$
+
+$$\operatorname{cov}(X_1,X_2) = \mathbb{E}[X_1X_2] - \mathbb{E}[X_1]\mathbb{E}[X_2]\,,$$
+verifique as seguintes propriedades.
+
+\begin{enumerate}
+	\item $\operatorname{cov}(X_1,X_2) = \operatorname{cov}(X_2,X_1)$.
+	\item $\operatorname{cov}(X_1,X_1) =  \mathbb{V}[X_1]$.
+	\item $\operatorname{cov}(aX_1,bX_2) =  ab\operatorname{cov}(X_1,X_2)$.
+	\item $\operatorname{cov}(X_1 + X_2,X_3) =  \operatorname{cov}(X_1,X_3) + \operatorname{cov}(X_2,X_3)$.
+	\item $\operatorname{cov}(X_1 + X_2,X_3 + X_4) = \operatorname{cov}(X_1,X_3) + \operatorname{cov}(X_1,X_4) + \operatorname{cov}(X_2,X_3) + \operatorname{cov}(X_2,X_4)$.
+	\item Generalize para: $\operatorname{cov}(\sum_{i=1}^mX_i,\sum_{j=1}^n Y_j) = \sum_{i=1}^{m}\sum_{j=1}^{n} \operatorname{cov}(X_i,X_j)$. 
+	\item $\operatorname{cov}(a,X_1) = 0$.
+	\item $\mathbb{V}[a] = 0$
+	\item $\mathbb{V}[a + X_1] = \mathbb{V}[X_1]$.
+	\item $\mathbb{V}[X_1 + X_2] = \mathbb{V}[X_1] + \mathbb{V}[X_2] + 2 \operatorname{cov}(X_1,X_2)$.
+	\item $\mathbb{V}[X_1 + X_2 + X_3] = \mathbb{V}[X_1] + \mathbb{V}[X_2] +  \mathbb{V}[X_3]+ 2 \operatorname{cov}(X_1,X_2) + 2 \operatorname{cov}(X_1,X_3) + 2 \operatorname{cov}(X_2,X_3)$.
+	\item Generalize para: $\mathbb{V}[\sum_{j=1}^{m}X_j] = \sum_{j=1}^m \mathbb{V}[X_j] + 2\sum_{i=1}^m \sum_{j=i+1}^m \operatorname{cov}(X_i,X_j)$.
+
+\end{enumerate}
+\paragraph{Questão} Sejam $Y$ e $Z$ variáveis aleatórias. Recorde-se que os coeficientes do melhor preditor linear de $Y$ como função de $Z$ (e um intercepto) são  dados por:
+
+$$(a,b) \in \operatorname{argmin}_{(a,b) \in \mathbb{R}}\mathbb{E}[(Y-a-bZ)^2]\,,$$
+
+Mostre, nesse caso, que, se $\mathbb{V}[Z] > 0$, $b =\operatorname{cov}(Z,Y)/\mathbb{V}[Z]$, e que, definindo o erro de previsão $u = Y - a - b Z$, temos:
+
+$$Y = a + bZ + u \, ,$$
+onde $\mathbb{E}[u] = 0$ e $\mathbb{E}[Zu] = \operatorname{cov}(Z,u) = 0$.
+
+	
+\end{document}

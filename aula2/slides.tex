@@ -23,7 +23,7 @@
 \usepackage{color}
 \usepackage{pgfplots}
 \usepackage{tikz}
-
+\usepackage{subcaption}
 %\usepackage{appendixnumberbeamer}
 
 \newenvironment{transitionframe}{
@@ -129,7 +129,7 @@ natbib=true
 			\item Nesse caso, espaço amostral é $\Omega = \{1,2,3,4,5,6\}$.
 			\item Como lançamento é não viciado, sabemos que:
 			$$\mathbb{P}[\{1\}]= \mathbb{P}[\{2\}] = \mathbb{P}[\{3\}] = \mathbb{P}[\{4\}] = \mathbb{P}[\{5\}] = \mathbb{P}[\{6\}] = 1/6 \,.$$
-			\item Pelos axiomas da probabilidade, segue que podemos tomar $\Sigma$ como o conjunto de todos os subconjuntos de $\Omega$, e, para qualquer $E\subset \Sigma$:
+			\item Pelos axiomas da probabilidade, segue que podemos tomar $\Sigma$ como o conjunto de todos os subconjuntos de $\Omega$, e, para qualquer $E\in \Sigma$:
 			$$\mathbb{P}[E]= \mathbb{P}[\cup_{e \in E}\{e\}] = \sum_{e \in E}\mathbb{P}[\{e\}] = \frac{\# E}{6}\, ,$$
 			onde $\# E$ é o número de elementos de $E$.
 			\item Exemplo: probabilidade de que o lançamento dê um número par é:
@@ -215,7 +215,7 @@ natbib=true
 	\begin{halfwideitemize}
 			\item Um processo $Z_t$, $t \in \mathbb{Z}$, é dito de média movel de ordem $q$, ou tão somente MA(q), se:
 			
-			$$Z_t = \mu + \epsilon_t + \sum_{j=1}^{q} \psi_j \epsilon_{t-j} \, ,$$
+			$$Z_t = \mu + \epsilon_t + \sum_{j=i}^{q} \psi_i \epsilon_{t-i} \, ,$$
 			onde $\{\epsilon_t\}_{t \in \mathbb{Z}}$ é um ruído branco com variância $\sigma^2_\epsilon$.
 			\item Vamos verificar que o processo é (fracamente) estacionário. De fato
 			\begin{enumerate}
@@ -386,6 +386,194 @@ natbib=true
 		\end{equation}
 		onde $\omega_k$ é a soma de termos $\frac{1}{\lambda^i_1 \lambda^j_2}$ tais que $i+j=k$. 
 	\end{halfwideitemize}
+\end{frame}
+
+\begin{frame}{ARMA(p,q)}
+	
+	\begin{halfwideitemize}
+		\item Um processo $\{Y_t\}_{t \in \mathbb{Z}}$ é dito ARMA(p,q) se:
+		
+		$$Y_t = \alpha + \sum_{j=1}^p \gamma_j Y_{t-j} + \epsilon_t + \sum_{l=1}^q \pi_l \epsilon_{t-l} \, ,$$
+		onde $\{\epsilon_t\}_{t \in \mathbb{Z}}$ é ruído branco.
+		
+		\item Processo ARMA(p,q) tem notação polinomial:
+		
+		$$\Gamma(L)Y_t = \alpha + \Pi(L)\epsilon_t \, ,$$
+		onde $\Gamma(L) = (1-\gamma_1L -\gamma_2 L^2 \ldots -\gamma_p L^p)$ e $\Pi(L) = (1+\pi_1L +\pi_2 L^2 \ldots +\pi_q L^q)$.
+			\item Um ARMA($p$,$q$) é dito em {\color{blue}forma simplificada} se $\Gamma$ e $\Pi$ não possuem raízes em comum, i.e. $\Gamma(x) =0 \implies \Pi(x) \neq 0$ e $\Pi(x) = 0 \implies \Gamma(x) \neq 0$.
+		
+		\begin{itemize}
+			\item Sempre é possível colocar um ARMA em forma simplificada, fatorando os dois polinômios em termos das raízes comuns e cortando-os dos dois lados.
+		\end{itemize}
+	
+	\end{halfwideitemize}
+\end{frame}
+
+\begin{frame}{Estacionariedade do ARMA(p,q)}
+	\begin{itemize}
+		\item A estacionariedade do ARMA(p,q) depende, fundalmente, do comportamento da parte AR.
+	\end{itemize}
+					\begin{block}{Proposição}
+		Considere um processo ARMA(p,q). Se, as $p$ raízes da equação característica $\Gamma(x) = 0$ estão todas fora do círculo unitário, então o ARMA($p$,$q$) é estacionário. Por outro lado, se o ARMA($p$,$q$) está em forma simplificada e uma das raízes de $\Gamma(x)$ está dentro do círculo (i.e. existe $\Gamma(x^*)=0$ com $|x^*| \leq 1$), o ARMA(p,q) não é estacionário.
+	\end{block}
+\end{frame}
+\begin{frame}{Processo ARMA(p,q) invertível}
+	\begin{halfwideitemize}
+		\item 	Um ARMA(p,q) estacionário é dito {\color{blue}invertível} se admite representação AR($\infty$), i.e. se pode ser escrito como:
+		$$Y_t = \omega +\sum_{j=1}^\infty \kappa_j y_{t-j} + \epsilon_t\, .$$
+		
+		\item Invertibilidade depende do comportamento da parte MA.
+		
+				\begin{block}{Proposição}
+			Considere um processo ARMA(p,q) estacionário. Se, as $q$ raízes da equação característica $\Pi(x) = 0$ estão todas fora do círculo unitário, então o ARMA($p$,$q$) é invertível. Por outro lado, se o ARMA($p$,$q$) está em forma simplificada e uma das raízes de $\Pi(x)$ está dentro do círculo  (i.e. existe $\Pi(x^*)=0$ com $|x^*| \leq 1$), o ARMA(p,q) não é invertível.
+		\end{block}
+		\item Invertibilidade será importante para distinguirmos entre processos ARMA.
+	\end{halfwideitemize}
+
+\end{frame}
+
+\begin{frame}{Método para verificar estacionariedade e invertibilidade do ARMA}
+	\begin{halfwideitemize}
+		\item Para verificar a estacionariedade do ARMA($p$,$q$).
+		\begin{enumerate}
+			\item Calcular as $p$ raízes de $\Gamma(x) = 0$. Se todas estão fora do círculo, processo é estacionário.
+			\item Se há raízes dentro do círculo, calculá-las (tratar raízes em multiplicidade como distintas). Se todas as raízes dentro do círculo de $\Gamma$ aparecem como raízes de $\Pi(x) = 0$ (as raízes em multiplicidade  precisam aparecer pelo menos o mesmo número de vezes repetidas em $\Pi$), o  processo ainda é estacionário. Se não for o caso, o processo é não estacionário.
+		\end{enumerate}
+		
+			\item Para verificar a invertibilidade do ARMA($p$,$q$) \textbf{estacionário}.
+		\begin{enumerate}
+			\item Calcular as $q$ raízes de $\Pi(x) = 0$. Se todas estão fora do círculo, processo é invertível.
+			\item Se há raízes dentro do círculo, calculá-las (tratar raízes em multiplicidade como distintas). Se todas as raízes dentro do círculo de $\Pi$ aparecem como raízes de $\Gamma(x) = 0$ (as raízes em multiplicidade  precisam aparecer pelo menos o mesmo número de vezes repetidas em $\Gamma$), o  processo ainda é invertível. Se não for o caso, o processo não é invertível.
+		\end{enumerate}
+	\end{halfwideitemize}
+\end{frame}
+
+\begin{frame}{ARMA(1,2) (gráfico)}
+	\centering
+	\includegraphics[scale=0.7]{graficos/arma12.pdf}
+\end{frame}
+\begin{frame}{Processo não estacionário: tendência determinística}
+	\begin{halfwideitemize}
+		\item Considere, agora, o processo:
+		\begin{equation}
+			\label{eq_trend}
+			Z_t = \alpha + \beta \cdot t + u_t
+		\end{equation}
+		onde $\beta \neq 0$ e $\{u_t\}_t$ é ruído branco. Note que esse processo é {\color{blue}não estacionário}, visto que:
+		\begin{equation*}
+			\mathbb{E}[Z_t] = \alpha + \beta \cdot t
+		\end{equation*}
+		varia no tempo.
+		\item Processo é estacionário {\color{blue} em torno de uma tendência}.
+		\item Dizemos que processos que incluem componentes determinísticos da forma $f(t)$, onde $f$ é uma função do tempo, apresentam {\color{blue}tendência determinística}. 
+	\end{halfwideitemize}
+\end{frame}
+\begin{frame}{Exemplo de processo com tendência determinística (gráfico)}
+	\begin{figure}
+		\caption{$Z_t = 0.05 \cdot t + u_t$, $u_t \sim N(0,1)$}
+		\includegraphics[scale=0.4]{graficos/deterministica.pdf}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Processo não estacionário: tendência estocástica}
+	\begin{halfwideitemize}
+		\item Considere agora um {\color{blue}passeio aleatório simples}, definido como:
+		\begin{equation}
+			\label{eq_rw}
+			Z_t = Z_{t-1} + u_t, \quad t > 0
+		\end{equation}
+		onde $\{u_t\}_{t \in \mathbb{N}}$ é ruído branco, e $Z_0 = 0$. 
+		\item Nesse caso, é possível verificar que:
+		\begin{equation}
+			\label{eq_stoch_trend}
+			Z_t = \sum_{s=1}^t u_s, \quad t > 0
+		\end{equation}
+		e vemos que o processo é não estacionário, visto que:
+		\begin{equation*}
+			\mathbb{V}[Z_t] = t \cdot \sigma^2_u
+		\end{equation*}
+		\item De \eqref{eq_stoch_trend}, notamos que o processo apresenta {\color{blue}tendência estocástica}: choques têm efeito permanente no nível da série.
+	\end{halfwideitemize}
+	
+\end{frame}
+
+\begin{frame}{Exemplo de processo com tendência estocástica (gráfico)}
+	\begin{figure}
+		\caption{Passeio aleatório simples}
+		\includegraphics[scale=0.4]{graficos/rw.pdf}
+	\end{figure}
+\end{frame}
+\begin{frame}{Processo não estacionário: quebra estrutural}
+	\begin{halfwideitemize}
+		\item Um terceiro tipo de processo não estacionário é dado por:
+		
+		\begin{equation}
+			\label{break_mean}
+				Y_t = \begin{cases}
+					\mu_0 + u_t \, ,& \text{se } t \leq T \, \\
+					\mu_1 + u_t \, , & \text{se } t > T \, 
+				\end{cases}
+		\end{equation}
+		onde $\{u_t\}_{t \in \mathbb{N}}$ é ruído branco e $\mu_0 \neq \mu_1$.
+		\item Processo apresenta quebra de {\color{blue}nível}: média é $\mu_0$ até $T$, e $\mu_1$ para a frente.
+		
+		\item Outro tipo de processo com {\color{blue}quebra de estrutura} é dado por:
+		
+				\begin{equation}
+			Y_t = \begin{cases}
+				 u_t \, ,& \text{se } t \leq T \, \\
+				\sigma u_t \, , & \text{se } t > T \, 
+			\end{cases}
+		\end{equation}
+		para $\sigma \neq 1$. Processo apresenta {\color{blue}quebra de escala ou na variância}.
+	\end{halfwideitemize}
+\end{frame}
+
+\begin{frame}{Processo não estacionário: quebra estrutural (gráfico)}
+	\begin{figure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[scale=0.4]{graficos/break_mean.pdf}
+		\caption{Quebra de nível}
+		
+	\end{subfigure}\begin{subfigure}{0.5\textwidth}
+			\centering
+					\includegraphics[scale=0.4]{graficos/break_sd.pdf}
+		\caption{Quebra de escala}
+	\end{subfigure}
+	\end{figure}
+\end{frame}
+\begin{frame}{Removendo não estacionariedades}
+	\begin{halfwideitemize}
+		\item Cada tipo de estacionariedade enseja um tratamento particular.
+		\item Podemos remover a tendência determinística do processo \eqref{eq_trend} ajustando um modelo de regressão linear de $Z_t$ em $t$ e extraindo os resíduos.
+		\begin{halfwideitemize}
+			\item Também é possível trabalhar com a série em {\color{blue}primeira diferenças}, isto é, trabalhar com a série $Y_t = Z_{t} - Z_{t-1}$ embora isso não seja a maneira mais eficiente de fazê-lo (e não funciona para tendências não lineares).
+		\end{halfwideitemize}
+		\item Por outro lado, para remover a tendência estocástica em \eqref{eq_rw}, devemos trabalhar com a {\color{blue}série diferenciada} $\Delta Z_t = Z_{t} - Z_{t-1}$.
+		\begin{halfwideitemize}
+			\item Observe que, de \eqref{eq_rw}, $\Delta Z_t = Z_t-Z_{t-1}$ é um processo estacionário.
+		\end{halfwideitemize} 
+		\item Por fim, para processos com quebra estrutural, o ideal é analisar os processos em janelas separadas, dentro das quais há estacionariedade.
+		\begin{itemize}
+			\vspace{-1em}
+			\item O problema, neste caso, é identificar o ponto de quebra $T$.
+		\end{itemize}
+	\end{halfwideitemize}
+\end{frame}
+
+\begin{frame}{Os diferentes tipos de não estacionariedade}
+	\begin{halfwideitemize}
+		\item Processos com tendência determínistica, que se tornam estacionários após a subtração de uma $f(t)$, são conhecidos como estacionários em torno de tendência ({\color{blue}\textit{trend-stationary}}). 
+					\item Processos com {\color{blue}tendência estocástica, que requerem diferenciação para se tornarem estacionários}, são conhecidos como {\color{blue}I(1) ou com uma raiz unitária}.
+		\item Processos {\color{blue}estacionários} são conhecidos como {\color{blue}I(0)}.
+		\item Nas próximas aulas, desenvolveremos métodos estatísticos para distinguir entre os três processos.
+		\begin{itemize}
+			\item Não vamos focar na detecção de quebra estrutural, embora seja importante saber que esta é uma área ativa da Econometria.
+			\item Mas, se der tempo, veremos como quebras ``exógenas'' de variância podem ser usadas na identificação de efeitos causais.
+		\end{itemize} 
+	\end{halfwideitemize}
+
 \end{frame}
 
 	%\begin{frame}[allowframebreaks]{Bibliografia}

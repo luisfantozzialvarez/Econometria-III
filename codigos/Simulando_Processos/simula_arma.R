@@ -44,9 +44,18 @@ plot(ar1)
 ma2 = ts(ma.sim( 500, psi = c(1,0.5) ),start = 0)
 plot(ma2)
 
+
+
+#Simulando ARMA(1,2)
+arma12 = ts(arima.sim(list(ar=0.7, ma =c(1,0.5) ),n = 500),start= 0)
+plot(arma12)
+
 #Processo determinístico
 det = 0.01*0:500 + rb
 plot(ts(det,start=0))
+
+
+
 
 #Passeio aleatorio
 rw = ts(ar.sim(500, rho=1), start = 0)
