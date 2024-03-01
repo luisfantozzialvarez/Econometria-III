@@ -40,12 +40,11 @@ ar1 = ts(ar.sim(500, rho = 0.7), start=0)
 plot(ar1)
 
 #Simulando MA2
-#Vamos usar a função arima.sim, do pacote stats (carregando, por padrão, no R)
 ma2 = ts(ma.sim( 500, psi = c(1,0.5) ),start = 0)
 plot(ma2)
 
 #Simulando ARMA(1,2)
-#usamos função arima.sim do pacote stats
+#Vamos usar a função arima.sim, do pacote stats (carregando, por padrão, no R)
 arma12 = ts(arima.sim(list(ar=0.7, ma =c(1,0.5) ),n = 500),start= 0)
 plot(arma12)
 
