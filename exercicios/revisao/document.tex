@@ -26,8 +26,8 @@ natbib=true
 	\maketitle
 	\paragraph{Questão 1:} Sejam $X_1,\ldots,X_m$ e $Y_1,\ldots, Y_n$ variáveis aleatórias, e $a,b,c \in \mathbb{R}$ números reais. Usando as propriedades de esperança:
 	
-	$$\mathbb{E}[X_1 + X_2] = X_1 + X_2 \, ,$$
-	$$\mathbb{E}[aX_1] = a + X_1 \, ,$$
+	$$\mathbb{E}[X_1 + X_2] = \mathbb{E}[X_1] + \mathbb{E}[X_2] \, ,$$
+	$$\mathbb{E}[aX_1 + b] = a\mathbb{E}[X_1] + b \, ,$$
 	$$\mathbb{E}[a] = a \, ,$$
 	e as definições de variância e covariância:
 		$$\mathbb{V}[X_1] = \mathbb{E}[X_1^2] - \mathbb{E}[X_1]^2\,,$$
@@ -50,7 +50,7 @@ verifique as seguintes propriedades.
 	\item Generalize para: $\mathbb{V}[\sum_{j=1}^{m}X_j] = \sum_{j=1}^m \mathbb{V}[X_j] + 2\sum_{i=1}^m \sum_{j=i+1}^m \operatorname{cov}(X_i,X_j)$.
 
 \end{enumerate}
-\paragraph{Questão} Sejam $Y$ e $Z$ variáveis aleatórias. Recorde-se que os coeficientes do melhor preditor linear de $Y$ como função de $Z$ (e um intercepto) são  dados por:
+\paragraph{Questão 2} Sejam $Y$ e $Z$ variáveis aleatórias. Recorde-se que os coeficientes do melhor preditor linear de $Y$ como função de $Z$ (e um intercepto) são  dados por:
 
 $$(a,b) \in \operatorname{argmin}_{(a,b) \in \mathbb{R}}\mathbb{E}[(Y-a-bZ)^2]\,,$$
 
