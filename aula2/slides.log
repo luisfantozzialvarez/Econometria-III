@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  4 MAR 2024 09:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  4 MAR 2024 09:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1618,7 +1618,7 @@ Overfull \vbox (3.002pt too high) detected at line 449
 [24
 
 ]
-<graficos/arma12.pdf, id=229, 395.4775pt x 312.16624pt>
+<graficos/arma12.pdf, id=230, 395.4775pt x 312.16624pt>
 File: graficos/arma12.pdf Graphic file (type pdf)
 <use graficos/arma12.pdf>
 Package pdftex.def Info: graficos/arma12.pdf  used on input line 454.
@@ -1628,7 +1628,7 @@ Package pdftex.def Info: graficos/arma12.pdf  used on input line 454.
  <./graficos/arma12.pdf>] [26
 
 ]
-<graficos/deterministica.pdf, id=247, 578.16pt x 433.62pt>
+<graficos/deterministica.pdf, id=248, 578.16pt x 433.62pt>
 File: graficos/deterministica.pdf Graphic file (type pdf)
 <use graficos/deterministica.pdf>
 Package pdftex.def Info: graficos/deterministica.pdf  used on input line 476.
@@ -1639,7 +1639,7 @@ Package pdftex.def Info: graficos/deterministica.pdf  used on input line 476.
 [28
 
 ]
-<graficos/rw.pdf, id=266, 578.16pt x 433.62pt>
+<graficos/rw.pdf, id=267, 578.16pt x 433.62pt>
 File: graficos/rw.pdf Graphic file (type pdf)
 <use graficos/rw.pdf>
 Package pdftex.def Info: graficos/rw.pdf  used on input line 505.
@@ -1649,12 +1649,12 @@ Package pdftex.def Info: graficos/rw.pdf  used on input line 505.
  <./graficos/rw.pdf>] [30
 
 ]
-<graficos/break_mean.pdf, id=283, 395.4775pt x 312.16624pt>
+<graficos/break_mean.pdf, id=284, 395.4775pt x 312.16624pt>
 File: graficos/break_mean.pdf Graphic file (type pdf)
 <use graficos/break_mean.pdf>
 Package pdftex.def Info: graficos/break_mean.pdf  used on input line 545.
 (pdftex.def)             Requested size: 158.18819pt x 124.86427pt.
-<graficos/break_sd.pdf, id=284, 395.4775pt x 312.16624pt>
+<graficos/break_sd.pdf, id=285, 395.4775pt x 312.16624pt>
 File: graficos/break_sd.pdf Graphic file (type pdf)
 <use graficos/break_sd.pdf>
 Package pdftex.def Info: graficos/break_sd.pdf  used on input line 545.
@@ -1689,7 +1689,7 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 Here is how much of TeX's memory you used:
  45392 strings out of 475735
  1039065 string characters out of 5784785
- 1870294 words of memory out of 5000000
+ 1871294 words of memory out of 5000000
  65301 multiletter control sequences out of 15000+600000
  614009 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1703,14 +1703,14 @@ lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss
 bx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/symbols/msbm7.pfb>
-Output written on slides.pdf (33 pages, 330586 bytes).
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on slides.pdf (33 pages, 334448 bytes).
 PDF statistics:
- 417 PDF objects out of 1000 (max. 8388607)
- 294 compressed objects within 3 object streams
+ 422 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
  72 named destinations out of 1000 (max. 500000)
  227 words of extra memory for PDF output out of 10000 (max. 10000000)
 
