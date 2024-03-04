@@ -222,7 +222,7 @@ natbib=true
 				\item 			$\mathbb{E}[Z_t] = \mu $.
 				\item $\mathbb{V}[Z_t] = \sigma^2_\epsilon(1+ \sum_{j=1}^q\psi^2_j)$.
 				\item $\operatorname{cov}( Z_{t+j}, Z_t) = \begin{cases}
-					\sigma^2_\epsilon (\psi_{j} + \psi_{j+1}\psi_1 + \psi_q \psi_{q-j}), & \text{se } 0 < j  \leq q \\
+					\sigma^2_\epsilon (\psi_{j} + \psi_{j+1}\psi_1 + \ldots + \psi_q \psi_{q-j}), & \text{se } 0 < j  \leq q \\
 					0,& \text{se } j  > q
 				\end{cases}$
 			\end{enumerate}
@@ -251,7 +251,7 @@ natbib=true
 				Z_t &=  \alpha + \rho(\alpha + \rho Z_{t-2} + u_{t-1}) + u_{t}  \\
 				    &= \alpha + \rho \alpha  + \rho^2(\alpha + \rho Z_{t-3} + u_{t-2}) + u_{t} + \rho u_{t-1} \\
 				     &`= \ldots \\
-				     & = \sum_{j=0}^{\tau} \rho^{j} \alpha +  \rho^{\tau} Z_{t-\tau} +  \sum_{j=0}^{\tau} \rho^{j} u_t\\
+				     & = \sum_{j=0}^{\tau} \rho^{j} \alpha +  \rho^{\tau} Z_{t-\tau} +  \sum_{j=0}^{\tau} \rho^{j} u_{t-j}\\
 			\end{aligned}
 		\end{equation*}
 		
@@ -264,7 +264,7 @@ natbib=true
 	\begin{halfwideitemize}
 		\item Pelas hipóteses, $\lim_{\tau \to \infty} \rho^{\tau} \mathbb{E}[|Z_{t-\tau}|] = 0$. Isso nos garante que $\rho^{\tau} |Z_t| \to 0$ e podemos escrever
 		
-		$$Z_t = \sum_{j=0}^{\infty} \rho^{j} \alpha +   \sum_{j=0}^{\infty } \rho^{j} u_t = \frac{\alpha}{1-\rho} + \sum_{j=0}^\infty \rho^j u_{t-j}$$
+		$$Z_t = \sum_{j=0}^{\infty} \rho^{j} \alpha +   \sum_{j=0}^{\infty } \rho^{j} u_{t-j} = \frac{\alpha}{1-\rho} + \sum_{j=0}^\infty \rho^j u_{t-j}$$
 		\item AR(1) estacionário se escreve como MA($\infty$).
 		\item Usando representação acima, podemos checar que o processo é estacionário. De fato:
 			\begin{halfwideenumerate}
