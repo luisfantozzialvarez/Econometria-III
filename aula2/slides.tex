@@ -215,7 +215,7 @@ natbib=true
 	\begin{halfwideitemize}
 			\item Um processo $Z_t$, $t \in \mathbb{Z}$, é dito de média movel de ordem $q$, ou tão somente MA(q), se:
 			
-			$$Z_t = \mu + \epsilon_t + \sum_{j=i}^{q} \psi_i \epsilon_{t-i} \, ,$$
+			$$Z_t = \mu + \epsilon_t + \sum_{i=0}^{q} \psi_i \epsilon_{t-i} \, ,$$
 			onde $\{\epsilon_t\}_{t \in \mathbb{Z}}$ é um ruído branco com variância $\sigma^2_\epsilon$.
 			\item Vamos verificar que o processo é (fracamente) estacionário. De fato
 			\begin{enumerate}
@@ -251,7 +251,7 @@ natbib=true
 				Z_t &=  \alpha + \rho(\alpha + \rho Z_{t-2} + u_{t-1}) + u_{t}  \\
 				    &= \alpha + \rho \alpha  + \rho^2(\alpha + \rho Z_{t-3} + u_{t-2}) + u_{t} + \rho u_{t-1} \\
 				     &`= \ldots \\
-				     & = \sum_{j=0}^{\tau} \rho^{j} \alpha +  \rho^{\tau} Z_{t-\tau} +  \sum_{j=0}^{\tau} \rho^{j} u_{t-j}\\
+				     & = \sum_{j=0}^{\tau - 1} \rho^{j} \alpha +  \rho^{\tau} Z_{t-\tau} +  \sum_{j=0}^{\tau - 1} \rho^{j} u_{t-j}\\
 			\end{aligned}
 		\end{equation*}
 		
@@ -262,7 +262,7 @@ natbib=true
 
 \begin{frame}{Processo AR(1) estacionário (cont.)}
 	\begin{halfwideitemize}
-		\item Pelas hipóteses, $\lim_{\tau \to \infty} \rho^{\tau} \mathbb{E}[|Z_{t-\tau}|] = 0$. Isso nos garante que $\rho^{\tau} |Z_t| \to 0$ e podemos escrever
+		\item Pelas hipóteses, $\lim_{\tau \to \infty} |\rho|^{\tau} \mathbb{E}[|Z_{t-\tau}|] = 0$. Isso nos garante que $\rho^{\tau} Z_{t-\tau} \to 0$ e podemos escrever
 		
 		$$Z_t = \sum_{j=0}^{\infty} \rho^{j} \alpha +   \sum_{j=0}^{\infty } \rho^{j} u_{t-j} = \frac{\alpha}{1-\rho} + \sum_{j=0}^\infty \rho^j u_{t-j}$$
 		\item AR(1) estacionário se escreve como MA($\infty$).

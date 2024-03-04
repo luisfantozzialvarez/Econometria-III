@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  4 MAR 2024 09:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  4 MAR 2024 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1571,7 +1571,7 @@ Overfull \vbox (22.06334pt too high) detected at line 237
 [10
 
  <./graficos/ma2.pdf>]
-Overfull \vbox (3.89502pt too high) detected at line 261
+Overfull \vbox (5.70058pt too high) detected at line 261
  []
 
 [11
@@ -1707,7 +1707,7 @@ fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10
 type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on slides.pdf (33 pages, 334448 bytes).
+Output written on slides.pdf (33 pages, 334477 bytes).
 PDF statistics:
  422 PDF objects out of 1000 (max. 8388607)
  297 compressed objects within 3 object streams
