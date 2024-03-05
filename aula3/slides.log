@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  4 MAR 2024 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  5 MAR 2024 09:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1619,8 +1619,10 @@ Overfull \vbox (0.65593pt too high) detected at line 230
 
 ] [15
 
+] [16
+
  </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [
-16
+17
 
 
 ]
@@ -1633,16 +1635,22 @@ Overfull \vbox (0.65593pt too high) detected at line 230
 \tf@snm=\write9
 \openout9 = `slides.snm'.
 
- (./slides.aux)
+
+(./slides.aux)
 Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: 72369A70582F08AEEDC45B9D0750298C;101.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'slides.run.xml'.
 \openout1 = `slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45594 strings out of 476025
- 1053461 string characters out of 5790017
+ 45596 strings out of 476025
+ 1053480 string characters out of 5790017
  1862388 words of memory out of 5000000
  65226 multiletter control sequences out of 15000+600000
  598266 words of font info for 89 fonts, out of 8000000 for 9000
@@ -1661,10 +1669,10 @@ e/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/tex
 mf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fon
 ts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pu
 blic/lm/lmtt10.pfb>
-Output written on slides.pdf (16 pages, 241648 bytes).
+Output written on slides.pdf (17 pages, 242633 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
