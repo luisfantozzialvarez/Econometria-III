@@ -53,11 +53,11 @@ verifique as seguintes propriedades.
 \end{enumerate}
 \paragraph{Questão 2} Sejam $Y$ e $Z$ variáveis aleatórias. Recorde-se que os coeficientes do melhor preditor linear de $Y$ como função de $Z$ (e um intercepto) são  dados por:
 
-$$(a,b) \in \operatorname{argmin}_{(a,b) \in \mathbb{R}}\mathbb{E}[(Y-a-bZ)^2]\,,$$
+$$(\alpha,\beta) \in \operatorname{argmin}_{(a,b) \in \mathbb{R}^2}\mathbb{E}[(Y-a-bZ)^2]\,,$$
 
-Mostre, nesse caso, que, se $\mathbb{V}[Z] > 0$, $b =\operatorname{cov}(Z,Y)/\mathbb{V}[Z]$, e que, definindo o erro de previsão $u = Y - a - b Z$, temos:
+Mostre, nesse caso, que, se $\mathbb{V}[Z] > 0$, $\beta =\operatorname{cov}(Z,Y)/\mathbb{V}[Z]$, e que, definindo o erro de previsão $u = Y - \alpha - \beta Z$, temos:
 
-$$Y = a + bZ + u \, ,$$
+$$Y = \alpha + \beta Z + u \, ,$$
 onde $\mathbb{E}[u] = 0$ e $\mathbb{E}[Zu] = \operatorname{cov}(Z,u) = 0$.
 
 	
