@@ -244,12 +244,12 @@ natbib=true
 	conteúdo...
 \end{frame}
 
-\begin{frame}{Alternativa ao filtro HP}
+\begin{frame}{Alternativas ao filtro HP: \citet{Hamilton2019}}
 	\begin{halfwideitemize}
 		\item A instabilidade de ponta, combinada a outras debilidades do filtro HP, leva \citet{Hamilton2019} sugerir uma outra medida de ciclo.
 		\item Sua sugestão é calcular o ciclo como o resíduo $\hat{\nu}_t$ da regressão:
 		
-		$$y_{t+h} = \alpha+\beta_1 y_{t} + \beta_2 y_{t-1} + \beta_3 y_{t-2} + \beta_4 y_{t-3} + \nu_t \, ,$$
+		$$y_{t+h} = \alpha+\beta_1 y_{t} + \beta_2 y_{t-1} + \beta_3 y_{t-2} + \beta_4 y_{t-3} + \nu_{t+h} \, ,$$
 		onde $h$ é tomado de forma de que a distância entre $t$ e $t+h$ seja de \textbf{dois} anos.
 		\begin{itemize}
 			\item $h=8$ em dados trimestrais, $h=24$ em dados mensais.

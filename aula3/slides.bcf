@@ -2365,6 +2365,7 @@
     <bcf:citekey order="1" intorder="1">DeLivera2012</bcf:citekey>
     <bcf:citekey order="2" intorder="1">Ravn2002</bcf:citekey>
     <bcf:citekey order="3" intorder="1">Hamilton2019</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">Hamilton2019</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
