@@ -411,7 +411,7 @@ natbib=true
 
 \begin{frame}{Estacionariedade do ARMA(p,q)}
 	\begin{itemize}
-		\item A estacionariedade do ARMA(p,q) depende, fundalmente, do comportamento da parte AR.
+		\item A estacionariedade do ARMA(p,q) depende, fundamentalmente, do comportamento da parte AR.
 	\end{itemize}
 					\begin{block}{Proposição}
 		Considere um processo ARMA(p,q). Se, as $p$ raízes da equação característica $\Gamma(x) = 0$ estão todas fora do círculo unitário, então o ARMA($p$,$q$) é estacionário. Por outro lado, se o ARMA($p$,$q$) está em forma simplificada e uma das raízes de $\Gamma(x)$ está dentro do círculo (i.e. existe $\Gamma(x^*)=0$ com $|x^*| \leq 1$), o ARMA(p,q) não é estacionário.
@@ -420,7 +420,7 @@ natbib=true
 \begin{frame}{Processo ARMA(p,q) invertível}
 	\begin{halfwideitemize}
 		\item 	Um ARMA(p,q) estacionário é dito {\color{blue}invertível} se admite representação AR($\infty$), i.e. se pode ser escrito como:
-		$$Y_t = \omega +\sum_{j=1}^\infty \kappa_j y_{t-j} + \epsilon_t\, .$$
+		$$Y_t = \omega +\sum_{j=1}^\infty \kappa_j Y_{t-j} + \epsilon_t\, .$$
 		
 		\item Invertibilidade depende do comportamento da parte MA.
 		

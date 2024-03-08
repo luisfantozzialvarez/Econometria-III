@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  4 MAR 2024 11:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  8 MAR 2024 09:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1687,13 +1687,13 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45392 strings out of 475735
- 1039065 string characters out of 5784785
+ 45356 strings out of 475735
+ 1038303 string characters out of 5784785
  1871294 words of memory out of 5000000
- 65301 multiletter control sequences out of 15000+600000
+ 65265 multiletter control sequences out of 15000+600000
  614009 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,12n,123p,1013b,1645s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,12n,123p,719b,1645s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/
@@ -1707,7 +1707,7 @@ fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10
 type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on slides.pdf (33 pages, 334477 bytes).
+Output written on slides.pdf (33 pages, 334668 bytes).
 PDF statistics:
  422 PDF objects out of 1000 (max. 8388607)
  297 compressed objects within 3 object streams

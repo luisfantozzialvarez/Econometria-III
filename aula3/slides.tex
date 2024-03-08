@@ -188,11 +188,11 @@ natbib=true
 		\begin{halfwideitemize}
 			\item Combina metodologia de médias móveis com a possibilidade de inclusão de efeitos-calendário (por padrão, modelo controla por dias úteis do mês e alguns feriados móveis; passível de alteração), detecção automática de \textit{outliers}, \textit{backfitting} para completamento da série de tempo e seleção automática de modelo aditivo ou multiplicativo. 
 		\end{halfwideitemize}
+				\item No \texttt{R}, acessível via pacote \texttt{seasonal}.
 		\item Disponível para séries mensais e trimestrais.
 		\begin{halfwideitemize}
 			\item Para séries diárias, há potencialmente mais de uma fonte de sazonalidade em diferentes frequências, o que requer abordagem diferentes (por exemplo, \cite{DeLivera2012}).
 		\end{halfwideitemize}
-		\item No \texttt{R}, acessível via pacote \texttt{seasonal}.
 	\end{wideitemize}
 \end{frame}
 
@@ -241,7 +241,10 @@ natbib=true
 \end{frame}
 
 \begin{frame}{Instabilidade de ponta: ilustração}
-	conteúdo...
+	\begin{figure}
+		\caption{Desemprego mensal (ajustado via X13) até janeiro/2024}
+		\includegraphics[scale=0.7]{graficos/instabilidade.pdf}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Alternativas ao filtro HP: \citet{Hamilton2019}}
@@ -253,7 +256,7 @@ natbib=true
 		onde $h$ é tomado de forma de que a distância entre $t$ e $t+h$ seja de \textbf{dois} anos.
 		\begin{itemize}
 			\item $h=8$ em dados trimestrais, $h=24$ em dados mensais.
-			\item Medida captura o erro que se comete em projetar o que em $t$, com base no que ocorreu há dois anos.
+			\item Medida captura o erro que se comete em projetar o que ocorre em $t$, com base no que ocorreu há dois anos.
 			\item Ideia é que esse erro capturaria fatores cíclicos.
 		\end{itemize}
 	\end{halfwideitemize}
