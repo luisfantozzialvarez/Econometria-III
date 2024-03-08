@@ -138,9 +138,10 @@ natbib=true
 		\begin{equation}
 			\log(X_t) = \tau_t + c_t + s_t + u_t
 		\end{equation}
-		\begin{halfwideitemize}
+		\vspace{-1em}
+		\begin{itemize}
 			\item Estimação é feita trabalhando com modelo aditivo em log.
-		\end{halfwideitemize}
+		\end{itemize}
 		\item Observe que, no modelo multiplicativo, a tendência afeta a {\color{blue}escala} das variáveis.
 		\begin{halfwideitemize}
 			\item Em particular, esperamos que, no modelo multiplicativo, a variância de $\Delta X_t = X_{t} - X_{t-1}$ mude bastante com o tempo.
@@ -149,10 +150,36 @@ natbib=true
 	\end{halfwideitemize}
 \end{frame}
 
-\begin{frame}{Modelo aditivo vs multiplicativo}
-	conteúdo...
+\begin{frame}{Modelo aditivo (nível e primeira diferença)}
+	\begin{figure}
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[scale=0.4]{graficos/aditivo_nivel.pdf}
+			\caption{Nível}
+\end{subfigure}
+		\begin{subfigure}{0.45\textwidth}
+	\centering
+	\includegraphics[scale=0.4]{graficos/aditivo_diff.pdf}
+	\caption{Primeira diferença}
+\end{subfigure}
+	\end{figure}
 \end{frame}
 
+
+\begin{frame}{Modelo multiplicativo (nível e primeira diferença)}
+	\begin{figure}
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[scale=0.4]{graficos/multiplicativo_nivel.pdf}
+			\caption{Nível}
+		\end{subfigure}
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[scale=0.4]{graficos/multiplicativo_diff.pdf}
+			\caption{Primeira diferença}
+		\end{subfigure}
+	\end{figure}
+\end{frame}
 \begin{frame}{Ajuste sazonal}
 	\begin{halfwideitemize}
 		\item Remoção do componente sazonal clássica faz uso de {\color{blue}médias móveis}.
@@ -249,7 +276,7 @@ natbib=true
 
 \begin{frame}{Alternativas ao filtro HP: \citet{Hamilton2019}}
 	\begin{halfwideitemize}
-		\item A instabilidade de ponta, combinada a outras debilidades do filtro HP, leva \citet{Hamilton2019} sugerir uma outra medida de ciclo.
+		\item A instabilidade de ponta, combinada a outras debilidades do filtro HP, leva \citet{Hamilton2019} a sugerir uma outra medida de ciclo.
 		\item Sua sugestão é calcular o ciclo como o resíduo $\hat{\nu}_t$ da regressão:
 		
 		$$y_{t+h} = \alpha+\beta_1 y_{t} + \beta_2 y_{t-1} + \beta_3 y_{t-2} + \beta_4 y_{t-3} + \nu_{t+h} \, ,$$
@@ -262,14 +289,24 @@ natbib=true
 	\end{halfwideitemize}
 \end{frame}
 
-\begin{frame}{Aplicação de \cite{Hamilton2019} aos dados de desemprego}
-	conteúdo...
+\begin{frame}{Aplicação de \citet{Hamilton2019} aos dados de desemprego}
+	\centering
+	\includegraphics[scale=0.7]{graficos/hamilton.pdf}
 \end{frame}
 
 \begin{frame}{Decomposição de Beveridge-Nelson}
-	conteúdo...
+	\begin{itemize}
+		\item A decomposição de Hamilton é bastante similar a um procedimento, sugerido por \citet{Beveridge1981}, para se separar a tendência estocástica da parte estacionária de um processo I(1).
+		\item Decomposição de Beveridge-Nelson toma a parte estacionária de um processo I(1) como:
+		
+		$$\nu^{\text{BN}}_t = y_t - \lim_{s \to \infty} \mathbb{E}[y_{t+s}|y_t,y_{t-1},\ldots]$$
+		i.e. a diferença entre $y_t$ e uma projeção de longo prazo, feita com base em toda o histórico de $y$ até $t$.
+		\item Se processo também apresenta tendência determinística $a_0 t$ em nível, fazemos: 
+			$$\nu^{\text{BN}}_t = y_t - \lim_{s \to \infty} ( \mathbb{E}[y_{t+s}|y_t,y_{t-1},\ldots] - a_0 s)$$
+			\item Decomposição pode ser estimada ajustando um modelo preditivo para $\Delta y_t$, e computando projeções fora da amostra para um horizonte longo, observando que $y_{t+s} = y_t + \Delta y_{t+1} + \ldots \Delta y_{t+s}$.
+	\end{itemize}
 \end{frame}
-
+\appendix
 	\begin{frame}[allowframebreaks]{Bibliografia}
 	\printbibliography
 	\end{frame}

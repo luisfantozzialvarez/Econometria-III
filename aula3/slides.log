@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  8 MAR 2024 07:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.19)  8 MAR 2024 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1540,75 +1540,128 @@ LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <9> not available
 dvips/lm/lm-rm.enc}] [3
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
-[4
+<graficos/aditivo_nivel.pdf, id=47, 394.47375pt x 312.16624pt>
+File: graficos/aditivo_nivel.pdf Graphic file (type pdf)
+<use graficos/aditivo_nivel.pdf>
+Package pdftex.def Info: graficos/aditivo_nivel.pdf  used on input line 166.
+(pdftex.def)             Requested size: 157.7867pt x 124.86427pt.
 
-] [5
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
-<graficos/desemprego_mm.pdf, id=58, 578.16pt x 433.62pt>
-File: graficos/desemprego_mm.pdf Graphic file (type pdf)
-<use graficos/desemprego_mm.pdf>
-Package pdftex.def Info: graficos/desemprego_mm.pdf  used on input line 182.
-(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
-
-Overfull \vbox (0.97192pt too high) detected at line 182
+Overfull \hbox (3.69186pt too wide) in paragraph at lines 166--166
+ [][] 
  []
 
+<graficos/aditivo_diff.pdf, id=48, 394.47375pt x 312.16624pt>
+File: graficos/aditivo_diff.pdf Graphic file (type pdf)
+<use graficos/aditivo_diff.pdf>
+Package pdftex.def Info: graficos/aditivo_diff.pdf  used on input line 166.
+(pdftex.def)             Requested size: 157.7867pt x 124.86427pt.
+
+Overfull \hbox (3.69186pt too wide) in paragraph at lines 166--166
+ [][] 
+ []
+
+[4
+
+ <./graficos/aditivo_nivel.pdf> <./graficos/aditivo_diff.pdf>]
+<graficos/multiplicativo_nivel.pdf, id=64, 394.47375pt x 312.16624pt>
+File: graficos/multiplicativo_nivel.pdf Graphic file (type pdf)
+<use graficos/multiplicativo_nivel.pdf>
+Package pdftex.def Info: graficos/multiplicativo_nivel.pdf  used on input line 
+182.
+(pdftex.def)             Requested size: 157.7867pt x 124.86427pt.
+
+Overfull \hbox (3.69186pt too wide) in paragraph at lines 182--182
+ [][] 
+ []
+
+<graficos/multiplicativo_diff.pdf, id=65, 394.47375pt x 312.16624pt>
+File: graficos/multiplicativo_diff.pdf Graphic file (type pdf)
+<use graficos/multiplicativo_diff.pdf>
+Package pdftex.def Info: graficos/multiplicativo_diff.pdf  used on input line 1
+82.
+(pdftex.def)             Requested size: 157.7867pt x 124.86427pt.
+
+Overfull \hbox (3.69186pt too wide) in paragraph at lines 182--182
+ [][] 
+ []
+
+[5
+
+ <./graficos/multiplicativo_nivel.pdf> <./graficos/multiplicativo_diff.pdf>]
 [6
 
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+<graficos/desemprego_mm.pdf, id=91, 578.16pt x 433.62pt>
+File: graficos/desemprego_mm.pdf Graphic file (type pdf)
+<use graficos/desemprego_mm.pdf>
+Package pdftex.def Info: graficos/desemprego_mm.pdf  used on input line 209.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \vbox (0.97192pt too high) detected at line 209
+ []
+
+[7
+
  <./graficos/desemprego_mm.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-97.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+24.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[7
+[8
 
 ]
-<graficos/desemprego_x13.pdf, id=78, 578.16pt x 433.62pt>
+<graficos/desemprego_x13.pdf, id=111, 578.16pt x 433.62pt>
 File: graficos/desemprego_x13.pdf Graphic file (type pdf)
 <use graficos/desemprego_x13.pdf>
-Package pdftex.def Info: graficos/desemprego_x13.pdf  used on input line 204.
+Package pdftex.def Info: graficos/desemprego_x13.pdf  used on input line 231.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
- [8
+ [9
 
- <./graficos/desemprego_x13.pdf>] [9
+ <./graficos/desemprego_x13.pdf>] [10
 
 ]
-<graficos/desemprego_hp.pdf, id=97, 578.16pt x 433.62pt>
+<graficos/desemprego_hp.pdf, id=130, 578.16pt x 433.62pt>
 File: graficos/desemprego_hp.pdf Graphic file (type pdf)
 <use graficos/desemprego_hp.pdf>
-Package pdftex.def Info: graficos/desemprego_hp.pdf  used on input line 230.
+Package pdftex.def Info: graficos/desemprego_hp.pdf  used on input line 257.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
 
-Overfull \vbox (0.97192pt too high) detected at line 230
+Overfull \vbox (0.97192pt too high) detected at line 257
  []
 
-[10
+[11
 
- <./graficos/desemprego_hp.pdf>] [11
+ <./graficos/desemprego_hp.pdf>] [12
 
 ]
-<graficos/instabilidade.pdf, id=113, 394.47375pt x 312.16624pt>
+<graficos/instabilidade.pdf, id=146, 394.47375pt x 312.16624pt>
 File: graficos/instabilidade.pdf Graphic file (type pdf)
 <use graficos/instabilidade.pdf>
-Package pdftex.def Info: graficos/instabilidade.pdf  used on input line 248.
+Package pdftex.def Info: graficos/instabilidade.pdf  used on input line 275.
 (pdftex.def)             Requested size: 276.12973pt x 218.51488pt.
 
-Overfull \vbox (16.04189pt too high) detected at line 248
+Overfull \vbox (16.04189pt too high) detected at line 275
  []
 
-[12
+[13
 
- <./graficos/instabilidade.pdf>] [13
+ <./graficos/instabilidade.pdf>] [14
 
-] [14
+]
+<graficos/hamilton.pdf, id=166, 394.47375pt x 312.16624pt>
+File: graficos/hamilton.pdf Graphic file (type pdf)
+<use graficos/hamilton.pdf>
+Package pdftex.def Info: graficos/hamilton.pdf  used on input line 295.
+(pdftex.def)             Requested size: 276.12973pt x 218.51488pt.
+ [15
 
-] [15
+ <./graficos/hamilton.pdf>]
+[16
 
-] [16
+] [17
 
- </usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [17
+ </usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [18
 
 
 ]
@@ -1627,19 +1680,19 @@ LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 72369A70582F08AEEDC45B9D0750298C;101.
+(rerunfilecheck)             Checksum: 93AAE74C7C9D177DFE421A3AFA5CD24D;193.
 Package logreq Info: Writing requests to 'slides.run.xml'.
 \openout1 = `slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45383 strings out of 475735
- 1038586 string characters out of 5784785
- 1871677 words of memory out of 5000000
- 65325 multiletter control sequences out of 15000+600000
+ 45453 strings out of 475735
+ 1040585 string characters out of 5784785
+ 1871752 words of memory out of 5000000
+ 65391 multiletter control sequences out of 15000+600000
  599366 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,11n,123p,743b,1641s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,11n,123p,896b,1641s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/p
@@ -1649,11 +1702,12 @@ m/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/
 lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.
-pfb>
-Output written on slides.pdf (17 pages, 249039 bytes).
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb>
+Output written on slides.pdf (18 pages, 288414 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 304 PDF objects out of 1000 (max. 8388607)
+ 222 compressed objects within 3 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

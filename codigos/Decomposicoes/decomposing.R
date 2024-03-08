@@ -55,7 +55,12 @@ legend('topleft', c('Tendência HP (estimação até dez/2022)', 'Tendência HP 
 
 
 #Proposta de Hamilton
-base = cbind(lag(desemp_x13,-4),do.call(cbind, lapply(0:3, function(x) lag(desemp_x13, x))))
-colnames(base) = c('forward', paste('L',0:3,sep=''))
+base = cbind(desemp_x13,do.call(cbind, lapply(-24-0:3, function(x) lag(desemp_x13, x))))
+colnames(base) = c('desemp', paste('L',0:3,sep=''))
 
-model = lm(forward~., data = base)
+model = lm(desemp~., data = base)
+
+base = cbind(base, 'hamilton_cycle' =base[,1]- predict(model, base))
+
+plot(base[,"hamilton_cycle"], col = 'blue')
+abline(h=0)

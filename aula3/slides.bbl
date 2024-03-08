@@ -19,6 +19,52 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{Beveridge1981}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=46bb54f8f3b5ddd4b72952824ee08966}{%
+           family={Beveridge},
+           familyi={B\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9733acb14bd6e601bdaa41f7950ea01f}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Charles\bibnamedelima R.},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2a28c9db8817316502103d60c67cbd65}
+      \strng{fullhash}{2a28c9db8817316502103d60c67cbd65}
+      \strng{bibnamehash}{2a28c9db8817316502103d60c67cbd65}
+      \strng{authorbibnamehash}{2a28c9db8817316502103d60c67cbd65}
+      \strng{authornamehash}{2a28c9db8817316502103d60c67cbd65}
+      \strng{authorfullhash}{2a28c9db8817316502103d60c67cbd65}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper introduces a general procedure for decomposition of non-stationary time series into a permanent and transitory component allowing both components to be stochastic. The permanent component is shown to be a random walk with drift and the transitory or cyclical component is a stationary process with mean zero. The decomposition methodology, which depends only on past data and therefore is computable in ‘real time’, is applied to the problem of measuring and dating business ‘cycles’ in the portwar U.S. economy. We find that measured expansions and contractions are of roughly equivalent duration and that our dating of cyclical episodes tends to lead the traditional NBER dating and, to a lesser extent, the ‘growth cycle’ chronology of Zarnowitz and Boschan (1977).}
+      \field{issn}{0304-3932}
+      \field{journaltitle}{Journal of Monetary Economics}
+      \field{number}{2}
+      \field{title}{A new approach to decomposition of economic time series into permanent and transitory components with particular attention to measurement of the ‘business cycle’}
+      \field{volume}{7}
+      \field{year}{1981}
+      \field{pages}{151\bibrangedash 174}
+      \range{pages}{24}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0304-3932(81)90040-4
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0304393281900404
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0304393281900404
+      \endverb
+    \endentry
     \entry{Hamilton2019}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=f1528bc518ebb8f6103311513805ac7d}{%
