@@ -189,16 +189,24 @@ natbib=true
 		\end{equation}
 		\item O {\color{blue}fator de correção sazonal} para $s=1,\ldots, h$ é dado por:
 		\begin{equation}
-			\hat{\delta}_s = \frac{1}{\lfloor (T - s)/h\rfloor}\sum_{t = s, s + h, s+ 2h \ldots} (X_t - \tilde{X}_t)
+			\hat{\delta}_s = \frac{1}{\lfloor (T - s)/h\rfloor + 1}\sum_{t = s, s + h, s+ 2h \ldots} (X_t - \tilde{X}_t)
 		\end{equation}
 		\item E o fator recentrado é:
 		\begin{equation}
 			\tilde{\delta}_s = \hat{\delta}_s - \frac{1}{h}\sum_{j=1}^h \hat{\delta}_j		
 		\end{equation}
-		\item Fatores podem ser usado para obter séries corrigidas da sazonalidade.
+
 		
 	\end{halfwideitemize}
 	
+\end{frame}
+
+\begin{frame}{Ajuste sazonal (cont.)}
+	\begin{itemize}
+				\item Fatores podem ser usado para obter séries corrigidas da sazonalidade, subtraindo-se de cada observação  o $\tilde{\delta}_s$ correspondente.
+		\item Se $h$ é par, calculamos $\tilde{X}_t$ combinando duas médias não centradas:
+		$$			\tilde{X}_t =0.5 \times \frac{1}{h}\sum_{s = t - (h-2)/2 {\color{red}- 1}}^{t+(h-2)/2} X_t + 0.5 \times \frac{1}{h}\sum_{s = t - (h-2)/2 - 1}^{t+(h-2)/2{\color{red}+1}} X_t $$
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Exemplo: taxa de desemprego mensal no Brasil}

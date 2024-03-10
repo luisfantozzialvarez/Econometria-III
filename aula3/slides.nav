@@ -30,23 +30,25 @@
 \headcommand {\beamer@framepages {15}{15}}
 \headcommand {\slideentry {0}{0}{16}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\gdef \insertmainframenumber {16}}
-\headcommand {\partentry {Ap\^endice}{1}}
-\headcommand {\beamer@partpages {1}{16}}
-\headcommand {\beamer@sectionpages {1}{16}}
-\headcommand {\beamer@subsectionpages {1}{16}}
-\headcommand {\beamer@appendixpages {17}}
-\headcommand {\beamer@sectionpages {17}{16}}
-\headcommand {\beamer@subsectionpages {17}{16}}
-\headcommand {\sectionentry {1}{Refer\^encias}{17}{Refer\^encias}{1}}
-\headcommand {\slideentry {1}{0}{0}{17/17}{}{1}}
+\headcommand {\slideentry {0}{0}{17}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {1}{0}{0}{17/18}{}{1}}
-\headcommand {\beamer@framepages {17}{18}}
-\headcommand {\beamer@partpages {17}{18}}
-\headcommand {\beamer@subsectionpages {17}{18}}
-\headcommand {\beamer@sectionpages {17}{18}}
-\headcommand {\beamer@documentpages {18}}
+\headcommand {\gdef \insertmainframenumber {17}}
+\headcommand {\partentry {Ap\^endice}{1}}
+\headcommand {\beamer@partpages {1}{17}}
+\headcommand {\beamer@sectionpages {1}{17}}
+\headcommand {\beamer@subsectionpages {1}{17}}
+\headcommand {\beamer@appendixpages {18}}
+\headcommand {\beamer@sectionpages {18}{17}}
+\headcommand {\beamer@subsectionpages {18}{17}}
+\headcommand {\sectionentry {1}{Refer\^encias}{18}{Refer\^encias}{1}}
+\headcommand {\slideentry {1}{0}{0}{18/18}{}{1}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {1}{0}{0}{18/19}{}{1}}
+\headcommand {\beamer@framepages {18}{19}}
+\headcommand {\beamer@partpages {18}{19}}
+\headcommand {\beamer@subsectionpages {18}{19}}
+\headcommand {\beamer@sectionpages {18}{19}}
+\headcommand {\beamer@documentpages {19}}
 \headcommand {\gdef \inserttotalframenumber {2}}
-\headcommand {\gdef \inserttotalframenumber {16}}
+\headcommand {\gdef \inserttotalframenumber {17}}
 \headcommand {\gdef \appendixtotalframenumber {2}}
