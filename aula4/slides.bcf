@@ -2370,8 +2370,12 @@
     <bcf:citekey order="6" intorder="1">Said1984</bcf:citekey>
     <bcf:citekey order="7" intorder="1">Ng2001</bcf:citekey>
     <bcf:citekey order="8" intorder="1">Phillips1988</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">Enders2014</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">Elliott1996</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Phillips1988</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Enders2014</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Elliott1996</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Elliott1996</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Newey1987</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">Phillips1988</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

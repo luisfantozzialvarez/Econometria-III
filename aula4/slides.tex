@@ -112,10 +112,11 @@ natbib=true
 		\item Vamos definir o operador diferença $\Delta$ como a função que, para uma série de tempo $\{X_t : t \in \mathcal{T}\}$, nos devolve uma série de tempo $\Delta X_t$ da seguinte forma:
 		$$\Delta X_t \overset{\operatorname{def}}{=} (1-L)X_t = X_t - X_{t-1}\,, \quad t \in \mathcal{T}\, .$$
 		\item Usaremos a notação $\Delta^d$ para a aplicação $d$ vezes do operador diferença, i.e.
-		$$\Delta^d X_t = (1-L)^d X_t, t \in \mathcal{T}$$
+		$$\Delta^d X_t = (1-L)^d X_t , \quad  t \in \mathcal{T}$$
 		\begin{itemize}
 			\item \textbf{Exemplo:} $\Delta^2 X_t = (1-L)(1-L)X_t = (X_t - X_{t-1}) - (X_{t-1} - X_{t-2})$
 		\end{itemize}
+		\vspace{1em}
 		\item Definimos $\Delta^0 =(1-L)^0 = 1$.
 	\end{itemize}
 \end{frame}
@@ -162,10 +163,7 @@ natbib=true
 			\label{eq_rho}
 			Y_t = \rho Y_{t-1} + \epsilon_t
 		\end{equation}
-		onde $\{\epsilon_t\}_t$ é ruído branco \emph{independente}.
-		\begin{itemize}
-			\item $\epsilon_t$, $\epsilon_{j}$, $j\neq t$, não possuem nenhuma associação, linear ou não.
-		\end{itemize}
+		onde $\{\epsilon_t\}_t$ é ruído branco.
 		\item Observe que:
 		\begin{halfwideenumerate}
 			\item Se $|\rho| < 1$, processo é I(0)
@@ -241,11 +239,11 @@ natbib=true
 
 \begin{frame}{Teste Dickey-Fuller aumentado}
 	\begin{halfwideitemize}
-		\item A construção das estatísticas de teste nos modelos anteriores supõe que os erros $\{\epsilon_t\}$ comportem-se como ruídos brancos independentes.
+		\item A construção das estatísticas de teste nos modelos anteriores supõe que os erros $\{\epsilon_t\}$ comportem-se como ruídos brancos.
 		\begin{halfwideitemize}
 			\item Em particular, os erros não podem ser autocorrelacionados. 
 		\end{halfwideitemize}
-		\item \citet{Said1984} sugerem aumentar os modelos \eqref{eq_no}-\eqref{eq_trend} incluindo \textit{lags}:
+		\item \citet{Said1984} sugerem aumentar os modelos \eqref{eq_no}-\eqref{eq_trend} incluindo defasagens:
 		\begin{equation}
 			\label{eq_full}
 			\begin{aligned}
@@ -277,16 +275,27 @@ natbib=true
 
 			\item Teste de raiz unitária continua sendo de $H_0: \gamma = 0$ contra $H_1: \gamma < 0$.
 			\begin{itemize}
+				\vspace{-1em}
 				\item Distribuição assintótica das estatísticas de teste, sob as nulas correspondentes, continua sendo a mesma.
 			\end{itemize}
 		\item \citet{Ng2001} propõem método MAIC para selecionar $k$.
 		\begin{itemize}
-			\item Ideia é encontrar $k$ tal que uma aproximação 
+			\item Ideia é encontrar $k$ tal que uma aproximação do erro quadrático médio de se prever $\Delta Y_t$ com base no modelo correspondente, \textbf{sob a nula} de raiz unitária, seja minimizada.
 		\end{itemize}
 	\end{itemize}
 \end{frame}
 \begin{frame}{Alternativa de \citet{Phillips1988}}
-	conteúdo...
+	\begin{itemize}
+		\item \citet{Phillips1988} propõem uma alternativa ao teste ADF.
+		\item Em vez de aumentar \eqref{eq_no}-\eqref{eq_trend} com defasagens, autores sugerem considerar os modelos \eqref{eq_no}-\eqref{eq_trend}, mas ajustar o erro padrão para torná-lo robusto a heterocedasticidade e correlação serial (mais adiante).
+		\item Sob a nula $\gamma = 0$, distribuição assintótica dessa $\hat{t}$ coincide com a do teste ADF no modelo correspondente.
+		\item Ao teste baseado nessa estatística damos o nome de Phillips-Perron (PP).
+		\begin{itemize}
+			\item Teste parece funcionar pior que o ADF em diversas simulações.
+			\item Por esse motivo, não focaremos nele no curso.
+		\end{itemize} 
+		
+	\end{itemize}
 \end{frame}
 \begin{frame}{Procedimento sequencial para testar a presença de uma tendência estocástica}
 	\begin{wideitemize}
@@ -306,10 +315,10 @@ natbib=true
 			\end{aligned}
 		\end{equation}
 		
-		Teste a nula de $H_0: \gamma = 0$ contra a alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 29, caso 4).
+		Teste $H_0: \gamma = 0$ contra alternativa de que $H_1: \gamma < 0$ usando estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 10, caso 4).
 		\begin{halfwideenumerate}
 			\item Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária.
-			\item Se \textbf{não} rejeitamos a hipótese nula, fazemos o teste F da nula $(\beta, \gamma)=0$, usando os valores críticos do slide 30 (Caso 4).
+			\item Se \textbf{não} rejeitamos a hipótese nula, fazemos o teste F da nula $(\beta, \gamma)=0$, usando os valores críticos do slide 11 (Caso 4).
 			\begin{halfwideenumerate}
 				\item Se \textbf{não} rejeitamos a hipótese  nula do teste $F$, concluímos que o modelo não apresenta tendência linear. Nesse caso, vamos à etapa 2 (próximo \textit{slide}).
 				\item Se \textbf{rejeitamos} a hipótese nula do teste F, há evidências de tendência linear. Nesse caso, o teste $\hat{t}$ da nula $H_0: \gamma = 0$ contra a alternativa  $H_1: \gamma < 0$ pode ser feito usando a tabela da normal. Repita o teste com essa tabela. Se rejeitamos a nula, concluímos que a série \textbf{não} apresenta raiz unitária. Se não rejeitamos a nula, concluímos que a série \textbf{apresenta} raiz unitária.
@@ -329,10 +338,10 @@ natbib=true
 			\end{aligned}
 		\end{equation}
 		
-		Teste a nula de $H_0: \gamma = 0$ contra a alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 29, caso 2).
+		Teste $H_0: \gamma = 0$ contra alternativa de que $H_1: \gamma < 0$ usando estatística $\hat{t}$ e valores críticos não normais para esse caso (\textit{slide} 10, caso 2).
 		\begin{halfwideenumerate}
 			\item[2.1] Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária.
-			\item[2.2] Se \textbf{não} rejeitamos a hipótese nula, fazemos o teste F da nula $(\alpha, \gamma)=0$, usando os valores críticos do slide 30 (Caso 2).
+			\item[2.2] Se \textbf{não} rejeitamos a hipótese nula, fazemos o teste F da nula $(\alpha, \gamma)=0$, usando os valores críticos do slide 11 (Caso 2).
 			\begin{halfwideenumerate}
 				\item[2.2.1] Se \textbf{não} rejeitamos a hipótese  nula do teste $F$, concluímos que o modelo não apresenta intercepto. Nesse caso, vamos à etapa 3 (próximo \textit{slide}).
 				\item[2.2.2] Se \textbf{rejeitamos} a hipótese nula do teste F, há evidências de intercepto no modelo. Nesse caso, o teste $\hat{t}$ da nula $H_0: \gamma = 0$ contra a alternativa  $H_1: \gamma < 0$ pode ser feito usando a tabela da normal. Repita o teste com essa tabela. Se rejeitamos a nula, concluímos que a série \textbf{não} apresenta raiz unitária. Se não rejeitamos a nula, concluímos que a série \textbf{apresenta} raiz unitária.
@@ -352,19 +361,22 @@ natbib=true
 			\end{aligned}
 		\end{equation}
 		
-		Teste a nula de $H_0: \gamma = 0$ contra a alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 29, caso 1). Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária. Se não rejeitamos a nula, concluímos que a série \textbf{apresenta} raiz unitária.
+		Teste a nula de $H_0: \gamma = 0$ contra a alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 10, caso 1). Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária. Se não rejeitamos a nula, concluímos que a série \textbf{apresenta} raiz unitária.
 		
 	\end{wideenumerate}
 	
 \end{frame}
 
 \begin{frame}{\citet{Elliott1996} }
-	conteúdo...
+	\begin{itemize}
+		\item \citet{Elliott1996} estudam o poder dos testes de raiz unitária discutidos anteriormente.
+		
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Testando a presença de componentes determinísticos}
 	\begin{halfwideitemize}
-		\item A conclusão do teste anterior é uma afirmação: a série apresenta raiz unitária ou não.
+		\item A conclusão do procedimento sequencial anterior é uma afirmação: a série apresenta raiz unitária ou não.
 		\item Se a série apresenta raiz unitária, vamos trabalhar como a série $Z_t = \Delta Y_t$.
 		\item Se a série não apresenta unitária, trabalhamos com $Z_t = Y_t$.
 		\item Podemos testar a presença de tendências determinísticas rodando:
@@ -385,6 +397,7 @@ natbib=true
 		\item Nesse caso, seria interessante computar erros padrão robustos a violações de ambas as hipóteses.
 		\begin{halfwideitemize}
 			\item A esse tipo de erro padrão damos o nome de HAC (\textit{heteroskedasticity and autocorrelation consistent}).
+			\item Sua introdução na Economia se deve a \citet{Newey1987}.
 		\end{halfwideitemize}
 		\item Podemos usar esses erros padrão robustos via função \texttt{vcovHAC} do pacote \texttt{sandwich}.
 	\end{halfwideitemize}
@@ -407,20 +420,54 @@ natbib=true
 		$$\hat{\gamma} -  \gamma = \frac{\sum_{t=2}^T y_{t-1}\epsilon_t}{\sum_{t=2}^T y_{t-1}^2}$$
 		\item Defina a função com domínio $[0,1]$:
 		
-		$$S_T(u) = 
-			\frac{\sum_{j=1}^{k}\epsilon_j}{T}, \quad \text{se } j-1 < u T \leq  j\, .
-		$$
+		$$X_T(r) = \begin{cases}
+						\frac{\sum_{j=1}^{k}\epsilon_j}{T},& \text{se } k\leq r T <  (k+1)\, \\
+						\frac{\sum_{j=1}^{T}\epsilon_j}{T}, & \text{se } r = 1
+		\end{cases}$$
+
 		\item Função em escada.
+		\item \textbf{Sob a nula} $\gamma = 0$, $\sum_{j=1}^{k}\epsilon_j/T=  y_k/T$.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Teorema de Donsker}
-	\begin{block}{conteúdo...}
-		conteúdo...
-	\end{block}
+\begin{frame}{Gráfico de $r \mapsto X_T(r)$ sob a nula}
+	\centering
+	\includegraphics[scale=0.5]{graficos/escada.png}
 \end{frame}
 
-\begin{frame}{Derivação da distribuição assintótica}
-	 \hyperlink{main_text}{\beamerreturnbutton{Retornar à aula}} 
+\begin{frame}{Teorema de Donsker}
+	\begin{block}{Teorema de Donsker}
+		Se os $\{\epsilon_j\}_{j}$ são iid com $\mathbb{E}[\epsilon_j]=0$ e $\sigma^2 < \infty$, então, quando $T \to \infty$
+		
+		$$\sqrt{T}X_T(\cdot) \Rightarrow \sigma B(\cdot)\, ,$$
+		onde $B$ é um movimento Browniano (ou processo de Wiener) em $[0,1]$,
+	\end{block}
+	\begin{itemize}
+		\item Teorema diz que a  função aleatória $\sqrt{T}X_T(\cdot)$ converge \emph{fracamente} para um Browniano.
+		\begin{itemize}
+			\item Convergência fraca: ``distribuição'' de $\sqrt{T}X_T(\cdot)$ converge para distribuição do Browniano.
+		\end{itemize}
+		\item Possível relaxar hipótese iid para ruído branco fracamente dependente \citep{Phillips1988}.
+		\item Processo de Wiener é um processo estocástico (ou função aleatória) $t \mapsto B(t)$, cujas trajetórias são sempre contínuas, $B(0) = 0$, e onde os incrementos $B(t') - B(t)$ tem distribuição normal, com média zero e variância $(t'-t)$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Processo de Wiener (cinco realizações)}
+	\centering
+	\includegraphics[scale=0.15]{graficos/wiener.png}
+\end{frame}
+\begin{frame}{Derivação da distribuição assintótica sob a nula}
+	\begin{itemize}
+		\item Note que, sob a nula:
+		$$y_{t-1}^2 + 2y_{t-1}\epsilon_t+\epsilon_t^2 = (y_{t-1}+\epsilon_t)^2 = y_t^2$$
+		\item Escrevendo em termos de $X_T(r)$, ficamos com:
+		
+		$$\hat{\gamma} -  \gamma = \frac{\sum_{t=2}^T y_{t-1}\epsilon_t}{\sum_{t=2}^Ty_{t-1}^2} =  \frac{1}{2} \frac{ T^2  X_T(1)^2 - y_{1}^2 - \sum_{t=2}^T \epsilon_t^2}{T^3 \int_0^1 X_T^2(u) du}\,,$$
+		\item Pela LGN $\operatorname{plim}_{T \to \infty}\frac{1}{T-1}\sum_{t=2}^T \epsilon^2_t =\sigma^2$.
+		\item Segue por preservação de convergência fraca em funções contínuas que:
+		
+		$$T(\hat{\gamma} -  \gamma) \Rightarrow \frac{B^2(1) -1}{2\int_0^1 B^2(u) du}$$
+	\end{itemize}
+	\hfill \hyperlink{main_text}{\beamerreturnbutton{Retornar à aula}} 
 \end{frame}
 \end{document}
