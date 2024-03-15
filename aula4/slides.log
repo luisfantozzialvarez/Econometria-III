@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  15 MAR 2024 09:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  15 MAR 2024 15:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1609,20 +1609,20 @@ Overfull \vbox (2.57152pt too high) detected at line 262
 ]
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <9> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 330.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 331.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 330.
+(Font)              <9> on input line 331.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 330.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 331.
 
-Overfull \vbox (13.26312pt too high) detected at line 330
+Overfull \vbox (13.26312pt too high) detected at line 331
  []
 
 [16
 
 ]
-Overfull \vbox (15.10274pt too high) detected at line 353
+Overfull \vbox (15.10274pt too high) detected at line 354
  []
 
 [17
@@ -1637,7 +1637,7 @@ Overfull \vbox (15.10274pt too high) detected at line 353
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-408.
+417.
  (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [22
@@ -1652,13 +1652,13 @@ File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ] [25
 
 ]
-<graficos/escada.png, id=245, 642.4pt x 477.785pt>
+<graficos/escada.png, id=249, 642.4pt x 477.785pt>
 File: graficos/escada.png Graphic file (type png)
 <use graficos/escada.png>
-Package pdftex.def Info: graficos/escada.png  used on input line 436.
+Package pdftex.def Info: graficos/escada.png  used on input line 445.
 (pdftex.def)             Requested size: 321.19922pt x 238.8919pt.
 
-Overfull \vbox (2.41891pt too high) detected at line 436
+Overfull \vbox (2.41891pt too high) detected at line 445
  []
 
 [26
@@ -1666,10 +1666,10 @@ Overfull \vbox (2.41891pt too high) detected at line 436
  <./graficos/escada.png>] [27
 
 ]
-<graficos/wiener.png, id=273, 1927.2pt x 1259.70625pt>
+<graficos/wiener.png, id=277, 1927.2pt x 1259.70625pt>
 File: graficos/wiener.png Graphic file (type png)
 <use graficos/wiener.png>
-Package pdftex.def Info: graficos/wiener.png  used on input line 458.
+Package pdftex.def Info: graficos/wiener.png  used on input line 467.
 (pdftex.def)             Requested size: 289.06754pt x 188.94778pt.
  [28
 
@@ -1719,10 +1719,10 @@ s/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb>
-Output written on slides.pdf (29 pages, 819214 bytes).
+Output written on slides.pdf (29 pages, 820829 bytes).
 PDF statistics:
- 404 PDF objects out of 1000 (max. 8388607)
- 298 compressed objects within 3 object streams
+ 409 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
  76 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
