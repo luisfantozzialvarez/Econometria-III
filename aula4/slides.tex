@@ -264,14 +264,15 @@ natbib=true
 \begin{frame}{Selecionando defasagens}
 		\begin{itemize}
 			\item Nos modelos:
-			\begin{equation*}
+			\begin{equation}
+				\tag{5}
 		\begin{aligned}
 			\Delta Y_t = \gamma Y_{t-1}  +\sum_{j=1}^k \kappa_j \Delta Y_{t-j} + u_t \\
 			\Delta Y_t = \alpha + \gamma Y_{t-1}  +\sum_{j=1}^k \kappa_j \Delta Y_{t-j} + u_t
 			\\
 			\Delta Y_t = \alpha + \beta \cdot t + \gamma Y_{t-1} +  \sum_{j=1}^k\kappa_j \Delta Y_{t-j} + u_t
 		\end{aligned}
-	\end{equation*}
+	\end{equation}
 
 			\item Teste de raiz unitária continua sendo de $H_0: \gamma = 0$ contra $H_1: \gamma < 0$.
 			\begin{itemize}
@@ -291,8 +292,7 @@ natbib=true
 		\item Sob a nula $\gamma = 0$, distribuição assintótica dessa $\hat{t}$ coincide com a do teste ADF no modelo correspondente.
 		\item Ao teste baseado nessa estatística damos o nome de Phillips-Perron (PP).
 		\begin{itemize}
-			\item Teste parece funcionar pior que o ADF em diversas simulações.
-			\item Por esse motivo, não focaremos nele no curso.
+			\item Não focaremos nele nesse curso.
 		\end{itemize} 
 		
 	\end{itemize}
@@ -309,13 +309,13 @@ natbib=true
 \begin{frame}{Procedimento Sequencial I}
 	\begin{wideenumerate}
 		\item Comece estimando o modelo mais geral:
-		\begin{equation}
+		\begin{equation*}
 			\begin{aligned}
 				\Delta Y_t = \alpha + \beta \cdot t + \gamma Y_{t-1}  +\sum_{j=1}^k \kappa_j\Delta Y_{t-j} + u_t
 			\end{aligned}
-		\end{equation}
+		\end{equation*}
 		
-		Teste $H_0: \gamma = 0$ contra alternativa de que $H_1: \gamma < 0$ usando estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 10, caso 4).
+		Teste $H_0: \gamma = 0$ contra a alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 10, caso 4).
 		\begin{halfwideenumerate}
 			\item Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária.
 			\item Se \textbf{não} rejeitamos a hipótese nula, fazemos o teste F da nula $(\beta, \gamma)=0$, usando os valores críticos do slide 11 (Caso 4).
@@ -332,13 +332,13 @@ natbib=true
 \begin{frame}{Procedimento Sequencial II}
 	\begin{wideenumerate}
 		\item[2] Se chegamos a essa etapa, não temos evidências de que haja uma tendência linear no modelo. Nesse caso, estimamos:
-		\begin{equation}
+		\begin{equation*}
 			\begin{aligned}
 				\Delta Y_t = \alpha  + \gamma Y_{t-1}  +\sum_{j=1}^k \kappa_j \Delta Y_{t-j} + u_t
 			\end{aligned}
-		\end{equation}
+		\end{equation*}
 		
-		Teste $H_0: \gamma = 0$ contra alternativa de que $H_1: \gamma < 0$ usando estatística $\hat{t}$ e valores críticos não normais para esse caso (\textit{slide} 10, caso 2).
+		Teste $H_0: \gamma = 0$ contra alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e valores críticos não normais para esse caso (\textit{slide} 10, caso 2).
 		\begin{halfwideenumerate}
 			\item[2.1] Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária.
 			\item[2.2] Se \textbf{não} rejeitamos a hipótese nula, fazemos o teste F da nula $(\alpha, \gamma)=0$, usando os valores críticos do slide 11 (Caso 2).
@@ -355,11 +355,11 @@ natbib=true
 \begin{frame}{Procedimento Sequencial III}
 	\begin{wideenumerate}
 		\item[3] Se chegamos a essa etapa, não temos evidências de que haja uma tendência linear no modelo nem um intercepto. Nesse caso, estimamos:
-		\begin{equation}
+		\begin{equation*}
 			\begin{aligned}
 				\Delta Y_t = \gamma Y_{t-1} +  \sum_{j=1}^k \kappa_j \Delta Y_{t-j} + u_t
 			\end{aligned}
-		\end{equation}
+		\end{equation*}
 		
 		Teste a nula de $H_0: \gamma = 0$ contra a alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 10, caso 1). Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária. Se não rejeitamos a nula, concluímos que a série \textbf{apresenta} raiz unitária.
 		
