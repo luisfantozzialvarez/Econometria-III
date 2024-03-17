@@ -308,31 +308,35 @@ natbib=true
 \end{frame}
 
 \begin{frame}{Procedimento Sequencial I}
-	\begin{wideenumerate}
-		\item Comece estimando o modelo mais geral:
+
+	
+		{\usebeamercolor[fg]{structure} 1.} Comece estimando o modelo mais geral:
 		\begin{equation*}
 			\begin{aligned}
 				\Delta Y_t = \alpha + \beta \cdot t + \gamma Y_{t-1}  +\sum_{j=1}^k \kappa_j\Delta Y_{t-j} + u_t
 			\end{aligned}
 		\end{equation*}
 		
-		Teste $H_0: \gamma = 0$ contra a alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 10, caso 4).
+		Teste $H_0: \gamma = 0$ contra alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 10, caso 4).
 		\begin{halfwideenumerate}
+					\small
 			\item Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária.
 			\item Se \textbf{não} rejeitamos a hipótese nula, fazemos o teste F da nula $(\beta, \gamma)=0$, usando os valores críticos do slide 11 (Caso 4).
 			\begin{halfwideenumerate}
+\footnotesize
 				\item Se \textbf{não} rejeitamos a hipótese  nula do teste $F$, concluímos que o modelo não apresenta tendência linear. Nesse caso, vamos à etapa 2 (próximo \textit{slide}).
 				\item Se \textbf{rejeitamos} a hipótese nula do teste F, há evidências de tendência linear. Nesse caso, o teste $\hat{t}$ da nula $H_0: \gamma = 0$ contra a alternativa  $H_1: \gamma < 0$ pode ser feito usando a tabela da normal. Repita o teste com essa tabela. Se rejeitamos a nula, concluímos que a série \textbf{não} apresenta raiz unitária. Se não rejeitamos a nula, concluímos que a série \textbf{apresenta} raiz unitária.
 			\end{halfwideenumerate}
 		\end{halfwideenumerate}
 		
-	\end{wideenumerate}
+
 	
 \end{frame}
 
 \begin{frame}{Procedimento Sequencial II}
-	\begin{wideenumerate}
-		\item[2] Se chegamos a essa etapa, não temos evidências de que haja uma tendência linear no modelo. Nesse caso, estimamos:
+
+		
+		{\usebeamercolor[fg]{structure} 2.} Se chegamos a essa etapa, não temos evidências de que haja uma tendência linear no modelo. Nesse caso, estimamos:
 		\begin{equation*}
 			\begin{aligned}
 				\Delta Y_t = \alpha  + \gamma Y_{t-1}  +\sum_{j=1}^k \kappa_j \Delta Y_{t-j} + u_t
@@ -341,21 +345,24 @@ natbib=true
 		
 		Teste $H_0: \gamma = 0$ contra alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e valores críticos não normais para esse caso (\textit{slide} 10, caso 2).
 		\begin{halfwideenumerate}
+			\small 
 			\item[2.1] Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária.
 			\item[2.2] Se \textbf{não} rejeitamos a hipótese nula, fazemos o teste F da nula $(\alpha, \gamma)=0$, usando os valores críticos do slide 11 (Caso 2).
 			\begin{halfwideenumerate}
+				\footnotesize
 				\item[2.2.1] Se \textbf{não} rejeitamos a hipótese  nula do teste $F$, concluímos que o modelo não apresenta intercepto. Nesse caso, vamos à etapa 3 (próximo \textit{slide}).
 				\item[2.2.2] Se \textbf{rejeitamos} a hipótese nula do teste F, há evidências de intercepto no modelo. Nesse caso, o teste $\hat{t}$ da nula $H_0: \gamma = 0$ contra a alternativa  $H_1: \gamma < 0$ pode ser feito usando a tabela da normal. Repita o teste com essa tabela. Se rejeitamos a nula, concluímos que a série \textbf{não} apresenta raiz unitária. Se não rejeitamos a nula, concluímos que a série \textbf{apresenta} raiz unitária.
 			\end{halfwideenumerate}
 		\end{halfwideenumerate}
 		
-	\end{wideenumerate}
+
 	
 \end{frame}
 
 \begin{frame}{Procedimento Sequencial III}
-	\begin{wideenumerate}
-		\item[3] Se chegamos a essa etapa, não temos evidências de que haja uma tendência linear no modelo nem um intercepto. Nesse caso, estimamos:
+
+		{\usebeamercolor[fg]{structure} 3.}
+		 Se chegamos a essa etapa, não temos evidências de que haja uma tendência linear no modelo nem um intercepto. Nesse caso, estimamos:
 		\begin{equation*}
 			\begin{aligned}
 				\Delta Y_t = \gamma Y_{t-1} +  \sum_{j=1}^k \kappa_j \Delta Y_{t-j} + u_t
@@ -364,21 +371,22 @@ natbib=true
 		
 		Teste a nula de $H_0: \gamma = 0$ contra a alternativa de que $H_1: \gamma < 0$ usando a estatística $\hat{t}$ e os valores críticos não normais para esse caso (\textit{slide} 10, caso 1). Se rejeitamos a hipótese nula, concluímos que a série \textbf{não} apresenta raiz unitária. Se não rejeitamos a nula, concluímos que a série \textbf{apresenta} raiz unitária.
 		
-	\end{wideenumerate}
+
 	
 \end{frame}
 
 \begin{frame}{\citet{Elliott1996} }
 	\begin{itemize}
 		\item \citet{Elliott1996} estudam o poder dos testes de raiz unitária discutidos anteriormente.
-		\item Os autores verificam que o poder do teste ADF nos modelos \eqref{eq_drift} e \eqref{eq_full} pode ser baixo
+		\item Os autores verificam que o poder do teste ADF nos modelos \eqref{eq_drift} e \eqref{eq_trend} pode ser baixo
 		\begin{itemize}
 			\item Isso se deve ao comportamento da estatística de teste, cuja distribuição assintótica acaba dependendo da presença ou não dos componentes determinísticos no processo gerador.
 		\end{itemize}
-		\item Proposta de ERS: remover os componentes determinísticos numa etapa preliminar, estimando o modelo \eqref{eq_drift} ou \eqref{eq_full} \textbf{impondo que} $\gamma = c/T$ para uma constante $c >0$, e rodar o teste ADF nos dados \textit{detrended}.
+		\item Proposta de ERS: remover os componentes determinísticos numa etapa preliminar, estimando o modelo \eqref{eq_drift} ou \eqref{eq_trend} \textbf{impondo que} $\gamma = c/T$ para uma constante $c <0$, e rodar o teste ADF nos dados \textit{detrended}.
 		\item Procedimento aumenta poder dos testes.
 		\begin{itemize}
 			\item Dificuldade é que não há ferramentas, no caso, para detectar qual modelo usar.
+			\item Podemos acoplar esse teste ao procedimento sequencial, se paramos na primeira ou segunda etapa.
 		\end{itemize} 
 	\end{itemize}
 \end{frame}
@@ -390,6 +398,7 @@ natbib=true
 		\item Se a série não apresenta unitária, trabalhamos com $Z_t = Y_t$.
 		\item Podemos testar a presença de tendências determinísticas rodando:
 		\begin{equation}
+			\label{eq_trend_test}
 			Z_t = a + b \cdot t + \xi_t
 		\end{equation}
 		e testando a nula de que $b=0$ contra a alternativa de que $b \neq 0$ fazendo um teste $t$ com valores críticos normais.
@@ -402,7 +411,7 @@ natbib=true
 
 \begin{frame}{Erros padrão HAC}
 	\begin{halfwideitemize}
-		\item Se rodamos o modelo (22) no \texttt{R} e usamos a função \texttt{summary} para fazer inferência, os erros padrão apresentados supõem homocedasticidade e não autocorrelação de $\xi_t$.
+		\item Se rodamos o modelo \eqref{eq_trend_test} no \texttt{R} e usamos a função \texttt{summary} para fazer inferência, os erros padrão apresentados supõem homocedasticidade e não autocorrelação de $\xi_t$.
 		\item Nesse caso, seria interessante computar erros padrão robustos a violações de ambas as hipóteses.
 		\begin{halfwideitemize}
 			\item A esse tipo de erro padrão damos o nome de HAC (\textit{heteroskedasticity and autocorrelation consistent}).
