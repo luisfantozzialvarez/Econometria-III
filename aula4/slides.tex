@@ -122,7 +122,7 @@ natbib=true
 \end{frame}
 \begin{frame}{Processo I(d)}
 	\begin{itemize}
-		\item Em nosso contexto, vamos definir um processo $\{Y_t:t \in \mathcal{T}\}$ {\color{blue}como integrado de ordem $d$, ou $I(d)$}, se ele se escreve como:
+		\item Em nosso contexto, vamos definir um processo $\{Y_t:t \in \mathcal{T}\}$ {\color{blue}como integrado de ordem $d$, ou $I(d)$}, se ele se escreve (em forma simplificada) como:
 		
 		$$\Phi(L)(1-L)^dY_t = \alpha + \Theta(L) \epsilon_t \, ,$$
 		para polinômios $\Phi(x)$ e $\Theta(x)$, onde todas as raízes de $\Phi(x)$ estão fora do círculo unitário.
@@ -292,7 +292,8 @@ natbib=true
 		\item Sob a nula $\gamma = 0$, distribuição assintótica dessa $\hat{t}$ coincide com a do teste ADF no modelo correspondente.
 		\item Ao teste baseado nessa estatística damos o nome de Phillips-Perron (PP).
 		\begin{itemize}
-			\item Não focaremos nele nesse curso.
+			\item Esse teste tende a funcionar bastante mal (alta rejeição da nula mesmo quando é verdadeira) quando a parte MA do processo exibe raiz negativa.
+			\item Por esse motivo, padrão na literatura se consolidou no teste ADF+MAIC para seleção de $k$; embora PP possa ser usado como complemento.
 		\end{itemize} 
 		
 	\end{itemize}
@@ -370,7 +371,15 @@ natbib=true
 \begin{frame}{\citet{Elliott1996} }
 	\begin{itemize}
 		\item \citet{Elliott1996} estudam o poder dos testes de raiz unitária discutidos anteriormente.
-		
+		\item Os autores verificam que o poder do teste ADF nos modelos \eqref{eq_drift} e \eqref{eq_full} pode ser baixo
+		\begin{itemize}
+			\item Isso se deve ao comportamento da estatística de teste, cuja distribuição assintótica acaba dependendo da presença ou não dos componentes determinísticos no processo gerador.
+		\end{itemize}
+		\item Proposta de ERS: remover os componentes determinísticos numa etapa preliminar, estimando o modelo \eqref{eq_drift} ou \eqref{eq_full} \textbf{impondo que} $\gamma = c/T$ para uma constante $c >0$, e rodar o teste ADF nos dados \textit{detrended}.
+		\item Procedimento aumenta poder dos testes.
+		\begin{itemize}
+			\item Dificuldade é que não há ferramentas, no caso, para detectar qual modelo usar.
+		\end{itemize} 
 	\end{itemize}
 \end{frame}
 
