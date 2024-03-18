@@ -35,13 +35,13 @@ plot(desemprego_x13, col='red')
 lines(filtrado$trend,col='blue')
 
 
-#Exemplificando viés de ponta com dados mais recentes
+#Exemplificando instabilidade de ponta com dados mais recentes
 data = read.csv("desemprego_atualizado.csv")
 
 desemp_atualizado = ts(data$Desemprego.PNADC., start = c(2012,03), frequency = 12)
 desemp_x13 = predict(seas(desemp_atualizado))
 
-desemp_menor = window(desemp_x13, end = c(2022,12))
+desemp_menor = window(desemp_x13, end = c(2021,12))
 
 filtrado_menor =  hpfilter(desemp_menor,129600,type = "lambda")$trend
 filtrado_cheio =  hpfilter(desemp_x13,129600,type = "lambda")$trend
@@ -50,7 +50,7 @@ plot(desemp_x13)
 lines(filtrado_menor, col = 'red')
 lines(filtrado_cheio, col = 'blue')
 
-legend('topleft', c('Tendência HP (estimação até dez/2022)', 'Tendência HP (estimação até jan/2024)'),
+legend('topleft', c('Tendência HP (estimação até dez/2021)', 'Tendência HP (estimação até jan/2024)'),
        col = c('red','blue'),lty = c(1,1), cex = 0.7)
 
 
