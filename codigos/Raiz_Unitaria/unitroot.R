@@ -28,7 +28,7 @@ print(teste)
 print(teste$est.model)
 linearHypothesis(teste$est.model,c("trnd = 0", "L(y, 1) = 0" ))
 
-#A estatística F é de 1.7638. Usando o Caso 4 da tabela 30 nos slides, vemos que, a 5% de significância,
+#A estatística F é de 1.7638. Usando o Caso 4 da tabela na página 11 dos slides, vemos que, a 5% de significância,
 #o valor crítico para 118 observações é 6.49. Como F < 6.49, não rejeitamos a hipótese nula de que 
 #a tendência e o coeficiente associado a y_{t-1} são ambos zero. Nesse caso, vamos para o modelo somente com
 #intercepto
@@ -42,7 +42,7 @@ print(teste)
 print(teste$est.model)
 linearHypothesis(teste$est.model,c("(Intercept) = 0", "L(y, 1) = 0" ))
 
-#A estatística F é de 1.3763. Usando o Caso 2 da tabela 30 nos slides, vemos que, a 5% de significância,
+#A estatística F é de 1.3763. Usando o Caso 2 da tabela na página 11 dos slides, vemos que, a 5% de significância,
 #o valor crítico para 118 observações é 4.71. Como F < 4.71, não rejeitamos a hipótese nula de que 
 #o intercepto e o coeficiente associado a y_{t-1} são ambos zero. Nesse caso, vamos para o modelo sem componentes
 #determinísticos
@@ -61,4 +61,5 @@ modelo = lm(diff(desemprego_brasil)~trend)
 
 coeftest(modelo, vcov. = vcovHAC)
 
-#Não rejeitamos a hipótese nula de que NÃO HÁ componente determinístico
+#Não rejeitamos a hipótese nula de que NÃO HÁ componente determinístico 
+#na série em primeira diferença
