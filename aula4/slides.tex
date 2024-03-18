@@ -421,8 +421,51 @@ natbib=true
 	\end{halfwideitemize}
 \end{frame}
 
+
+\begin{frame}{Testando ordens de integração maiores}
+	\begin{itemize}
+		\item O procedimento sequencial discutido anteriormente considera somente duas possibilidades: ou há uma raiz unitária, ou nenhuma.
+		\item De fato, estes são os casos predominantes nas séries econômicas.
+		\begin{itemize}
+			\item Não obstante, há séries de interesse que são I(2). Por exemplo, dados referentes à incidência de Covid \citep{Chernozhukov2021}.
+		\end{itemize}
+		\item \citet{Dickey1987} proveem um procedimento sequencial para determinar se uma série é I(2), I(1) ou I(0).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Procedimento de \citet{Dickey1987}}
+	\begin{itemize}
+		\small 
+		\item Considere o modelo:
+		\begin{equation*}
+			\Delta^2 y_t = \gamma_{1,1} \Delta y_{t-1} + \sum_{j=1}^{k} \beta_{1,j} \Delta^2 y_{t-j} + u_t
+		\end{equation*}
+		\item Nesse ambiente, \citet{Dickey1987} sugerem testar $H_0: \gamma_1 = 0 $ contra $H_1: \gamma_1 < 0$, usando estatística $t$ e valores critícos de Dickey-Fuller.
+			\begin{itemize}
+				\item Se não rejeitamos a nula, concluímos que a série é I(2).
+			\end{itemize}
+		\item Se rejeitarmos a nula na etapa anterior, considerar o modelo
+		
+				\begin{equation*}
+			\Delta^2 y_t =\gamma_{2,1} \Delta y_{t-1} + \gamma_{2,2} y_{t-1} +  \sum_{j=1}^{k} \beta_{2,j} \Delta^2 y_{t-j} +  u_t
+		\end{equation*}
+		e testar $\gamma_{2,2}=0$ contra $\gamma_{2,2} < 0$, usando os valores críticos de Dickey-Fuller.
+		\vspace{-1em}
+		\begin{itemize}
+			\item Se não rejeitamos a nula, concluímos que a série é I(1).
+			\item Se rejeitamos a nula, série é I(0).
+		\end{itemize}
+		\item Procedimento pode incluir componentes determinísticos.
+		\begin{itemize}
+			\item Nesse caso, usar a distribuição do teste ADF do caso correspondente.
+			\item Possível acoplar o procedimento sequencial em cada etapa da metodologia para determinar o componente determinístico apropriado.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
 \begin{frame}[allowframebreaks]{Referências}
-	\printbibliography´
+	\printbibliography
 \end{frame}
 
 \appendix

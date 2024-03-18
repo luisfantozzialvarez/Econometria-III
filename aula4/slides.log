@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  17 MAR 2024 09:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  17 MAR 2024 21:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1657,46 +1657,50 @@ Overfull \vbox (5.4868pt too high) detected at line 360
 
 ] [21
 
+] [22
+
+] [23
+
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-426.
+469.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [22
+) [24
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} </usr/local/
-texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [23
-
-
-] [24
+ </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [
+25
 
 
-] [25
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [26
+
+
+] [27
 
 ]
-<graficos/escada.png, id=251, 642.4pt x 477.785pt>
+<graficos/escada.png, id=272, 642.4pt x 477.785pt>
 File: graficos/escada.png Graphic file (type png)
 <use graficos/escada.png>
-Package pdftex.def Info: graficos/escada.png  used on input line 454.
+Package pdftex.def Info: graficos/escada.png  used on input line 497.
 (pdftex.def)             Requested size: 321.19922pt x 238.8919pt.
 
-Overfull \vbox (2.10292pt too high) detected at line 454
+Overfull \vbox (2.10292pt too high) detected at line 497
  []
 
-[26
+[28
 
- <./graficos/escada.png>] [27
+ <./graficos/escada.png>] [29
 
 ]
-<graficos/wiener.png, id=279, 1927.2pt x 1259.70625pt>
+<graficos/wiener.png, id=301, 1927.2pt x 1259.70625pt>
 File: graficos/wiener.png Graphic file (type png)
 <use graficos/wiener.png>
-Package pdftex.def Info: graficos/wiener.png  used on input line 476.
+Package pdftex.def Info: graficos/wiener.png  used on input line 519.
 (pdftex.def)             Requested size: 289.06754pt x 188.94778pt.
- [28
+ [30
 
- <./graficos/wiener.png>] [29
+ <./graficos/wiener.png>] [31
 
 ]
 \tf@nav=\write7
@@ -1717,35 +1721,36 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45897 strings out of 476025
- 1059471 string characters out of 5790017
- 1863388 words of memory out of 5000000
- 65472 multiletter control sequences out of 15000+600000
+ 45923 strings out of 476025
+ 1059999 string characters out of 5790017
+ 1865388 words of memory out of 5000000
+ 65492 multiletter control sequences out of 15000+600000
  620203 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,11n,122p,1220b,1728s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,11n,122p,2168b,1728s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texli
 ve/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2023/texmf-dist/f
-onts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/
-public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
-mss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/20
-23/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf
--dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fon
-ts/type1/public/lm/lmsso12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/
-public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/
-lmsso9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
-></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-
-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (29 pages, 820933 bytes).
+onts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/
+public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
+mmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/20
+23/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-di
+st/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts
+/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pu
+blic/lm/lmsso12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
+msso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso9.pfb>
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2
+023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on slides.pdf (31 pages, 828353 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
- 304 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
+ 438 PDF objects out of 1000 (max. 8388607)
+ 327 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
