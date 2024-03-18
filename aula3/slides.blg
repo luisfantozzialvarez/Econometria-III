@@ -1,15 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'slides.blg'
-[88] biber-darwin:340> INFO - === Sun Mar 10, 2024, 16:46:55
-[106] Biber.pm:419> INFO - Reading 'slides.bcf'
-[217] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
-[239] Biber.pm:4419> INFO - Processing section 0
-[254] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
-[263] bibtex.pm:1713> INFO - LaTeX decoding ...
-[321] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
-[403] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[404] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[404] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[404] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
-[416] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[421] bbl.pm:763> INFO - Output to slides.bbl
+[88] biber-darwin:340> INFO - === Mon Mar 18, 2024, 06:27:26
+[105] Biber.pm:419> INFO - Reading 'slides.bcf'
+[212] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[231] Biber.pm:4419> INFO - Processing section 0
+[243] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[247] bibtex.pm:1713> INFO - LaTeX decoding ...
+[292] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
