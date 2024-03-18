@@ -38,12 +38,17 @@
 \headcommand {\beamer@sectionpages {1}{17}}
 \headcommand {\beamer@subsectionpages {1}{17}}
 \headcommand {\beamer@appendixpages {18}}
-\headcommand {\slideentry {0}{0}{18}{18/18}{}{1}}
+\headcommand {\beamer@sectionpages {18}{17}}
+\headcommand {\beamer@subsectionpages {18}{17}}
+\headcommand {\sectionentry {1}{Refer\^encias}{18}{Refer\^encias}{1}}
+\headcommand {\slideentry {1}{0}{0}{18/18}{}{1}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@partpages {18}{18}}
-\headcommand {\beamer@subsectionpages {18}{18}}
-\headcommand {\beamer@sectionpages {18}{18}}
-\headcommand {\beamer@documentpages {18}}
-\headcommand {\gdef \inserttotalframenumber {1}}
+\headcommand {\slideentry {1}{0}{0}{18/19}{}{1}}
+\headcommand {\beamer@framepages {18}{19}}
+\headcommand {\beamer@partpages {18}{19}}
+\headcommand {\beamer@subsectionpages {18}{19}}
+\headcommand {\beamer@sectionpages {18}{19}}
+\headcommand {\beamer@documentpages {19}}
+\headcommand {\gdef \inserttotalframenumber {2}}
 \headcommand {\gdef \inserttotalframenumber {17}}
-\headcommand {\gdef \appendixtotalframenumber {1}}
+\headcommand {\gdef \appendixtotalframenumber {2}}
