@@ -20,26 +20,16 @@ natbib=true
 
 
 \title{\large EAE1223: Econometria III}
-\author{\normalsize Exercícios sobre Decomposições de séries de tempo}
+\author{\normalsize Exercícios sobre Raízes Unitárias}
 \date{}
 \begin{document}
 	\maketitle
-	Faça o \textit{download} de \textbf{duas} séries de tempo de frequências mensal ou trimenstral. Alguns sítios úteis para encontrar dados: 
-	\begin{enumerate}
-		\item[a]  Sistema gerenciador de séries temporais, do BCB: \url{https://www3.bcb.gov.br/sgspub/};\footnote{Se preferir, você pode usar o pacote \texttt{dadosbc} para baixar as séries do SGS. A documentação do código está disponível em: \url{https://github.com/Figuera/dadosbc}. }
-		\item[b] IPEA Data: \url{http://www.ipeadata.gov.br/};\footnote{Se preferir, você pode usar o pacote \texttt{ipeadatar} para baixar as séries do IPEA Data. A documentação do código está disponível em: \url{https://cran.r-project.org/web/packages/ipeadatar/vignettes/intro-ipeadatar.html}. }
-		\item[c] FRED, do \textit{Federal Reserve} de Saint Louis: \url{https://fred.stlouisfed.org/}.
-	\end{enumerate}
-	Uma vez baixadas ambas as séries, responda as questões abaixo:
-	\begin{enumerate}
-		\item Para cada uma das séries, realize o ajuste sazonal manualmente (método das médias móveis centradas) e utilizando a metodologia Arima X13/Seats. Para cada variável, apresente em um gráfico os resultados obtidos e os dados sem ajuste. A série aparenta apresentar movimentos sazonais?
-		\item Usando as séries dessazonalizadas via X13, extraia a tendência de cada série usando Filtro HP. Contraste a série com a tendência obtida. Você consegue identificar ciclos nos dados?
-		\item Implemente a proposta de Hamilton para as suas séries. Quais as diferenças em relação ao filtro HP?
-		
-		\item Considere o seguinte processo:
-		
-		$$(1-\phi L) (1-L)y_t = \epsilon_t \, ,$$
-		one $|\phi|<1$, e a sequência $\{\epsilon_t\}_t$ é independente e identicamente distribuída com média zero e variância finita. Encontre o componente cíclico da decomposição de Beveridge-Nelson de $y_t$. \textit{Dica:} $\mathbb{E}[\epsilon_s| y_{t}, y_{t-1}, y_{t-2}, \ldots ] = 0$ para todo $s > t$, pela hipótese de que a série $\{\epsilon_t\}_t$ é independente, e $\mathbb{E}[y_{s}| y_{t}, y_{t-1}, y_{t-2}, \ldots ] = y_t + \sum_{j=1}^s \mathbb{E}[\Delta y_{t+j}| y_{t}, y_{t-1}, y_{t-2}, \ldots ]$, para todo $s > t$.
-	\end{enumerate}
+	Usando as duas séries que você analisou no exercício anterior.
+\begin{enumerate}
+	\item Para cada uma das séries, realize o procedimento sequencial descrito nos \textit{slides} para testar a presença de raiz unitária. Conduza os testes ao nível de significância de $10\%$. Qual a conclusão dos procedimentos?
+	\item Para cada uma das séries, realize o teste de tendência determinística descrito nos \textit{slides}, já usando a série transformada obtida com base na conclusão dos testes no item anterior. Conduza os testes ao nível de significância de $10\%$.  Qual a conclusão de cada teste?
+	
+	\item Repita os dois itens anteriores a 5\% de significância. As conclusões mudaram?
+\end{enumerate}
 			
 \end{document}
