@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  21 MAR 2024 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  21 MAR 2024 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1466,6 +1466,180 @@ LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10.95> not available
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-ec.enc}]
+
+LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10> not available
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 124.
+
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 124.
+[2
+
+] [3
+
+] [4
+
+]
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+167.
+ (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+67.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+167.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+167.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 167.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 167.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 167.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 167
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 167
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 167.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 167.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 167.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 167.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 167.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 167.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 167.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 167.
+
+Overfull \vbox (1.77704pt too high) detected at line 167
+ []
+
+[5
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
+dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [6
+
+] [7
+
+] [8
+
+] [9
+
+]
+Overfull \vbox (9.51212pt too high) detected at line 239
+ []
+
+[10
+
+] [11
+
+] [12
+
+] [13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
+]
+<graficos/acf_unemp.pdf, id=120, 433.62pt x 433.62pt>
+File: graficos/acf_unemp.pdf Graphic file (type pdf)
+<use graficos/acf_unemp.pdf>
+Package pdftex.def Info: graficos/acf_unemp.pdf  used on input line 328.
+(pdftex.def)             Requested size: 169.11111pt x 169.11111pt.
+<graficos/pacf_unemp.pdf, id=121, 433.62pt x 433.62pt>
+File: graficos/pacf_unemp.pdf Graphic file (type pdf)
+<use graficos/pacf_unemp.pdf>
+Package pdftex.def Info: graficos/pacf_unemp.pdf  used on input line 328.
+(pdftex.def)             Requested size: 169.11111pt x 169.11111pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 328.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 328.
+ [18
+
+ <./graficos/acf_unemp.pdf> <./graficos/pacf_unemp.pdf>] [19
+
+] [20
+
+]
+<graficos/ar2_fac.pdf, id=151, 505.89pt x 505.89pt>
+File: graficos/ar2_fac.pdf Graphic file (type pdf)
+<use graficos/ar2_fac.pdf>
+Package pdftex.def Info: graficos/ar2_fac.pdf  used on input line 359.
+(pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
+<graficos/ar2_facp.pdf, id=152, 505.89pt x 505.89pt>
+File: graficos/ar2_facp.pdf Graphic file (type pdf)
+<use graficos/ar2_facp.pdf>
+Package pdftex.def Info: graficos/ar2_facp.pdf  used on input line 359.
+(pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
+ [21
+
+ <./graficos/ar2_fac.pdf> <./graficos/ar2_facp.pdf>] [22
+
+]
+<graficos/ma3_fac.pdf, id=176, 505.89pt x 505.89pt>
+File: graficos/ma3_fac.pdf Graphic file (type pdf)
+<use graficos/ma3_fac.pdf>
+Package pdftex.def Info: graficos/ma3_fac.pdf  used on input line 370.
+(pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
+<graficos/ma3_facp.pdf, id=177, 505.89pt x 505.89pt>
+File: graficos/ma3_facp.pdf Graphic file (type pdf)
+<use graficos/ma3_facp.pdf>
+Package pdftex.def Info: graficos/ma3_facp.pdf  used on input line 370.
+(pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
+ [23
+
+ <./graficos/ma3_fac.pdf> <./graficos/ma3_facp.pdf>] [24
+
+]
+<graficos/arma23_fac.pdf, id=200, 505.89pt x 505.89pt>
+File: graficos/arma23_fac.pdf Graphic file (type pdf)
+<use graficos/arma23_fac.pdf>
+Package pdftex.def Info: graficos/arma23_fac.pdf  used on input line 383.
+(pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
+<graficos/arma23_facp.pdf, id=201, 505.89pt x 505.89pt>
+File: graficos/arma23_facp.pdf Graphic file (type pdf)
+<use graficos/arma23_facp.pdf>
+Package pdftex.def Info: graficos/arma23_facp.pdf  used on input line 383.
+(pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
+
+[25
+
+ <./graficos/arma23_fac.pdf> <./graficos/arma23_facp.pdf>] [26
+
+]
 \tf@nav=\write7
 \openout7 = `slides.nav'.
 
@@ -1475,54 +1649,41 @@ dvips/lm/lm-ec.enc}]
 \tf@snm=\write9
 \openout9 = `slides.snm'.
 
- (./slides.aux)
+
+(./slides.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `slides.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `slides.out':
-(rerunfilecheck)             Before: D612BBF9693FBBAA38CA5E9859ED7DE4;185
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                slides
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `slides.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'slides.run.xml'.
 \openout1 = `slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44793 strings out of 475735
- 1024438 string characters out of 5784786
- 1865055 words of memory out of 5000000
- 64818 multiletter control sequences out of 15000+600000
- 531462 words of font info for 43 fonts, out of 8000000 for 9000
+ 45156 strings out of 475735
+ 1032989 string characters out of 5784786
+ 1869246 words of memory out of 5000000
+ 65083 multiletter control sequences out of 15000+600000
+ 605690 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,7n,123p,2168b,1641s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Outline1} has been referenced but does not exist, r
-eplaced by a fixed one
-
-
-pdfTeX warning (dest): name{Outline0.1} has been referenced but does not exist,
- replaced by a fixed one
-
-</usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmss10.pfb>
-Output written on slides.pdf (1 page, 47628 bytes).
+ 128i,11n,123p,2168b,1645s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb>
+Output written on slides.pdf (26 pages, 256130 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
