@@ -112,7 +112,7 @@ natbib=true
 	\begin{halfwideitemize}
 		\item A metodologia de Box-Jenkins consiste numa série de etapas para estimar um modelo {\color{blue}univariado} de {\color{blue}previsão}.
 		\begin{halfwideitemize}
-			\item Ideia é estimar um modelo simples, embora flexível, dos dados.
+			\item Ideia é estimar um modelo simples, embora flexível, aos dados.
 		
 		\end{halfwideitemize}
 	\item Trata-se da metodologia básica de previsão em séries de tempo. 
@@ -148,7 +148,7 @@ natbib=true
 
 \begin{frame}{MA(q)}
 	\begin{halfwideitemize}
-		\item Dizemos que uma série de tempo $\{Y_t\}$ segue um MA(q) se ela se
+		\item Dizemos que uma série de tempo $\{Y_t\}$ segue um MA(q) se:
 		\begin{equation*}
 			Y_t =\alpha + \epsilon_t + \sum_{j=1}^q \theta_j \epsilon_{t-j} 
 		\end{equation*} 
@@ -162,7 +162,7 @@ natbib=true
 		\begin{equation*}
 			Y_t = \omega + \sum_{j=1}^\infty \psi_j Y_{t-j} + \epsilon_t
 		\end{equation*}
-		(MA($\infty$) pode ser representado como AR($\infty$)).
+		(MA(q) pode ser representado como AR($\infty$)).
 	\end{halfwideitemize}
 \end{frame}
 \begin{frame}{AR(p) estacionário}
@@ -176,7 +176,7 @@ natbib=true
 		\begin{halfwideitemize}
 			\item Mas persistência não é tão grande, de modo que a série é estacionária (não há raiz unitária).
 		\end{halfwideitemize}
-		\item Recorde-se que um AR(p) é estacionário se, e somente se, ele se escreve como um MA($\infty$).
+		\item Recorde-se que um AR(p) é estacionário se, e somente se, ele se escreve como um MA($\infty$):
 		\begin{equation*}
 			Y_t = \kappa + \epsilon_{t} +\sum_{j=1}^\infty \tau_j \epsilon_{t-j} 
 		\end{equation*}
@@ -203,11 +203,11 @@ natbib=true
 		\begin{halfwideitemize}
 			\item Como fazer a previsão em casos não estacionários?
 		\end{halfwideitemize}
-		\item Se as séries apresentarem tendência estocástica, trabalhamos com os dados em primeira diferença $\{\Delta y_t\}$. 
+		\item Se as séries apresentarem uma tendência estocástica, trabalhamos com os dados em primeira diferença $\{\Delta y_t\}$. 
 		
 		\item Conduzidas as etapas da metodologia Box-Jenkins com os dados diferenciados, e encontradas projeções para $\Delta y_t$ fora da amostra, recompomos as projeções  em nível usando o fato de que $y_{t+1} = y_t + \Delta y_{t+1}$.
 		\begin{halfwideitemize}
-			\item Isto é, se temos $T$ observações, projetamos $\widehat{y_{T+1}} = y_t + \widehat{{\Delta y_{T+1}}}$, , $y_{t+2} = y_t + \widehat{\Delta y_{t+1}} + \widehat{\Delta y_{t+2}}$, e assim por diante.
+			\item Isto é, se temos $T$ observações, projetamos $\widehat{y_{T+1}} = y_t + \widehat{{\Delta y_{T+1}}}$,  $y_{t+2} = y_t + \widehat{\Delta y_{t+1}} + \widehat{\Delta y_{t+2}}$, e assim por diante.
 		\end{halfwideitemize}
 		\end{halfwideitemize}
 \end{frame}
@@ -329,7 +329,7 @@ $$\Phi(L) y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 
 \begin{frame}{Inferência conjunta sobre a FAC}
 	\begin{itemize}
-	 	\item Para testar a nula conjunta de que $\gamma_{1} = \gamma_{2}=\ldots = \gamma_{s} = 0$, onde $s$ é pequeno relativamente a $T$, Podemos usar a {\color{blue}estatística de Ljung-Box}:
+	 	\item Para testar a nula conjunta de que $\gamma_{1} = \gamma_{2}=\ldots = \gamma_{s} = 0$, onde $s$ é pequeno relativamente a $T$, podemos usar a {\color{blue}estatística de Ljung-Box}:
 		
 		$$\hat{Q}= T(T+2)\sum_{r=1}^s \frac{\hat{\gamma}_r^2}{T-k}\, .$$
 		\item Com $T$ grande, sob a nula, $\hat{Q}$ segue uma qui-quadrado com $s$ graus de liberdade. Valores altos da estatística são evidência contra a nula, i.e. evidência de que ao menos uma autocorrelação entre as testadas é diferente de zero.
