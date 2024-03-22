@@ -47,12 +47,13 @@ linearHypothesis(teste$est.model,c("(Intercept) = 0", "L(y, 1) = 0" ))
 #Como não rejeitamos a nula de que gamma = 0 anteriormente, concluímos que alpha é diferente de zero. Nesse caso, podemos 
 #repetir o teste de gamma = 0 contra gamma < 0 usando o valor crítico da normal. Esse valor crítico é dado por:
 qnorm(0.10)
+#-1.281
 
 #Enquanto nossa t é:
 summary(teste)
-#-0.687
+#-0.474
 
-#Logo NÃO REJEITAMOS a nula de raiz unitária a 10%
+#Logo NÃO REJEITAMOS a nula de raiz unitária a 10%, visto que -0.474 > -1.281
 
 #Como paramos no modelo com drift, podemos testar a hipótese de raiz unitária usando
 #o procedimento de ERS. Esse procedimento está disponível no pacote urca, que carregamos
