@@ -45,7 +45,7 @@ print(teste$est.model)
 linearHypothesis(teste$est.model,c("(Intercept) = 0", "L(y, 1) = 0" ))
 
 #A estatística F é de 0.5362. Usando o Caso 2 da tabela na página 11 dos slides, vemos que, a 5% de significância,
-#o valor crítico para 242 observações é 4.71. Como F < 4.63, não rejeitamos a hipótese nula de que 
+#o valor crítico para 242 observações é 4.63. Como F < 4.63, não rejeitamos a hipótese nula de que 
 #o intercepto e o coeficiente associado a y_{t-1} são ambos zero. Nesse caso, vamos para o modelo sem componentes
 #determinísticos
 

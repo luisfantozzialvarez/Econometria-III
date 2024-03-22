@@ -395,7 +395,7 @@ natbib=true
 	\begin{halfwideitemize}
 		\item A conclusão do procedimento sequencial anterior é uma afirmação: a série apresenta raiz unitária ou não.
 		\item Se a série apresenta raiz unitária, vamos trabalhar como a série $Z_t = \Delta Y_t$.
-		\item Se a série não apresenta unitária, trabalhamos com $Z_t = Y_t$.
+		\item Se a série não apresenta raiz unitária, trabalhamos com $Z_t = Y_t$.
 		\item Podemos testar a presença de tendências determinísticas rodando:
 		\begin{equation}
 			\label{eq_trend_test}
@@ -437,23 +437,24 @@ natbib=true
 	\begin{itemize}
 		\small 
 		\item Considere o modelo:
+						\vspace{-0.5em}
 		\begin{equation*}
 			\Delta^2 y_t = \gamma_{1,1} \Delta y_{t-1} + \sum_{j=1}^{k} \beta_{1,j} \Delta^2 y_{t-j} + u_t
 		\end{equation*}
 		\item Nesse ambiente, \citet{Dickey1987} sugerem testar $H_0: \gamma_{1,1} = 0 $ contra $H_1: \gamma_{1,1} < 0$, usando estatística $t$ e valores critícos de Dickey-Fuller.
 			\begin{itemize}
-				\item Se não rejeitamos a nula, concluímos que a série é I(2).
+				\item Se não rejeitamos a nula, concluímos que a série apresenta DUAS raízes unitárias.
 			\end{itemize}
 		\item Se rejeitarmos a nula na etapa anterior, considerar o modelo
-		
+		\vspace{-0.5em}
 				\begin{equation*}
 			\Delta^2 y_t =\gamma_{2,1} \Delta y_{t-1} + \gamma_{2,2} y_{t-1} +  \sum_{j=1}^{k} \beta_{2,j} \Delta^2 y_{t-j} +  u_t
 		\end{equation*}
 		e testar $\gamma_{2,2}=0$ contra $\gamma_{2,2} < 0$, usando os valores críticos de Dickey-Fuller.
 		\vspace{-1em}
 		\begin{itemize}
-			\item Se não rejeitamos a nula, concluímos que a série é I(1).
-			\item Se rejeitamos a nula, série é I(0).
+			\item Se não rejeitamos a nula, concluímos que série apresenta UMA raiz unitária.
+			\item Se rejeitamos a nula, série NÃO APRESENTA raiz unitária.
 		\end{itemize}
 		\item Procedimento pode incluir componentes determinísticos.
 		\begin{itemize}
