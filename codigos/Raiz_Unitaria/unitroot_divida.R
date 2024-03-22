@@ -63,5 +63,5 @@ modelo = lm(diff(divida)~trend)
 
 coeftest(modelo, vcov. = vcovHAC)
 
-#Não rejeitamos a hipótese nula de que NÃO HÁ componente determinístico 
+#Não rejeitamos a hipótese nula de que NÃO HÁ tendência linear determinística
 #na série em primeira diferença

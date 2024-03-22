@@ -71,6 +71,10 @@ modelo = lm(diff(industrial_prod)~trend)
 
 coeftest(modelo, vcov. = vcovHAC)
 
-#Não rejeitamos a nula de que não há componente determinístico na série em diferenças
+#Não rejeitamos a nula de que não há tendência linear determinística na série em diferenças
+
+#Observe que o intercepto do modelo em diferenças é estatisticamente significante. De fato,
+#o procedimento sequencial nos indicou que um passeio aleatório com drift como aproximação
+#ao processo.
 
 
