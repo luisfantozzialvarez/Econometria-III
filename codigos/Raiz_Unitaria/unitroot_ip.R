@@ -62,7 +62,6 @@ summary(teste)
 #Vamos rodar o método de ERS com o número de defasagens selecionados pelo MAIC no teste ADF
 summary(ur.ers(industrial_prod, type = 'DF-GLS', model = 'constant', lag.max = 5))
 
-
 #Aqui também não rejeitamos a nula de raiz unitária.
 
 #Vamos testar a presença de componentes determinísticos.
