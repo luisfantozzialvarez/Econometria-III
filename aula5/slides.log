@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  30 MAR 2024 22:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  31 MAR 2024 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1781,6 +1781,8 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 ] [41
 
+] [42
+
 ]
 \tf@nav=\write7
 \openout7 = `slides.nav'.
@@ -1799,10 +1801,10 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45527 strings out of 476025
- 1049725 string characters out of 5790017
+ 45531 strings out of 476025
+ 1049760 string characters out of 5790017
  1861388 words of memory out of 5000000
- 65095 multiletter control sequences out of 15000+600000
+ 65097 multiletter control sequences out of 15000+600000
  655793 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,2168b,1637s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1822,10 +1824,10 @@ fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type
 m/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/loc
 al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (41 pages, 326517 bytes).
+Output written on slides.pdf (42 pages, 327611 bytes).
 PDF statistics:
- 412 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 310 compressed objects within 4 object streams
+ 86 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

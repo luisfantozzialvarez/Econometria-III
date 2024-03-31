@@ -509,6 +509,7 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 			\item Não autocorrelação dos erros.
 			\item Estabilidade e invertibilidade das partes AR e MA.
 			\item Convergência numérica dos estimadores.
+			\item Normalidade dos erros.
 		\end{halfwideenumerate}
 	\end{halfwideitemize}
 \end{frame}
@@ -597,6 +598,22 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 		\end{halfwideitemize}
 		
 	\end{halfwideitemize}
+	
+
+\end{frame}
+	\begin{frame}{Normalidade dos erros}
+		\begin{itemize}
+			\item Recorde-se que, se os ruídos brancos forem Gaussianos, o estimador de máxima verossimilhança do ARMA(p,q) é eficiente.
+			\begin{itemize}
+				\item Ainda assim, mesmo que os ruídos brancos não sejam Gaussianos, o estimador é consistente.
+			\end{itemize}
+			\item Nesse sentido, é costumeiro testar a hipótese de normalidade dos erros de um modelo ARMA.
+			\item Isso é feito verificando a assimetria e curtose dos \textit{resíduos} do modelo, e quanto elas distam do esperado em uma distribuição normal.
+			\item Sob a nula de normalidade, a estatística de teste de Jarque-Bera possui distribuição $\chi^2$ com \textbf{dois} graus de liberdade.
+			\begin{itemize}
+				\item Valores grandes da estatística são evidência contra a nula.
+			\end{itemize}
+		\end{itemize}
 \end{frame}
 
 \end{document}
