@@ -203,11 +203,11 @@ natbib=true
 		\begin{halfwideitemize}
 			\item Como fazer a previsão em casos não estacionários?
 		\end{halfwideitemize}
-		\item Se as séries apresentarem uma tendência estocástica, trabalhamos com os dados em primeira diferença $\{\Delta y_t\}$. 
+		\item Se as séries apresentarem uma tendência estocástica, trabalhamos com os dados em primeira diferença $\{\Delta Y_t\}$. 
 		
-		\item Conduzidas as etapas da metodologia Box-Jenkins com os dados diferenciados, e encontradas projeções para $\Delta y_t$ fora da amostra, recompomos as projeções  em nível usando o fato de que $y_{t+1} = y_t + \Delta y_{t+1}$.
+		\item Conduzidas as etapas da metodologia Box-Jenkins com os dados diferenciados, e encontradas projeções para $\Delta Y_t$ fora da amostra, recompomos as projeções  em nível usando o fato de que $Y_{t+1} = Y_t + \Delta Y_{t+1}$.
 		\begin{halfwideitemize}
-			\item Isto é, se temos $T$ observações, projetamos $\widehat{y_{T+1}} = y_t + \widehat{{\Delta y_{T+1}}}$,  $y_{t+2} = y_t + \widehat{\Delta y_{t+1}} + \widehat{\Delta y_{t+2}}$, e assim por diante.
+			\item Isto é, se temos $T$ observações, projetamos $\widehat{Y_{T+1}} = Y_t + \widehat{{\Delta Y_{T+1}}}$,  $Y_{t+2} = Y_t + \widehat{\Delta Y_{t+1}} + \widehat{\Delta Y_{t+2}}$, e assim por diante.
 		\end{halfwideitemize}
 		\end{halfwideitemize}
 \end{frame}
@@ -215,10 +215,10 @@ natbib=true
 	\begin{halfwideitemize}
 				\item Em outras palavras, no caso de raiz unitária, a metodologia irá estimar um modelo {\color{blue}ARIMA(p,1,q)}, da forma:
 		\begin{equation*}
-			\Delta y_t =\alpha + \sum_{i=1}^p \beta_i \Delta y_{t-i} + \epsilon_t + \sum_{j=1}^q \theta_j \epsilon_{t-j}
+			\Delta Y_t =\alpha + \sum_{i=1}^p \beta_i \Delta Y_{t-i} + \epsilon_t + \sum_{j=1}^q \theta_j \epsilon_{t-j}
 		\end{equation*}
 		\item De modo geral, se a série é I(d), a modelagem considerará modelos {\color{blue}ARIMA(p,d,q)}:
-		$$\Phi(L)(1-L)^d y_t =  \alpha + \Psi(L)\epsilon_t \, ,$$
+		$$\Phi(L)(1-L)^d Y_t =  \alpha + \Psi(L)\epsilon_t \, ,$$
 		para polinômios $\Phi(L)$ e $\Psi(L)$ de grau $p$ e $q$, respectivamente.
 
 	\end{halfwideitemize}
@@ -228,13 +228,13 @@ natbib=true
 				\item Se séries apresentam tendência determinística, conduzimos a metodologia com dados \textit{detrended}. Calculadas as projeções \textit{detrended}, recompomos projeções em nível usando a tendência estimada.
 				
 				\item Por exemplo, se estimamos uma tendência linear:
-				$$y_t = \tilde{a} + \tilde{b}t + \tilde{\xi}_t$$
+				$$Y_t = \tilde{a} + \tilde{b}t + \tilde{\xi}_t$$
 				e ajustamos um modelo ARMA  para $\tilde{\xi}_t$, a projeção para fora da amostra é:
 				
-				$$\widehat{y_{T+h}} = \tilde{a} + \tilde{b}(T+h) + \widehat{\tilde{\xi}_{T+h}}\, ,$$
+				$$\widehat{Y_{T+h}} = \tilde{a} + \tilde{b}(T+h) + \widehat{\tilde{\xi}_{T+h}}\, ,$$
 				onde $\widehat{\tilde{\xi}_{T+h}}$ é a projeção do ARMA para $T+h$ (veremos como calculá-la na etapa de previsão).
 	\item Estimação de ARMA para dado \textit{detrended} é equivalente a estimar um modelo ARMA(p,q) com tendência determinística.
-$$\Phi(L) y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
+$$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 	\end{halfwideitemize}
 \end{frame}
 
@@ -242,8 +242,8 @@ $$\Phi(L) y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 	\begin{halfwideitemize}
 		\item A restrição a modelos ARMA(p,q) pode ser entendida a partir do {\color{blue}teorema de decomposição de Wold.}
 		\item Segundo esse teorema, \textbf{qualquer processo fracamente estacionário} pode ser representado pela soma de um MA($\infty$), acrescido de uma função determinística dos $y$ no passados:
-		$$y_t = \epsilon_t  +\sum_{l=0}^\infty \psi_l \epsilon_{t-l} + \kappa_t \, ,$$
-		onde $\kappa_t$ é função ``aproximadamente'' linear de $y_{t{\color{red}-1}}$, $y_{t-2}$\ldots 
+		$$Y_t = \epsilon_t  +\sum_{l=0}^\infty \psi_l \epsilon_{t-l} + \kappa_t \, ,$$
+		onde $\kappa_t$ é função ``aproximadamente'' linear de $Y_{t{\color{red}-1}}$, $Y_{t-2}$\ldots 
 			\item Ideia de Box-Jenkins é aproximar essa representação por um ARMA(p,q), com \textit{p} e \textit{q} {\color{blue}pequenos}.
 		\begin{halfwideitemize}
 			\item Ideia é que aproximação {\color{blue}parcimoniosa}, por ser menos ruidosa, tende a funcionar melhor que modelos muito complexos.
@@ -301,8 +301,8 @@ $$\Phi(L) y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 		\begin{halfwideitemize}
 			\item Estimamos a FAC calculando as autocorrelações nos dados.
 			
-			$$\hat{\gamma}_k = \frac{\sum_{t=1}^{T-k} (y_{t}-\bar{y})(y_{t+k}-\bar{y})}{\sum_{t=1}^{T}(y_t-\bar{y})^2} \, ,$$
-			onde $\bar{y} = T^{-1}\sum_{t=1}^T y_t$.
+			$$\hat{\gamma}_k = \frac{\sum_{t=1}^{T-k} (Y_{t}-\bar{y})(Y_{t+k}-\bar{y})}{\sum_{t=1}^{T}(Y_t-\bar{y})^2} \, ,$$
+			onde $\bar{y} = T^{-1}\sum_{t=1}^T Y_t$.
 			\item Estimamos a FACP ajustando o modelo \eqref{pred_model} aos dados.
 		\end{halfwideitemize}
 	
@@ -341,14 +341,14 @@ $$\Phi(L) y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 \begin{frame}{FAC e FACP de um AR(p) estacionário}
 	\begin{halfwideitemize}
 		\item Como vimos em aula anterior, a FAC de um AR(1) estacionário é dada por:
-		\begin{equation}
+		\begin{equation*}
 			\gamma_k = \text{cor}(Y_t, Y_{t-k}) = \beta_1^k, \quad |\beta_1| < 1
-		\end{equation}
+		\end{equation*}
 		isto é, a FAC apresenta decaimento geométrico em direção a zero.
 		\item De modo geral, a FAC de um AR(p) estacionário apresenta {\color{blue}decaimento em direção a zero}, visto que um AR(p) estacionário pode ser escrito como um MA($\infty$), i.e.
-		\begin{equation}
+		\begin{equation*}
 			Y_t = \mu + \epsilon_t + \sum_{j=1}^\infty  \omega_j \epsilon_{t- j}
-		\end{equation}
+		\end{equation*}
 		\item E a FACP de um AR(p) estacionário? Pela definição da FACP de ordem $k$ como o coeficiente de $Y_{t-k}$ na regressão populacional de $Y_t$ em $Y_{t-1}$, $Y_{t-2}$,\ldots $Y_{t-k}$, esperamos que a FACP seja {\color{blue} truncada em $p$}, visto que o processo só depende diretamente das $p$ primeiras defasagens.
 	\end{halfwideitemize}
 \end{frame}
@@ -420,15 +420,183 @@ $$\Phi(L) y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 \end{frame}
 
 \begin{frame}{Estimação condicional do AR(p)}
-	conteúdo...
+	\begin{itemize}
+		\item Podemos estimar os parâmetros de um AR(p) através de mínimos quadrados ordinários:
+	\end{itemize}
+		\begin{equation*}
+			(\hat\alpha,\hat{\beta}_1,\ldots, \hat\beta_p) \in \operatorname{argmin}_{a,b_1,\ldots b_p} \frac{1}{T-p}\sum_{t=p+1}^{T}(Y_{t}- a - b_1 Y_{t-1} \ldots - b_p Y_{t-p})^2
+		\end{equation*}
+				\begin{itemize}
+		\item Note que não tentamos prever as $p$ primeiras observações, para as quais não temos todas as defasagens.
+		\item Estimadores $	(\hat\alpha,\hat{\beta}_1,\ldots, \hat\beta_p) $ coincidem com o estimador de máxima verossimilhança que usa a distribuição de $(Y_{p+1},Y_{p+2}\ldots Y_{T})$ {\color{blue}condicional} a $(Y_1,Y_2,\ldots,Y_p)$, tomando o ruído branco como $\epsilon_{it}\overset{\text{iid}}{\sim} N(0,\sigma^2)$.
+		 \end{itemize}
+\end{frame}
+\begin{frame}{Estimação condicional do MA(1)}
+	\begin{halfwideitemize}
+		\item Para a estimação de um modelo MA(1) com base numa série $\{Y_{t}\}_{t=1}^T$, precisamos de um chute inicial para o ruído branco no período $t=0$.
+		\item Chamemos esse chute de $\tilde{\epsilon}_0$ (padrão é tomar  $\tilde{\epsilon}_0 = 0$).
+
+		\item Dado o chute inicial, e dado um valor candicato $c$ para o parâmetro $\theta_1$, e um valor candidato $a$ para o intercepto $\alpha$, podemos imputar o ruído branco em $t=1$:
+		$$ \tilde{\epsilon}_{1}(a,c) = Y_1 - a - c \tilde{\epsilon}_0 \, .$$
+		\item Procedendo recursivamente, obtemos, para todo $t\geq 2$.
+		$$ \tilde{\epsilon}_{t}(a,c) = Y_t - a - c \tilde{\epsilon}_{t-1}(a,c)$$
+		\item MA(1) pode ser estimado como:
+		\begin{equation*}
+			(\hat \alpha, \hat \theta_1) \in \operatorname{argmin}_{a, c}\frac{1}{T-1}\sum_{t=2}^{T}(Y_t -a - \tilde{\epsilon}_t(a,c) - c\tilde{\epsilon}_{t-1}(a,c))^2
+		\end{equation*}
+	\end{halfwideitemize}
 \end{frame}
 
+\begin{frame}{Estimação condicional do MA(1)}
+	\begin{halfwideitemize}
+\item Note que $(a,c)\mapsto a+ \tilde{\epsilon}_t(a,c) + c\tilde{\epsilon}_{t-1}(a,c)$ varia não linearmente com $(a,c)$.
+\begin{itemize}
+	\item Estimação se dá através de algoritmos para mínimos quadrados não lineares (não há  expressão fechada para o mínimo).
+\end{itemize}
+\item Observe também que a primeira observação não contribui à estimação.
+\begin{itemize}
+	\item De fato $(Y_{1} -a - \tilde{\epsilon}_{1}(a,c) - c\tilde{\epsilon}_{0}) = 0$ para qualquer escolha de $(a,c)$.
+\end{itemize}
+\item Se o MA(1) é {\color{blue}invertível}, então, com $T$ grande, efeito do chute inicial sobre a função objetivo desaparece.
+\begin{itemize}
+	\item Contribuição do chute inicial ao erro de previsão em $t$ é da ordem de $c^t$, que desaparece quando $|c| < 1$. 
+\end{itemize}
+	\end{halfwideitemize}
+\end{frame}
 
 \begin{frame}{Estimação condicional do ARMA(p,q)}
-	conteúdo...
+	\begin{itemize}
+		\item Estendendo a discussão anterior, a estimação condicional de um ARMA(p,q) é dada pela minimização de:
+\end{itemize}
+		\begin{equation*}
+			\small  \sum_{t= p+q}^{T}(Y_t - a - b_1 Y_{t-1}  \ldots - b_p Y_{t-p} - \tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c}) - c_1\tilde{\epsilon}_{t-1}(a,\boldsymbol{b},\boldsymbol{c}) \ldots -c_q \tilde{\epsilon}_{t-q}(a,\boldsymbol{b},\boldsymbol{c})  )^2
+\end{equation*}
+onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recursivamente, para cada valor candidato dos parâmetros $(a,\boldsymbol{b},\boldsymbol{c})$ e chutes iniciais dos errors.
+\begin{itemize}
+	\item Perdemos $p$ observações pois não observamos os valores de $Y$ anteriores a $t=1$, e mais $q$ observações na construção recursiva dos erros.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Estimação incondicional do ARMA(p,q)}
-	conteúdo...
+	\begin{itemize}
+		\item Na estimação condicional, perdemos a informação das $p+q$ primeiras informações.
+		\item Se fizermos uma hipótese distributiva sobre os ruídos brancos, somos capazes de caracterizar a distribuição das $p$+$q$ primeiras observações.
+		\begin{itemize}
+			\item Por exemplo, se $\epsilon_t \overset{\text{iid}}{\sim} N(0,\sigma^2)$ e $Y_t$ seguir um AR(1) estacionário, então $Y_1 \sim N(\alpha/(1-\alpha), \sigma^2/(1-\rho^2))$.
+		\end{itemize}
+		\item A estimação {\color{blue}incondicional} de um ARMA(p,q) se dá pela máxima verossimilhança que usa a distribuição conjunta de $\{Y_1,\ldots, Y_T\}$, sob a hipótese auxiliar de que  $\epsilon_t \overset{\text{iid}}{\sim} N(0,\sigma^2)$.
+		\begin{itemize}
+			\item Método padrão na função \texttt{arima} do \texttt{R}.
+		\end{itemize}
+		\item Se ruído branco de fato é Gaussiano, estimador é {\color{blue}eficiente}: dentre todos os estimadores de um ARMA(p,q) Gaussiano, estimador é o de menor variância.
+		\item Mesmo que o ruído branco não seja Gaussiano, estimador ainda é {\color{blue}consistente} para os parâmetros de um ARMA(p,q).
+ 	\end{itemize}
 \end{frame}
+
+\begin{transitionframe}
+	\begin{center}
+		{\Huge   Diagnóstico}
+	\end{center}
+\end{transitionframe}
+
+
+\begin{frame}{Diagnóstico}
+	\begin{halfwideitemize}
+		\item Estimados os modelos candidatos, procedemos à etapa de diagnóstico. A ideia é avaliar os modelos conforme algumas métricas:
+		\begin{halfwideenumerate}
+			\item Critérios de informação.
+			\item Parcimônia. 
+			\item Não autocorrelação dos erros.
+			\item Estabilidade e invertibilidade das partes AR e MA.
+			\item Convergência numérica dos estimadores.
+		\end{halfwideenumerate}
+	\end{halfwideitemize}
+\end{frame}
+
+\begin{frame}{Critérios de informação}
+	\begin{halfwideitemize}
+		\item A princípio, gostaríamos de uma métrica que indicasse quanto da variabilidade do processo é explicada pelo modelo.
+		\begin{halfwideitemize}
+			\item Quantidade não observada; precisa ser estimada.
+		\end{halfwideitemize}
+		\item Intuitivamente, um estimador dessa quantidade poderia ser dado pela soma dos quadrados dos resíduos (SSR) do modelo estimado.
+		\item O problema dessa métrica é que modelos mais complexos \textbf{necessariamente} apresentam SSR menor.
+		\begin{halfwideitemize}
+			\item Maior flexibilidade leva a melhor ajuste dentro da amostra.
+			\item Isso não significa que o modelo necessariamente explique bem a variação verdadeira do processo (em particular, \textbf{fora da amostra}).
+		\end{halfwideitemize}
+		\item Se fôssemos escolher o modelo pelo menor SSR, sempre escolheríamos o modelo mais complexo, incorrendo num problema conhecido como sobreajuste (\textit{overfitting}).
+		\begin{halfwideitemize}
+			\item Modelo funcionará, em geral, muito mal fora da amostra, pois estimadores dos parâmetros apresentam alta variância.
+		\end{halfwideitemize}
+	\end{halfwideitemize}
+\end{frame}
+\begin{frame}{Critérios de informação (cont.)}
+	\begin{halfwideitemize}
+		\item A ideia de {\color{blue}um critério de informação} é {\color{blue}penalizar} a SSR pelo número de parâmetros estimados. 
+		\begin{itemize}
+			\item A penalização pode ser vista como uma forma de corrigir o viés do SSR em estimar a capacidade preditiva de um modelo.
+		\end{itemize}
+		\item Os critérios de informação mais utilizados são o AIC e o BIC. Para um ARMA(p,q) com intercepto, eles são dados por:
+		\begin{equation*}
+			\begin{aligned}
+				AIC = T\text{ln}(SSR) + 2 (p+q+1) \\
+				BIC = T \text{ln}(SSR) + ln(T) (p+q+1)
+			\end{aligned}
+		\end{equation*}
+		\item Quanto menor o critério de informação, melhor.
+		%\item Quando $T$ é grande, ambos os critérios são aproximadamente equivalentes.
+		\item Para $T > 7$, BIC escolhe modelos com menos parâmetros.
+		\item Se a estimação do modelo é condicional, importante ajustar amostra para que mesmo número de observações sejam usadas no cálculo dos critérios em todos os modelos comparados (isso já vale, por construção, na estimação incondicional).
+	\end{halfwideitemize}
+\end{frame}
+
+\begin{frame}{Parcimônia}
+	\begin{halfwideitemize}
+		\item Os critérios de informação induzem {\color{blue}parcimônia} no modelo escolhido, ajudando a evitar o problema de sobreajuste.
+		\item Ainda sob essa lógica, é costumeiro verificar quais coeficientes são estatisticamente significantes na especificação: se houver muitos coeficientes insignificantes, talvez valha trabalhar com um modelo mais simples. 
+	\end{halfwideitemize}
+\end{frame}
+
+\begin{frame}{Não autocorrelação dos erros}
+	\begin{itemize}
+		\item Os modelos ARMA discutidos supõem que os erros são ruído branco.
+		\begin{itemize}
+			\item Dessa forma, esperaríamos que os \emph{resíduos} de nosso modelo fossem aproximadamente não autocorrelacionados.
+			\item Se houver correlação nos resíduos, ainda há informação nos dados que a parte sistemática do modelo não está capturando.
+		\end{itemize}
+		\item Teste da hipótese nula de que as autocorrelações dos erros de ordens $1$ até $s$ são zero, contra a alternativa de que ao menos uma é diferente de zero, podem ser conduzidos usando a estatística de {\color{blue}Ljung-Box}:
+		\begin{equation*}
+			Q = T (T+2) \sum_{j=1}^s \hat{\gamma}_j^2/(T-j) \, ,
+		\end{equation*}
+		onde $\hat{\gamma}_j$ é autocorrelação de ordem $j$ estimada com base nos resíduos.
+		
+		\item Sob a nula, distribuição de $Q$ é aproximadamente uma $\chi^2$ com $s-(p+q)$ graus de liberdade.
+		\item Quanto maior $Q$, maior a evidência contra a nula. Assim, região crítica do teste é da forma $Q > c$ onde $c$ é o quantil apropriado da distribuição $\chi^2$.
+	\end{itemize}
+\end{frame}
+\begin{frame}{Estabilidade e invertibilidade}
+	\begin{halfwideitemize}
+		\item Recorde-se que a análise de identificação dos modelos ARMA(p,q) pressupõe que os processos sejam estacionários e invertíveis. Assim, é costumeiro verificar se os coeficientes estimados de fato nos levam a processos estacionários e invertíveis.
+		\begin{halfwideitemize}
+			\item Se isso não ocorrer, devemos suspeitar de nossas estimativas.
+		\end{halfwideitemize}
+		\item Podemos checar a estacionariedade e invertibilidade do  ARMA(p,q) resolvendo, respectivamente, as equações de grau $p$ e $q$ dos polinômios estimados, e avaliando se as raízes se encontram todas fora do cícrulo
+		
+	\end{halfwideitemize}
+\end{frame}
+\begin{frame}{Convergência numérica}
+	\begin{halfwideitemize}
+		\item Os estimadores mais usados de modelos ARMA são não lineares e não possuem solução fechada.
+		\begin{halfwideitemize}
+			\item Por esse motivo, pacotes estatísticos usam algoritmos de otimização para estimar o modelo.  
+		\end{halfwideitemize}
+		\item É importante checar se os algoritmos de otimização de fato convergiram para um mínimo.
+		\begin{halfwideitemize}
+			\item Se esse não é o caso, devemos descartar as estimativas.
+		\end{halfwideitemize}
+		
+	\end{halfwideitemize}
+\end{frame}
+
 \end{document}
