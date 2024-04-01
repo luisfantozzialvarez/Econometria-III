@@ -312,7 +312,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 \begin{frame}{Inferência sobre FAC e FACP populacionais}
 	\begin{halfwideitemize}
 				\item Como observamos apenas algumas realizações do processo, gostaríamos de testar hipóteses sobre a FAC e FACP populacionais.
-		\item Sob algumas condições mais estringentes, o intervalo $[-2/\sqrt{T}, 2/\sqrt{T}]$ é uma região de aceitação aproximadamente válida para o teste da nula $\gamma_k=0$ ($\theta_k =0$ na FACP)  contra a alternativa bilateral ao nível de significância de 5\%.
+		\item Sob algumas condições mais estringentes, o intervalo $[-2/\sqrt{T}, 2/\sqrt{T}]$ é uma região de aceitação aproximadamente válida para o teste da nula $\gamma_k=0$ ($\theta_k =0$ na FACP)  contra a alternativa bilateral ao nível de significância de 5\%, com base na estatística $\hat \gamma_k$ ($\hat \theta_k$).
 		\begin{halfwideitemize}
 			\item São esses intervalos que são apresentados, no R, quando computamos a FAC e FACP.
 			\item Para autocorrelações (parciais) estimadas que excedem esses limites, rejeitamos a hipótese nula de não autocorrelação (parcial) a essa ordem.
@@ -331,7 +331,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 	\begin{itemize}
 	 	\item Para testar a nula conjunta de que $\gamma_{1} = \gamma_{2}=\ldots = \gamma_{s} = 0$, onde $s$ é pequeno relativamente a $T$, podemos usar a {\color{blue}estatística de Ljung-Box}:
 		
-		$$\hat{Q}= T(T+2)\sum_{r=1}^s \frac{\hat{\gamma}_r^2}{T-k}\, .$$
+		$$\hat{Q}= T(T+2)\sum_{r=1}^s \frac{\hat{\gamma}_r^2}{T-r}\, .$$
 		\item Com $T$ grande, sob a nula, $\hat{Q}$ segue uma qui-quadrado com $s$ graus de liberdade. Valores altos da estatística são evidência contra a nula, i.e. evidência de que ao menos uma autocorrelação entre as testadas é diferente de zero.
 	\end{itemize}
 \end{frame}
