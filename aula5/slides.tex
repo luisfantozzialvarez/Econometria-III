@@ -207,7 +207,7 @@ natbib=true
 		
 		\item Conduzidas as etapas da metodologia Box-Jenkins com os dados diferenciados, e encontradas projeções para $\Delta Y_t$ fora da amostra, recompomos as projeções  em nível usando o fato de que $Y_{t+1} = Y_t + \Delta Y_{t+1}$.
 		\begin{halfwideitemize}
-			\item Isto é, se temos $T$ observações, projetamos $\widehat{Y_{T+1}} = Y_t + \widehat{{\Delta Y_{T+1}}}$,  $Y_{t+2} = Y_t + \widehat{\Delta Y_{t+1}} + \widehat{\Delta Y_{t+2}}$, e assim por diante.
+			\item Isto é, se temos $T$ observações, projetamos $\widehat{Y_{T+1}} = Y_T + \widehat{{\Delta Y_{T+1}}}$,  $Y_{T+2} = Y_T + \widehat{\Delta Y_{T+1}} + \widehat{\Delta Y_{T+2}}$, e assim por diante.
 		\end{halfwideitemize}
 		\end{halfwideitemize}
 \end{frame}
@@ -241,7 +241,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 \begin{frame}{``Filosofia'' da metodologia de Box-Jenkins}
 	\begin{halfwideitemize}
 		\item A restrição a modelos ARMA(p,q) pode ser entendida a partir do {\color{blue}teorema de decomposição de Wold.}
-		\item Segundo esse teorema, \textbf{qualquer processo fracamente estacionário} pode ser representado pela soma de um MA($\infty$), acrescido de uma função determinística dos $y$ no passados:
+		\item Segundo esse teorema, \textbf{qualquer processo fracamente estacionário} pode ser representado pela soma de um MA($\infty$), acrescido de uma função determinística dos $Y$ no passados:
 		$$Y_t = \epsilon_t  +\sum_{l=0}^\infty \psi_l \epsilon_{t-l} + \kappa_t \, ,$$
 		onde $\kappa_t$ é função ``aproximadamente'' linear de $Y_{t{\color{red}-1}}$, $Y_{t-2}$\ldots 
 			\item Ideia de Box-Jenkins é aproximar essa representação por um ARMA(p,q), com \textit{p} e \textit{q} {\color{blue}pequenos}.
