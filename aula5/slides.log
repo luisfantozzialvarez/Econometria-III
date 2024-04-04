@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  1 APR 2024 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  4 APR 2024 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1759,6 +1759,35 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 ] [42
 
+] [43
+
+]
+Overfull \vbox (4.36465pt too high) detected at line 643
+ []
+
+[44
+
+] [45
+
+] [46
+
+] [47
+
+]
+<graficos/divida_forecast_plot.pdf, id=338, 366.36874pt x 274.02374pt>
+File: graficos/divida_forecast_plot.pdf Graphic file (type pdf)
+<use graficos/divida_forecast_plot.pdf>
+Package pdftex.def Info: graficos/divida_forecast_plot.pdf  used on input line 
+695.
+(pdftex.def)             Requested size: 329.72882pt x 246.61908pt.
+
+Overfull \vbox (10.14609pt too high) detected at line 695
+ []
+
+[48
+
+ <./graficos/divida_forecast_plot.pdf>] [49
+
 ]
 \tf@nav=\write7
 \openout7 = `slides.nav'.
@@ -1781,10 +1810,10 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45316 strings out of 475735
- 1034948 string characters out of 5784786
- 1870246 words of memory out of 5000000
- 65199 multiletter control sequences out of 15000+600000
+ 45351 strings out of 475735
+ 1035500 string characters out of 5784786
+ 1871246 words of memory out of 5000000
+ 65220 multiletter control sequences out of 15000+600000
  656893 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,123p,2168b,1645s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1796,15 +1825,15 @@ re/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lms
-y10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-
-Output written on slides.pdf (42 pages, 327505 bytes).
+mf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+sso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on slides.pdf (49 pages, 358689 bytes).
 PDF statistics:
- 418 PDF objects out of 1000 (max. 8388607)
- 310 compressed objects within 4 object streams
- 86 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 350 compressed objects within 4 object streams
+ 100 named destinations out of 1000 (max. 500000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

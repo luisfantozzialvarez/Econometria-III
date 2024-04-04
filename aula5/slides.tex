@@ -616,4 +616,85 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 		\end{itemize}
 \end{frame}
 
+
+\begin{transitionframe}
+	\begin{center}
+		{\Huge   Previsão}
+	\end{center}
+\end{transitionframe}
+
+\begin{frame}{Previsão um passo à frente}
+	\begin{itemize}
+		\item Estimado um ARMA(p,q) com base num conjunto de dados $\{Y_t\}_{t=1}^T$, como podemos calcular uma previsão para $Y_{T+1}$?
+		\item Recorde-se que, se o processo é descrito por um ARMA(p,q), então:
+		
+		$$Y_{T+1} = \alpha + \sum_{j=1}^{p} \beta_j Y_{T+1-j} + \epsilon_{T+1} + \sum_{j=1}^q \theta_j \epsilon_{T+1-j} \, ,  $$
+		
+		\item Estimação de um ARMA nos dá estimativas para os parâmetros, além de estimativas dos ruídos brancos na janela de estimação, isto é, $\hat \epsilon_{j}$, $j \leq T$.
+		\item Único componente ``desconhecido'' é $\epsilon_{T+1}$.
+		\begin{itemize}
+				\item Mas, como se trata de um ruído branco, um processo sem memória, o melhor a se fazer é $\hat \epsilon_{T+1} = \mathbb{E}[\epsilon_{T+1}] = 0$.
+		\end{itemize}
+		\item Assim, {\color{blue}a previsão um passo à frente}, com base num ARMA(p,q), é dada por:
+		
+		$$\hat Y_{t+1} = \hat \alpha + \sum_{j=1}^p \hat{\beta}_j Y_{T+1-j} + \sum_{j=1}^q \hat \theta_j \hat \epsilon_{T+1-j}$$
+	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Previsão dois passos à frente}
+	\begin{itemize}
+		\item Também podemos estar interessados em prever o que ocorrerá dois passos adiante, i.e. $Y_{T+2}$.
+		\item Neste caso, temos que:
+		
+		$$Y_{T+2} = \alpha + \sum_{j-1}^T \beta_{j} 	Y_{T+2-j} + \epsilon_{T+2} + \sum_{j=1}^q \theta_j \epsilon_{T+2-j}\, .$$
+		
+		\item Com base na informação até $T$, ``desconhecemos'' $\epsilon_{T+1}$, $\epsilon_{T+2}$ e $Y_{T+1}$.
+		\begin{itemize}
+			\item Vamos fazer $\hat \epsilon_{T+2} = \hat \epsilon_{T+1} = 0$.
+			\item Vamos usar nossa previsão de $\hat{Y}_{T+1}$ para imputar $Y_{T+1}$.
+		\end{itemize}
+			\item Assim, {\color{blue}a previsão dois passo à frente}, com base num ARMA(p,q), é dada por:
+		
+		$$\hat Y_{t+1} = \hat \alpha + \hat \beta_1 \hat Y_{T+1} + \sum_{j={\color{red}2}}^p \hat{\beta}_j Y_{T+1-j} + \sum_{j={\color{red}2}}^q \hat \theta_j \hat\epsilon_{T+1-j}$$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Previsão $h$ passos à frente}
+	\begin{itemize}
+		\item Procedendo recursivamente, podemos definir, para qualquer $h \in \mathbb{N}$, a projeção $h$ passos à frente, $\hat Y_{t+h}$, em que usamos $\hat \epsilon_{T+j} = 0$ para $j > 0$ e as predições $\hat Y_{T+j}$, $h-1 \geq j \geq 1$, na imputação dos termos desconhecidos.
+		\item Observe que para $h > \operatorname{max}(p,q)$, a projeção não usa nenhuma informação nova, somente projeções de horizontes anteriores.
+		\item De fato, quando $h \to \infty$, as projeções de um ARMA(p,q) estacionário convergem para a média incondicional estimada do processo, i.e.:
+		
+		$$\lim_{h \to \infty} \hat Y_{T+h} = \frac{\hat \alpha}{1-\hat \beta_1  - \hat \beta_2 - \ldots - \hat \beta_p}$$
+		
+		\item Equivalentemente, as projeções de um ARIMA(p,1,q) convergem para projeções em que a variação é constante:
+		
+		$$\lim_{h \to \infty} \Delta \hat Y_{T+h} = \frac{\hat \alpha}{1-\hat \beta_1  - \hat \beta_2 - \ldots - \hat \beta_p}$$
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Intervalo de predição}
+	\begin{itemize}
+		\item Um intervalo de predição para $Y_{T+h}$ com confiança $\gamma$ é um par de funções dos dados, $(L,U)$, com a propriedade:
+		
+		$$\mathbb{P}[L \leq Y_{T+h} \leq U] \geq \gamma\, .$$
+		\item Intervalo de predição contém a realização de $Y_{T+h}$ em ao menos $100 \gamma\%$ dos casos, sobre todas as realizações possíveis da incerteza econômica.
+		\item É possível construir um intervalo de predição, com base nas predições de um ARMA(p,q) Gaussiano.
+		\begin{halfwideitemize}
+			\item Intervalo de predição leva em conta incerteza Gaussiana acerca dos ruídos brancos, $\epsilon_{T+j}$, $j > 0$.
+		\end{halfwideitemize}
+		\item À medida que $h$ cresce, comprimento do intervalo de confiança cresce, visto que incerteza torna-se cada vez maior.
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Projeções: endividamento público}\centering
+\includegraphics[scale=0.9]{graficos/divida_forecast_plot.pdf}
+\end{frame}
+
+\begin{frame}{Usando projeções para comparar modelos}
+
+\end{frame}
 \end{document}
