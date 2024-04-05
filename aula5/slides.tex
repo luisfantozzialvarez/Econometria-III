@@ -442,21 +442,18 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 		$$ \tilde{\epsilon}_{t}(a,c) = Y_t - a - c \tilde{\epsilon}_{t-1}(a,c)$$
 		\item MA(1) pode ser estimado como:
 		\begin{equation*}
-			(\hat \alpha, \hat \theta_1) \in \operatorname{argmin}_{a, c}\frac{1}{T-1}\sum_{t=2}^{T}(Y_t -a - \tilde{\epsilon}_t(a,c) - c\tilde{\epsilon}_{t-1}(a,c))^2
+			(\hat \alpha, \hat \theta_1) \in \operatorname{argmin}_{a, c}\frac{1}{T}\sum_{t=1}^{T}(Y_t -a  - c\tilde{\epsilon}_{t-1}(a,c))^2
 		\end{equation*}
 	\end{halfwideitemize}
 \end{frame}
 
 \begin{frame}{Estimação condicional do MA(1)}
 	\begin{halfwideitemize}
-\item Note que $(a,c)\mapsto a+ \tilde{\epsilon}_t(a,c) + c\tilde{\epsilon}_{t-1}(a,c)$ varia não linearmente com $(a,c)$.
+\item Note que $(a,c)\mapsto a + c\tilde{\epsilon}_{t-1}(a,c)$ varia não linearmente com $(a,c)$.
 \begin{itemize}
 	\item Estimação se dá através de algoritmos para mínimos quadrados não lineares (não há  expressão fechada para o mínimo).
 \end{itemize}
-\item Observe também que a primeira observação não contribui à estimação.
-\begin{itemize}
-	\item De fato $(Y_{1} -a - \tilde{\epsilon}_{1}(a,c) - c\tilde{\epsilon}_{0}) = 0$ para qualquer escolha de $(a,c)$.
-\end{itemize}
+\item Observe também que a primeira observação não contribui à estimação de $c$.
 \item Se o MA(1) é {\color{blue}invertível}, então, com $T$ grande, efeito do chute inicial sobre a função objetivo desaparece.
 \begin{itemize}
 	\item Contribuição do chute inicial ao erro de previsão em $t$ é da ordem de $c^t$, que desaparece quando $|c| < 1$. 
@@ -469,7 +466,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 		\item Estendendo a discussão anterior, a estimação condicional de um ARMA(p,q) é dada pela minimização de:
 \end{itemize}
 		\begin{equation*}
-			\small  \sum_{t= p+q}^{T}(Y_t - a - b_1 Y_{t-1}  \ldots - b_p Y_{t-p} - \tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c}) - c_1\tilde{\epsilon}_{t-1}(a,\boldsymbol{b},\boldsymbol{c}) \ldots -c_q \tilde{\epsilon}_{t-q}(a,\boldsymbol{b},\boldsymbol{c})  )^2
+			\small  \sum_{t= p+q+1}^{T}(Y_t -  b_1 Y_{t-1}  \ldots - b_p Y_{t-p} - \tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c}) - c_1\tilde{\epsilon}_{t-1}(a,\boldsymbol{b},\boldsymbol{c}) \ldots -c_q \tilde{\epsilon}_{t-q}(a,\boldsymbol{b},\boldsymbol{c})  )^2
 \end{equation*}
 onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recursivamente, para cada valor candidato dos parâmetros $(a,\boldsymbol{b},\boldsymbol{c})$ e chutes iniciais dos errors.
 \begin{itemize}

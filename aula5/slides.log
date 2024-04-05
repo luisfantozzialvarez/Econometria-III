@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  5 APR 2024 07:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  5 APR 2024 09:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1652,90 +1652,79 @@ Package pdftex.def Info: graficos/arma23_facp.pdf  used on input line 383.
 
 ]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 478.
+LaTeX Font Warning: Command \small invalid in math mode on input line 475.
 
 LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <7> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 475.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <7> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 475.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <5> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 475.
 LaTeX Font Info:    Font shape `T1/lmss/b/it' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/b/it' in size <7> not available
-(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <7> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/b/it' in size <5> not available
-(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <5> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <8> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <6> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 475.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <8> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 475.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 475.
 LaTeX Font Info:    Font shape `T1/lmss/b/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/b/it' in size <8> not available
-(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <8> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/b/it' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 478.
+(Font)              Font shape `T1/lmss/bx/it' tried instead on input line 475.
 
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <6> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 478.
-
-
-Overfull \hbox (3.38023pt too wide) detected at line 478
-[]\OT1/lmss/m/n/10 (\T1/lmss/m/sl/10 Y[] \OMS/lmsy/m/n/10 ^^@ \T1/lmss/m/sl/10 
-a \OMS/lmsy/m/n/10 ^^@ \T1/lmss/m/sl/10 b[]Y[] [] \OMS/lmsy/m/n/10 ^^@ \T1/lmss
-/m/sl/10 b[]Y[] \OMS/lmsy/m/n/10 ^^@ []\OT1/lmss/m/n/10 (\T1/lmss/m/sl/10 a\OML
-/lmm/m/it/10 ; []; []\OT1/lmss/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \T1/lmss/m/sl/10 c
-[][]\OT1/lmss/m/n/10 (\T1/lmss/m/sl/10 a\OML/lmm/m/it/10 ; []; []\OT1/lmss/m/n/
-10 ) [] \OMS/lmsy/m/n/10 ^^@ \T1/lmss/m/sl/10 c[][]\OT1/lmss/m/n/10 (\T1/lmss/m
-/sl/10 a\OML/lmm/m/it/10 ; []; []\OT1/lmss/m/n/10 ))[]
- []
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 475.
 
 [32
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-94.
+91.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [33
@@ -1762,7 +1751,7 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ] [43
 
 ]
-Overfull \vbox (4.36465pt too high) detected at line 643
+Overfull \vbox (4.36465pt too high) detected at line 640
  []
 
 [44
@@ -1778,16 +1767,16 @@ Overfull \vbox (4.36465pt too high) detected at line 643
 File: graficos/divida_forecast_plot.pdf Graphic file (type pdf)
 <use graficos/divida_forecast_plot.pdf>
 Package pdftex.def Info: graficos/divida_forecast_plot.pdf  used on input line 
-695.
+692.
 (pdftex.def)             Requested size: 329.72882pt x 246.61908pt.
 
-Overfull \vbox (10.14609pt too high) detected at line 695
+Overfull \vbox (10.14609pt too high) detected at line 692
  []
 
 [48
 
  <./graficos/divida_forecast_plot.pdf>]
-Overfull \vbox (3.75551pt too high) detected at line 711
+Overfull \vbox (3.75551pt too high) detected at line 708
  []
 
 [49
@@ -1818,7 +1807,7 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 Here is how much of TeX's memory you used:
  45355 strings out of 475735
  1035537 string characters out of 5784786
- 1871245 words of memory out of 5000000
+ 1871246 words of memory out of 5000000
  65222 multiletter control sequences out of 15000+600000
  656893 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1836,7 +1825,7 @@ sso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (50 pages, 362697 bytes).
+Output written on slides.pdf (50 pages, 362514 bytes).
 PDF statistics:
  474 PDF objects out of 1000 (max. 8388607)
  354 compressed objects within 4 object streams
