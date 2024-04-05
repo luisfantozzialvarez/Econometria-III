@@ -695,6 +695,27 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 \end{frame}
 
 \begin{frame}{Usando projeções para comparar modelos}
+\begin{itemize}
+	\item Se temos uma série longa, podemos realizar um procedimento para validar e comparar os modelos, sem incorrer em problemas de sobreajuste.
+	\item Ideia é repartir a amostra em dois subconjuntos de períodos, $\mathcal{E} = \{1,2,T_0\}$ e $\mathcal{V} = \{T_0+1,T_0+2,\ldots, T\}$.
+	\item No conjunto $\mathcal{E}$, realizamos todas as etapas para identificar, estimar e diagnosticar modelos.
+	\item Definidos um conjunto $ \mathcal{M}$ de modelos estimados com os dados em $ \mathcal{E}$, podemos calcular, para cada horizonte $h \in \mathbb{N}$, previsões $h$ passos à frente, para os períodos em $\mathcal{V}$.
+	\begin{itemize}
+ 	\item Isto é, para cada modelo $m \in \mathcal{M}$ estimado com os dados de $\mathcal{E}$, e $t \in \mathcal{V}$, definimos como $\hat{Y}_{t+h|h}(m)$ a previsão que se faz com o modelo estimado $m$, para o período $t+h$, \textbf{com as informações até t}.
+	\end{itemize}
 
+	\item Nesse caso, podemos definir o erro quadrático médio da previsão fora da amostra, no horizonte $h$, como:
+	$$\text{MSE}(m;h) =  \frac{1}{T-T_0-(h-1)}\sum_{t=T_0+h}^{T} (Y_t - \hat{Y}_{t+h|h}(m))$$
+	
+\end{itemize}
+\end{frame}
+\begin{frame}{Corrida de cavalos}
+	\begin{itemize}
+		\item A medida 	$\text{MSE}(m;h)$ é livre da influência de sobreajuste, visto que o modelo foi estimado sem recorrer aos dados em $\mathcal{V}$.
+		\item Podemos comparar os modelos em termos de qual tem o menor $\text{MSE}(m;h)$.
+		\begin{itemize}
+			\item A esse procedimento damos o nome de corrida de cavalos (\textit{horseracing}).
+		\end{itemize}
+	\end{itemize}
 \end{frame}
 \end{document}

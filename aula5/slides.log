@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  4 APR 2024 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  5 APR 2024 07:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1786,7 +1786,13 @@ Overfull \vbox (10.14609pt too high) detected at line 695
 
 [48
 
- <./graficos/divida_forecast_plot.pdf>] [49
+ <./graficos/divida_forecast_plot.pdf>]
+Overfull \vbox (3.75551pt too high) detected at line 711
+ []
+
+[49
+
+] [50
 
 ]
 \tf@nav=\write7
@@ -1810,10 +1816,10 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45351 strings out of 475735
- 1035500 string characters out of 5784786
- 1871246 words of memory out of 5000000
- 65220 multiletter control sequences out of 15000+600000
+ 45355 strings out of 475735
+ 1035537 string characters out of 5784786
+ 1871245 words of memory out of 5000000
+ 65222 multiletter control sequences out of 15000+600000
  656893 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,123p,2168b,1645s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1830,10 +1836,10 @@ sso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (49 pages, 358689 bytes).
+Output written on slides.pdf (50 pages, 362697 bytes).
 PDF statistics:
- 469 PDF objects out of 1000 (max. 8388607)
- 350 compressed objects within 4 object streams
- 100 named destinations out of 1000 (max. 500000)
+ 474 PDF objects out of 1000 (max. 8388607)
+ 354 compressed objects within 4 object streams
+ 102 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
