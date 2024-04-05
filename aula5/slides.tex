@@ -453,7 +453,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 \begin{itemize}
 	\item Estimação se dá através de algoritmos para mínimos quadrados não lineares (não há  expressão fechada para o mínimo).
 \end{itemize}
-\item Observe também que a primeira observação não contribui à estimação de $c$.
+\item Observe também que a primeira observação não contribui à estimação de $c$, visto que $(Y_t - a - c\tilde{\epsilon}_0)^2 = (Y_t - a)^2$.
 \item Se o MA(1) é {\color{blue}invertível}, então, com $T$ grande, efeito do chute inicial sobre a função objetivo desaparece.
 \begin{itemize}
 	\item Contribuição do chute inicial ao erro de previsão em $t$ é da ordem de $c^t$, que desaparece quando $|c| < 1$. 
@@ -466,17 +466,17 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 		\item Estendendo a discussão anterior, a estimação condicional de um ARMA(p,q) é dada pela minimização de:
 \end{itemize}
 		\begin{equation*}
-			\small  \sum_{t= p+q+1}^{T}(Y_t -  b_1 Y_{t-1}  \ldots - b_p Y_{t-p} - \tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c}) - c_1\tilde{\epsilon}_{t-1}(a,\boldsymbol{b},\boldsymbol{c}) \ldots -c_q \tilde{\epsilon}_{t-q}(a,\boldsymbol{b},\boldsymbol{c})  )^2
+			\small  \sum_{t= p}^{T}(Y_t -  b_1 Y_{t-1}  \ldots - b_p Y_{t-p} -  c_1\tilde{\epsilon}_{t-1}(a,\boldsymbol{b},\boldsymbol{c}) \ldots -c_q \tilde{\epsilon}_{t-q}(a,\boldsymbol{b},\boldsymbol{c})  )^2
 \end{equation*}
-onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recursivamente, para cada valor candidato dos parâmetros $(a,\boldsymbol{b},\boldsymbol{c})$ e chutes iniciais dos errors.
+onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recursivamente, para cada valor candidato dos parâmetros $(a,\boldsymbol{b},\boldsymbol{c})$ e chutes iniciais dos erros $\tilde{\epsilon}_{p-q+1} = \tilde{\epsilon}_{p-q+2} = \ldots = \tilde{\epsilon}_{p} =0$ .
 \begin{itemize}
-	\item Perdemos $p$ observações pois não observamos os valores de $Y$ anteriores a $t=1$, e mais $q$ observações na construção recursiva dos erros.
+	\item Perdemos $p$ observações pois não observamos os valores de $Y$ anteriores a $t=1$. Além disso, para as observações de $p+1$ a $p+q+1$, não temos informação completa para inferir todos os $\theta_j$.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Estimação incondicional do ARMA(p,q)}
 	\begin{itemize}
-		\item Na estimação condicional, perdemos a informação das $p+q$ primeiras informações.
+		\item Na estimação condicional, perdemos informação nas $p+q$ primeiras observações.
 		\item Se fizermos uma hipótese distributiva sobre os ruídos brancos, somos capazes de caracterizar a distribuição das $p$+$q$ primeiras observações.
 		\begin{itemize}
 			\item Por exemplo, se $\epsilon_t \overset{\text{iid}}{\sim} N(0,\sigma^2)$ e $Y_t$ seguir um AR(1) estacionário, então $Y_1 \sim N(\alpha/(1-\alpha), \sigma^2/(1-\rho^2))$.
