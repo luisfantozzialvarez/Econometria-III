@@ -24,7 +24,7 @@ natbib=true
 \date{}
 \begin{document}
 \maketitle
-\section*{Estimação do MA(1)}
+\section*{Estimação condicional do MA(1)}
 
 Considere, de início o MA(1) sem intercepto:
 
@@ -55,13 +55,27 @@ onde $\tilde{\epsilon}_0(c) = \tilde{\epsilon}_0$, e, recursivamente:
 
 Note que o estimador factível efetivo $\hat \theta_1$ na prática não usa a primeira observação, visto que $(Y_1-c \tilde{\epsilon}_0(c))^2 = (Y_1)^2$.
 
-No Apêndice A, nós mostramos que o chute inicial $\tilde{\epsilon}_0$ torna-se irrelevante, quando $T$ é grande, na região de invertibilidade do MA(1), $|c|<1$.
+No Apêndice \ref{app_mostrar}, nós mostramos que o chute inicial $\tilde{\epsilon}_0$ torna-se irrelevante, quando $T$ é grande, na região de invertibilidade do MA(1), $|c|<1$.
 
 \paragraph{Obeservação:} note que a função objetivo $\frac{1}{T}\sum_{t=1}^T (Y_t - \tilde \epsilon_{t}(c) - c \tilde \epsilon_{t-1}(c))^2$ é trivialmente igual a zero, para qualquer valor de $c$. Logo, ela não pode ser usada na minimização. Devemos remover o ruído branco contemporâneo na estimação.
 
-\section{Estimação condicional do ARMA(p,q)}
+\section*{Estimação condicional do ARMA(p,q)}
+
+A estimação do ARMA(p,q) procede analogamente. Minimizamos:
+
+$$\operatorname{min}_{a, b_1, \ldots, b_p, c_1,\ldots, c_q} \sum_{t=p+1}^T (Y_t- a - b_1 y_{t-1}\ldots -b_py_{t-p}  - c_1 \tilde{\epsilon}_{t-1}(a;\boldsymbol{b};\boldsymbol{c})- \ldots -c_q \tilde{\epsilon}_{t-q}(a;\boldsymbol{b};\boldsymbol{c}))^2\,,$$ 
+onde $\tilde{\epsilon}_{p-q+1} = \tilde{\epsilon}_{p-q+2}=\ldots = \tilde{\epsilon}_{p} = 0$ e, recursivamente, para $t > p$:
+
+$$\tilde{\epsilon}_{t}(a;\boldsymbol{b};\boldsymbol{c}) = y_t- a - b_1 y_{t-1}\ldots -b_py_{t-p}  - c_1 \tilde{\epsilon}_{t-1}(a;\boldsymbol{b};\boldsymbol{c})- \ldots -c_q \tilde{\epsilon}_{t-q}(a;\boldsymbol{b};\boldsymbol{c}) \, .$$
+
+Note que perdemos as $p$ primeiras observações, visto que não observamos os $Y_t$ anteriores a $t=1$. Além disso, na observação $t= p+1$, não há informação referente aos coeficientes $c_1,\ldots, c_q$, visto que os $\tilde \epsilon$ correspondentes são todos zero. Similarmente, em $t=p+2$, não há informação para os coeficientes $c_{2},\ldots, c_q$. Somente em $t=p+q+1$ há informação para todos os coeficientes. Assim, perdemos informação nas $p+q$ primeiras observações. Em virtude desse fato, algumas implementações da estimação condicional consideram somente os períodos em que há informação para todos os coeficientes, isto é: 
+
+$$\operatorname{min}_{a, b_1, \ldots, b_p, c_1,\ldots, c_q} \sum_{t=p+q+1}^T (Y_t- a - b_1 y_{t-1}\ldots -b_py_{t-p}  - c_1 \tilde{\epsilon}_{t-1}(a;\boldsymbol{b};\boldsymbol{c})- \ldots -c_q \tilde{\epsilon}_{t-q}(a;\boldsymbol{b};\boldsymbol{c}))^2\,,$$ 
+
+Com $T$ grande, ambas as abordagens (de $p+1$ a $T$ e de $p+q+1$ a $T$) produzem resultados similares.
 \appendix 
 \section{Mostrando que chute inicial é irrelevante para $T$ grande, na região em que $|c|<1$}
+\label{app_mostrar}
 Vamos mostrar agora que, para a região de parâmetros em que o MA é invertível, $|c|<1$, o chute inicial faz pouca diferença, com $T$ grande. De fato, observe que, para todo $t$:
 
 $$\tilde{\epsilon}_t(c) = \check{\epsilon}_t(c) -c^t(\tilde{\epsilon}_0 - \epsilon_0)\, .$$

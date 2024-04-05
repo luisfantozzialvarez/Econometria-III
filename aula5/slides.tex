@@ -466,7 +466,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 		\item Estendendo a discussão anterior, a estimação condicional de um ARMA(p,q) é dada pela minimização de:
 \end{itemize}
 		\begin{equation*}
-			\small  \sum_{t= p}^{T}(Y_t -a -  b_1 Y_{t-1}  \ldots - b_p Y_{t-p} -  c_1\tilde{\epsilon}_{t-1}(a,\boldsymbol{b},\boldsymbol{c}) \ldots -c_q \tilde{\epsilon}_{t-q}(a,\boldsymbol{b},\boldsymbol{c})  )^2
+			\small  \sum_{t= p+1}^{T}(Y_t -a -  b_1 Y_{t-1}  \ldots - b_p Y_{t-p} -  c_1\tilde{\epsilon}_{t-1}(a,\boldsymbol{b},\boldsymbol{c}) \ldots -c_q \tilde{\epsilon}_{t-q}(a,\boldsymbol{b},\boldsymbol{c})  )^2
 \end{equation*}
 onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recursivamente, para cada valor candidato dos parâmetros $(a,\boldsymbol{b},\boldsymbol{c})$ e chutes iniciais dos erros $\tilde{\epsilon}_{p-q+1} = \tilde{\epsilon}_{p-q+2} = \ldots = \tilde{\epsilon}_{p} =0$ .
 \begin{itemize}
