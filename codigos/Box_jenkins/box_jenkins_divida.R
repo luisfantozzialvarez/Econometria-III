@@ -1,7 +1,7 @@
 #Decompondo séries de tempo
 
 #Fixando pasta com arquivos
-setwd("~/Documentos/GitHub/Econometria-III/codigos/")
+setwd("~/Documents/GitHub/Econometria-III/codigos/")
 
 #Carregando pacotes necessários. Instale-os se não os possuir
 library(forecast) #Pacote forecast para métodos de previsão
@@ -54,11 +54,30 @@ forecast(modelo)
 plot(forecast(modelo))
 
 # ARMA(5,2)
-modelo = Arima(divida, order =c(5,1,2), include.constant = F, include.drift = F)
-summary(modelo)
+modelo2 = Arima(divida, order =c(5,1,2), include.constant = F, include.drift = F)
+summary(modelo2)
 
-checkresiduals(modelo)
+checkresiduals(modelo2)
 
-forecast(modelo)
-plot(forecast(modelo))
+forecast(modelo2)
+plot(forecast(modelo2))
+
+#Resultados parecidos: vamos ficar com o modelo mais parcimonioso
+
+#Vamos usar o modelo para calcular a decomposição de beveridge Nelson
+#Vamos fazer a decomposição a partir de Jan/2003
+lp =c()
+for(year in 2003:2023)
+  for(month in 1:12)
+  {
+    valor = forecast(Arima(window(divida,end=c(year,month)), model = modelo), h=1000)
+    lp = c(lp,valor$mean[1000])
+  }
+
+lp = ts(lp, start = c(2003,1),frequency=12)
+
+cycle_bn = divida - lp
+
+plot(cycle_bn)
+
 
