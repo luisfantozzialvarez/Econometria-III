@@ -93,7 +93,7 @@ natbib=true
 	
 	\item Mostre que o estimador $\hat{\theta}^{\text{MLE}}_1$ que maximiza a log-verossimilhança condicional:
 	
-	$$(\hat\sigma^{\text{MLE}}, \hat\theta_1^{\text{MLE}}) \in \operatorname{argmin}_{s> 0, c \in \mathbb{R}} \log\left(\prod_{t=1}^T\frac{1}{s}\phi\left(\frac{y_t - c\left(\sum_{j=1}^{t-1}(-c)^{t-1 - j}Y_{j}  +  (-c)^{t-1}\tilde{\epsilon}_0\right)}{s}\right)\right)$$
+	$$(\hat\sigma^{\text{MLE}}, \hat\theta_1^{\text{MLE}}) \in \operatorname{argmax}_{s> 0, c \in \mathbb{R}} \log\left(\prod_{t=1}^T\frac{1}{s}\phi\left(\frac{y_t - c\left(\sum_{j=1}^{t-1}(-c)^{t-1 - j}Y_{j}  +  (-c)^{t-1}\tilde{\epsilon}_0\right)}{s}\right)\right)$$
 	\end{itemize}
 	
 	É \textbf{idêntico} ao estimador condicional de mínimos quadrados não lineares visto em aula.
