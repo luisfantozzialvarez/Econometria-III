@@ -470,7 +470,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 \end{equation*}
 onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recursivamente, para cada valor candidato dos parâmetros $(a,\boldsymbol{b},\boldsymbol{c})$ e chutes iniciais dos erros $\tilde{\epsilon}_{p-q+1} = \tilde{\epsilon}_{p-q+2} = \ldots = \tilde{\epsilon}_{p} =0$ .
 \begin{itemize}
-	\item Perdemos $p$ observações pois não observamos os valores de $Y$ anteriores a $t=1$. Além disso, para as observações de $p+1$ a $p+q+1$, não temos informação completa para inferir todos os $\theta_j$.
+	\item Perdemos $p$ observações pois não observamos os valores de $Y$ anteriores a $t=1$. Além disso, para as observações de $p+1$ a $p+q$, não temos informação completa para inferir todos os $\theta_j$.
 \end{itemize}
 \end{frame}
 
@@ -691,28 +691,186 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 \includegraphics[scale=0.9]{graficos/divida_forecast_plot.pdf}
 \end{frame}
 
+
+\begin{transitionframe}
+	\begin{center}
+		{\Huge   Comparação de modelos}
+	\end{center}
+\end{transitionframe}
+
 \begin{frame}{Usando projeções para comparar modelos}
 \begin{itemize}
-	\item Se temos uma série longa, podemos realizar um procedimento para validar e comparar os modelos, sem incorrer em problemas de sobreajuste.
-	\item Ideia é repartir a amostra em dois subconjuntos de períodos, $\mathcal{E} = \{1,2,T_0\}$ e $\mathcal{V} = \{T_0+1,T_0+2,\ldots, T\}$.
+	\item Se temos uma série longa, podemos realizar um procedimento para validar e comparar modelos, sem incorrer em sobreajuste.
+	\item Ideia é repartir a amostra em dois subconjuntos de períodos, $\mathcal{E} = \{1,2,\ldots,T_0\}$ e $\mathcal{V} = \{T_0+1,T_0+2,\ldots, T\}$.
 	\item No conjunto $\mathcal{E}$, realizamos todas as etapas para identificar, estimar e diagnosticar modelos.
 	\item Definidos um conjunto $ \mathcal{M}$ de modelos estimados com os dados em $ \mathcal{E}$, podemos calcular, para cada horizonte $h \in \mathbb{N}$, previsões $h$ passos à frente, para os períodos em $\mathcal{V}$.
 	\begin{itemize}
- 	\item Isto é, para cada modelo $m \in \mathcal{M}$ estimado com os dados de $\mathcal{E}$, e $t \in \mathcal{V}$, definimos como $\hat{Y}_{t+h|h}(m)$ a previsão que se faz com o modelo estimado $m$, para o período $t+h$, \textbf{com as informações até t}.
+ 	\item Isto é, para cada modelo $m \in \mathcal{M}$ estimado com os dados de $\mathcal{E}$, e $t+h \in \mathcal{V}$, definimos como $\hat{Y}_{t+h|t}(m)$ a previsão que se faz com o modelo estimado $m$, para o período $t+h$, \textbf{com as informações até t}.
 	\end{itemize}
 
 	\item Nesse caso, podemos definir o erro quadrático médio da previsão fora da amostra, no horizonte $h$, como:
-	$$\text{MSE}(m;h) =  \frac{1}{T-T_0-(h-1)}\sum_{t=T_0+h}^{T} (Y_t - \hat{Y}_{t+h|h}(m))$$
+	$$\text{MSE}(m;h) =  \frac{1}{T-T_0-(h-1)}\sum_{t=T_0}^{T-h} (Y_t - \hat{Y}_{t+h|t}(m))^2$$
 	
 \end{itemize}
 \end{frame}
 \begin{frame}{Corrida de cavalos}
 	\begin{itemize}
 		\item A medida 	$\text{MSE}(m;h)$ é livre da influência de sobreajuste, visto que o modelo foi estimado sem recorrer aos dados em $\mathcal{V}$.
-		\item Podemos comparar os modelos em termos de qual tem o menor $\text{MSE}(m;h)$.
+		\item Podemos comparar os modelos em termos de qual tem o menor $\text{MSE}(m;h)$, para cada horizonte $h \in \mathbb{N}$.
 		\begin{itemize}
 			\item A esse procedimento damos o nome de corrida de cavalos (\textit{horseracing}).
+			\item O resultado dessa comparação é a escolha de um modelo ``ótimo'', para cada horizonte.
 		\end{itemize}
 	\end{itemize}
 \end{frame}
+
+\begin{frame}{Teste de Diebold-Mariano}
+	\begin{itemize}
+		\item A comparação $\text{MSE}(m;h)$ para diferentes modelos está sujeita a contigências do período de validação $\mathcal{V}$.
+		\begin{itemize}
+			\item Modelo pode ser bom para a janela $\mathcal{V}$, mas ideia é que modelo seja bom em prever o futuro.
+		\end{itemize}
+		\item Sob estacionariedade do erro de previsão, Diebold e Mariano introduziram um teste da hipótese nula:
+		$$H_0: \mathbb{E}[(Y_t - \hat{Y}_{t+h|t}(m))^2] = \mathbb{E}[(Y_t - \hat{Y}_{t+h|t}(m'))^2] \, ,$$
+		para modelos $m,m' \in \mathcal{M}$, e horizonte $h \in \mathbb{N}$.
+		\item Teste é implementado através da estatística $t$:
+		$$\hat t = \frac{\frac{1}{T-T_0-(h-1)}\sum_{t=T_0}^{T-h} [(Y_t - \hat{Y}_{t+h|t}(m))^2 -(Y_t - \hat{Y}_{t+h|t}(m'))^2 ]}{\hat \sigma}\,,$$
+		onde $\hat \sigma$ é um erro padrão HAC.
+		\begin{itemize}
+			\item Implementação computacional: construir série $\hat{e}_t = (Y_t - \hat{Y}_{t+h|t}(m))^2 -(Y_t - \hat{Y}_{t+h|t}(m'))^2$, $t = T_0\ldots T-h$. Rodar regressão de $\hat{e}_t$ num intercepto, e conduzir o teste $t$ no intercepto usando \texttt{vcovHAC}.
+		\end{itemize}  
+	\end{itemize}
+\end{frame}
+\begin{frame}{Teste de Diebold-Mariano (cont.)}
+	\begin{itemize}
+		\item Validade dos erros padrão HAC requer janela de validação grande.
+		\begin{itemize}
+			\item Por outro lado, hipótese estacionariedade do erro de previsão requer  $T_0$ também grande, e bem maior que janela de validação \citep{Diebold2015}.
+		\end{itemize}
+		\item Metodologia de Diebold-Mariano pode ser estendida para analisar os determinantes da qualidade preditiva em uma classe de modelos.
+		\item Ideia é considerar modelos lineares:
+		
+		$$(Y_t - \hat{Y}_{t+h|t}(m))^2 = \gamma'h(m) + u_{m,t}, \quad m \in \mathcal{M}, t = T_0,\ldots T-h$$
+		onde $h(m) = (h_1(m), h_2(m),\ldots, h_J(m))$ são $J$ características do modelo $m$ (e.g. indicador da presença de um componente MA).
+		\item Usando erros padrão HAC em painel, é possível testar quais características de um modelo ensejam melhor qualidade preditiva.
+		\begin{itemize}
+			\item Teste $t$ da nula $\gamma_j = 0$ contra alternativa $\gamma_j < 0$, onde $\gamma_j$ é o coeficiente associado $h_j(m)$.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{transitionframe}
+	\begin{center}
+		{\Huge   Modelagem Sazonal}
+	\end{center}
+\end{transitionframe}
+\begin{frame}{Sazonalidade e previsão}
+	\begin{itemize}
+		\item Até aqui, não discorremos sobre o efeito da sazonalidade de uma série nas previsões.
+		\item Nesse caso, há duas estratégias a se seguir.
+		\begin{enumerate}
+			\item Se o objetivo é prever a série livre de seu componente sazonal, podemos realizar a metodologia de Box-Jenkins na série dessazonalizada.
+			\item Por outro lado, se o objetivo é prever a série original, devemos incorporar a sazonalidade na análise.
+		\end{enumerate}
+			\item A maneira mais simples de incorporar a sazonalidade em nossa análise seria incluindo \textit{dummies de período} entre os componentes determinísticos do processo.
+			\begin{itemize}
+				\item Argumento \texttt{Xreg} na função \texttt{arima} do R.
+			\end{itemize}
+			\item No entanto, essa abordagem supõe sazonalidade {\color{blue}não estocástica}: efeito das variações sazonais é sempre o mesmo.
+			\item Box e Jenkins desenvolveram uma metodologia para previsão com {\color{blue}sazonalidade estocástica}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{$\text{ARIMA}(P,D,Q)_h$}
+\begin{itemize}
+	\item Uma série de tempo com sazonalidade de frequência $h$ segue um $\text{ARIMA}(P,D,Q)_h$ se pode ser descrita como:
+\end{itemize}
+
+	$$(1-\gamma_1 L^h - \gamma_2 L^{2h} \ldots - \gamma_{P} L^{Ph})(1-L^h)^DY_t = (1-\pi_1 L^h - \pi_2 L^{2h} \ldots - \pi_{Q} L^{Qh})\epsilon_t \,, $$
+	onde $\epsilon_t$ é ruído branco.
+	
+	\begin{itemize}
+	\item ARIMA sazonal é modelo em que defasagens ocorrem a cada $h$ períodos.
+	\item Identificação da ordem  $P$ e $Q$ é feita observando-se a FAC e FACP nas ordens $h$, $2h$, $3h$ \ldots.
+	\item Modelo permite também a presença de \textbf{raízes unitárias sazonais}.
+	\begin{itemize}
+		\item Diremos que uma série de tempo tem uma raiz unitária sazonal se sua FAC nas ordens $h$, $2h$, $3h$\ldots \textbf{decai muito lentamente/não decai}.
+		\item Nesse caso, identificação de $P$ e $Q$ deve ser feita observando-se a FAC e FACP do processo em primeira diferença sazonal, $\Delta_h Y_t = Y_t - Y_{t-h}$.
+	\end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{FAC e FACP de um $AR(1)_{12}$}
+	
+	\begin{figure}
+		\includegraphics[scale=0.55]{graficos/fac_sar1.pdf} 		\includegraphics[scale=0.55]{graficos/facp_sar1.pdf}
+	\end{figure}
+\end{frame}
+
+
+
+\begin{frame}{FAC e FACP de um $MA(1)_{12}$}
+	
+	\begin{figure}
+		\includegraphics[scale=0.55]{graficos/fac_sma1.pdf} 		\includegraphics[scale=0.55]{graficos/facp_sma1.pdf}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}{FAC de processo com raiz unitária sazonal ($h=12$)}
+	
+	\begin{figure}
+		\includegraphics[scale=0.8]{graficos/fac_srw.pdf} 	
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Identificação da ordem (P,D,Q) no $\text{ARIMA}(P,D,Q)_h$}
+\begin{itemize}
+	\item Série apresenta raiz unitária sazonal ($D=1$), se FAC decai muito lentamente/não decai nas ordens $h$, $2h$, \ldots.
+	
+	\item Na série livre de raiz unitária sazonal, ($Y_t$ se $D=0$ ou $\Delta_h Y_t$ se $D=1$):
+\end{itemize}
+	\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{c|c|c}
+	Modelo& FAC em $h$, $2h$, $3h$ \ldots  & FACP em $h$, $2h$, $3h$ \ldots   \\
+	\hline
+	$\text{AR}(P)_h$ estacionário& decai  & truncada em $P$  \\
+	\hline
+	$\text{MA}(Q)_h$ invertível& truncada em $Q$ & decai   \\
+	\hline
+	$\text{ARMA}(P,Q)_h$ estacionário  & decai  & decai  \\
+	e invertível& (esp. após $Q$) & (esp. após $P$)
+\end{tabular}
+\end{center}
+\end{table}
+\end{frame}
+\begin{frame}{Modelos SARIMA}
+	\begin{itemize}
+		\item Dizemos que uma série de tempo segue um processo ARIMA$(p,d,q)\times (P,D,Q)_h$, se:
+		$$ \Phi_P(L^h) \Phi_p(L) (1-L^h)^{D}(1-L)^{d}Y_t = \Theta_Q(L^h) \Theta_q(L) \epsilon_t\, ,$$
+		para polinômios de graus  $p$ ($\Phi_p$), $q$ ($\Theta_q$), $P$ ($\Phi_P$), $Q$($\Theta_Q$), e ruído branco $\epsilon_t$.
+		\item Classe de modelos combina os ARIMA tradicionais com a modelagem sazonal (donde vem o nome SARIMA).
+		\item Identificação das partes não sazonal e sazonal é feita separadamente, conforme vimos em cada modelo correspondente.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Desemprego: modelagem sazonal}
+\begin{figure}
+	\includegraphics[scale=0.4]{graficos/sarima.pdf}
+\end{figure}
+		
+\end{frame}
+
+
+\appendix
+\begin{frame}{Referências}
+	\printbibliography
+\end{frame}
 \end{document}
+
+\begin{transitionframe}
+	\begin{center}
+		{\Huge   Análise de intervenção}
+	\end{center}
+\end{transitionframe}

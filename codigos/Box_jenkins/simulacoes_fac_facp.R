@@ -28,3 +28,16 @@ sma1  <- arima.sim(list("ma"=c(rep(0,11),0.5)), n = 10000)
 
 acf(sma1) #Truncada em 12
 pacf(sma1) #Decaimento a cada 12 períodos
+
+
+#Processo I(1) sazonal (a cada doze meses)
+srw = rnorm(12000)
+for(j in 1:12)
+{
+  srw[seq(j,12000, by=12)] = cumsum(srw[seq(j,12000, by=12)])
+}
+
+acf(srw, lag.max=80)
+
+acf(diff(srw,lag=12), lag.max=80)
+

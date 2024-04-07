@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  5 APR 2024 18:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  7 APR 2024 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1597,12 +1597,12 @@ Overfull \vbox (9.19612pt too high) detected at line 239
 ] [17
 
 ]
-<graficos/acf_unemp.pdf, id=120, 433.62pt x 433.62pt>
+<graficos/acf_unemp.pdf, id=128, 433.62pt x 433.62pt>
 File: graficos/acf_unemp.pdf Graphic file (type pdf)
 <use graficos/acf_unemp.pdf>
 Package pdftex.def Info: graficos/acf_unemp.pdf  used on input line 328.
 (pdftex.def)             Requested size: 169.11111pt x 169.11111pt.
-<graficos/pacf_unemp.pdf, id=121, 433.62pt x 433.62pt>
+<graficos/pacf_unemp.pdf, id=129, 433.62pt x 433.62pt>
 File: graficos/pacf_unemp.pdf Graphic file (type pdf)
 <use graficos/pacf_unemp.pdf>
 Package pdftex.def Info: graficos/pacf_unemp.pdf  used on input line 328.
@@ -1618,12 +1618,12 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
 ] [20
 
 ]
-<graficos/ar2_fac.pdf, id=151, 505.89pt x 505.89pt>
+<graficos/ar2_fac.pdf, id=159, 505.89pt x 505.89pt>
 File: graficos/ar2_fac.pdf Graphic file (type pdf)
 <use graficos/ar2_fac.pdf>
 Package pdftex.def Info: graficos/ar2_fac.pdf  used on input line 359.
 (pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
-<graficos/ar2_facp.pdf, id=152, 505.89pt x 505.89pt>
+<graficos/ar2_facp.pdf, id=160, 505.89pt x 505.89pt>
 File: graficos/ar2_facp.pdf Graphic file (type pdf)
 <use graficos/ar2_facp.pdf>
 Package pdftex.def Info: graficos/ar2_facp.pdf  used on input line 359.
@@ -1633,12 +1633,12 @@ Package pdftex.def Info: graficos/ar2_facp.pdf  used on input line 359.
  <./graficos/ar2_fac.pdf> <./graficos/ar2_facp.pdf>] [22
 
 ]
-<graficos/ma3_fac.pdf, id=176, 505.89pt x 505.89pt>
+<graficos/ma3_fac.pdf, id=184, 505.89pt x 505.89pt>
 File: graficos/ma3_fac.pdf Graphic file (type pdf)
 <use graficos/ma3_fac.pdf>
 Package pdftex.def Info: graficos/ma3_fac.pdf  used on input line 370.
 (pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
-<graficos/ma3_facp.pdf, id=177, 505.89pt x 505.89pt>
+<graficos/ma3_facp.pdf, id=185, 505.89pt x 505.89pt>
 File: graficos/ma3_facp.pdf Graphic file (type pdf)
 <use graficos/ma3_facp.pdf>
 Package pdftex.def Info: graficos/ma3_facp.pdf  used on input line 370.
@@ -1648,12 +1648,12 @@ Package pdftex.def Info: graficos/ma3_facp.pdf  used on input line 370.
  <./graficos/ma3_fac.pdf> <./graficos/ma3_facp.pdf>] [24
 
 ]
-<graficos/arma23_fac.pdf, id=200, 505.89pt x 505.89pt>
+<graficos/arma23_fac.pdf, id=208, 505.89pt x 505.89pt>
 File: graficos/arma23_fac.pdf Graphic file (type pdf)
 <use graficos/arma23_fac.pdf>
 Package pdftex.def Info: graficos/arma23_fac.pdf  used on input line 383.
 (pdftex.def)             Requested size: 166.9442pt x 166.9442pt.
-<graficos/arma23_facp.pdf, id=201, 505.89pt x 505.89pt>
+<graficos/arma23_facp.pdf, id=209, 505.89pt x 505.89pt>
 File: graficos/arma23_facp.pdf Graphic file (type pdf)
 <use graficos/arma23_facp.pdf>
 Package pdftex.def Info: graficos/arma23_facp.pdf  used on input line 383.
@@ -1787,7 +1787,7 @@ Overfull \vbox (4.04866pt too high) detected at line 640
 ] [47
 
 ]
-<graficos/divida_forecast_plot.pdf, id=338, 366.36874pt x 274.02374pt>
+<graficos/divida_forecast_plot.pdf, id=346, 366.36874pt x 274.02374pt>
 File: graficos/divida_forecast_plot.pdf Graphic file (type pdf)
 <use graficos/divida_forecast_plot.pdf>
 Package pdftex.def Info: graficos/divida_forecast_plot.pdf  used on input line 
@@ -1799,15 +1799,86 @@ Overfull \vbox (9.8301pt too high) detected at line 692
 
 [48
 
- <./graficos/divida_forecast_plot.pdf>]
-Overfull \vbox (3.43951pt too high) detected at line 708
- []
-
-[49
+ <./graficos/divida_forecast_plot.pdf>] [49
 
 ] [50
 
+] [51
+
+] [52
+
+] [53
+
+] [54
+
 ]
+[55
+
+] [56
+
+]
+<graficos/fac_sar1.pdf, id=403, 289.08pt x 289.08pt>
+File: graficos/fac_sar1.pdf Graphic file (type pdf)
+<use graficos/fac_sar1.pdf>
+Package pdftex.def Info: graficos/fac_sar1.pdf  used on input line 808.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+<graficos/facp_sar1.pdf, id=404, 289.08pt x 289.08pt>
+File: graficos/facp_sar1.pdf Graphic file (type pdf)
+<use graficos/facp_sar1.pdf>
+Package pdftex.def Info: graficos/facp_sar1.pdf  used on input line 808.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+ [57
+
+ <./graficos/fac_sar1.pdf> <./graficos/facp_sar1.pdf>]
+<graficos/fac_sma1.pdf, id=423, 289.08pt x 289.08pt>
+File: graficos/fac_sma1.pdf Graphic file (type pdf)
+<use graficos/fac_sma1.pdf>
+Package pdftex.def Info: graficos/fac_sma1.pdf  used on input line 817.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+<graficos/facp_sma1.pdf, id=424, 289.08pt x 289.08pt>
+File: graficos/facp_sma1.pdf Graphic file (type pdf)
+<use graficos/facp_sma1.pdf>
+Package pdftex.def Info: graficos/facp_sma1.pdf  used on input line 817.
+(pdftex.def)             Requested size: 158.99448pt x 158.99448pt.
+ [58
+
+ <./graficos/fac_sma1.pdf> <./graficos/facp_sma1.pdf>]
+<graficos/fac_srw.pdf, id=443, 289.08pt x 289.08pt>
+File: graficos/fac_srw.pdf Graphic file (type pdf)
+<use graficos/fac_srw.pdf>
+Package pdftex.def Info: graficos/fac_srw.pdf  used on input line 825.
+(pdftex.def)             Requested size: 231.2643pt x 231.2643pt.
+
+Overfull \vbox (20.47531pt too high) detected at line 825
+ []
+
+[59
+
+ <./graficos/fac_srw.pdf>]
+Overfull \hbox (24.56744pt too wide) in paragraph at lines 847--847
+ [] 
+ []
+
+[60
+
+] [61
+
+]
+<graficos/sarima.pdf, id=466, 867.24pt x 433.62pt>
+File: graficos/sarima.pdf Graphic file (type pdf)
+<use graficos/sarima.pdf>
+Package pdftex.def Info: graficos/sarima.pdf  used on input line 863.
+(pdftex.def)             Requested size: 346.88986pt x 173.44492pt.
+
+Overfull \hbox (4.45454pt too wide) in paragraph at lines 863--863
+ [] 
+ []
+
+[62
+
+ <./graficos/sarima.pdf>] [63
+
+ </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
 \openout7 = `slides.nav'.
 
@@ -1819,40 +1890,41 @@ Overfull \vbox (3.43951pt too high) detected at line 708
 
  (./slides.aux)
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 93AAE74C7C9D177DFE421A3AFA5CD24D;193.
 Package logreq Info: Writing requests to 'slides.run.xml'.
 \openout1 = `slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45570 strings out of 476025
- 1050323 string characters out of 5790017
+ 45880 strings out of 476025
+ 1056523 string characters out of 5790017
  1862388 words of memory out of 5000000
- 65119 multiletter control sequences out of 15000+600000
- 655793 words of font info for 124 fonts, out of 8000000 for 9000
+ 65394 multiletter control sequences out of 15000+600000
+ 656112 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,11n,122p,2168b,1637s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,12n,122p,719b,1701s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texli
 ve/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/te
-xmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fo
-nts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/p
-ublic/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
-mss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss17.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local
-/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></usr/local/texlive
-/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/te
-xmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/
-fonts/type1/public/lm/lmsso12.pfb></usr/local/texlive/2023/texmf-dist/fonts/typ
-e1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/
-lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.p
-fb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (50 pages, 362738 bytes).
+xmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2023/texmf-dist/f
+onts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/
+public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/l
+mss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb>
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2
+023/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/f
+onts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type
+1/public/lm/lmsso12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/
+lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.
+pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on slides.pdf (63 pages, 430793 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 354 compressed objects within 4 object streams
- 102 named destinations out of 1000 (max. 500000)
- 88 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 619 PDF objects out of 1000 (max. 8388607)
+ 467 compressed objects within 5 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
