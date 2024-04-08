@@ -22,12 +22,12 @@ arima.est.parallel <- function(data_raw, pmax, qmax, d, pseas_max= 0, qseas_max 
   mmd = expand.grid(0:pmax, d, 0:qmax, 0:pseas_max,Dseas, 0:qseas_max)
   
   cluster = makeCluster(cores)
-  msd = parApply(cl = cluster, X = mmd, MARGIN = 1, FUN = bx.line,  data_raw = data_raw, include.constant= include.constant,
-           include.trend = include.trend, signif = signif, lags.lbox = lags.lbox)
+   msd = parApply(cl = cluster, X = mmd, MARGIN = 1, FUN = bx.line,  data_raw = data_raw, include.constant= include.constant,
+            include.trend = include.trend, signif = signif, lags.lbox = lags.lbox)
   
-  msd = apply(mmd, MARGIN = 1, FUN = bx.line, data_raw = data_raw, include.constant= include.constant,
-           include.trend = include.trend, signif = signif, lags.lbox = lags.lbox)
-  
+  #msd = apply(mmd, MARGIN = 1, FUN = bx.line, data_raw = data_raw, include.constant= include.constant,
+  #        include.trend = include.trend, signif = signif, lags.lbox = lags.lbox)
+
   tabla = do.call(rbind, msd)
   
   keeper = c(pmax>0, qmax>0, pseas_max>0, qseas_max>0, rep(T, ncol(tabla)-4))
@@ -46,10 +46,11 @@ bx.line <- function(order, data_raw, include.constant, include.trend, signif, la
   library(tseries)
   raw = as.numeric(order[1:3])
   seas = as.numeric(order[4:6])
+  #print(seas)
   
   modelo = tryCatch({Arima(data_raw,order =raw, seasonal = seas, include.constant = include.constant,
                            include.drift = include.trend) }, error  = function(e){
-    warning(e)
+    #warning(e)
     return(NULL)
   })
   
