@@ -644,7 +644,7 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 		\item Também podemos estar interessados em prever o que ocorrerá dois passos adiante, i.e. $Y_{T+2}$.
 		\item Neste caso, temos que:
 		
-		$$Y_{T+2} = \alpha + \sum_{j-1}^T \beta_{j} 	Y_{T+2-j} + \epsilon_{T+2} + \sum_{j=1}^q \theta_j \epsilon_{T+2-j}\, .$$
+		$$Y_{T+2} = \alpha + \sum_{j=1}^T \beta_{j} 	Y_{T+2-j} + \epsilon_{T+2} + \sum_{j=1}^q \theta_j \epsilon_{T+2-j}\, .$$
 		
 		\item Com base na informação até $T$, ``desconhecemos'' $\epsilon_{T+1}$, $\epsilon_{T+2}$ e $Y_{T+1}$.
 		\begin{itemize}
@@ -861,16 +861,82 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 \end{figure}
 		
 \end{frame}
+\begin{transitionframe}
+	\begin{center}
+		{\Huge   Análise de intervenção}
+	\end{center}
+\end{transitionframe}
 
+\begin{frame}{Análise de intervenção}
+	\begin{itemize}
+		\item Há, na Estatística, uma série de extensões à modelagem ARIMA para realizar o que se convencionou chamar ``análise de intervenção''.
+		\begin{itemize}
+			\item Ideia é utilizar os modelos que vimos para se avaliar os \emph{efeitos} dinâmicos de uma política.
+		\end{itemize}
+		\item No entanto, essas abordagens não incorporam a linguagem da inferência causal, seja através da definição de efeitos contrafactuais (modelos estruturais econométricos); seja através do modelo de resultados potenciais de Rubin (cuja origem se dá na Estatística).
+		\begin{itemize}
+			\item Isso dificulta a interpretação das hipóteses de identificação necessárias ao uso dos métodos.
+		\end{itemize} 
+		\item Vamos estudar uma metodologia recente de inferência causal, usando os modelos ARIMA, em que as hipóteses são explicitadas em termos de resultados potenciais \citep{Menchetti2022}.
+		\begin{itemize}
+			\item Complemento útil para a análise dos efeitos agregados de políticas, quando não há unidades de controle não expostas disponíveis, ou a teoria econômica não nos fornece informação adicional acerca dos determinantes fundamentais do processo (veremos isso mais à frente).
+		\end{itemize}
+	\end{itemize}
+\end{frame}
 
+\begin{frame}{Ambiente}
+	\begin{itemize}
+		\item Considere um processo estocástico $\{Y_t\}_{t \in \mathcal{T}}$ de interesse.
+		\item Suponha que há uma política de interesse, que é implementada a partir de um período $T^*$.
+		\begin{itemize}
+			\item Tratamos $T^*$ como variável aleatória, na medida em que $T^*$ é incerto sobre realizações repetidas da incerteza econômica ($T^* = \infty$ se a política não é adotada em uma realização possível).
+		\end{itemize}
+		\item Definimos \textbf{resultados potenciais}, $Y_t(1)$ e $Y_t(0)$, que expressam o que ocorre com o processo, sob a presença ou não da política.
+		\item Efeito causal da política em $t$ é dado por $\alpha_t = Y_t(1) - Y_t(0)$.
+		\item \textbf{Problema fundamental da inferência causal}: nunca observamos $Y_t(0)$ e $Y_t(1)$ simultaneamente, visto que:
+		
+		
+		$$Y_t = \begin{cases}
+			Y_t(0) & \text{se } t < T^* \\
+			Y_t(1) & \text{se } t \geq T^*
+		\end{cases}$$
+		
+		\end{itemize}
+\end{frame}
+
+\begin{frame}{Identificação de efeitos causais na abordagem C-Arima}
+\begin{itemize}
+	\item Para utilizar a abordagem ARIMA em inferência causal, requereremos duas hipóteses.
+	\begin{block}{\textbf{Hipótese 1:} Modelo ARIMA para $Y_{t}(0)$}
+		O resultado potencial não tratado segue um modelo (S)ARIMA, onde $\{\epsilon_t\}$ são as inovações (ruídos brancos).
+	\end{block}
+		\begin{block}{\textbf{Hipótese 2: sobre a regra de decisão do tratamento}}
+		$\epsilon_{t}$ é independente de $T^*$, para todo $t\geq T^*$.
+	\end{block}
+	\item Hipótese 2 essencialmente requer que decisão do tratamento dependa somente dos $Y_t(0)$ anteriores à decisão de tratamento, i.e. de $\{Y_t(0):  t < T^*\}$; ou de outros fatores independentes de $\{Y_t(0)\}_{t \in \mathcal{T}}$
+	\begin{itemize}
+		\item Hipótese exclui a possibilidade de que decisão dependa de características $X_t$ capazes de prever a inovação $\epsilon_t$ no futuro.
+		\item Se planejador usa modelagem Box-Jenkins para decidir tratamento, hipótese é satisfeita.
+	\end{itemize}
+	
+\end{itemize}
+\end{frame}
+\begin{frame}{Estimação e inferência}
+	\begin{itemize}
+		\item Sob as duas hipóteses anteriores, é possível estimar os efeitos causais da política da seguinte maneira.
+		\begin{wideitemize}
+			\item Aplicar a metodologia de Box-Jenkins para estimar um modelo (S)ARIMA, {\color{red}com dados até $T^*-1$}.
+			\item Usando o modelo estimado e os dados até $T^*-1$, calcular, para $h > 0$, as previsões fora da amostra, $h$ passos à frente: $\hat{Y}_{T^*-1+h|T^*-1}$.
+			\item Estimar o efeito do tratamento, no $h$-ésimo período após o início do tratamento como:
+			$$\hat \alpha_{T^*-1+h}  = Y_{T^*-1+h} - \hat{Y}_{T^*-1+h|T^*-1} \, .$$
+		\end{wideitemize}
+		\item Sob as hipóteses 1 e 2, e se a janela pré-tratamento é grande, estimador $\hat \alpha_{T^*-1+h}$ é aproximadamente não viciado para $\mathbb{E}[\alpha_{T^*-1+h}]$.
+		\item Se computarmos intervalos de predição para $Y$ com dados até $T^*-1$, $[L_{T^*-1+h|T^*-1},U_{T^*-1+h|T^*-1}]$, então  $[Y_{T^*-1+h} - U_{T^*-1+h|T^*-1},Y_{T^*-1+h} - L_{T^*-1+h|T^*-1}]$ é intervalo de predição válido para $\alpha_{T^*-1+h}$.
+	\end{itemize}
+\end{frame}
 \appendix
 \begin{frame}{Referências}
 	\printbibliography
 \end{frame}
 \end{document}
 
-\begin{transitionframe}
-	\begin{center}
-		{\Huge   Análise de intervenção}
-	\end{center}
-\end{transitionframe}

@@ -122,21 +122,31 @@
 \headcommand {\beamer@framepages {61}{61}}
 \headcommand {\slideentry {0}{0}{62}{62/62}{}{0}}
 \headcommand {\beamer@framepages {62}{62}}
-\headcommand {\gdef \insertmainframenumber {62}}
-\headcommand {\partentry {Ap\^endice}{1}}
-\headcommand {\beamer@partpages {1}{62}}
-\headcommand {\beamer@sectionpages {1}{62}}
-\headcommand {\beamer@subsectionpages {1}{62}}
-\headcommand {\beamer@appendixpages {63}}
-\headcommand {\beamer@sectionpages {63}{62}}
-\headcommand {\beamer@subsectionpages {63}{62}}
-\headcommand {\sectionentry {1}{Refer\^encias}{63}{Refer\^encias}{1}}
-\headcommand {\slideentry {1}{0}{0}{63/63}{}{1}}
+\headcommand {\slideentry {0}{0}{63}{63/63}{}{0}}
 \headcommand {\beamer@framepages {63}{63}}
-\headcommand {\beamer@partpages {63}{63}}
-\headcommand {\beamer@subsectionpages {63}{63}}
-\headcommand {\beamer@sectionpages {63}{63}}
-\headcommand {\beamer@documentpages {63}}
+\headcommand {\slideentry {0}{0}{64}{64/64}{}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {0}{0}{65}{65/65}{}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {0}{0}{66}{66/66}{}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\slideentry {0}{0}{67}{67/67}{}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\gdef \insertmainframenumber {67}}
+\headcommand {\partentry {Ap\^endice}{1}}
+\headcommand {\beamer@partpages {1}{67}}
+\headcommand {\beamer@sectionpages {1}{67}}
+\headcommand {\beamer@subsectionpages {1}{67}}
+\headcommand {\beamer@appendixpages {68}}
+\headcommand {\beamer@sectionpages {68}{67}}
+\headcommand {\beamer@subsectionpages {68}{67}}
+\headcommand {\sectionentry {1}{Refer\^encias}{68}{Refer\^encias}{1}}
+\headcommand {\slideentry {1}{0}{0}{68/68}{}{1}}
+\headcommand {\beamer@framepages {68}{68}}
+\headcommand {\beamer@partpages {68}{68}}
+\headcommand {\beamer@subsectionpages {68}{68}}
+\headcommand {\beamer@sectionpages {68}{68}}
+\headcommand {\beamer@documentpages {68}}
 \headcommand {\gdef \inserttotalframenumber {1}}
-\headcommand {\gdef \inserttotalframenumber {62}}
+\headcommand {\gdef \inserttotalframenumber {67}}
 \headcommand {\gdef \appendixtotalframenumber {1}}

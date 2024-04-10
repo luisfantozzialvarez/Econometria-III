@@ -63,6 +63,62 @@
       \verb https://doi.org/10.1080/07350015.2014.983236
       \endverb
     \endentry
+    \entry{Menchetti2022}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=03e36675c2e66eca52ef5b7e90caa504}{%
+           family={Menchetti},
+           familyi={M\bibinitperiod},
+           given={Fiammetta},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3007e99b0b021f1aa9657a54bbcb31df}{%
+           family={Cipollini},
+           familyi={C\bibinitperiod},
+           given={Fabrizio},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1dcb46aac9c02eeee16fbcd79cffaa83}{%
+           family={Mealli},
+           familyi={M\bibinitperiod},
+           given={Fabrizia},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fecf758b55ba56d82a9f1c256c0b8290}
+      \strng{fullhash}{fecf758b55ba56d82a9f1c256c0b8290}
+      \strng{bibnamehash}{fecf758b55ba56d82a9f1c256c0b8290}
+      \strng{authorbibnamehash}{fecf758b55ba56d82a9f1c256c0b8290}
+      \strng{authornamehash}{fecf758b55ba56d82a9f1c256c0b8290}
+      \strng{authorfullhash}{fecf758b55ba56d82a9f1c256c0b8290}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{The Rubin Causal Model (RCM) is a framework that allows to define the causal effect of an intervention as a contrast of potential outcomes. In recent years, several methods have been developed under the RCM to estimate causal effects in time series settings. None of these makes use of autoregressive integrated moving average (ARIMA) models, which are instead very common in the econometrics literature. In this paper, we propose a novel approach, named Causal-ARIMA (C-ARIMA), to define and estimate the causal effect of an intervention in observational time series settings under the RCM. We first formalise the assumptions enabling the definition, the estimation and the attribution of the effect to the intervention. We then check the validity of the proposed method with a simulation study. In the empirical application, we use C-ARIMA to assess the causal effect of a permanent price reduction on supermarket sales. The CausalArima R package provides an implementation of the proposed approach.}}
+      \field{issn}{1368-4221}
+      \field{journaltitle}{The Econometrics Journal}
+      \field{month}{09}
+      \field{number}{1}
+      \field{title}{{Combining counterfactual outcomes and ARIMA models for policy evaluation}}
+      \field{volume}{26}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 24}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1093/ectj/utac024
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/ectj/article-pdf/26/1/1/48597685/utac024.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/ectj/utac024
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/ectj/utac024
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
