@@ -634,7 +634,7 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 		\end{itemize}
 		\item Assim, {\color{blue}a previsão um passo à frente}, com base num ARMA(p,q), é dada por:
 		
-		$$\hat Y_{t+1} = \hat \alpha + \sum_{j=1}^p \hat{\beta}_j Y_{T+1-j} + \sum_{j=1}^q \hat \theta_j \hat \epsilon_{T+1-j}$$
+		$$\hat Y_{T+1} = \hat \alpha + \sum_{j=1}^p \hat{\beta}_j Y_{T+1-j} + \sum_{j=1}^q \hat \theta_j \hat \epsilon_{T+1-j}$$
 	
 	\end{itemize}
 \end{frame}
@@ -644,7 +644,7 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 		\item Também podemos estar interessados em prever o que ocorrerá dois passos adiante, i.e. $Y_{T+2}$.
 		\item Neste caso, temos que:
 		
-		$$Y_{T+2} = \alpha + \sum_{j=1}^T \beta_{j} 	Y_{T+2-j} + \epsilon_{T+2} + \sum_{j=1}^q \theta_j \epsilon_{T+2-j}\, .$$
+		$$Y_{T+2} = \alpha + \sum_{j=1}^p \beta_{j} 	Y_{T+2-j} + \epsilon_{T+2} + \sum_{j=1}^q \theta_j \epsilon_{T+2-j}\, .$$
 		
 		\item Com base na informação até $T$, ``desconhecemos'' $\epsilon_{T+1}$, $\epsilon_{T+2}$ e $Y_{T+1}$.
 		\begin{itemize}
@@ -653,14 +653,14 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 		\end{itemize}
 			\item Assim, {\color{blue}a previsão dois passo à frente}, com base num ARMA(p,q), é dada por:
 		
-		$$\hat Y_{t+1} = \hat \alpha + \hat \beta_1 \hat Y_{T+1} + \sum_{j={\color{red}2}}^p \hat{\beta}_j Y_{T+1-j} + \sum_{j={\color{red}2}}^q \hat \theta_j \hat\epsilon_{T+1-j}$$
+		$$\hat Y_{T+2} = \hat \alpha + \hat \beta_1 \hat Y_{T+1} + \sum_{j={\color{red}2}}^p \hat{\beta}_j Y_{T+1-j} + \sum_{j={\color{red}2}}^q \hat \theta_j \hat\epsilon_{T+1-j}$$
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Previsão $h$ passos à frente}
 	\begin{itemize}
-		\item Procedendo recursivamente, podemos definir, para qualquer $h \in \mathbb{N}$, a projeção $h$ passos à frente, $\hat Y_{t+h}$, em que usamos $\hat \epsilon_{T+j} = 0$ para $j > 0$ e as predições $\hat Y_{T+j}$, $h-1 \geq j \geq 1$, na imputação dos termos desconhecidos.
-		\item Observe que para $h > \operatorname{max}(p,q)$, a projeção não usa nenhuma informação nova, somente projeções de horizontes anteriores.
+		\item Procedendo recursivamente, podemos definir, para qualquer $h \in \mathbb{N}$, a projeção $h$ passos à frente, $\hat Y_{T+h}$, em que usamos $\hat \epsilon_{T+j} = 0$ para $j > 0$ e as predições $\hat Y_{T+j}$, $h-1 \geq j \geq 1$, na imputação dos termos desconhecidos.
+		\item Observe que para $h > \operatorname{max}(p,q)$, a projeção não usa os dados observados diretamente, somente através de projeções de horizontes anteriores.
 		\item De fato, quando $h \to \infty$, as projeções de um ARMA(p,q) estacionário convergem para a média incondicional estimada do processo, i.e.:
 		
 		$$\lim_{h \to \infty} \hat Y_{T+h} = \frac{\hat \alpha}{1-\hat \beta_1  - \hat \beta_2 - \ldots - \hat \beta_p}$$
