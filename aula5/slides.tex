@@ -721,6 +721,10 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 			\item A esse procedimento damos o nome de corrida de cavalos (\textit{horseracing}).
 			\item O resultado dessa comparação é a escolha de um modelo ``ótimo'', para cada horizonte.
 		\end{itemize}
+		\item Se temos capacidade computacional, podemos fazer as previsões fora da amostra com \emph{janela expansível}, o que aproxima melhor um cenário ``em tempo real'' (\textit{online}).
+		\begin{itemize}
+			\item Ideia é, após identificar e diagnosticar os modelos em $\mathcal{E}$, fazer as previsões para $t+h$ com o modelo reestimado até $t$, para todo $t \in \{T_0,T_0+1, \ldots\}$.
+		\end{itemize}
 	\end{itemize}
 \end{frame}
 
