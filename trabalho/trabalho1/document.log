@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  18 APR 2024 10:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  18 APR 2024 10:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -298,6 +298,7 @@ File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 4060.
 Package hyperref Info: Hyper figures OFF on input line 4177.
 Package hyperref Info: Link nesting OFF on input line 4182.
 Package hyperref Info: Hyper index ON on input line 4185.
@@ -328,7 +329,7 @@ Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
 Package hyperref Info: backreferencing OFF on input line 6057.
-Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring ON on input line 6060.
 Package hyperref Info: Link coloring with OCG OFF on input line 6067.
 Package hyperref Info: PDF/A mode OFF on input line 6072.
 
@@ -713,7 +714,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring ON on input line 29.
 
 (./document.out) (./document.out)
 \@outlinefile=\write4
@@ -819,7 +820,7 @@ xlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texl
 ive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texliv
 e/2023/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/
 2023/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on document.pdf (1 page, 200769 bytes).
+Output written on document.pdf (1 page, 200820 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  65 compressed objects within 1 object stream
