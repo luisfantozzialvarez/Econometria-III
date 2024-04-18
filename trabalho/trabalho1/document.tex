@@ -1,0 +1,55 @@
+% !TeX document-id = {06d52d2b-f2e4-4e4b-a6cf-d528198f97ce}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{float}
+\usepackage[brazilian]{babel}
+\usepackage[margin=1.5cm]{geometry}
+
+	\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{bib.bib}
+
+\title{ \large EAE1223: Econometria III \\
+	{\large Primeiro Trabalho}}
+%\author{ \normalsize Professor Luis Antonio Fantozzi Alvarez}
+\date{\small \textbf{Data de entrega:} 22 de maio de 2024}
+\begin{document}
+	\maketitle
+	Responda aos itens abaixo, um a um:
+\begin{enumerate}
+	\item \citet{michaillat2022u} propõem uma medida da taxa de desemprego eficiente de uma economia. Qual é essa medida? Qual é sua interpretação? Explique a derivação da fórmula por eles obtida.
+\end{enumerate}
+	Faça o \textit{download} da série de vagas não preenchidas no mercado de trabalho alemão (\href{https://data-explorer.oecd.org/vis?tm=unfilled\%20vacancies\%20germany&pg=0&hc[Reference\%20area]=Germany&hc[Measure]=Unfilled\%20vacancies&snb=1&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_OLAB\%40DF_OIALAB_INDIC&df[ag]=OECD.SDD.TPS&df[vs]=1.1&pd=\%2C&dq=DEU.VAC_U.._Z.Y..M&ly[cl]=TIME_PERIOD&to[TIME_PERIOD]=false&lo=13&lom=LASTNPERIODS}{\textit{link}}), além dos dados de desemprego e população economicamente ativa (\href{https://www-genesis.destatis.de/genesis//online?operation=table&language=en&code=13231-0001&bypass=true&levelindex=0&levelid=1713437546333#abreadcrumb}{\textit{link}}), de janeiro de 1991 a dezembro de 2023, \textbf{sem ajuste sazonal}.
+	\begin{enumerate}
+	\item[2.] Construa a série de taxa de vacância (postos não preenchidos como percentual da população economicamente ativa). Há evidência de sazonalidade na série? Justifique.
+	
+	\item[3.] Construa a medida de desemprego eficiente de \citet{michaillat2022u}. Há evidência de sazonalidade na série? Justifique.
+\end{enumerate}
+	Entre 2003 e 2005, uma série de reformas foram implementadas no mercado de trabalho alemão, com vistas a melhorar a eficiência alocativa e reduzir o desemprego \citep{Bradley2019}. Vamos avaliar o efeito desta política na medida de desemprego eficiente.
+		\begin{enumerate}
+	\item[4.] Leia Seção 2 de \citet{Bradley2019}. Com base na discussão de \citet{michaillat2022u}, por que poderíamos esperar um efeito das reformas sobre a medida de desemprego eficiente?
+	
+	\item[5.] Ajuste um modelo (S)ARIMA para a série de desemprego eficiente, \textbf{com dados de janeiro de 1991 a dezembro de 2002}. Reporte todas as etapas da metodologia de Box-Jenkins.
+	
+	\item[6.] Usando a metodologia Causal-ARIMA vista em aula, reporte os efeitos estimados das reformas, \textbf{de janeiro de 2003 a dezembro de 2006}. Apresente estimativas pontuais e os intervalos de predição dos efeitos. Quais as conclusões da metodologia?
+	
+	\item[7.] Quais são as hipóteses de identificação para a validade da abordagem anterior em recuperar os efeitos de interesse? Elas parecem razoáveis no contexto da reforma? Por quê? Se há preocupações com a identificação, você consegue pensar em modificações da abordagem/métodos alternativos que mitiguem essas preocupações? Explique-os.
+	
+	
+	
+\end{enumerate}
+\printbibliography
+\end{document}
