@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  15 APR 2024 07:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  19 APR 2024 09:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1781,14 +1781,18 @@ Overfull \vbox (10.14609pt too high) detected at line 692
 
 ] [51
 
-] [52
+]
+Overfull \hbox (5.66644pt too wide) detected at line 747
+[] \OT1/lmss/m/n/10.95 = [] \OML/lmm/m/it/10.95 ;
+ []
+
+[52
 
 ] [53
 
 ] [54
 
-]
-[55
+] [55
 
 ] [56
 
@@ -1901,7 +1905,7 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 Here is how much of TeX's memory you used:
  45852 strings out of 475735
  1046858 string characters out of 5784786
- 1872390 words of memory out of 5000000
+ 1872391 words of memory out of 5000000
  65678 multiletter control sequences out of 15000+600000
  672404 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1922,7 +1926,7 @@ ype1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on slides.pdf (68 pages, 478646 bytes).
+Output written on slides.pdf (68 pages, 478883 bytes).
 PDF statistics:
  695 PDF objects out of 1000 (max. 8388607)
  518 compressed objects within 6 object streams

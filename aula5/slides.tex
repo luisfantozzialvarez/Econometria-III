@@ -709,7 +709,7 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 	\end{itemize}
 
 	\item Nesse caso, podemos definir o erro quadrático médio da previsão fora da amostra, no horizonte $h$, como:
-	$$\text{MSE}(m;h) =  \frac{1}{T-T_0-(h-1)}\sum_{t=T_0}^{T-h} (Y_t - \hat{Y}_{t+h|t}(m))^2$$
+	$$\text{MSE}(m;h) =  \frac{1}{T-T_0-(h-1)}\sum_{t=T_0}^{T-h} (Y_{t+h} - \hat{Y}_{t+h|t}(m))^2$$
 	
 \end{itemize}
 \end{frame}
@@ -735,13 +735,13 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 			\item Modelo pode ser bom para a janela $\mathcal{V}$, mas ideia é que modelo seja bom em prever o futuro.
 		\end{itemize}
 		\item Sob estacionariedade do erro de previsão, Diebold e Mariano introduziram um teste da hipótese nula:
-		$$H_0: \mathbb{E}[(Y_t - \hat{Y}_{t+h|t}(m))^2] = \mathbb{E}[(Y_t - \hat{Y}_{t+h|t}(m'))^2] \, ,$$
+		$$H_0: \mathbb{E}[(Y_{t+h} - \hat{Y}_{t+h|t}(m))^2] = \mathbb{E}[(Y_{t+h} - \hat{Y}_{t+h|t}(m'))^2] \, ,$$
 		para modelos $m,m' \in \mathcal{M}$, e horizonte $h \in \mathbb{N}$.
 		\item Teste é implementado através da estatística $t$:
-		$$\hat t = \frac{\frac{1}{T-T_0-(h-1)}\sum_{t=T_0}^{T-h} [(Y_t - \hat{Y}_{t+h|t}(m))^2 -(Y_t - \hat{Y}_{t+h|t}(m'))^2 ]}{\hat \sigma}\,,$$
+		$$\hat t = \frac{\frac{1}{T-T_0-(h-1)}\sum_{t=T_0}^{T-h} [(Y_{t+h} - \hat{Y}_{t+h|t}(m))^2 -(Y_{t+h} - \hat{Y}_{t+h|t}(m'))^2 ]}{\hat \sigma}\,,$$
 		onde $\hat \sigma$ é um erro padrão HAC.
 		\begin{itemize}
-			\item Implementação computacional: construir série $\hat{e}_t = (Y_t - \hat{Y}_{t+h|t}(m))^2 -(Y_t - \hat{Y}_{t+h|t}(m'))^2$, $t = T_0\ldots T-h$. Rodar regressão de $\hat{e}_t$ num intercepto, e conduzir o teste $t$ no intercepto usando \texttt{vcovHAC}.
+			\item Implementação computacional: construir série $\hat{e}_t = (Y_{t+h} - \hat{Y}_{t+h|t}(m))^2 -(Y_{t+h} - \hat{Y}_{t+h|t}(m'))^2$, $t = T_0\ldots T-h$. Rodar regressão de $\hat{e}_t$ num intercepto, e conduzir o teste $t$ no intercepto usando \texttt{vcovHAC}.
 		\end{itemize}  
 	\end{itemize}
 \end{frame}
@@ -754,7 +754,7 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 		\item Metodologia de Diebold-Mariano pode ser estendida para analisar os determinantes da qualidade preditiva em uma classe de modelos.
 		\item Ideia é considerar modelos lineares:
 		
-		$$(Y_t - \hat{Y}_{t+h|t}(m))^2 = \gamma'h(m) + u_{m,t}, \quad m \in \mathcal{M}, t = T_0,\ldots T-h$$
+		$$(Y_{t+h} - \hat{Y}_{t+h|t}(m))^2 = \gamma'h(m) + u_{m,t}, \quad m \in \mathcal{M}, t = T_0,\ldots T-h$$
 		onde $h(m) = (h_1(m), h_2(m),\ldots, h_J(m))$ são $J$ características do modelo $m$ (e.g. indicador da presença de um componente MA).
 		\item Usando erros padrão HAC em painel, é possível testar quais características de um modelo ensejam melhor qualidade preditiva.
 		\begin{itemize}
@@ -790,7 +790,7 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 	\item Uma série de tempo com sazonalidade de frequência $h$ segue um $\text{ARIMA}(P,D,Q)_h$ se pode ser descrita como:
 \end{itemize}
 
-	$$(1-\gamma_1 L^h - \gamma_2 L^{2h} \ldots - \gamma_{P} L^{Ph})(1-L^h)^DY_t = (1-\pi_1 L^h - \pi_2 L^{2h} \ldots - \pi_{Q} L^{Qh})\epsilon_t \,, $$
+	$$(1-\gamma_1 L^h - \gamma_2 L^{2h} \ldots - \gamma_{P} L^{Ph})(1-L^h)^DY_t = (1+\pi_1 L^h + \pi_2 L^{2h} \ldots + \pi_{Q} L^{Qh})\epsilon_t \,, $$
 	onde $\epsilon_t$ é ruído branco.
 	
 	\begin{itemize}
