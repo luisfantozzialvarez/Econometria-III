@@ -151,7 +151,7 @@ $$\mathbb{V}[\boldsymbol{X}]_{i,j}= \operatorname{cov}(\boldsymbol{X}_i,\boldsym
 	\end{enumerate}
 	\item Extensão do conceito de série de tempo estacionária para o caso vetorial.
 	\item Pedimos estabilidade das covariâncias contemporâneas e extemporâneas entre as entradas dos vetores.
-	\item \textbf{Obs:} se processo é fracamente estacionária, cada uma das entradas $\{\boldsymbol{X}_{j,t}: t \in \mathcal{I}\}$ , $j =1,\ldots, d$, é fracamente estacionária.
+	\item \textbf{Obs:} se processo é fracamente estacionária, cada uma das entradas $\{\boldsymbol{X}_{j,t}: t \in \mathcal{T}\}$ , $j =1,\ldots, d$, é fracamente estacionária.
 \end{itemize}
 \end{frame}
 
@@ -197,7 +197,7 @@ $$\begin{pmatrix}
 			&= a_{{\color{blue}j},0}  +{\color{orange}\sum_{k=1}^{d}}\sum_{l=1}^p a_{{\color{blue}j},{\color{orange}k},l} X_{{\color{orange}k},t-l} + \epsilon_{{\color{blue}j},t} \, ,
 		\end{aligned}
 	\end{equation*}
-	onde $\boldsymbol{\epsilon}_t = (\epsilon_{1,j,t},\epsilon_{2,j,t},\ldots, \epsilon_{d,j,t})'$ é um ruído branco vetorial.
+	onde $\boldsymbol{\epsilon}_t = (\epsilon_{1,t},\epsilon_{2,t},\ldots, \epsilon_{d,t})'$ é um ruído branco vetorial.
 	\begin{itemize}
 		\item No VAR(p), assim como no AR(p), evolução em cada uma das $d$ variáveis depende do que ocorreu nela mesma nos últimos $p$ períodos.
 		\item Mas além disso, trajetória depende do que ocorreu nos últimos $p$ períodos {\color{orange}nas demais variáveis}.
