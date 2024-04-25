@@ -127,7 +127,7 @@ $$\mathbb{V}[\boldsymbol{X}]_{i,j}= \operatorname{cov}(\boldsymbol{X}_i,\boldsym
 
 \begin{frame}{Matriz de covariância entre dois vetores aleatórios}
 	\begin{itemize}
-		\item Seja $\boldsymbol{X}$ um vetor aleatório em $\mathbb{R}^d$, e $\boldsymbol{Y}$ um vetor aleatório em $\mathbb{R}^p$, definimos a matriz de covariância entre $\boldsymbol{X}$ e $\boldsymbol{Y}$  como:
+		\item Seja $\boldsymbol{X}$ um vetor aleatório em $\mathbb{R}^d$, e $\boldsymbol{Y}$ um vetor aleatório em $\mathbb{R}^p$, definimos a matriz de covariância entre $\mathbb{V}[\boldsymbol{X}]$ e $\boldsymbol{Y}$  como:
 		
 		$$\operatorname{cov}(\boldsymbol{X},\boldsymbol{Y}) = \mathbb{E}[\boldsymbol{X}\boldsymbol{Y}'] - \mathbb{E}[\boldsymbol{X}]\mathbb{E}[\boldsymbol{Y}'] \, .$$
 		\item Matriz $d \times p$ em que a entrada $(i,j)$ é igual a:
@@ -288,29 +288,61 @@ $$\begin{pmatrix}
 		\item Para selecionar a ordem $p$ de um VAR, podemos adotar generalizações dos critérios de informação vistos para modelos multivariados:
 		
 		$$\text{AIC}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{2}{T}(d^2 p + d)\, ,$$
-						$$\text{HC}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{2 \log \log(T)}{T}(d^2 p + d)\, ,$$
+						$$\text{HQ}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{2 \log \log(T)}{T}(d^2 p + d)\, ,$$
 				$$\text{SC}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{\log(T)}{T}(d^2 p + d)\, ,$$
 	onde $\hat \Sigma(p)$ é a matriz de variância-covariância dos resíduos do modelo VAR estimado com $p$ defasagens.
-	\item Métodos oferecem aproximações ao erro quadrático médio de previsão um passo à frente.
+	\item Métodos oferecem aproximações ao erro quadrático médio de previsão um passo à frente, corrigidas do viés induzido por \textit{overfitting}.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Testando a inclusão de defasagens}
 \begin{itemize}
-	\item Considerado um VAR(p)
+	\item Partindo de um VAR(p). Podemos testar se há necessidade de incluir a $p$-ésima defasagem.
+	\item Especificamente, gostaríamos de testar.
+	\begin{equation}
+		H_0: \boldsymbol{A}_p = \boldsymbol{0}_{d \times d} \quad H_1:  \boldsymbol{A}_p \neq \boldsymbol{0}_{d \times d}
+	\end{equation} 
+	\item Teste pode ser conduzido através da estatística de razão de verossimilhança.
+	\begin{equation}
+		\operatorname{LR} = 2\cdot(\hat{L}_{p} - \hat{L}_{p-1})
+	\end{equation}
+	onde $\hat{L}_j$ é a log-verossimilhança maximizada do estimador de máxima verossimilhança condicional, do modelo que inclui $j$ defasagens.
+	\item Sob hipótese nula, com $T$ grande, estatística segue distribuição qui-quadrado com $d^2$ graus de liberdade.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Diagnóstico dos resíduos}
-	conteúdo...
+	\begin{itemize}
+		\item Escolhida uma ordem $p$ do VAR, podemos avaliar o comportamento dos erros.
+		\item Em particular, para $h \in \mathbb{N}$, podemos testar a hipótese nula:
+		$$H_0: \operatorname{cov}(\boldsymbol{\epsilon}_{t}, \epsilon_{t-j}) = \boldsymbol{0}_{d\times d}, \quad j=1,\ldots, h\, .$$
+		usando um análogo vetorial do teste de Ljung-Box.
+		\item A esse teste, damos o nome de Portmanteau.
+		\item Também é possível estudar a normalidade conjunta dos erros, através de um análogo vetorial do teste de Jarque-Bera.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Inclusão de componentes determinísticos}
-	conteúdo...
+	\begin{itemize}
+		\item No modelo VAR apresentado, incluímos tão somente um intercepto entre os componentes determinísticos.
+		\item Para  séries \textit{trend stationary}, devemos fazer o \textit{detrending} dos dados para a estimação do VAR estacionário.
+		\item Se todas as séries apresentam tendência, um jeito mais eficiente de fazer isso é estimar conjuntamente a tendência ao VAR, ajustando o modelo:
+		
+			\begin{equation*}
+			\boldsymbol{X}_t = \boldsymbol{a}_0 +\boldsymbol{a}_1 t + \boldsymbol{A}_1 \boldsymbol{X}_{t-1} + \boldsymbol{A}_2 \boldsymbol{X}_{t-2} + \ldots + \boldsymbol{A}_p \boldsymbol{X}_{t-p} + \boldsymbol{\epsilon}_t \, ,
+		\end{equation*}
+		
+		\item Se há evidência de sazonalidade nas séries, podemos ajustar o VAR incluindo um conjunto de \textit{dummies} sazonais.
+			\begin{equation*}
+			\boldsymbol{X}_t = \boldsymbol{a}_0 +\boldsymbol{\gamma} \boldsymbol{d}_t + \boldsymbol{A}_1 \boldsymbol{X}_{t-1} + \boldsymbol{A}_2 \boldsymbol{X}_{t-2} + \ldots + \boldsymbol{A}_p \boldsymbol{X}_{t-p} + \boldsymbol{\epsilon}_t \, ,
+		\end{equation*}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Previsão}
-	conteúdo...
+	\begin{itemize}
+		\item Assim como nos modelos ARMA, a previsão em um modelo VAR se faz de maneira recursiva
+	\end{itemize}
 \end{frame}
 
 \appendix
