@@ -315,7 +315,7 @@ $$\begin{pmatrix}
 	\begin{itemize}
 		\item Escolhida uma ordem $p$ do VAR, podemos avaliar o comportamento dos erros.
 		\item Em particular, para $h \in \mathbb{N}$, podemos testar a hipótese nula:
-		$$H_0: \operatorname{cov}(\boldsymbol{\epsilon}_{t}, \epsilon_{t-j}) = \boldsymbol{0}_{d\times d}, \quad j=1,\ldots, h\, .$$
+		$$H_0: \operatorname{cov}(\boldsymbol{\epsilon}_{t}, \boldsymbol{\epsilon}_{t-j}) = \boldsymbol{0}_{d\times d}, \quad j=1,\ldots, h\, .$$
 		usando um análogo vetorial do teste de Ljung-Box.
 		\item A esse teste, damos o nome de Portmanteau.
 		\item Também é possível estudar a normalidade conjunta dos erros, através de um análogo vetorial do teste de Jarque-Bera.
@@ -341,13 +341,142 @@ $$\begin{pmatrix}
 
 \begin{frame}{Previsão}
 	\begin{itemize}
-		\item Assim como nos modelos ARMA, a previsão em um modelo VAR se faz de maneira recursiva
+		\item Assim como nos modelos ARMA, a previsão em um modelo VAR se faz de maneira recursiva.
+		\item Dados estimadores dos parâmetros do VAR,  previsão um passo à frente de $\boldsymbol{X}_{T+1}$ é dada por:
+		
+		$$\hat{\boldsymbol{X}}_{T+1} = \hat{\boldsymbol{a}}_0 + + \hat{\boldsymbol{A}}_1 \boldsymbol{X}_{T} + \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T-1} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T+1-P}  $$
+		\item A previsão dois passos à frente é dada por: 
+		
+		$$\hat{\boldsymbol{X}}_{T+2} = \hat{\boldsymbol{a}}_0 + + \hat{\boldsymbol{A}}_1 {\color{red}\hat{\boldsymbol{X}}_{T+1} }+ \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T-P}  \, ,$$
+		e assim recursivamente.
+		\item Previsões do VAR estacionário convergem para média incondicional estimada do processo:
+		
+		$$\lim_{h \to \infty }\hat{\boldsymbol{X}}_{T+h} = (\mathbb{I}-  \hat{\boldsymbol{A}}_1 -  \hat{\boldsymbol{A}}_2 \ldots -  \hat{\boldsymbol{A}}_p )^{-1}\hat{\boldsymbol{a} }$$
 	\end{itemize}
 \end{frame}
 
-\appendix
-\begin{frame}{Referências}
-	\printbibliography
+\begin{transitionframe}
+	\centering	{\Huge Conceitos de interrelação para processos multivariados}
+\end{transitionframe}
+
+\begin{frame}{Distribuições conjuntas de processos vetoriais }
+	\begin{itemize}
+		\item Seja $\{\boldsymbol{Z}_t\}_{t \in \mathbb{Z}}$ um processo vetorial de interesse.
+		\item A densidade conjunta numa janela  $\{\boldsymbol{Z}_t\}_{t =1}^T$, condicional a um valor inicial $Z_0$, fatora-se como:
+		
+		$$f[(\boldsymbol{Z}_t)_{t=1}^T|Z_0] = \prod_{t=1}^T f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1}]\, ,$$
+		onde $\mathcal{Z}_{t} = (\boldsymbol{Z}_0, \boldsymbol{Z}_1,\ldots, \boldsymbol{Z}_{t-1})$.
+	\end{itemize}
 \end{frame}
+
+\begin{frame}{Causalidade de Granger}
+	\begin{itemize}
+		\item Particione $\boldsymbol{Z}_t$ em dois conjuntos de variáveis, $\boldsymbol{Z}^1_t$ e $\boldsymbol{Z}^2_t$, com $d_1 + d_2 = d$.
+		\item Dizemos que $\boldsymbol{Z}^2_t$ {\color{blue}não Granger causa} $\boldsymbol{Z}^1_t$ se:
+		
+		$$f(\boldsymbol{Z}^1_t|\mathcal{Z}_{t}) = f(\boldsymbol{Z}^1_t|\mathcal{Z}^1_{t}) \,,$$
+		onde $\mathcal{Z}_{t}^1 = (\boldsymbol{Z}_0^1, \boldsymbol{Z}_1^1,\ldots, \boldsymbol{Z}_{t-1}^1)$.
+		\item $\boldsymbol{Z}^2_t$ {\color{blue}não Granger causa} $\boldsymbol{Z}^1_t$ se defasagens de $\boldsymbol{Z}^2_t$ não são informativas sobre $\boldsymbol{Z}^1_t$.
+		\begin{itemize}
+			\item {\color{red}Conceito preditivo}, e não causal (no sentido econométrico do termo), embora o termo causalidade esteja no nome.
+		\end{itemize}
+		\item Em um modelo VAR(p) para $\boldsymbol{Z}_t$, onde $\boldsymbol{A}_l = \begin{bmatrix}
+		\boldsymbol{A}_{l,1,1} & 	\boldsymbol{A}_{l,1,2} \\
+				\boldsymbol{A}_{l,2,1} & 	\boldsymbol{A}_{l,2,2} \\
+		\end{bmatrix}$,
+		nula de que $\boldsymbol{Z}^2_t$  não Granger causa  $\boldsymbol{Z}^1_t$  é equivalente a:
+		$$H_0: 	\boldsymbol{A}_{l,1,2} = \boldsymbol{0}_{d_1\times d_2}, \quad l =1,\ldots p\, .$$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Causalidade de Granger e Exogeneidade Fraca}
+\begin{itemize}
+	\item Conceito de causalidade de Granger nos diz que conhecimento do passado de $\boldsymbol{Z}^2_t$ não é informativo sobre $\boldsymbol{Z}^1_t$ contemporâneo.
+	\item Note que não falamos nada sobre conhecimento \textbf{contemporâneo} de $\boldsymbol{Z}^2_t$ ser informativo sobre   $\boldsymbol{Z}^1_t$ contemporâneo.
+	\begin{itemize}
+		\item De fato, num VAR, $\boldsymbol{Z}^2_t$ é no geral contemporanemanete informativo sobre  $\boldsymbol{Z}^1_t$ por conta das correlações em $\Sigma$ diferentes de zero.
+	\end{itemize}
+	\item Um conceito relacionado, embora diferente da causalidade de Granger diz respeito à modelagem da distribuição de $\boldsymbol{Z}^2_t$ ser importante, do ponto de vista estatístico, na estimação do modelo para $\boldsymbol{Z}^1_t$.
+	\item A esse conceito damos o nome de {\color{blue}exogeneidade fraca}.
+\end{itemize}
+\end{frame}
+\begin{frame}{Modelo condicional e exogeneidade fraca}
+	\begin{itemize}
+		\item Formalmente, um modelo é uma parametrização da distribuição condicional  $f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1}] = f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1};\theta_0] $, onde $\theta_0 \in \Theta$ é um parâmetro desconhecido, que tomar algum valor em $\Theta$.
+		
+		\item Note que sempre podemos escrever, usando a regra de Bayes:
+			$$\small f[(\boldsymbol{Z}_t)_{t=1}^T|Z_0;\theta_0] = \prod_{t=1}^T f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1};\theta_0] = \prod_{t=1}^T f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\theta_0] f[\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1};\theta_0] \, ,$$
+		\item Nesse contexto, um subconjunto $\psi$ dos parâmetros $\theta_0$ é dito {\color{blue}fracamente exógeno com respeito a $\boldsymbol{Z}^2_t$} se podemos reescrever:
+		$$f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\theta_0] f[\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1};\theta_0]  = f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\lambda_1] f[\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1};\lambda_2]  $$
+		onde $\psi$ é  função somente de $\lambda_1$, e $\lambda_1$ e $\lambda_2$ podem variar {\color{blue}livremente}.
+		\begin{itemize}
+			\item No caso, não há perda de informação relevante em estimar $\theta$ somente considerando o modelo $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$, tratando $\boldsymbol{Z}^2_t$ como fixo.
+			\item No VAR(p) irrestrito, $\boldsymbol{A}_{1,1,l}$ e $\boldsymbol{A}_{2,2,l}$, $l=1,\ldots, p$, são fracamente exógenos com respeito a $\boldsymbol{Z}^2_t$.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Análise contrafactual e super exogeneidade}
+\begin{itemize}
+	\item Retorne à faturação da densidade conjunta:
+	$$f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1};\theta_0]  = f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\lambda_1] f[\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1};\lambda_2]$$
+	\item Essa fatoração, nos sugere um método para avaliar intervenções alternativas em $\boldsymbol{Z}^t_2$, que aqui são medidas por mudanças na distribuição $\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1}$.
+	\begin{itemize}
+		\item Se $\boldsymbol{Z}_t^2$ é a taxa de juros e $\boldsymbol{Z}_t^1$ compila inflação e taxa de desemprego, qual seria o comportamento da taxa de juros sobre uma regra de decisão alternativa?
+	\end{itemize} 
+	\item Formalmente, a avaliação de políticas alternativas (contrafactuais) com base na estimação de $\hat \lambda_1$ só será válida sobre um requerimento adicional à exogeneidade fraca, denominado \textbf{invariância}.
+	\begin{itemize}
+		\item $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$ é invariante se o modelo para $f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\lambda_1]$ não muda sob distribuições alternativas para $\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1}$.
+	\end{itemize}
+	\item Exogeneidade fraca + invariância: {\color{blue}superexogeneidade} com respeito a um parâmetro.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Invariância e crítica de Lucas}
+	\begin{itemize}
+		\item Num VAR(p) de inflação, desemprego e taxa de juros, a hipótese de invariância para  avaliação do efeito contrafactual de regra de juros alternativas parece razoável?
+		\item A {\color{blue}crítica clássica de Lucas} sugere que, na medida em que as decisões de produção e preço de uma economia são tomadas por agentes racionais que levam em conta expectativas acerca do regime em questão, a resposta é \textbf{não}.
+		\item Nesse caso, os parâmetros do VAR(p) em questão são funções complicadas dos parâmetros fundamentais da Economia (preferências, parâmetros da função de produção e política econômica), de modo que existe uma relação complicada entre os parâmetros de equações diferentes de um VAR(p).
+		\begin{itemize}
+			\item Não podemos simplesmente alterar uma das equações do modelo, mantendo as demais fixas nos valores estimados.
+			\item Além disso, note que as equações do modelo, a princípio, também não são necessariamente funções política passíveis de modificação, e sim objetos de equilíbrio.
+		\end{itemize}
+		\end{itemize}
+\end{frame}
+\begin{frame}{Alternativas à crítica de Lucas}
+\begin{itemize}
+	\item A crítica de Lucas ensejou duas tradições na macroeconometria.
+	\item A tradição de DSGE busca partir de modelos econômicos estocásticos microfundamentados e completamente especificados, e derivar um VAR(p) a partir das primitivas  do modelo econômico e de hipóteses de equilíbrio do sistema.
+		\item Formalmente, o VAR(p) resultante se escreve nesses casos como 
+	\begin{equation*}
+		\boldsymbol{Z}_t = \boldsymbol{a}_0(\xi)+ \boldsymbol{A}_1(\xi) \boldsymbol{Z}_{t-1} + \boldsymbol{A}_2(\xi) \boldsymbol{Z}_{t-2} + \ldots + \boldsymbol{A}_p(\xi) \boldsymbol{Z}_{t-p} + \boldsymbol{\epsilon}_t(\xi) \, ,
+	\end{equation*}
+	onde $\xi$ são os parâmetros fundamentais (preferências, tecnologia, política fiscal e monetária etc.), e tanto os  choques e $\boldsymbol{A}_l$ são funções complicadas desses parâmetros que emergem do equilíbrio do sistema.
+	\item Ideia é estimar $\theta$ indiretamente a partir do VAR(p), e realizar os contrafactuais variando-se $\theta$.
+	\begin{itemize}
+		\item Dificuldades de identificação, estimação e inferência. 
+		\item Além disso, método depende muito da correta especificação do modelo.
+	\end{itemize}
+	
+\end{itemize}
+\end{frame}
+\begin{frame}{VAR estrutural}
+	\begin{itemize}
+	 	\item Uma segunda tradição busca postular modelos que, partindo da teoria econômica, explicitem as relações causais entre as variáveis, embora sejam agnósticos sobre os microfundamentos específicos dos problemas.
+	 	\begin{itemize}
+	 		\item Diversos modelos econômicos postulam relações contemporâneas e extemporâneas entre desemprego, juros e inflação.
+	 	\end{itemize}
+	 	\item Definido o modelo, analisamos condições que garantam que sejamos capazes de avaliar o efeito de choques (surpresas) nas variáveis de política econômica sobre as demais variáveis, \textbf{no regime em questão}.
+	 	\begin{itemize}
+	 		\item Análise de natureza causal, embora não contrafactual (visto que mantemos o regime atual).
+	 		\item Para análise contrafactual, precisamos de mais hipóteses, visto que não postulamos todos os microfundamentos como na abordagem DSGE.
+	 	\end{itemize}
+	 	\item Abordagem de VAR estrutural, que veremos mais à frente no curso.
+	\end{itemize}
+\end{frame}
+%\appendix
+%\begin{frame}{Referências}
+%	\printbibliography
+%\end{frame}
 \end{document}
 
