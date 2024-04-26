@@ -242,11 +242,11 @@ $$\begin{pmatrix}
 \end{frame}
 \begin{frame}{Estimação do VAR(p)}
 	\begin{itemize}
-		\item 	Dado um painel com observações de $d$ séries durante $T$ períodos, $\{\boldsymbol{X}_{j,t}\}_{t=1}^T$, como estimar os parâmetros de um VAR(p)?
+		\item 	Dado um painel com observações de $d$ séries durante $T$ períodos, $\{\boldsymbol{X}_{j,t}\}_{t=1}^T$, $j=1,\ldots, d$, como estimar os parâmetros de um VAR(p)?
 		\item Maneira mais simples é estimar os parâmetros através de MQO, {\color{blue}equação a equação}.
 		\item Isto é, estimamos os parâmetros da $j$-ésima equação resolvendo:
 		
-		$$\min_{b_{0,j}, \{b_{j,k,l}\}_{k,l}} \sum_{t=p+1}^T\left(\boldsymbol{X}_{j,t} - b_{0,j} - \sum_{k=1}^d \sum_{l=1}^p b_{j,k,l}X_{j,t-l}\right)^2$$
+		$$\min_{b_{0,j}, \{b_{j,k,l}\}_{k,l}} \sum_{t=p+1}^T\left(\boldsymbol{X}_{j,t} - b_{0,j} - \sum_{k=1}^d \sum_{l=1}^p b_{j,k,l}X_{k,t-l}\right)^2$$
 		\item Para cada equação, rodamos uma regressão com $T$ observações e $p\times d +1$ parâmetros.
 	\end{itemize}
 
@@ -285,7 +285,7 @@ $$\begin{pmatrix}
 
 \begin{frame}{Selecionando a ordem $p$ de um VAR}
 	\begin{itemize}
-		\item Para selecionar a ordem $p$ de um VAR, podemos adotar generalizações dos critérios de informação vistos para modelos multivariados:
+		\item Para selecionar a ordem $p$ de um VAR, podemos adotar generalizações multivariadas dos critérios de informação vistos para modelos univariados:
 		
 		$$\text{AIC}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{2}{T}(d^2 p + d)\, ,$$
 						$$\text{HQ}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{2 \log \log(T)}{T}(d^2 p + d)\, ,$$
@@ -297,7 +297,7 @@ $$\begin{pmatrix}
 
 \begin{frame}{Testando a inclusão de defasagens}
 \begin{itemize}
-	\item Partindo de um VAR(p). Podemos testar se há necessidade de incluir a $p$-ésima defasagem.
+	\item Partindo de um VAR(p), podemos testar se há necessidade de incluir a $p$-ésima defasagem.
 	\item Especificamente, gostaríamos de testar.
 	\begin{equation}
 		H_0: \boldsymbol{A}_p = \boldsymbol{0}_{d \times d} \quad H_1:  \boldsymbol{A}_p \neq \boldsymbol{0}_{d \times d}
@@ -411,7 +411,7 @@ $$\begin{pmatrix}
 		onde $\psi$ é  função somente de $\lambda_1$, e $\lambda_1$ e $\lambda_2$ podem variar {\color{blue}livremente}.
 		\begin{itemize}
 			\item No caso, não há perda de informação relevante em estimar $\theta$ somente considerando o modelo $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$, tratando $\boldsymbol{Z}^2_t$ como fixo.
-			\item No VAR(p) irrestrito, $\boldsymbol{A}_{1,1,l}$ e $\boldsymbol{A}_{2,2,l}$, $l=1,\ldots, p$, são fracamente exógenos com respeito a $\boldsymbol{Z}^2_t$.
+		%	\item No VAR(p) irrestrito, $\boldsymbol{A}_{1,1,l}$ e $\boldsymbol{A}_{2,2,l}$, $l=1,\ldots, p$, são fracamente exógenos com respeito a $\boldsymbol{Z}^2_t$.
 		\end{itemize}
 	\end{itemize}
 \end{frame}
