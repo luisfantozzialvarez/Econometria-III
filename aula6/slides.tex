@@ -259,12 +259,12 @@ $$\begin{pmatrix}
 		\begin{itemize}
 		\item Erro em uma equação é informativo sobre a outra equação.
 		\end{itemize}
-		\item Seja $\hat \Sigma_0$ um estimador preliminar de $\mathbb{V}(\epsilon_t)$.
+		\item Seja $\hat \Sigma_0$ um estimador preliminar de $\mathbb{V}(\boldsymbol{\epsilon}_t)$.
 		\begin{itemize}
 			\item Por exemplo, estimador da variância-covariância com base nos resíduos do estimador de MQO equação a equação.
 		\end{itemize}
 		\item O estimador de \textit{seemingly unrelated regression} (SUR) dos parâmetros de um VAR propõe-se a estimar os parâmetros do sistema {\color{blue}conjuntamente}, minimizando:
-	\end{itemize}		$$\min_{\boldsymbol{b}_0, \boldsymbol{B}_1,\ldots \boldsymbol{B}_p} \sum_{t=p+1}^T \left(\boldsymbol{X}_t - \boldsymbol{b}_0 -  \sum_{l=1}^p\boldsymbol{B}_l \boldsymbol{X}_{t-l}\right)' \hat \Sigma^{-1} \left(\boldsymbol{X}_t - \boldsymbol{b}_0 -  \sum_{l=1}^p\boldsymbol{B}_l \boldsymbol{X}_{t-l}\right)$$
+	\end{itemize}		$$\min_{\boldsymbol{b}_0, \boldsymbol{B}_1,\ldots \boldsymbol{B}_p} \sum_{t=p+1}^T \left(\boldsymbol{X}_t - \boldsymbol{b}_0 -  \sum_{l=1}^p\boldsymbol{B}_l \boldsymbol{X}_{t-l}\right)' \hat \Sigma^{-1}_0 \left(\boldsymbol{X}_t - \boldsymbol{b}_0 -  \sum_{l=1}^p\boldsymbol{B}_l \boldsymbol{X}_{t-l}\right)$$
 \end{frame}
 \begin{frame}{Máxima verossimilhança condicional}
 \begin{itemize}
@@ -347,7 +347,7 @@ $$\begin{pmatrix}
 		$$\hat{\boldsymbol{X}}_{T+1} = \hat{\boldsymbol{a}}_0 + + \hat{\boldsymbol{A}}_1 \boldsymbol{X}_{T} + \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T-1} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T+1-P}  $$
 		\item A previsão dois passos à frente é dada por: 
 		
-		$$\hat{\boldsymbol{X}}_{T+2} = \hat{\boldsymbol{a}}_0 + + \hat{\boldsymbol{A}}_1 {\color{red}\hat{\boldsymbol{X}}_{T+1} }+ \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T-P}  \, ,$$
+		$$\hat{\boldsymbol{X}}_{T+2} = \hat{\boldsymbol{a}}_0 + + \hat{\boldsymbol{A}}_1 {\color{red}\hat{\boldsymbol{X}}_{T+1} }+ \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T+2-P}  \, ,$$
 		e assim recursivamente.
 		\item Previsões do VAR estacionário convergem para média incondicional estimada do processo:
 		
