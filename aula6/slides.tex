@@ -1,6 +1,9 @@
 % !TeX document-id = {0be8c18c-9430-4e9a-bdd9-12beadebfebc}
 % !TeX TXS-program:bibliography = txs:///biber
 \documentclass[11pt]{beamer}
+
+\usepackage[brazilian]{babel}
+
 \uselanguage{portuguese}
 \languagepath{portuguese}
 \deftranslation[to=portuguese]{Theorem}{Teorema}
@@ -13,7 +16,7 @@
 \deftranslation[to=portuguese]{corollary}{corolário}
 %\deftranslation[to=portuguese]{and}{e}
 
-\usepackage[brazilian]{babel}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -343,7 +346,7 @@ $$\begin{pmatrix}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Previsão}
+\begin{frame}{Previsão fora da amostra}
 	\begin{itemize}
 		\item Assim como nos modelos ARMA, a previsão em um modelo VAR se faz de maneira recursiva.
 		\item Dados estimadores dos parâmetros do VAR,  previsão um passo à frente de $\boldsymbol{X}_{T+1}$ é dada por:
@@ -357,6 +360,11 @@ $$\begin{pmatrix}
 		
 		$$\lim_{h \to \infty }\hat{\boldsymbol{X}}_{T+h} = (\mathbb{I}-  \hat{\boldsymbol{A}}_1 -  \hat{\boldsymbol{A}}_2 \ldots -  \hat{\boldsymbol{A}}_p )^{-1}\hat{\boldsymbol{a}}_0 $$
 	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Previsão \textit{online}}
+	conteúdo...
 \end{frame}
 
 \begin{transitionframe}
