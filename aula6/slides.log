@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  26 APR 2024 09:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.14)  26 APR 2024 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1635,9 +1635,9 @@ Overfull \vbox (31.8186pt too high) detected at line 187
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 296.
+(Font)              <14.4> on input line 297.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 296.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 297.
  [14
 
 ] [15
@@ -1659,10 +1659,10 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
 
 ]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 417.
+LaTeX Font Warning: Command \small invalid in math mode on input line 421.
 
 
-Overfull \hbox (5.66208pt too wide) detected at line 417
+Overfull \hbox (5.66208pt too wide) detected at line 421
 \T1/lmss/m/sl/10 f\OT1/lmss/m/n/10 [([][])[]\OMS/lmsy/m/n/10 j\T1/lmss/m/sl/10 
 Z[]\OT1/lmss/m/n/10 ; \OML/lmm/m/it/10 ^^R[]\OT1/lmss/m/n/10 ] = [] \T1/lmss/m/
 sl/10 f\OT1/lmss/m/n/10 [[][]\OMS/lmsy/m/n/10 jZ[]\OT1/lmss/m/n/10 ; \OML/lmm/m
@@ -1727,7 +1727,7 @@ so12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (28 pages, 301238 bytes).
+Output written on slides.pdf (28 pages, 302110 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  209 compressed objects within 3 object streams

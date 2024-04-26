@@ -271,7 +271,7 @@ $$\begin{pmatrix}
 	\item Sob a hipótese auxiliar:
 	
 	$$\boldsymbol{\epsilon}_t \overset{iid}{\sim} N(\boldsymbol{0}_{d\times 1}, \Sigma_0)$$
-	podemos calcular a verossimilhança de $\boldsymbol{X}_{t+p+1},\ldots \boldsymbol{X}_{T}$, condicional a $\boldsymbol{X}_1,\ldots, \boldsymbol{X}_p$.
+	podemos calcular a verossimilhança de $\boldsymbol{X}_{p+1},\ldots \boldsymbol{X}_{T}$, condicional a $\boldsymbol{X}_1,\ldots, \boldsymbol{X}_p$.
 	\item Estimador de máxima verossimilhança condicional estima {\color{blue}simultaneamente} $\boldsymbol{a}_0$, os $\boldsymbol{A}_l$  e $\Sigma_0$.
 \end{itemize}
 \end{frame}
@@ -290,7 +290,8 @@ $$\begin{pmatrix}
 		$$\text{AIC}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{2}{T}(d^2 p + d)\, ,$$
 						$$\text{HQ}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{2 \log \log(T)}{T}(d^2 p + d)\, ,$$
 				$$\text{SC}(p) = \operatorname{ln}(\operatorname{det}(\hat\Sigma(p))) + \frac{\log(T)}{T}(d^2 p + d)\, ,$$
-	onde $\hat \Sigma(p)$ é a matriz de variância-covariância dos resíduos do modelo VAR estimado com $p$ defasagens.
+	onde $\hat \Sigma(p)$ é a matriz de variância-covariância dos resíduos do modelo VAR estimado com $p$ defasagens. 
+	\item Assim como no caso univariado, no cálculo dos diferentes $\hat \Sigma(p)$, usamos os resíduos dos mesmos $T-\operatorname{p}_{max}$ períodos, onde $\operatorname{p}_{max}$ é a ordem máxima a se testar.
 	\item Métodos oferecem aproximações ao erro quadrático médio de previsão um passo à frente, corrigidas do viés induzido por \textit{overfitting}.
 	\end{itemize}
 \end{frame}
@@ -317,8 +318,11 @@ $$\begin{pmatrix}
 		\item Em particular, para $h \in \mathbb{N}$, podemos testar a hipótese nula:
 		$$H_0: \operatorname{cov}(\boldsymbol{\epsilon}_{t}, \boldsymbol{\epsilon}_{t-j}) = \boldsymbol{0}_{d\times d}, \quad j=1,\ldots, h\, .$$
 		usando um análogo vetorial do teste de Ljung-Box.
-		\item A esse teste, damos o nome de Portmanteau.
+		\item A esse teste, damos o nome de {\color{blue}Portmanteau}.
 		\item Também é possível estudar a normalidade conjunta dos erros, através de um análogo vetorial do teste de Jarque-Bera.
+		\begin{itemize}
+			\item Preocupação usualmente secundária. Normalidade garante que o MLE condicional domine outros estimadores, para além do MQO equação a equação e SUR. Também é importante na construção de intervalos de predição, assim como nos ARMA.
+		\end{itemize}
 	\end{itemize}
 \end{frame}
 
@@ -344,10 +348,10 @@ $$\begin{pmatrix}
 		\item Assim como nos modelos ARMA, a previsão em um modelo VAR se faz de maneira recursiva.
 		\item Dados estimadores dos parâmetros do VAR,  previsão um passo à frente de $\boldsymbol{X}_{T+1}$ é dada por:
 		
-		$$\hat{\boldsymbol{X}}_{T+1} = \hat{\boldsymbol{a}}_0 + + \hat{\boldsymbol{A}}_1 \boldsymbol{X}_{T} + \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T-1} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T+1-P}  $$
+		$$\hat{\boldsymbol{X}}_{T+1} = \hat{\boldsymbol{a}}_0 +  \hat{\boldsymbol{A}}_1 \boldsymbol{X}_{T} + \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T-1} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T+1-P}  $$
 		\item A previsão dois passos à frente é dada por: 
 		
-		$$\hat{\boldsymbol{X}}_{T+2} = \hat{\boldsymbol{a}}_0 + + \hat{\boldsymbol{A}}_1 {\color{red}\hat{\boldsymbol{X}}_{T+1} }+ \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T+2-P}  \, ,$$
+		$$\hat{\boldsymbol{X}}_{T+2} = \hat{\boldsymbol{a}}_0 +  \hat{\boldsymbol{A}}_1 {\color{red}\hat{\boldsymbol{X}}_{T+1} }+ \hat{\boldsymbol{A}}_2 \boldsymbol{X}_{T} + \ldots + \ \hat{\boldsymbol{A}}_p \boldsymbol{X}_{T+2-P}  \, ,$$
 		e assim recursivamente.
 		\item Previsões do VAR estacionário convergem para média incondicional estimada do processo:
 		
