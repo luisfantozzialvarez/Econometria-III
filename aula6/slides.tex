@@ -351,7 +351,7 @@ $$\begin{pmatrix}
 		e assim recursivamente.
 		\item Previsões do VAR estacionário convergem para média incondicional estimada do processo:
 		
-		$$\lim_{h \to \infty }\hat{\boldsymbol{X}}_{T+h} = (\mathbb{I}-  \hat{\boldsymbol{A}}_1 -  \hat{\boldsymbol{A}}_2 \ldots -  \hat{\boldsymbol{A}}_p )^{-1}\hat{\boldsymbol{a} }$$
+		$$\lim_{h \to \infty }\hat{\boldsymbol{X}}_{T+h} = (\mathbb{I}-  \hat{\boldsymbol{A}}_1 -  \hat{\boldsymbol{A}}_2 \ldots -  \hat{\boldsymbol{A}}_p )^{-1}\hat{\boldsymbol{a}}_0 $$
 	\end{itemize}
 \end{frame}
 
@@ -402,7 +402,7 @@ $$\begin{pmatrix}
 \end{frame}
 \begin{frame}{Modelo condicional e exogeneidade fraca}
 	\begin{itemize}
-		\item Formalmente, um modelo é uma parametrização da distribuição condicional  $f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1}] = f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1};\theta_0] $, onde $\theta_0 \in \Theta$ é um parâmetro desconhecido, que tomar algum valor em $\Theta$.
+		\item Formalmente, um modelo é uma parametrização da distribuição condicional  $f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1}] = f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1};\theta_0] $, onde $\theta_0 \in \Theta$ é um parâmetro desconhecido, que toma algum valor em $\Theta$.
 		
 		\item Note que sempre podemos escrever, usando a regra de Bayes:
 			$$\small f[(\boldsymbol{Z}_t)_{t=1}^T|Z_0;\theta_0] = \prod_{t=1}^T f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1};\theta_0] = \prod_{t=1}^T f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\theta_0] f[\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1};\theta_0] \, ,$$
@@ -418,7 +418,7 @@ $$\begin{pmatrix}
 
 \begin{frame}{Análise contrafactual e super exogeneidade}
 \begin{itemize}
-	\item Retorne à faturação da densidade conjunta:
+	\item Retorne à fatoração da densidade conjunta:
 	$$f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1};\theta_0]  = f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\lambda_1] f[\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1};\lambda_2]$$
 	\item Essa fatoração, nos sugere um método para avaliar intervenções alternativas em $\boldsymbol{Z}^t_2$, que aqui são medidas por mudanças na distribuição $\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1}$.
 	\begin{itemize}
@@ -451,8 +451,8 @@ $$\begin{pmatrix}
 	\begin{equation*}
 		\boldsymbol{Z}_t = \boldsymbol{a}_0(\xi)+ \boldsymbol{A}_1(\xi) \boldsymbol{Z}_{t-1} + \boldsymbol{A}_2(\xi) \boldsymbol{Z}_{t-2} + \ldots + \boldsymbol{A}_p(\xi) \boldsymbol{Z}_{t-p} + \boldsymbol{\epsilon}_t(\xi) \, ,
 	\end{equation*}
-	onde $\xi$ são os parâmetros fundamentais (preferências, tecnologia, política fiscal e monetária etc.), e tanto os  choques e $\boldsymbol{A}_l$ são funções complicadas desses parâmetros que emergem do equilíbrio do sistema.
-	\item Ideia é estimar $\theta$ indiretamente a partir do VAR(p), e realizar os contrafactuais variando-se $\theta$.
+	onde $\xi$ são os parâmetros fundamentais (preferências, tecnologia, política fiscal e monetária etc.), e tanto os  choques como $\boldsymbol{A}_l$ são funções complicadas desses parâmetros que emergem do equilíbrio do sistema.
+	\item Ideia é estimar $\xi$ indiretamente a partir do VAR(p), e realizar os contrafactuais variando-se $\xi$.
 	\begin{itemize}
 		\item Dificuldades de identificação, estimação e inferência. 
 		\item Além disso, método depende muito da correta especificação do modelo.
