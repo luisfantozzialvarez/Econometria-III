@@ -396,7 +396,7 @@ $$\begin{pmatrix}
 	\begin{itemize}
 		\item De fato, num VAR, $\boldsymbol{Z}^2_t$ é no geral contemporanemanete informativo sobre  $\boldsymbol{Z}^1_t$ por conta das correlações em $\Sigma$ diferentes de zero.
 	\end{itemize}
-	\item Um conceito relacionado, embora diferente da causalidade de Granger diz respeito à modelagem da distribuição de $\boldsymbol{Z}^2_t$ ser importante, do ponto de vista estatístico, na estimação do modelo para $\boldsymbol{Z}^1_t$.
+	\item Um conceito relacionado, embora diferente da causalidade de Granger, diz respeito à modelagem da distribuição de $\boldsymbol{Z}^2_t$ ser importante, do ponto de vista estatístico, na estimação do modelo para $\boldsymbol{Z}^1_t$.
 	\item A esse conceito damos o nome de {\color{blue}exogeneidade fraca}.
 \end{itemize}
 \end{frame}
@@ -410,9 +410,22 @@ $$\begin{pmatrix}
 		$$f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\theta_0] f[\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1};\theta_0]  = f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\lambda_1] f[\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1};\lambda_2]  $$
 		onde $\psi$ é  função somente de $\lambda_1$, e $\lambda_1$ e $\lambda_2$ podem variar {\color{blue}livremente}.
 		\begin{itemize}
-			\item No caso, não há perda de informação relevante em estimar $\theta$ somente considerando o modelo $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$, tratando $\boldsymbol{Z}^2_t$ como fixo.
-		%	\item No VAR(p) irrestrito, $\boldsymbol{A}_{1,1,l}$ e $\boldsymbol{A}_{2,2,l}$, $l=1,\ldots, p$, são fracamente exógenos com respeito a $\boldsymbol{Z}^2_t$.
+			\item No caso, não há perda de informação relevante em estimar $\psi$ somente considerando o modelo $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$, tratando $\boldsymbol{Z}^2_t$ como fixo.
+
 		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Exogeneidade forte}
+	\begin{itemize}
+		\item O conceito de exogeneidade fraca nos diz que, para estimar $\psi$, não há perda de informação em considerar o modelo para $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$.
+		\item Se formos realizar previsões para $\boldsymbol{Z}_{T+h}^1$ com base nesse  modelo, no entanto, vamos precisar de projeções para $\boldsymbol{Z}^2_{T+h}$.
+		\item Podemos fazer isso imputando $\boldsymbol{Z}^2_{T+h}$ com base nas projeções de um modelo para $\boldsymbol{Z}^2_{T+h}$ com base somente no seu passado?
+		\begin{itemize}
+			\item Isso só faz em termos estatístico-preditivos se $\boldsymbol{Z}^1_{T+h}$ \textbf{não Granger causa} $\boldsymbol{Z}^2_{T+h}$.
+			\item Nesse caso, podemos modelar $\boldsymbol{Z}^2_{T+h}$ externamente e somente incluir suas projeções futuras no modelo para $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$.
+		\end{itemize}
+		\item Exogeneidade fraca de $\boldsymbol{Z}^2_t$ com respeito a $\psi$ + não causalidade de Granger $\boldsymbol{Z}^1_t$ sobre $\boldsymbol{Z}^2_t$: $\boldsymbol{Z}^2_t$ é {\color{blue}fortemente exógeno} com respeito a $\psi$.
 	\end{itemize}
 \end{frame}
 
@@ -426,11 +439,13 @@ $$\begin{pmatrix}
 	\end{itemize} 
 	\item Formalmente, a avaliação de políticas alternativas (contrafactuais) com base na estimação de $\hat \lambda_1$ só será válida sobre um requerimento adicional à exogeneidade fraca, denominado \textbf{invariância}.
 	\begin{itemize}
-		\item $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$ é invariante se o modelo para $f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\lambda_1]$ não muda sob distribuições alternativas para $\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1}$.
+		\item $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$ é invariante se modelo e seu parâmetro para $f[\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1};\lambda_1]$ não mudam sob distribuições alternativas para $\boldsymbol{Z}_t^2|\mathcal{Z}_{t-1}$.
 	\end{itemize}
 	\item Exogeneidade fraca + invariância: {\color{blue}superexogeneidade} com respeito a um parâmetro.
 \end{itemize}
 \end{frame}
+
+
 
 \begin{frame}{Invariância e crítica de Lucas}
 	\begin{itemize}
@@ -460,7 +475,7 @@ $$\begin{pmatrix}
 	
 \end{itemize}
 \end{frame}
-\begin{frame}{VAR estrutural}
+\begin{frame}{VAR (semi)estrutural}
 	\begin{itemize}
 	 	\item Uma segunda tradição busca postular modelos que, partindo da teoria econômica, explicitem as relações causais entre as variáveis, embora sejam agnósticos sobre os microfundamentos específicos dos problemas.
 	 	\begin{itemize}
@@ -471,7 +486,7 @@ $$\begin{pmatrix}
 	 		\item Análise de natureza causal, embora não contrafactual (visto que mantemos o regime atual).
 	 		\item Para análise contrafactual, precisamos de mais hipóteses, visto que não postulamos todos os microfundamentos como na abordagem DSGE.
 	 	\end{itemize}
-	 	\item Abordagem de VAR estrutural, que veremos mais à frente no curso.
+	 	\item Abordagem de VAR (semi)estrutural, que veremos mais à frente no curso.
 	\end{itemize}
 \end{frame}
 %\appendix
