@@ -364,7 +364,55 @@ $$\begin{pmatrix}
 
 
 \begin{frame}{Previsão \textit{online}}
-	conteúdo...
+\begin{itemize}
+	\item Em diversas situações, a previsão em tempo real ocorre num cenário em que as divulgações dos valores mais recentes das variáveis ocorrem com defasagem no tempo.
+	\begin{itemize}
+		\item Dados para taxa inflação em $T+1$ são divulgados em um certo dia do mês $T+2$, enquanto dados da SELIC média de um mês podem ser obtidas antes, a depender do calendário do COPOM.
+	\end{itemize}
+	\item Nessas janelas intermediárias, em que alguns dados de $T+1$ já foram divulgados, mas faltam outros, é interessante entender como calcular as previsões para as variáveis que ainda não foram divulgadas para $T+1$, mas incorporando {\color{blue}toda} a informação disponível
+	\begin{itemize}
+		\item Se as defasagens entre divulgações forem muito longas e com um padrão bem-definido, uma possível solução, do ponto de vista preditivo, é trabalhar com as variáveis que saem muito antes de modo defasado, i.e. incluímos a defasagem da variável adiantada entre os $\boldsymbol{X}_t$ no modelo VAR. 
+	\begin{itemize}
+		\item No entanto, essa estratégia é menos útil quando o calendário de divulgações é mais irregular e com menos intervalos entre divulgações.
+		\item Além disso, defasar algumas séries pode complicar a interpretação dos resultados das estimações.
+	\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Previsão \textit{online} e \textit{nowcasting}}
+\begin{itemize}
+	\item A alternativa para os cenários com divulgação irregular, que mantém a interpretabilidade dos coeficientes, consiste em realizar um procedimento conhecido como \textit{nowcasting}.
+	\item Formalmente, suponha que podemos dividir o VAR em dois conjuntos de variáveis $\boldsymbol{X}_t = [{\color{blue}\boldsymbol{X}_{t}^e}, {\color{orange}\boldsymbol{X}_{t}^l}]$.
+	\begin{itemize}
+		\item Para as variáveis em $\boldsymbol{X}_{t}^e$, observamos os dados {\color{blue}até $T+1$}.
+				\item Para as variáveis em $\boldsymbol{X}_{t}^l$, observamos os dados {\color{orange}até $T$}.
+	\end{itemize}
+	\item Sejam $\hat{\boldsymbol{a}_0}$, $\{\hat{\boldsymbol{A}_k}\}_{k=1}^p$ e $\hat{\Sigma}_0$ estimadores dos parâmetros do VAR com base em dados \textbf{até $T$}.
+	\begin{itemize}
+		\item Para esse conjunto de dados, não faltam informações para resolver o problema de otimização que produz o estimador.
+	\end{itemize}
+	\item Ideia é incorporar na projeção de $\boldsymbol{X}_{t}^l$ nossa melhor projeção para $\boldsymbol{\epsilon}^l_{T+1}$.
+	\begin{itemize}
+		\item Quando não temos dados de $T+1$, sabemos que nossa melhor projeção para esse termo é $\boldsymbol{0}$, visto que se trata de um ruído branco.
+		\item No entanto, conhecimento de  $\boldsymbol{X}_{T+1}^e$ é possivelmente informativo sobre ruído branco, visto que há potencial correlação contemporânea nestes.
+	\end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{\textit{Nowcasting}}
+\begin{itemize}
+ 	\item Possível mostrar que melhor projeção (linear) para $\boldsymbol{\epsilon}^l_{T+1}$ com base no conhecimento do passado e $\boldsymbol{X}_{T+1}^e$ é:
+ 	$$ \boldsymbol{s}^l_{T+1} =   \Sigma_{l,e}\Sigma_{e,e}^{-1} \boldsymbol{\epsilon}_{T+1}^{e}$$
+ 	onde $\Sigma_{e,e} = \mathbb{V}[\boldsymbol{\epsilon}_t^e]$ e  $\Sigma_{l,e} = \operatorname{cov}[\boldsymbol{\epsilon}_t^l,\boldsymbol{\epsilon}_t^e]$.
+ 	\item Ideia é estimar $\boldsymbol{s}^l_{T+1}$ como:
+ 	$$\small \hat{\boldsymbol{s}}^l_{T+1} = \hat{\Sigma}_{0,l,e}\hat{\Sigma}_{0,e,e}^{-1}(\boldsymbol{X}^{e}_{T+1}-\hat{\boldsymbol{X}^{e}}_{T+1|T}),$$
+ 	onde $\hat{\boldsymbol{X}^{e}}_{T+1|T}$ é a projeção usual do VAR com dados até $T$, para $T+1$.
+ 	 \item Projetamos $\boldsymbol{X}^l_{T+1}$ como: 
+ 		$$\hat{\boldsymbol{X}}_{T+1}^l = \hat{\boldsymbol{X}^{l}}_{T+1|T} + \hat{\boldsymbol{s}}^l_{T+1}  $$
+ 		 	\item $\hat{\boldsymbol{s}}^l_{T+1}$ é o {\color{blue}ganho informacional} da divulgação adiantada de $e$.
+ 	\item Projeções para o horizonte longo são feitas de forma recursiva, usando $\hat{\boldsymbol{X}}_{T+1}^l $ e ${\boldsymbol{X}}_{T+1}^e $ para $T+1$.
+
+\end{itemize}
 \end{frame}
 
 \begin{transitionframe}
@@ -374,7 +422,7 @@ $$\begin{pmatrix}
 \begin{frame}{Distribuições conjuntas de processos vetoriais }
 	\begin{itemize}
 		\item Seja $\{\boldsymbol{Z}_t\}_{t \in \mathbb{Z}}$ um processo vetorial de interesse.
-		\item A densidade conjunta numa janela  $\{\boldsymbol{Z}_t\}_{t =1}^T$, condicional a um valor inicial $Z_0$, fatora-se como:
+		\item A densidade conjunta numa janela  $\{\boldsymbol{Z}_t\}_{t =1}^T$, condicional a um valor inicial $\boldsymbol{Z}_0$, fatora-se como:
 		
 		$$f[(\boldsymbol{Z}_t)_{t=1}^T|Z_0] = \prod_{t=1}^T f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1}]\, ,$$
 		onde $\mathcal{Z}_{t} = (\boldsymbol{Z}_0, \boldsymbol{Z}_1,\ldots, \boldsymbol{Z}_{t-1})$.
@@ -401,12 +449,13 @@ $$\begin{pmatrix}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Causalidade de Granger e Exogeneidade Fraca}
+\begin{frame}{Causalidade de Granger, causalidade contemporânea e exogeneidade Fraca}
 \begin{itemize}
 	\item Conceito de causalidade de Granger nos diz que conhecimento do passado de $\boldsymbol{Z}^2_t$ não é informativo sobre $\boldsymbol{Z}^1_t$ contemporâneo.
 	\item Note que não falamos nada sobre conhecimento \textbf{contemporâneo} de $\boldsymbol{Z}^2_t$ ser informativo sobre   $\boldsymbol{Z}^1_t$ contemporâneo.
 	\begin{itemize}
-		\item De fato, num VAR, $\boldsymbol{Z}^2_t$ é no geral contemporanemanete informativo sobre  $\boldsymbol{Z}^1_t$ por conta das correlações em $\Sigma$ diferentes de zero.
+		\item De fato, num VAR, $\boldsymbol{Z}^2_t$ é no geral contemporanemanete informativo sobre  $\boldsymbol{Z}^1_t$ por conta das correlações em $\mathbb{V}(\boldsymbol{\epsilon}_t)$ diferentes de zero.
+		\item No VAR, é possível testar essas relações contemporâneas olhando-se para as entradas de $\mathbb{V}(\boldsymbol{\epsilon}_t)$ ({\color{blue}``causalidade'' contemporânea}; também um conceito preditivo).
 	\end{itemize}
 	\item Um conceito relacionado, embora diferente da causalidade de Granger, diz respeito à modelagem da distribuição de $\boldsymbol{Z}^2_t$ ser importante, do ponto de vista estatístico, na estimação do modelo para $\boldsymbol{Z}^1_t$.
 	\item A esse conceito damos o nome de {\color{blue}exogeneidade fraca}.
@@ -434,7 +483,7 @@ $$\begin{pmatrix}
 		\item Se formos realizar previsões para $\boldsymbol{Z}_{T+h}^1$ com base nesse  modelo, no entanto, vamos precisar de projeções para $\boldsymbol{Z}^2_{T+h}$.
 		\item Podemos fazer isso imputando $\boldsymbol{Z}^2_{T+h}$ com base nas projeções de um modelo para $\boldsymbol{Z}^2_{T+h}$ com base somente no seu passado?
 		\begin{itemize}
-			\item Isso só faz em termos estatístico-preditivos se $\boldsymbol{Z}^1_{T+h}$ \textbf{não Granger causa} $\boldsymbol{Z}^2_{T+h}$.
+			\item Isso só faz sentido em termos estatístico-preditivos se $\boldsymbol{Z}^1_{T+h}$ \textbf{não Granger causa} $\boldsymbol{Z}^2_{T+h}$.
 			\item Nesse caso, podemos modelar $\boldsymbol{Z}^2_{T+h}$ externamente e somente incluir suas projeções futuras no modelo para $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$.
 		\end{itemize}
 		\item Exogeneidade fraca de $\boldsymbol{Z}^2_t$ com respeito a $\psi$ + não causalidade de Granger $\boldsymbol{Z}^1_t$ sobre $\boldsymbol{Z}^2_t$: $\boldsymbol{Z}^2_t$ é {\color{blue}fortemente exógeno} com respeito a $\psi$.
