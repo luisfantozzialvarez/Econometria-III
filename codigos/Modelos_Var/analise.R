@@ -163,13 +163,13 @@ fanchart(predict(modelo, ci = 0.95), plot.type = 'single')
 ### VAMOS INCORPORAR OS DADOS DE ABRIL PARA A SELIC
 dado_up = read.csv('selic_atualizado.csv')
 at= dado_up[nrow(dado_up),2]
-eup = summary(modelo)$covres[2,]%*%solve(summary(modelo)$covres[2,2])%*%(at - predicoes$fcst$dados.dados.juros[1,1])
+eup = summary(modelo)$covres[2,]%*%solve(summary(modelo)$covres[2,2])%*%(at - predicoes$fcst$dados.juros[1,1])
 
 vlh =t(do.call(c,lapply(predicoes$fcst, function(x) x[1,1])) + eup)
 
 mod_up = predict(VAR(ts(rbind(dados[,1:3],vlh),end=c(2024,04),frequency=12) ,type = 'both', p = 14), ci = 0.95)
 
 
-#Testes de causalidade de Granger
-causality(modelo,cause = 'dados.exp')
+#Testes de causalidade de Granger e contemporânea
+causality(modelo,cause = 'dados.juros')
 
