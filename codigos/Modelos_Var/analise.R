@@ -165,8 +165,11 @@ dado_up = read.csv('selic_atualizado.csv')
 at= dado_up[nrow(dado_up),2]
 eup = summary(modelo)$covres[2,]%*%solve(summary(modelo)$covres[2,2])%*%(at - predicoes$fcst$dados.juros[1,1])
 
+
+#Projeções atualizadas em abril
 vlh =t(do.call(c,lapply(predicoes$fcst, function(x) x[1,1])) + eup)
 
+#Projeções de maio para frente
 mod_up = predict(VAR(ts(rbind(dados[,1:3],vlh),end=c(2024,04),frequency=12) ,type = 'both', p = 14), ci = 0.95)
 
 
