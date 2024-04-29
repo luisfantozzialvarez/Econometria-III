@@ -324,7 +324,7 @@ $$\begin{pmatrix}
 		\item A esse teste, damos o nome de {\color{blue}Portmanteau}.
 		\item Também é possível estudar a normalidade conjunta dos erros, através de um análogo vetorial do teste de Jarque-Bera.
 		\begin{itemize}
-			\item Preocupação usualmente secundária. Normalidade garante que o MLE condicional domine outros estimadores, para além do MQO equação a equação e SUR. Também é importante na construção de intervalos de predição, assim como nos ARMA.
+			\item Preocupação usualmente secundária. Normalidade garante que o MLE condicional domine outros estimadores condicionais, para além do MQO equação a equação e SUR. Também é importante na construção de intervalos de predição, assim como nos ARMA.
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -371,7 +371,7 @@ $$\begin{pmatrix}
 	\end{itemize}
 	\item Nessas janelas intermediárias, em que alguns dados de $T+1$ já foram divulgados, mas faltam outros, é interessante entender como calcular as previsões para as variáveis que ainda não foram divulgadas para $T+1$, mas incorporando {\color{blue}toda} a informação disponível
 	\begin{itemize}
-		\item Se as defasagens entre divulgações forem muito longas e com um padrão bem-definido, uma possível solução, do ponto de vista preditivo, é trabalhar com as variáveis que saem muito antes de modo defasado, i.e. incluímos a defasagem da variável adiantada entre os $\boldsymbol{X}_t$ no modelo VAR. 
+		\item Se as defasagens entre divulgações forem muito longas e com um padrão bem-definido, uma possível solução, do ponto de vista preditivo, é trabalhar com as variáveis que saem muito antes de modo adiantado, i.e. incluímos a variável adiantada (em $t+1$) entre os $\boldsymbol{X}_t$ no modelo VAR. 
 	\begin{itemize}
 		\item No entanto, essa estratégia é menos útil quando o calendário de divulgações é mais irregular e com menos intervalos entre divulgações.
 		\item Além disso, defasar algumas séries pode complicar a interpretação dos resultados das estimações.
@@ -425,7 +425,7 @@ $$\begin{pmatrix}
 		\item A densidade conjunta numa janela  $\{\boldsymbol{Z}_t\}_{t =1}^T$, condicional a um valor inicial $\boldsymbol{Z}_0$, fatora-se como:
 		
 		$$f[(\boldsymbol{Z}_t)_{t=1}^T|Z_0] = \prod_{t=1}^T f[\boldsymbol{Z}_t|\mathcal{Z}_{t-1}]\, ,$$
-		onde $\mathcal{Z}_{t} = (\boldsymbol{Z}_0, \boldsymbol{Z}_1,\ldots, \boldsymbol{Z}_{t-1})$.
+		onde $\mathcal{Z}_{t-1} = (\boldsymbol{Z}_0, \boldsymbol{Z}_1,\ldots, \boldsymbol{Z}_{t-1})$.
 	\end{itemize}
 \end{frame}
 
@@ -434,8 +434,8 @@ $$\begin{pmatrix}
 		\item Particione $\boldsymbol{Z}_t$ em dois conjuntos de variáveis, $\boldsymbol{Z}^1_t$ e $\boldsymbol{Z}^2_t$, com $d_1 + d_2 = d$.
 		\item Dizemos que $\boldsymbol{Z}^2_t$ {\color{blue}não Granger causa} $\boldsymbol{Z}^1_t$ se:
 		
-		$$f(\boldsymbol{Z}^1_t|\mathcal{Z}_{t}) = f(\boldsymbol{Z}^1_t|\mathcal{Z}^1_{t}) \,,$$
-		onde $\mathcal{Z}_{t}^1 = (\boldsymbol{Z}_0^1, \boldsymbol{Z}_1^1,\ldots, \boldsymbol{Z}_{t-1}^1)$.
+		$$f(\boldsymbol{Z}^1_t|\mathcal{Z}_{t-1}) = f(\boldsymbol{Z}^1_t|\mathcal{Z}^1_{t-1}) \,,$$
+		onde $\mathcal{Z}_{t-1}^1 = (\boldsymbol{Z}_0^1, \boldsymbol{Z}_1^1,\ldots, \boldsymbol{Z}_{t-1}^1)$.
 		\item $\boldsymbol{Z}^2_t$ {\color{blue}não Granger causa} $\boldsymbol{Z}^1_t$ se defasagens de $\boldsymbol{Z}^2_t$ não são informativas sobre $\boldsymbol{Z}^1_t$.
 		\begin{itemize}
 			\item {\color{red}Conceito preditivo}, e não causal (no sentido econométrico do termo), embora o termo causalidade esteja no nome.
@@ -455,7 +455,11 @@ $$\begin{pmatrix}
 	\item Note que não falamos nada sobre conhecimento \textbf{contemporâneo} de $\boldsymbol{Z}^2_t$ ser informativo sobre   $\boldsymbol{Z}^1_t$ contemporâneo.
 	\begin{itemize}
 		\item De fato, num VAR, $\boldsymbol{Z}^2_t$ é no geral contemporanemanete informativo sobre  $\boldsymbol{Z}^1_t$ por conta das correlações em $\mathbb{V}(\boldsymbol{\epsilon}_t)$ diferentes de zero.
-		\item No VAR, é possível testar essas relações contemporâneas olhando-se para as entradas de $\mathbb{V}(\boldsymbol{\epsilon}_t)$ ({\color{blue}``causalidade'' contemporânea}; também um conceito preditivo).
+		\item No VAR, é possível testar essas relações contemporâneas olhando-se para as entradas de $\mathbb{V}(\boldsymbol{\epsilon}_t)$ ({\color{blue}``causalidade'' contemporânea}; também um conceito preditivo). 
+		\begin{itemize}
+			\item 	Nula de não causalidade contemporânea é que coeficiente do melhor preditor linear de $\epsilon_{1,t}$ em $\epsilon_{2,t}$ é zero, i.e. $\operatorname{cov}(\boldsymbol{\epsilon}_1^t, \boldsymbol{\epsilon}_2^t)\mathbb{V}[\epsilon^2_t]^{-1} = \boldsymbol{0}_{d_1 \times d_2}$.
+		\end{itemize}
+	
 	\end{itemize}
 	\item Um conceito relacionado, embora diferente da causalidade de Granger, diz respeito à modelagem da distribuição de $\boldsymbol{Z}^2_t$ ser importante, do ponto de vista estatístico, na estimação do modelo para $\boldsymbol{Z}^1_t$.
 	\item A esse conceito damos o nome de {\color{blue}exogeneidade fraca}.

@@ -1,4 +1,4 @@
-setwd("~/Documents/GitHub/Econometria-III/codigos/Modelos_Var")
+setwd("~/Documentos/GitHub/Econometria-III/codigos/Modelos_Var")
 
 library("CADFtest")
 library("car")
@@ -57,12 +57,12 @@ summary(teste)
 #Vamos fazer o teste F
 print(teste$est.model)
 linearHypothesis(teste$est.model,c("trnd = 0", "L(y, 1) = 0" ))
-#Rejeitamos H0, do teste F, a 5%, olhando na tabela dos slides
+#Não rejeitamos H0, do teste F, a 5%, olhando na tabela dos slides
 
-#Logo, repetindo o teste t com valores críticos normais
-print(teste$statistic)
-print(qnorm(0.05))
-
+#Rodando agora no modelo com drift somente
+teste = CADFtest(dados[,2], type = "drift", max.lag.y = ceiling(12*(length(dados[,2])/100)^(1/4)),
+                 criterion = "MAIC")
+summary(teste)
 #Concluímos que não há raiz unitária
 
 #TESTE DE COMPONENTE DETERMINÍSTICO
@@ -91,8 +91,9 @@ coeftest(lm(dados[,3]~ trnd), vcov = vcovHAC)
 #Vamos analisar as FACs dos processos, para detectar a presença de sazonalidade.
 #Note que os dois primeiros processos devem ser detrended
 resid = residuals(lm(dados[,1:2]~ trnd))
-colnames(resid) = paste("resid", colnames(resid), sep="_")
 dados = cbind(dados,resid)
+colnames(dados)[4:5] = paste("r", c("exp","juros"), sep="_")
+
 
 acf(dados[,3:5],lag.max=40)
 #Não parece haver evidência de componentes sazonais no processo
