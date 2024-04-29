@@ -1,4 +1,4 @@
-setwd("~/Documentos/GitHub/Econometria-III/codigos/Modelos_Var")
+setwd("~/Documents/GitHub/Econometria-III/codigos/Modelos_Var")
 
 library("CADFtest")
 library("car")
@@ -128,8 +128,6 @@ qchisq(0.95, 9)
 
 #Vamos verificar o teste de Portmanteau para autocorrelação dos resíduos
 serial.test(modelo, lags.pt = 20, type = c("PT.adjusted"))
-
-
 #Rejeitamos a hipótese nula: VAR(2) joga muita informação fora!!!
 
 #Vamos considerar o VAR com base no AIC
@@ -154,12 +152,23 @@ normality.test(modelo)
 #Rejeitamos claramente normalidade dos erros
 
 #Podemos procurar especificações com ordem maiores, mas a dimensionalidade vai tender a piorar
-#Vamos ficar com o modelo do AIC (vale comparar com o do BIC)
-predict(modelo, ci = 0.95)
+#Vamos ficar com o modelo do AIC (vale comparar os resultados com o do BIC e HQ também)
+
+predicoes = predict(modelo, ci = 0.95)
 
 fanchart(predict(modelo, ci = 0.95), plot.type = 'single')
 
 
+### VAMOS INCORPORAR OS DADOS DE ABRIL PARA A SELIC
+dado_up = read.csv('selic_atualizado.csv')
+at= dado_up[nrow(dado_up),2]
+eup = summary(modelo)$covres[2,]%*%solve(summary(modelo)$covres[2,2])%*%(at - predicoes$fcst$dados.dados.juros[1,1])
+
+vlh =t(do.call(c,lapply(predicoes$fcst, function(x) x[1,1])) + eup)
+
+mod_up = predict(VAR(ts(rbind(dados[,1:3],vlh),end=c(2024,04),frequency=12) ,type = 'both', p = 14), ci = 0.95)
+
 
 #Testes de causalidade de Granger
 causality(modelo,cause = 'dados.exp')
+
