@@ -1,0 +1,274 @@
+% !TeX document-id = {0be8c18c-9430-4e9a-bdd9-12beadebfebc}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[11pt]{beamer}
+
+\usepackage[brazilian]{babel}
+
+\uselanguage{portuguese}
+\languagepath{portuguese}
+\deftranslation[to=portuguese]{Theorem}{Teorema}
+\deftranslation[to=portuguese]{theorem}{teorema}
+\deftranslation[to=portuguese]{Example}{Exemplo}
+\deftranslation[to=portuguese]{example}{exemplo}
+\deftranslation[to=portuguese]{Lemma}{Lema}
+\deftranslation[to=portuguese]{lemma}{Lema}
+\deftranslation[to=portuguese]{Corollary}{Corolário}
+\deftranslation[to=portuguese]{corollary}{corolário}
+%\deftranslation[to=portuguese]{and}{e}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{subcaption}
+%\usepackage{appendixnumberbeamer}
+
+\newenvironment{transitionframe}{
+	\setbeamercolor{background canvas}{bg=yellow}
+	\begin{frame}}{
+	\end{frame}
+}
+\usetheme{default}
+\usefonttheme{structuresmallcapsserif}
+
+%% I use a beige off white for my background
+\definecolor{MyBackground}{RGB}{255,253,218}
+\useinnertheme[shadow]{rounded}
+\setbeamercolor{block title}{bg=MyBackground}
+\setbeamercolor{block body}{bg=MyBackground}
+\setbeamercolor{example title}{bg=MyBackground}
+\setbeamercolor{example body}{bg=MyBackground}
+
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{page number in head/foot}[appendixframenumber]
+
+%\usepackage{graphics}
+\usepackage{graphicx}
+
+\definecolor{blue_emph}{RGB}{0,114,178}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+\definecolor{purple}{RGB}{204,121,167}
+\definecolor{orange}{RGB}{230,159,0}
+\definecolor{lightblue}{RGB}{86,180,233}
+
+%\setbeamercolor{frametitle}{fg=blue}
+%\setbeamercolor{title}{fg=blue}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{itemize items}{-}
+%\setbeamercolor{itemize item}{fg=blue}
+%\setbeamercolor{itemize subitem}{fg=blue}
+\setbeamertemplate{enumerate items}[default]
+%\setbeamercolor{enumerate subitem}{fg=blue}
+\setbeamercolor{button}{bg=MyBackground,fg=blue}
+\usefonttheme{structuresmallcapsserif}
+
+%\setbeamercolor{section in toc}{fg=blue}
+%\setbeamercolor{subsection in toc}{fg=red}
+\setbeamersize{text margin left=1em,text margin right=1em} 
+
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage[
+backend=biber,
+uniquename=false,
+uniquelist=false,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{halfwideitemize}{\itemize\addtolength{\itemsep}{0.5em}}{\enditemize}
+\newenvironment{halfwideenumerate}{\enumerate\addtolength{\itemsep}{0.5em}}{\endenumerate}
+
+
+\author{Luis A. F. Alvarez}
+\title{EAE1223: Econometria III}
+\subtitle{Aula 7 - Cointegração}
+%\logo{}
+%\institute{}
+\date{\today}
+%\subject{}
+%\setbeamercovered{transparent}
+
+\begin{document}
+
+\begin{frame}[plain]
+	\maketitle
+\end{frame}
+
+\begin{frame}{Natureza da inferência espúria}
+	\begin{wideitemize}
+		\item Em algumas aulas atrás, vimos que a inferência baseada nos estimadores de MQO de um modelo linear de um processo I(1) em outro processo I(1), {\color{blue} completamente independentes}, gerava conclusões espúrias.
+		\begin{itemize}
+			\item Relação verdadeira é $0$, mas testes de hipótese proviam forte evidência contra hipótese de associação nula  (p-valores baixíssimos).
+		\end{itemize}
+		\item Uma pergunta que cabe é: se há dependência entre os processos I(1), há condições sob as quais estimadores de MQO produzem inferência \textbf{não espúria}? 
+	\end{wideitemize}
+
+\end{frame}
+
+\begin{frame}{Um exemplo}
+	\begin{itemize}
+		\item Considere o seguinte processo bivariado :
+		$$x_t =  x_{t-1}+u_t \, ,$$
+		$$ y_t = \gamma x_t + v_t\, ,$$
+		onde $\{u_t\}_t$ e $\{v_t\}_t$ são ruídos brancos independentes uns dos outros.
+		\item Observe que ambos os processos são I(1)
+		\item Vamos considerar as propriedades do estimador de MQO $\hat \gamma$  de $\gamma$, sobre realizações repetidas da incerteza econômica:
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Uma realização do processo por $T=500$ períodos ($\gamma =0.5$)}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{graficos/tendencia_comum.pdf}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Distribuição de $\hat \gamma$ em realizações repetidas da incerteza ($T=500$  e $\gamma =0.5$)}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.7]{graficos/distribuicao_gammahat.pdf}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Tendência estocástica comum}
+	\begin{itemize}
+		\item Note que o estimador de MQO tem distribuição convencional (normal) sobre realizações repetidas da incerteza.
+		\item Isso ocorre mesmo com ambas as séries sendo I(1).
+		\item Por que isso ocorre?
+		\begin{itemize}
+			\item Processos possuem tendência estocástica {\color{blue}\textbf{comum}}.
+			\item A tendência comum ``amarra'' o comportamento explosivo dos processos, recuperando a validade da aproximação normal.
+			\item A processos I(1) com tendência estocástica comum, damos o nome de {\color{blue}processos cointegrados}.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Cointegração}
+\begin{itemize}
+	\item Considere um processo vetorial $\{\boldsymbol{Z}_t\}_{t \in \mathbb{Z}}$ com $n$ variáveis.
+	\item Dizemos que o vetor é cointegrado (de ordem (1,1)), ou CI(1,1), se:
+	\begin{enumerate}
+		\item Cada uma das séries $\{Z_{jt}\}_{t\in \mathbb{Z}}$, $j=1,\ldots, n$, é I(1).
+		\item Existe um vetor $\boldsymbol{\gamma} \in \mathbb{R}^n$, $\boldsymbol{\gamma} \neq \boldsymbol{0}_{n\times 1}$, tal que $\boldsymbol{\gamma}'\boldsymbol{Z}_t$, é I(0).
+	\end{enumerate} 
+	\item Se processo é CI(1,1), existe combinação linear não trivial tal que processo resultante é estacionário.
+	\begin{itemize}
+		\item Existe uma {\color{blue}relação de longo prazo}, fruto de uma tendência comum, amarrando os processos, de modo que desvios dessa relação são I(0).
+		\item Note que a relação não é única, visto que sempre podemos multiplicá-la por uma constante não nula.
+	\end{itemize}
+	\item De modo mais geral, um processo vetorial é dito cointegrado de ordem (d,b), ou CI(d,b), $ 0< b \leq  d$, se:
+	\begin{itemize}
+			\item Cada uma das séries $\{Z_{jt}\}_{t\in \mathbb{Z}}$, $j=1,\ldots, n$, é I(d).
+					\item Existe um vetor $\boldsymbol{\gamma} \in \mathbb{R}^n$, $\boldsymbol{\gamma} \neq 0$, tal que $\boldsymbol{\gamma}'\boldsymbol{Z}_t$, é I(d-b).
+	\end{itemize}
+	\item Focaremos no caso CI(1,1), que é o mais economicamente interessante.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cointegração e teoria econômica}
+	\begin{itemize}
+		\item O conceito de cointegração é de natureza estatística.
+		\begin{itemize}
+			\item Não obstante, a evidência ou não de uma relação de longo prazo pode ter uma interpretação econômica.
+		\end{itemize}
+		\item Considere uma medida dos preços praticados para uma cesta de bens no Brasil, em reais; uma outra medida, para cesta similar, dos preços praticados em dólares nos Estados Unidos, e a taxa de câmbio real/Estados Unidos.
+		\begin{itemize}
+		\item  {\color{blue}Pela teoria da paridade do poder de compra}, embora processos individualmente apresentem comportamento não estacionário (estocástico), deveria haver uma relação de cointegração entre estas variáveis.
+		\end{itemize}
+		
+		\item {\color{blue}Se há neutralidade da moeda no longo prazo}, não deveria haver relação de longo prazo entre produto real e base monetária real.
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Testando pela presença de cointegração}
+	\begin{itemize}
+		\item \citet{EngleGranger1987} popularizaram um procedimento bastante intuitivo para se testar a nula de\textbf{ não cointegração}.
+		\item Considere um processo vetorial $\boldsymbol{Z}_t = (y_t, \boldsymbol{x}_t)$ em que cada entrada é I(1), e para o qual acreditamos que possa haver alguma relação de cointegração envolvendo $y_t$.\begin{itemize}
+			\item Para sistemas com duas variáveis  ($\boldsymbol{x}_t$ escalar), crença é sem perda de generalidade, visto que cointegração necessariamente envolve $y_t$.
+			\item Para sistemas com mais de duas variáveis, efetivamente nos restringimos a alternativas em que $y_t$ participa da relação.
+		\end{itemize}
+		\item Ideia de \citet{EngleGranger1987}: estimar por MQO uma regressão de $y_t$ em $\boldsymbol{x}_t$ (e um intercepto):
+		$$y_t =\hat\alpha + \hat{{\gamma}}'\boldsymbol{x}_t + \hat{u}_t \, , \quad t=1,\ldots, T$$
+		e fazer um teste da nula de raiz unitária nos resíduos $\{\hat u_t\}_{t=1}^T$.
+		\begin{itemize}
+			\item Se não há cointegração, resíduos devem apresentar tendência estocástica.
+			\item Se há cointegração envolvendo $y_t$, resíduos deveriam ser estacionários.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Procedimento de \citet{Phillips1990}}
+	\begin{itemize}
+		\item Teste não pode ser feito usando valores críticos convencionais, pois estimação preliminar afeta valores críticos.
+		\begin{itemize}
+			\item \citet{Phillips1990} tabularam os valores críticos para as estatísticas do teste ADF e de \citet{Phillips1988}.
+		\end{itemize}
+		\item Tabulação depende de existência de tendência linear no nível da série.
+		\begin{itemize}
+			\item Se há somente tendência estocástica em nível, usar {\color{blue}Caso 2}.
+			\item  Se séries apresentam tendência estocástica, e ao menos uma das séries em $\boldsymbol{x}_t$ apresentar tendência determinística linear em nível, usar {\color{blue}Caso 3}.
+			\item Se séries apresentam tendência estocástica, nenhuma das séries em $\boldsymbol{x}_t$ apresentar tendência determinística em nível, mas $y_t$ apresentar tendência linear, há que se modificar o conceito de cointegração. Nesse caso, é impossível gerar combinação linear estacionária, mas ainda é possível gerar combinação linear \textit{ trend-stationary }(cointegração em torno de tendência determinística). Se quisermos testar isso, rodamos 
+					$$y_t =\hat\alpha + \hat \delta t + \hat{{\gamma}}'\boldsymbol{x}_t + \hat{u}_t \, , \quad t=1,\ldots, T\ ,$$
+			e usamos os valores críticos do {\color{blue}Caso 3, supondo que há $n+1$ variáveis}.
+			\item Se sabemos que relação de cointegração tem média zero, podemos omitir o intercepto da regressão e considerando o {\color{blue}Caso $1$}.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Valores críticos}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.4]{graficos/tabela.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{O que o MQO estima sob cointegração?}
+\begin{itemize}
+	\item Para um processo vetorial $\boldsymbol{Z}_t = (y_t,\boldsymbol{x}_t)$ $n$-variado cointegrado, há no mínimo uma, e no máximo $n-1$ relações de cointegração linearmente independentes disponíveis.
+	\begin{itemize}
+		\item Se houvesse $n$ relações de cointegração, é possível mostrar que o processo na verdade seria estacionário.
+	\end{itemize}
+	\item Sejam $\left\{(1,
+		\boldsymbol{b}_1'
+	)', 
+(1,
+\boldsymbol{b}_2'
+)',\ldots, (1,
+\boldsymbol{b}_q'
+)'\right\}$ as $q$ relações linearmente independentes que envolvem $y_t$.
+		\item Se $q > 0$, possível mostrar que estimador de MQO de $y_t$ em  $\boldsymbol{x}_t$ e em um intercepto é consistente para o parâmetro $\gamma^* \in \operatorname{span} \{\boldsymbol{b}_1,\ldots, \boldsymbol{b}_q\}$ do {\color{blue}melhor preditor linear de $y_t$ em $\boldsymbol{x}_t$} definido de tal forma que:
+		$$y_t = \alpha^* + \boldsymbol{x}_t '\gamma^* + u_t\, $$
+		com $u_t$ estacionário, $\mathbb{E}[u_t] = 0$ e $\operatorname{cov}(\boldsymbol{x}_t,u_t) = \boldsymbol{0}$.
+		\begin{itemize}
+			\item Se $\operatorname{cov}(\Delta \boldsymbol{x}_t , u_s) = \boldsymbol{0}$ para todo $t$ e $s$, podemos realizar inferência sobre  $\gamma^*$ com base no estimador de MQO, erros padrão HAC e valores críticos normais.
+		\end{itemize}
+		\item Se $q=0$, inferência com base no MQO é espúria.
+\end{itemize}
+\end{frame}
+
+
+\appendix
+\begin{frame}{Referências}
+	\printbibliography
+\end{frame}
+\end{document}
+
