@@ -1,0 +1,37 @@
+% !TeX document-id = {1c0b4298-276a-4038-8e08-c4a1f4846da7}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{float}
+
+\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+
+\title{\large EAE1223: Econometria III}
+\author{\normalsize Exercícios sobre metodologia VAR}
+\date{}
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+\item Escolha uma das séries por você analisada na metodologia de Box-Jenkins.
+\begin{itemize}
+	\item[a] Considere mais uma variável que você acredita que possa ajudar na previsão desta série. Ajuste um modelo VAR bivariado para as duas séries, devidamente estacionarizadas. Conduza todas as etapas de especificação e diagnóstico do modelo, e calcule as previsões fora da amostra. Como elas se comparam às obtidas na metodologia Box-Jenkins?
+	\item[b] Realize o teste da hipótese nula de que a inclusão das defasagens da nova variável não afeta as previsões da série original, relativamente a um modelo AR de mesma ordem que o VAR(p) por você escolhido. Qual é o nome desta hipótese nula? Qual a conclusão do teste, a 5\%?
+\end{itemize}
+\end{enumerate}
+
+\end{document}
