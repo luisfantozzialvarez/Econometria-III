@@ -28,10 +28,68 @@ natbib=true
 	\maketitle
 	\begin{enumerate}
 \item Escolha uma das séries por você analisada na metodologia de Box-Jenkins.
-\begin{itemize}
+\begin{enumerate}
 	\item[a] Considere mais uma variável que você acredita que possa ajudar na previsão desta série. Ajuste um modelo VAR bivariado para as duas séries, devidamente estacionarizadas. Conduza todas as etapas de especificação e diagnóstico do modelo, e calcule as previsões fora da amostra. Como elas se comparam às obtidas na metodologia Box-Jenkins?
 	\item[b] Realize o teste da hipótese nula de que a inclusão das defasagens da nova variável não afeta as previsões da série original, relativamente a um modelo AR de mesma ordem que o VAR(p) por você escolhido. Qual é o nome desta hipótese nula? Qual a conclusão do teste, a 5\%?
-\end{itemize}
+\end{enumerate}
+\item Com base no modelo VAR trivariado visto em aula:
+\begin{enumerate}
+	\item Acesse o site do IpeaData e colete as expectativas médias de inflação (IPCA), doze meses à frente, para o mês de \textbf{abril de 2024}.
+	\item Usando a fórmula do \textit{nowcasting} vista em aula, atualize as projeções feitas com dados até março, com base nesta divulgação e na de taxa de juros já vista em sala. Como mudam as projeções para abril e maio?
+	\item Testa, ao nível de significância de 5\%, a hipótese nula de que tanto a atualização com base na divulgação antecipada das expectativas como da Selic não impactam as projeções de inflação. Como é o nome desta hipótese? Qual a conclusão do teste?
+\end{enumerate}
+
+\item Considere um VAR(1) para um processo vetorial $\boldsymbol{Z}_t = (\boldsymbol{Y}_t', X_t)'$, com $d+1$ entradas, em que $\boldsymbol{Y}_t$ é $d\times 1$ e $X_t$ é escalar:
+\begin{align}
+\boldsymbol{Y}_t = A_{y,y}\boldsymbol{Y}_{t-1} + A_{y,x}X_{t-1} + u_{y,t}  \label{full}
+\\
+X_t = A_{x,y}\boldsymbol{Y}_{t-1} + A_{x,x}X_{t-1} + u_{x,t}  \label{eq_marginal}
+\end{align}
+
+em que $\begin{pmatrix}
+	u_{y,t} \\
+	u_{x,t}
+	\end{pmatrix} \overset{iid}{\sim} \mathcal{N}\left(\begin{pmatrix}\boldsymbol{0}_{d\times 1} \\ 0\end{pmatrix},\begin{pmatrix}
+\Sigma_{y,y} & \Sigma_{y,x} \\
+\Sigma_{x,y}& \sigma_{x,x}
+	\end{pmatrix}\right)$, com $\Sigma_{y,y} = \mathbb{V}[\boldsymbol{Y}_t]$, $\sigma_{x,x} = \mathbb{V}[X_t]$, e $\Sigma_{y,x} = \operatorname{cov}(\boldsymbol{Y}_t,X_t) = \Sigma_{x,y}'$.
+	
+	\begin{enumerate}
+		\item Usando a seguinte propriedade da distribuição normal:
+		$$u_{y_t} = \gamma u_{x,t} + v_t\, ,$$
+		em que $v_t \sim N(\boldsymbol{0}_{d\times 1}, \Sigma_{y,y} - \Sigma_{y,x}\sigma_{x,x}^{-1}\Sigma_{x,y})$ é independente de $u_{x,t}$, $\gamma = \Sigma_{y,x}\sigma_{x,x}^{-1} \Sigma_{x,y}$; mostre que podemos escrever o modelo condicional para $\boldsymbol{Y}_t|X_t,\mathcal{Z}_{t-1}$ como:
+	\begin{equation}
+		\label{eq_cond}
+		\boldsymbol{Y}_t = {B}_{y,y}\boldsymbol{Y}_{t-1} +\delta_{y,0}X_t + \delta_{y,1} X_{t-1}+ v_{t}\, .
+	\end{equation}
+	
+	Expresse a relação entre os parâmetros desse modelo, $\{B_{y,y}, \delta_{y,0}, \delta_{y,1}, \mathbb{V}[v_t]\}$, e os parâmetros do VAR(1).
+	\item Argumente que, se não impomos nenhuma restrição nos parâmetros do VAR(1) que descreve $\boldsymbol{Z}_t$ (equações \eqref{eq_full}-\eqref{eq_cond}), os parâmetros do modelo condicional \eqref{eq_cond},  $\{B_{y,y}, \delta_{y,0}, \delta_{y,1}, \mathbb{V}[v_t]\}$,  podem variar independentemente dos parâmetros do modelo para $\boldsymbol{X}_t|\mathcal{Z}_{t-1}$, dado pela equação \eqref{eq_marginal}, $\{\boldsymbol{A}_{x,y}, \boldsymbol{A}_{x,x}, \Sigma_{x,x}\}$. Qual é o nome desta propriedade? Qual é a implicação dela, se nosso interesse está somente em estimar os parâmetros do modelo \eqref{eq_cond}, tratando $X_t$ e $X_{t-1}$ como variáveis externas no VAR de $\boldsymbol{Y}_t$?
+	\item Sob qual condição adicional podemos usar as estimativas do modelo \eqref{eq_cond}, conjuntamente a projeções externas para $\{X_t\}$, de maneira consistente e sem perda de informação relevante? Qual é o nome da propriedade resultante?
+		
+	\end{enumerate}
+\item (Um modelo monetarista) Considere a seguinte descrição de uma economia:
+\begin{align}
+	i_t = r_t +\mathbb{E}_t \pi_{t+1} \label{eq_foc} \\
+	i_t = r_t + \bar\pi +  \pi \theta (\pi_t - \bar{\pi}) + x_t  \label{eq_cb}
+\end{align}
+
+A equação \eqref{eq_foc} é a conhecida equação de Fisher, e resulta do comportamento intertemporal dos consumidores, de modo que a taxa de juros nominal, $i_t$, subtraída da expectativa de inflação com base na informação disponível em $t$, $\mathbb{E}_t \pi_{t+1}$, deve coincidir com a taxa de juros real, $r_t$, que em nossa economia monetarista é determinada por fatores reais, podendo ser descrita por:
+\begin{equation}
+r_t = \bar{r} + \beta r_{t-1} + u_t \, ,
+\end{equation}
+onde $u_t$ são choques reais que afetam o equilíbrio no mercado de fundos emprestáveis.
+
+A equação \eqref{eq_cb} é a regra de política monetária do Banco Central, onde $\bar \pi$ é a meta de inflação, $\pi$ é a resposta da política monetária a desvios da inflação da meta, e $x_t$ são outros fatores que determinam a decisão de política monetária do banco central. Nós supomos que esses fatores seguem:
+ 
+ \begin{equation}
+ 	x_t =  \rho x_{t-1} + v_t \, ,
+ \end{equation}
+pnde permitimos que haja correlação entre choques reais e choques nos outros determinantes da decisão de política monetária, isto é $\operatorname{cov}(v_t,u_t)$ não precisa ser $0$.
+
+\begin{enumerate}
+	\item 
+\end{enumerate}
 \end{enumerate}
 
 \end{document}
