@@ -41,7 +41,7 @@ natbib=true
 
 \item Considere um VAR(1) para um processo vetorial $\boldsymbol{Z}_t = (\boldsymbol{Y}_t', X_t)'$, com $d+1$ entradas, em que $\boldsymbol{Y}_t$ é $d\times 1$ e $X_t$ é escalar:
 \begin{align}
-\boldsymbol{Y}_t = A_{y,y}\boldsymbol{Y}_{t-1} + A_{y,x}X_{t-1} + u_{y,t}  \label{full}
+\boldsymbol{Y}_t = A_{y,y}\boldsymbol{Y}_{t-1} + A_{y,x}X_{t-1} + u_{y,t}  \label{eq_full}
 \\
 X_t = A_{x,y}\boldsymbol{Y}_{t-1} + A_{x,x}X_{t-1} + u_{x,t}  \label{eq_marginal}
 \end{align}
@@ -71,24 +71,65 @@ em que $\begin{pmatrix}
 \item (Um modelo monetarista) Considere a seguinte descrição de uma economia:
 \begin{align}
 	i_t = r_t +\mathbb{E}_t \pi_{t+1} \label{eq_foc} \\
-	i_t = r_t + \bar\pi +  \pi \theta (\pi_t - \bar{\pi}) + x_t  \label{eq_cb}
+	i_t = r_t + \bar\pi +  \theta (\pi_t - \bar{\pi}) + x_t  \label{eq_cb}
 \end{align}
 
 A equação \eqref{eq_foc} é a conhecida equação de Fisher, e resulta do comportamento intertemporal dos consumidores, de modo que a taxa de juros nominal, $i_t$, subtraída da expectativa de inflação com base na informação disponível em $t$, $\mathbb{E}_t \pi_{t+1}$, deve coincidir com a taxa de juros real, $r_t$, que em nossa economia monetarista é determinada por fatores reais, podendo ser descrita por:
 \begin{equation}
 r_t = \bar{r} + \beta r_{t-1} + u_t \, ,
 \end{equation}
-onde $u_t$ são choques reais que afetam o equilíbrio no mercado de fundos emprestáveis.
+onde $u_t$ são choques reais que afetam o equilíbrio no mercado de fundos emprestáveis; e $|\beta| < 1$.
 
-A equação \eqref{eq_cb} é a regra de política monetária do Banco Central, onde $\bar \pi$ é a meta de inflação, $\pi$ é a resposta da política monetária a desvios da inflação da meta, e $x_t$ são outros fatores que determinam a decisão de política monetária do banco central. Nós supomos que esses fatores seguem:
+A equação \eqref{eq_cb} é a regra de política monetária do Banco Central, onde $\bar \pi$ é a meta de inflação, $\theta$ mede a resposta da política monetária a desvios da inflação da meta, e $x_t$ são outros fatores que determinam a decisão de política monetária do banco central. Nós supomos que esses fatores seguem:
  
  \begin{equation}
  	x_t =  \rho x_{t-1} + v_t \, ,
  \end{equation}
-pnde permitimos que haja correlação entre choques reais e choques nos outros determinantes da decisão de política monetária, isto é $\operatorname{cov}(v_t,u_t)$ não precisa ser $0$.
+ 
+ com $|\rho| < 1$. Por fim, supomos que as inovações  $(u_t,v_t)$ se comportam como ruídos brancos independentes no tempo e contemporaneamente independentes entre si.
 
 \begin{enumerate}
-	\item 
+	\item Usando \eqref{eq_foc}-\eqref{eq_cb}, mostre que:
+	
+	$$\mathbb{E}_t \pi_{t+1} = (1-\theta)\bar{\pi} +\theta \pi_t + x_t\, . $$
+	\item Suponha que as expectativas são \emph{racionais}, no sentido de que $\mathbb{E}_t$ corresponde à esperança condicional do modelo, com base em todas as variáveis do sistema até $t$. Mostre que, neste caso, para todo $s > 0$:
+	
+	$$\mathbb{E}_t \pi_{t+s}  = \sum_{j=1}^{s} \theta^{s- j}  ((1-\theta)\bar{\pi} + \mathbb{E}_t[x_{t+j-1}])  +  \theta^s \pi_t   = \sum_{j=1}^{s} \theta^{s-j}  ((1-\theta)\bar{\pi} +\rho^{j-1} x_{t})  +  \theta^s \pi_t \, .$$
+	
+	\textit{Dicas:} Pela lei das expectativas iteradas $\mathbb{E}_t \mathbb{E}_{t+j} z = \mathbb{E}_t z$, para qualquer variável aleatória $z$. Além disso, para o processo AR(1) que descreve $x_t$, recorde-se que $\mathbb{E}_t x_{t+s} = \rho^s x_t$.
+	
+	\item Mostre que, se vale o \emph{princípio de Taylor}, qual seja, $\theta > 1$, e o equilíbrio apresenta expectativas não explosivas, isto é, existem $C > 0$ e $S \in \mathbb{N}$ tais que $|\mathbb{E}_t \pi_{t+s}| \leq C$ para todo $s \geq S$, então a taxa de inflação satisfaz:
+	
+	$$\pi_t = \bar \pi - \frac{1}{\theta - \rho} x_t \, .$$
+	
+	\item Mostre que $(\pi_t, i_t)$ segue um VAR(1) da forma:
+	
+	$$\begin{bmatrix}
+	\pi_t \\
+	i_t 
+	\end{bmatrix} =  \begin{pmatrix}
+	a_\pi \\
+	a_i
+	\end{pmatrix} + \begin{pmatrix}
+	b_{\pi,\pi} & b_{\pi,i} \\
+	b_{i,\pi} & b_{i,i}
+	\end{pmatrix}\begin{bmatrix}
+	\pi_{t-1}\\
+	i_{t-1}
+\end{bmatrix} + \begin{bmatrix}
+e_{i,t} \\
+e_{\pi, t}
+\end{bmatrix} \, ,$$
+onde $\begin{bmatrix}
+	e_{i,t} \\
+	e_{\pi, t}
+\end{bmatrix} $ é um ruído branco vetorial. Determine os valores dos coeficientes, como função dos parâmetros do modelo econômico, bem como a matriz de variância-covariância de $\begin{bmatrix}
+e_{i,t} \\
+e_{\pi, t}
+\end{bmatrix} $.
+\item No VAR obtido, juros Granger causa inflação? Inflação Granger causa juros? E a causalidade instantânea?
+\item A equação de movimento dos juros, no modelo VAR(1) resultante, pode ser interpretada como a regra de \textbf{decisão} do banco central? Por quê?
+\item A equação de movimento da inflação, no modelo VAR(1) resultante, é invariante a mudanças no parâmetro $\theta$ de resposta da política monetária? O que isso indica de exercícios contrafactuais que visassem a usar essa equação estimada para avaliar regras monetárias contrafactuais?
 \end{enumerate}
 \end{enumerate}
 
