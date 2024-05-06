@@ -259,12 +259,52 @@ natbib=true
 		$$y_t = \alpha^* + \boldsymbol{x}_t '\gamma^* + u_t\, $$
 		com $u_t$ estacionário, $\mathbb{E}[u_t] = 0$ e $\operatorname{cov}(\boldsymbol{x}_t,u_t) = \boldsymbol{0}$.
 		\begin{itemize}
-			\item Se $\operatorname{cov}(\Delta \boldsymbol{x}_t , u_s) = \boldsymbol{0}$ para todo $t$ e $s$, podemos realizar inferência sobre  $\gamma^*$ com base no estimador de MQO, erros padrão HAC e valores críticos normais.
+			\item Se $\operatorname{cov}(\Delta \boldsymbol{x}_t , u_s) = \boldsymbol{0}$ para todo $t$ e $s$, podemos realizar inferência sobre  $\gamma^*$ com base no estimador de MQO, estatísticas $t$ com erros padrão HAC e valores críticos normais.
 		\end{itemize}
 		\item Se $q=0$, inferência com base no MQO é espúria.
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Limitações da metodologia de Engle-Granger}
+	\begin{wideitemize}
+		\item Não obstante sua praticidade, a metodologia de Engle-Granger possui algumas limitações:
+		\begin{itemize}
+			\item Ao efetivamente escolher uma variável do lado esquerdo, nos restrigimos a relações de cointegação que envolvem $y_t$.
+			\item Se $n>2$, não conseguimos separar as relações de cointegração distintas (linearmente independentes) potencialmentes existentes, cada uma correspondente a uma relação de longo prazo diferente.
+		\end{itemize}
+		\item Como veremos a seguir, o {\color{blue}teorema da representação de Granger} nos diz que, para um sistema de variáveis cointegrado, há restrições no processo gerador que são úteis para separar as relações de cointegração existentes.
+		\begin{wideitemize}
+			\item Essas relações podem ser usadas para construir modelos preditivos superiores (a um VAR em primeiras diferenças).
+		\end{wideitemize}
+	\end{wideitemize}
+\end{frame}
+
+\begin{frame}{Teorema de representação de Granger}
+	\begin{wideitemize}
+		\item Seja $\{\boldsymbol{Z}_t\}_{t\in \mathbb{Z}}$ um processo vetorial em $\mathbb{R}^n$ em que cada uma das variáveis é $I(1)$, e o processo é descrito por um VAR(p):
+		
+		\begin{equation}
+			\boldsymbol{Z}_t = \boldsymbol{c} + \sum_{j=1}^p A_j \boldsymbol{Z}_{t-j} + \boldsymbol{v}_t \, . 
+		\end{equation}
+		\item {\color{blue}Teorema de representação de Granger:} $\boldsymbol{Z}_t$ é CI(1,1) se, e somente se, admite a {\color{blue}representação de correção de erros}:
+		\begin{equation}
+			\Delta \boldsymbol{Z}_t  =  \boldsymbol{c} + \boldsymbol{\alpha}'\boldsymbol{\beta} \boldsymbol{Z}_{t-1} + \sum_{j=1}^{p-1} \boldsymbol{B}_{j} \Delta  \boldsymbol{Z}_{t-j} + \boldsymbol{v}_t \, , 
+		\end{equation}
+		onde $\boldsymbol{\alpha}$ e $ \boldsymbol{\beta}$ são matrizes $r \times n$ com posto $r$, e cada uma das linhas de $\boldsymbol{\beta}$ corresponde a uma das $r \in \{1,\ldots, n-1\}$ relações de cointegração linearmente independentes do sistema.
+
+	\end{wideitemize}
+\end{frame}
+
+\begin{frame}{Cointegração e correção de erros}
+\begin{wideitemize}
+	 		\item Teorema de representação de Granger nos diz que, se sistema é cointegrado, variações de curto prazo $\Delta \boldsymbol{Z}_t$ respondem a desvios nas $r$ relações de longo prazos, de modo a garantir a tendência comum de longo prazo do sistema.
+	 		\item Do ponto de vista preditivo, o teorema nos diz que, se as variáveis são cointegradas, a relação de cointegração deve ser usada na predição (relativamente a trabalhar com um VAR em primeiras diferenças).
+	 		\begin{itemize}
+	 			\item Por outro lado, embora, em um sistema cointegrado, um estimador de VAR irrestrito em nível é consistente para os parâmetros populacionais (a relação não é espúria), o teorema de representação de Granger nos mostra que há restrições que podem ser incorporadas na estimação, o que pode aumentar a eficiência dos estimadores dos parâmetros.
+	 		\end{itemize}
+	 		\item Veremos a seguir como o modelo vetorial de correção de erros (VECM) pode ser estimado, e suas estimativas podem ser usadas para se testar o número de relações de cointegração existentes no sistema.
+	 	\end{wideitemize}
+\end{frame}
 
 \appendix
 \begin{frame}{Referências}

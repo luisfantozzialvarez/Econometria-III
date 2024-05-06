@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  2 MAY 2024 23:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  5 MAY 2024 22:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1679,13 +1679,19 @@ Overfull \vbox (10.09927pt too high) detected at line 242
 
  <./graficos/tabela.png>] [12
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-72.
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [13
+
+] [14
+
+] [15
+
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
+12.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [13
+) [16
 
  </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write7
@@ -1705,10 +1711,10 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45600 strings out of 476025
- 1052545 string characters out of 5790017
+ 45612 strings out of 476025
+ 1052650 string characters out of 5790017
  1863388 words of memory out of 5000000
- 65225 multiletter control sequences out of 15000+600000
+ 65231 multiletter control sequences out of 15000+600000
  650209 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1878b,1633s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1730,10 +1736,10 @@ ic/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8
 /local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pf
 b>
-Output written on slides.pdf (13 pages, 632615 bytes).
+Output written on slides.pdf (16 pages, 642494 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
+ 263 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
  74 words of extra memory for PDF output out of 10000 (max. 10000000)
 

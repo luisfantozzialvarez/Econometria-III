@@ -36,7 +36,7 @@ natbib=true
 \begin{enumerate}
 	\item Acesse o site do IpeaData e colete as expectativas médias de inflação (IPCA), doze meses à frente, para o mês de \textbf{abril de 2024}.
 	\item Usando a fórmula do \textit{nowcasting} vista em aula, atualize as projeções feitas com dados até março, com base nesta divulgação e na de taxa de juros já vista em sala. Como mudam as projeções para abril e maio?
-	\item Testa, ao nível de significância de 5\%, a hipótese nula de que tanto a atualização com base na divulgação antecipada das expectativas como da Selic não impactam as projeções de inflação. Como é o nome desta hipótese? Qual a conclusão do teste?
+	\item Teste, ao nível de significância de 5\%, a hipótese nula de que tanto a atualização com base na divulgação antecipada das expectativas como da Selic não impactam as projeções de inflação. Como é o nome desta hipótese? Qual a conclusão do teste?
 \end{enumerate}
 
 \item Considere um VAR(1) para um processo vetorial $\boldsymbol{Z}_t = (\boldsymbol{Y}_t', X_t)'$, com $d+1$ entradas, em que $\boldsymbol{Y}_t$ é $d\times 1$ e $X_t$ é escalar:
@@ -64,8 +64,8 @@ em que $\begin{pmatrix}
 	\end{equation}
 	
 	Expresse a relação entre os parâmetros desse modelo, $\{B_{y,y}, \delta_{y,0}, \delta_{y,1}, \mathbb{V}[v_t]\}$, e os parâmetros do VAR(1).
-	\item Argumente que, se não impomos nenhuma restrição nos parâmetros do VAR(1) que descreve $\boldsymbol{Z}_t$ (equações \eqref{eq_full}-\eqref{eq_cond}), os parâmetros do modelo condicional \eqref{eq_cond},  $\{B_{y,y}, \delta_{y,0}, \delta_{y,1}, \mathbb{V}[v_t]\}$,  podem variar independentemente dos parâmetros do modelo para $\boldsymbol{X}_t|\mathcal{Z}_{t-1}$, dado pela equação \eqref{eq_marginal}, $\{\boldsymbol{A}_{x,y}, \boldsymbol{A}_{x,x}, \Sigma_{x,x}\}$. Qual é o nome desta propriedade? Qual é a implicação dela, se nosso interesse está somente em estimar os parâmetros do modelo \eqref{eq_cond}, tratando $X_t$ e $X_{t-1}$ como variáveis externas no VAR de $\boldsymbol{Y}_t$?
-	\item Sob qual condição adicional podemos usar as estimativas do modelo \eqref{eq_cond}, conjuntamente a projeções externas para $\{X_t\}$, de maneira consistente e sem perda de informação relevante? Qual é o nome da propriedade resultante?
+	\item Argumente que, se não impomos nenhuma restrição nos parâmetros do VAR(1) que descreve $\boldsymbol{Z}_t$ (equações \eqref{eq_full}-\eqref{eq_cond}), os parâmetros do modelo condicional \eqref{eq_cond},  $\{B_{y,y}, \delta_{y,0}, \delta_{y,1}, \mathbb{V}[v_t]\}$,  podem variar independentemente dos parâmetros do modelo para $\boldsymbol{X}_t|\mathcal{Z}_{t-1}$, dado pela equação \eqref{eq_marginal}, $\{\boldsymbol{A}_{x,y}, \boldsymbol{A}_{x,x}, \sigma_{x,x}\}$. Qual é o nome desta propriedade? Qual é a implicação dela, se nosso interesse está somente em estimar os parâmetros do modelo \eqref{eq_cond}, tratando $X_t$ e $X_{t-1}$ como variáveis externas fixas no VAR de $\boldsymbol{Y}_t$?
+	\item Sob qual condição adicional podemos usar as estimativas do modelo \eqref{eq_cond}, conjuntamente a projeções externas para $\{X_t\}$, de maneira consistente e sem perda de informação relevante? Qual é o nome dessa propriedade?
 		
 	\end{enumerate}
 \item (Um modelo monetarista) Considere a seguinte descrição de uma economia:
