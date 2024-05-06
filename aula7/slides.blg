@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'slides.blg'
-[90] biber-darwin:340> INFO - === Thu May  2, 2024, 22:19:58
-[107] Biber.pm:419> INFO - Reading 'slides.bcf'
-[207] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
-[224] Biber.pm:4419> INFO - Processing section 0
-[235] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
-[240] bibtex.pm:1713> INFO - LaTeX decoding ...
-[294] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
-[356] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[356] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[356] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[356] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
-[365] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[368] bbl.pm:763> INFO - Output to slides.bbl
+[75] biber:340> INFO - === seg mai  6, 2024, 09:07:39
+[87] Biber.pm:419> INFO - Reading 'slides.bcf'
+[143] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
+[158] Biber.pm:4419> INFO - Processing section 0
+[182] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
+[186] bibtex.pm:1713> INFO - LaTeX decoding ...
+[224] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
+[274] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[274] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[274] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[274] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[282] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
+[284] bbl.pm:763> INFO - Output to slides.bbl
