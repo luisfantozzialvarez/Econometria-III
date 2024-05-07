@@ -67,6 +67,89 @@
       \verb http://www.jstor.org/stable/1913236
       \endverb
     \endentry
+    \entry{Johansen1991}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fa1655c028c92b8ef87d909112f82026}{%
+           family={Johansen},
+           familyi={J\bibinitperiod},
+           given={Søren},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {[Wiley, Econometric Society]}%
+      }
+      \strng{namehash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{fullhash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{bibnamehash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{authorbibnamehash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{authornamehash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{authorfullhash}{fa1655c028c92b8ef87d909112f82026}
+      \field{extraname}{1}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The purpose of this paper is to present the likelihood methods for the analysis of cointegration in VAR models with Gaussian errors, seasonal dummies, and constant terms. We discuss likelihood ratio tests of cointegration rank and find the asymptotic distribution of the test statistics. We characterize the maximum likelihood estimator of the cointegrating relations and formulate tests of structural hypotheses about these relations. We show that the asymptotic distribution of the maximum likelihood estimator is mixed Gaussian. Once a certain eigenvalue problem is solved and the eigenvectors and eigenvalues calculated, one can conduct inference on the cointegrating rank using some nonstandard distributions, and test hypotheses about cointegrating relations using the χ 2 distribution.}
+      \field{issn}{00129682, 14680262}
+      \field{journaltitle}{Econometrica}
+      \field{number}{6}
+      \field{title}{Estimation and Hypothesis Testing of Cointegration Vectors in Gaussian Vector Autoregressive Models}
+      \field{urlday}{6}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{59}
+      \field{year}{1991}
+      \field{urldateera}{ce}
+      \field{pages}{1551\bibrangedash 1580}
+      \range{pages}{30}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/2938278
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/2938278
+      \endverb
+    \endentry
+    \entry{Johansen1995}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fa1655c028c92b8ef87d909112f82026}{%
+           family={Johansen},
+           familyi={J\bibinitperiod},
+           given={Søren},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{fullhash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{bibnamehash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{authorbibnamehash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{authornamehash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{authorfullhash}{fa1655c028c92b8ef87d909112f82026}
+      \field{extraname}{2}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{This monograph is concerned with the statistical analysis of multivariate systems of non‐stationary time series of type I(1). It applies the concepts of cointegration and common trends in the framework of the Gaussian vector autoregressive model. The main result on the structure of cointegrated processes as defined by the error correction model is Grangers representation theorem. The statistical results include derivation of the trace test for cointegrating rank, test on cointegrating relations, and test on adjustment coefficients and their asymptotic distributions.}}
+      \field{isbn}{9780198774501}
+      \field{month}{12}
+      \field{title}{{Likelihood-Based Inference in Cointegrated Vector Autoregressive Models}}
+      \field{year}{1995}
+      \verb{doi}
+      \verb 10.1093/0198774508.001.0001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/0198774508.001.0001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/0198774508.001.0001
+      \endverb
+    \endentry
     \entry{Phillips1990}{article}{}
       \name{author}{2}{}{%
         {{hash=09f90d13f3b581831038af16bc9981ba}{%

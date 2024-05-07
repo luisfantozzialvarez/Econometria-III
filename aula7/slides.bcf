@@ -2367,6 +2367,9 @@
     <bcf:citekey order="3" intorder="1">Phillips1990</bcf:citekey>
     <bcf:citekey order="4" intorder="1">Phillips1988</bcf:citekey>
     <bcf:citekey order="5" intorder="1">Phillips1990</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">Johansen1991</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Johansen1991</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">Johansen1995</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

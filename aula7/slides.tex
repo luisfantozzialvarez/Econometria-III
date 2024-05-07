@@ -142,16 +142,16 @@ natbib=true
 \end{figure}
 \end{frame}
 
-\begin{frame}{Distribuição de $\hat \gamma$ em realizações repetidas da incerteza ($T=500$  e $\gamma =0.5$)}
+\begin{frame}{Distribuição de $\hat t = \frac{\hat \gamma - \gamma}{\operatorname{se}(\hat \gamma)}$ em realizações repetidas da incerteza ($T=500$  e $\gamma =0.5$)}
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.7]{graficos/distribuicao_gammahat.pdf}
+	\includegraphics[scale=0.7]{graficos/distribuicao_that.pdf}
 \end{figure}
 \end{frame}
 
 \begin{frame}{Tendência estocástica comum}
 	\begin{itemize}
-		\item Note que o estimador de MQO tem distribuição convencional (normal) sobre realizações repetidas da incerteza.
+		\item Note que a estatística $t$, sob a nula, tem distribuição convencional (normal) sobre realizações repetidas da incerteza.
 		\item Isso ocorre mesmo com ambas as séries sendo I(1).
 		\item Por que isso ocorre?
 		\begin{itemize}
@@ -288,6 +288,7 @@ natbib=true
 		\end{equation}
 		\item {\color{blue}Teorema de representação de Granger:} $\boldsymbol{Z}_t$ é CI(1,1) se, e somente se, admite a {\color{blue}representação de correção de erros}:
 		\begin{equation}
+			\label{coint_system}
 			\Delta \boldsymbol{Z}_t  =  \boldsymbol{c} + \boldsymbol{\alpha}'\boldsymbol{\beta} \boldsymbol{Z}_{t-1} + \sum_{j=1}^{p-1} \boldsymbol{B}_{j} \Delta  \boldsymbol{Z}_{t-j} + \boldsymbol{v}_t \, , 
 		\end{equation}
 		onde $\boldsymbol{\alpha}$ e $ \boldsymbol{\beta}$ são matrizes $r \times n$ com posto $r$, e cada uma das linhas de $\boldsymbol{\beta}$ corresponde a uma das $r \in \{1,\ldots, n-1\}$ relações de cointegração linearmente independentes do sistema.
@@ -306,8 +307,136 @@ natbib=true
 	 	\end{wideitemize}
 \end{frame}
 
+\begin{frame}{Detectando o número de relações de cointegração}
+	\begin{itemize}
+		\item Considere o estimador de máxima verossimilhança condicional de \eqref{coint_system}, onde a verossimilhança é derivada sob a hipótese auxiliar de que $\boldsymbol{v}_t \overset{iid}{\sim} N(\boldsymbol{0}_{n\times 1}, \Sigma)$, e a estimação impõe que $r=q$.
+		\begin{halfwideitemize}
+			\item Podemos escolher $p$ preliminarmente ajustando um VAR \textbf{em nível} e fazendo os procedimentos de diagnóstico vistos na aula anterior.
+		\end{halfwideitemize}
+								\item Defina por  $\hat{L}_q$ a log-verossimilhança, no máximo atingido, calculada sob a hipótese de que $r=q$.
+		\item \citet{Johansen1991} propõe testar:
+		$$H_0 : r= q, \quad H_1: r= q+1\, ,$$
+		usando a estatística de razão de verossimilhança $\text{LR}(q,q+1) = 2 \cdot (\max_{j \in \{q,q+1\}} \hat L_{j} - \hat L_q)  = 2 \cdot ( \hat L_{q+1} - \hat L_q)$.
+		\begin{itemize}
+			\item Distribuição não padrão sob a nula, e tabulada pelo autor.
+			\item Estatística de teste conhecida como do {\color{blue}máximo autovalor}, visto que pode ser obtida através de um autovalor de uma matriz auxiliar calculada a partir dos dados.
+		\end{itemize}
+				
+	\end{itemize}
+\end{frame}
+\begin{frame}{Procedimento sequencial e estatística do traço}
+	\begin{itemize}
+				\item Com base no teste do máximo autovalor, podemos detectar $r$ procedendo sequencialmente, começando os testes com $q=0$ e parando no momento em que não rejeitamos mais a nula.
+				\begin{itemize}
+					\item Valor de $r$ é dado pelo menor $q$ tal que não rejeitamos a nula do teste.
+				\end{itemize} 
+	 		\item Um outro teste possível é:
+		$$H_0 : r= q, \quad H_1: r> q+1 \, ,$$
+		que pode ser conduzido a partir da {\color{blue}estatística de traço} $\text{LR}(q,n) = \max_{n\geq j\geq q}2 \cdot ( \hat L_{j} - \hat L_q)= 2 \cdot ( \hat L_{n} - \hat L_q)$, e os valores críticos tabulados por \citet{Johansen1991} para esse caso.
+		\begin{itemize}
+			\item Também procedemos sequencialmente, parando no $r$ em que não rejeitamos a nula. 
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Componentes determinísticos}
+\begin{itemize}
+	\item Em nossa discussão, consideramos o modelo \eqref{coint_system}, em que, a princípio, $\boldsymbol{c} \in \mathbb{R}^n$ toma qualquer valor:
+	\begin{itemize}
+		\item Como há no máximo $r = n+1$ relações de cointegração, possível mostrar que a constante irrestrita permite $n - r> 0$ tendências lineares linearmente independentes  afetando o nível das séries; além de $r$ médias distintas em cada uma das relações de cointegração.
+		\item Essa flexibilidade vem ao custo de poder reduzido.
+	\end{itemize} 
+	\item Se sabemos que não há tendências lineares no nível das séries, mas ainda assim queremos permitir que as relações de cointegração tenham média diferente de zero, podemos considerar o modelo: 
+			\begin{equation*}
+		\Delta \boldsymbol{Z}_t  = \boldsymbol{\alpha}'[\boldsymbol{a} + \boldsymbol{\beta} \boldsymbol{Z}_{t-1} ]+ \sum_{j=1}^{p-1} \boldsymbol{B}_{j} \Delta  \boldsymbol{Z}_{t-j} + \boldsymbol{v}_t \, , 
+	\end{equation*}
+	com $\boldsymbol{a} \in \mathbb{R}^{r}$. Ao reduzir o número de parâmetros ganhamos poder (valores críticos para os testes mudam nesse caso).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Componentes determinísticos (cont.)}
+	\begin{itemize}
+	\item Por outro lado, se queremos considerar que a cointegração somente remove a tendência estocástica, devemos considerar o modelo:
+\begin{equation*}
+	\Delta \boldsymbol{Z}_t  =\boldsymbol{a}+ \boldsymbol{\alpha}'[\boldsymbol{b}t + \boldsymbol{\beta} \boldsymbol{Z}_{t-1} ]+ \sum_{j=1}^{p-1} \boldsymbol{B}_{j} \Delta  \boldsymbol{Z}_{t-j} + \boldsymbol{v}_t \, , 
+\end{equation*}
+\item Por fim, também é possível considerar testes nos diferentes modelos sob a presença adicional de \textit{dummies} sazonais.
+	\begin{itemize}
+	\item Valores críticos tabulados em \citet{Johansen1995}.
+\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Inferência sobre parâmetros do VECM}
+\begin{itemize}
+	\item Estimado um VECM, podemos fazer inferência individual (conjunta) sobre  os $\boldsymbol{\beta}$ usando estatísticas $t$ ($F$) e valores críticos normais ($F$).
+	\begin{itemize}
+		\item Um ponto importante é que existem diferentes pares $(\boldsymbol{\alpha},\boldsymbol{\beta})$ compatíveis com $r$ relações de cointegração (linearmente independentes) $\implies$ precisamos normalizar $\boldsymbol{\beta}$ para separar $\boldsymbol{\alpha}$ de $\boldsymbol{\beta}$.
+	\end{itemize}
+	\item Como alternativa, é possível testar algumas nulas conjuntas sobre os $\boldsymbol{\beta}$ usando a estatística LR, sem necessidade de normalização.
+\begin{itemize}
+	\item Por exemplo, podemos testar que somente um subconjunto de $q \geq r$ das variáveis  participa das relações.
+\end{itemize}
+\item Podemos fazer inferência individual ou conjunta sobre os $\boldsymbol{B}_j$ e $\boldsymbol{\alpha}$ usando estatística $t$ ou testes $F$ convencionais, respectivamente.
+\begin{itemize}
+	\item Para testar $\boldsymbol{\alpha}$, precisamos de normalizações em $\boldsymbol{\beta}$, embora não seja o caso para testes que só envolvem os  $\boldsymbol{B}_j$.
+\end{itemize}
+	\item No entanto, \textbf{não} é possível, no geral, fazer testes de causalidade de Granger usando as distribuições convencionais de referência.
+	\begin{itemize}
+		\item Isso se deve à nula envolver restrições sobre coeficientes associados a variáveis I(0) e I(1) $\implies$ falha de aproximações convencionais.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Metodologia VAR com séries I(1)}
+\begin{itemize}
+	\item A discussão anterior sugere o seguinte procedimento para se ajustar um VAR com séries I(1).
+	\begin{enumerate}
+		\item Checar pela presença de cointegração. 
+		\item Se não há cointegração ($r=0$), estimar um VAR(p-1) em primeiras diferenças.
+		\begin{itemize}
+			\item Nesse caso, inferência tradicional é válida para todos os parâmetros estimados.
+		\end{itemize}
+		\item Se há cointegração ($r>0$), estimar o modelo de correção de erros, impondo o número de relações de cointegração detectadas.
+		\begin{itemize}
+			\item Nesse caso, é possível fazer inferência como discutido no slide anterior.
+		\end{itemize}
+	\end{enumerate}
+
+\end{itemize}
+\end{frame}
+\begin{frame}{VAR(p) em nível com séries I(1)}
+\begin{itemize}
+	\item Embora seja possível mostrar que, com séries I(1), o estimador do VAR(p) em nível seja consistente para os parâmetros tanto com $r=0$ como com $r>0$, há dois motivos para não fazê-lo.
+	\item Estimar um VAR(p-1) em primeira diferença quando $r=0$ é preferível do ponto de vista de eficiência estatística, visto que efetivamente restringimos os coeficientes da representação VECM equivalente.
+\item Além disso, estimar o VAR(p-1) em primeira diferença quando $r=0$ ou a representação VECM quando $r>0$ é peferível à estimação direta VAR(p) em nível, visto que temos garantias de inferência válida para diferentes subconjuntos dos parâmetros.
+\begin{itemize}
+	\item De modo geral, inferência no VAR(p) em nível não é padrão em nenhum dos casos.
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+\begin{frame}{Metodologia VAR com séries I(0) e I(1)}
+	\begin{itemize}
+		\item E se há as variáveis de interesse envolvem processos I(1) e I(0)?
+	\begin{itemize}
+		\item Nesse caso, comumente se estima um VAR com as séries I(1) em primeiras diferenças, e as séries I(0) em nível.
+		\begin{itemize}
+					\item No entanto, isso ignora a possível cointegração entre as séries I(1).
+		\end{itemize}
+	\item Uma alternativa é detectar as $r$ relações de cointegração entre as séries I(1), e, se $r>0$, estimar um VECM com $r+n_0$ relações de cointegração, onde $n_0$ é o número de variáveis I(0).
+	\begin{itemize}
+		\item Recorde-se que, numa representação VECM com $s$ variáveis, se há $s$ relações de cointegração, os processos são efetivamente estacionários.
+			\item Se $r=0$, estimamos o VAR misto, com as séries I(1) em diferença e as I(0) em nível.
+	\end{itemize}
+
+	
+\end{itemize}
+\end{itemize}
+\end{frame}
 \appendix
-\begin{frame}{Referências}
+\begin{frame}[allowframebreaks]{Referências}
 	\printbibliography
 \end{frame}
 \end{document}
