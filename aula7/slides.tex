@@ -271,11 +271,13 @@ natbib=true
 		\begin{itemize}
 			\item Ao efetivamente escolher uma variável do lado esquerdo, nos restrigimos a relações de cointegação que envolvem $y_t$.
 			\item Se $n>2$, não conseguimos separar as relações de cointegração distintas (linearmente independentes) potencialmentes existentes, cada uma correspondente a uma relação de longo prazo diferente.
+			\item Além disso, para conduzir inferência sobre o vetor de cointegração estimado, necessitamos de hipóteses mais fortes sobre os erros.
 		\end{itemize}
 		\item Como veremos a seguir, o {\color{blue}teorema da representação de Granger} nos diz que, para um sistema de variáveis cointegrado, há restrições no processo gerador que são úteis para separar as relações de cointegração existentes.
-		\begin{wideitemize}
+		\begin{itemize}
 			\item Essas relações podem ser usadas para construir modelos preditivos superiores (a um VAR em primeiras diferenças).
-		\end{wideitemize}
+			\item Além disso, a metodologia nos permite testar hipóteses sobre as diferentes relações diretamente.
+		\end{itemize}
 	\end{wideitemize}
 \end{frame}
 
@@ -311,7 +313,7 @@ natbib=true
 	\begin{itemize}
 		\item Considere o estimador de máxima verossimilhança condicional de \eqref{coint_system}, onde a verossimilhança é derivada sob a hipótese auxiliar de que $\boldsymbol{v}_t \overset{iid}{\sim} N(\boldsymbol{0}_{n\times 1}, \Sigma)$, e a estimação impõe que $r=q$.
 		\begin{halfwideitemize}
-			\item Podemos escolher $p$ preliminarmente ajustando um VAR \textbf{em nível} e fazendo os procedimentos de diagnóstico vistos na aula anterior.
+			\item Podemos escolher $p$ preliminarmente ajustando um VAR \textbf{em nível} e fazendo os procedimentos vistos na aula anterior.
 		\end{halfwideitemize}
 								\item Defina por  $\hat{L}_q$ a log-verossimilhança, no máximo atingido, calculada sob a hipótese de que $r=q$.
 		\item \citet{Johansen1991} propõe testar:
@@ -409,7 +411,7 @@ natbib=true
 \begin{frame}{VAR(p) em nível com séries I(1)}
 \begin{itemize}
 	\item Embora seja possível mostrar que, com séries I(1), o estimador do VAR(p) em nível seja consistente para os parâmetros tanto com $r=0$ como com $r>0$, há dois motivos para não fazê-lo.
-	\item Estimar um VAR(p-1) em primeira diferença quando $r=0$ é preferível do ponto de vista de eficiência estatística, visto que efetivamente restringimos os coeficientes da representação VECM equivalente.
+	\item Estimar um VAR(p-1) em primeira diferença quando $r=0$ é preferível do ponto de vista de eficiência estatística, visto que efetivamente restringimos os coeficientes da representação VECM equivalentepea.
 \item Além disso, estimar o VAR(p-1) em primeira diferença quando $r=0$ ou a representação VECM quando $r>0$ é peferível à estimação direta VAR(p) em nível, visto que temos garantias de inferência válida para diferentes subconjuntos dos parâmetros.
 \begin{itemize}
 	\item De modo geral, inferência no VAR(p) em nível não é padrão em nenhum dos casos.
