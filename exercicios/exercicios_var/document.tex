@@ -52,11 +52,11 @@ em que $\begin{pmatrix}
 	\end{pmatrix} \overset{iid}{\sim} \mathcal{N}\left(\begin{pmatrix}\boldsymbol{0}_{d\times 1} \\ 0\end{pmatrix},\begin{pmatrix}
 \Sigma_{y,y} & \Sigma_{y,x} \\
 \Sigma_{x,y}& \sigma_{x,x}
-	\end{pmatrix}\right)$, com $\Sigma_{y,y} = \mathbb{V}[\boldsymbol{Y}_t]$, $\sigma_{x,x} = \mathbb{V}[X_t]$, e $\Sigma_{y,x} = \operatorname{cov}(\boldsymbol{Y}_t,X_t) = \Sigma_{x,y}'$.
+	\end{pmatrix}\right)$, com $\Sigma_{y,y} = \mathbb{V}[u_{y,t}]$, $\sigma_{x,x} = \mathbb{V}[u_{x,t}]$, e $\Sigma_{y,x} = \operatorname{cov}(u_{y,t},u_{x,t}) = \Sigma_{x,y}'$.
 	
 	\begin{enumerate}
 		\item Usando a seguinte propriedade da distribuição normal:
-		$$u_{y_t} = \gamma u_{x,t} + v_t\, ,$$
+		$$u_{y,t} = \gamma u_{x,t} + v_t\, ,$$
 		em que $v_t \sim N(\boldsymbol{0}_{d\times 1}, \Sigma_{y,y} - \Sigma_{y,x}\sigma_{x,x}^{-1}\Sigma_{x,y})$ é independente de $u_{x,t}$, $\gamma = \Sigma_{y,x}\sigma_{x,x}^{-1} \Sigma_{x,y}$; mostre que podemos escrever o modelo condicional para $\boldsymbol{Y}_t|X_t,\mathcal{Z}_{t-1}$ como:
 	\begin{equation}
 		\label{eq_cond}
