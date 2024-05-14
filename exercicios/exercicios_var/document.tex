@@ -57,7 +57,7 @@ em que $\begin{pmatrix}
 	\begin{enumerate}
 		\item Usando a seguinte propriedade da distribuição normal:
 		$$u_{y,t} = \gamma u_{x,t} + v_t\, ,$$
-		em que $v_t \sim N(\boldsymbol{0}_{d\times 1}, \Sigma_{y,y} - \Sigma_{y,x}\sigma_{x,x}^{-1}\Sigma_{x,y})$ é independente de $u_{x,t}$, $\gamma = \Sigma_{y,x}\sigma_{x,x}^{-1} \Sigma_{x,y}$; mostre que podemos escrever o modelo condicional para $\boldsymbol{Y}_t|X_t,\mathcal{Z}_{t-1}$ como:
+		em que $v_t \sim N(\boldsymbol{0}_{d\times 1}, \Sigma_{y,y} - \Sigma_{y,x}\sigma_{x,x}^{-1}\Sigma_{x,y})$ é independente de $u_{x,t}$, $\gamma = \Sigma_{y,x}\sigma_{x,x}^{-1}$; mostre que podemos escrever o modelo condicional para $\boldsymbol{Y}_t|X_t,\mathcal{Z}_{t-1}$ como:
 	\begin{equation}
 		\label{eq_cond}
 		\boldsymbol{Y}_t = {B}_{y,y}\boldsymbol{Y}_{t-1} +\delta_{y,0}X_t + \delta_{y,1} X_{t-1}+ v_{t}\, .
