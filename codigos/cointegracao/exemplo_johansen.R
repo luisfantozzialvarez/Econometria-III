@@ -1,0 +1,81 @@
+#Fixando ambiente
+setwd("~/Documents/GitHub/Econometria-III/codigos/cointegracao")
+
+library("CADFtest")
+library("car")
+library("lmtest")
+library("sandwich")
+library("vars")
+
+#Pacote para testes de cointegração
+library('urca')
+library('vars')
+
+ibc = read.csv2('ibc.csv')
+ibc = ts(log(ibc[,2]), start=c(substring(ibc[1,1],1,4),substring(ibc[1,1],6,7)),frequency=12)
+
+m1 = read.csv2('m1.csv')
+m1 = ts(log(m1[,2]), start=c(substring(m1[1,1],1,4),substring(m1[1,1],6,7)),frequency=12)
+
+igp = read.csv2('igp.csv')
+igp = ts(log(igp[,2]), start=c(substring(igp[1,1],1,4),substring(igp[1,1],6,7)),frequency=12)
+
+
+dados = cbind(ibc,m1,igp)
+dados = window(dados, start = c(2003,1), end = c(2024,2))
+
+#Ao rodar o procedimento sequencial, notamos que todas as séries são I(1),
+#e que m1 e igp exibem drift (intercepto na primeira diferença)
+
+#Evidência de sazonalidade
+acf(diff(dados))
+
+#Selecionando coeficientes com base no VAR em nível. Note que, como há drift,
+#devemos incluir uma tendência linear em nível
+criterios = VARselect(dados, lag.max = 20, type = 'both', season=12)
+
+#Selecionando com base no BIC
+modelo_nivel = VAR(dados, type = 'both', p=2, season=12)
+summary(modelo_nivel)
+LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'both', p=1, season=12)))
+print(LM>qchisq(0.95,9))
+
+#Vamos olhar o teste de Breusch-Godfrey de não correlação serial
+serial.test(modelo_nivel, type = 'BG', lags.bg =5)
+
+#Aumentando
+modelo_nivel = VAR(dados, type = 'both', p=3, season=12)
+LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'both', p=2, season=12)))
+print(LM>qchisq(0.95,9))
+serial.test(modelo_nivel, type = 'BG', lags.bg =5)
+
+#p=3 parece ok
+
+#Vamos trabalhar com 3 defasagens
+johansen = ca.jo(dados, type = 'eigen', ecdet = c('none'), K=3,spec = 'transitory', season=12)
+
+summary(johansen)
+
+#Conclusão do teste: UMA relação de cointegração
+
+#Testando a nula de que atividade econômica NÃ0 participa da relação de cointegração
+teste = blrtest(johansen, matrix(c(c(0,1,0), c(0,0,1)), nrow=3), r=1)
+summary(teste)
+#Claramente rejeitamos a nula
+
+
+#Testando a nula de que equação quantitativa é boa descrição
+teste = blrtest(johansen, matrix(c(1,-1,1),nrow=3), r=1)
+summary(teste)
+#Também rejeitamos a nula!
+
+#Estimando VECM
+modelo = cajorls(johansen, r=1)
+modelo$beta
+summary(modelo$rlm)
+
+#Representação em VAR
+vs = vec2var(johansen, r=1)
+
+#Predições
+fanchart(predict(vs), plot.type = 'single')
