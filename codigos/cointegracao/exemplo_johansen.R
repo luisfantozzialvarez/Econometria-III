@@ -69,6 +69,14 @@ teste = blrtest(johansen, matrix(c(1,-1,1),nrow=3), r=1)
 summary(teste)
 #Também rejeitamos a nula!
 
+
+#Com mais de uma relação de cointegração, para testarmos hipóteses
+# de que r1 < r relações de cointegração são iguais a uma matriz H,
+# usamos bh5lrtest.
+# Para testar restrições sobre r1 < r relações (por exemplo, que algumas,
+# variáveis participam de r1 relações), usamos bh6lrtest.
+
+
 #Estimando VECM
 modelo = cajorls(johansen, r=1)
 modelo$beta
