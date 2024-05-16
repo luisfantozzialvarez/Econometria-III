@@ -1,0 +1,235 @@
+% !TeX document-id = {0be8c18c-9430-4e9a-bdd9-12beadebfebc}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[11pt]{beamer}
+
+\usepackage[brazilian]{babel}
+
+\uselanguage{portuguese}
+\languagepath{portuguese}
+\deftranslation[to=portuguese]{Theorem}{Teorema}
+\deftranslation[to=portuguese]{theorem}{teorema}
+\deftranslation[to=portuguese]{Example}{Exemplo}
+\deftranslation[to=portuguese]{example}{exemplo}
+\deftranslation[to=portuguese]{Lemma}{Lema}
+\deftranslation[to=portuguese]{lemma}{Lema}
+\deftranslation[to=portuguese]{Corollary}{Corolário}
+\deftranslation[to=portuguese]{corollary}{corolário}
+%\deftranslation[to=portuguese]{and}{e}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{subcaption}
+%\usepackage{appendixnumberbeamer}
+
+\newenvironment{transitionframe}{
+	\setbeamercolor{background canvas}{bg=yellow}
+	\begin{frame}}{
+	\end{frame}
+}
+\usetheme{default}
+\usefonttheme{structuresmallcapsserif}
+
+%% I use a beige off white for my background
+\definecolor{MyBackground}{RGB}{255,253,218}
+\useinnertheme[shadow]{rounded}
+\setbeamercolor{block title}{bg=MyBackground}
+\setbeamercolor{block body}{bg=MyBackground}
+\setbeamercolor{example title}{bg=MyBackground}
+\setbeamercolor{example body}{bg=MyBackground}
+
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{page number in head/foot}[appendixframenumber]
+
+%\usepackage{graphics}
+\usepackage{graphicx}
+
+\definecolor{blue_emph}{RGB}{0,114,178}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+\definecolor{purple}{RGB}{204,121,167}
+\definecolor{orange}{RGB}{230,159,0}
+\definecolor{lightblue}{RGB}{86,180,233}
+
+%\setbeamercolor{frametitle}{fg=blue}
+%\setbeamercolor{title}{fg=blue}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{itemize items}{-}
+%\setbeamercolor{itemize item}{fg=blue}
+%\setbeamercolor{itemize subitem}{fg=blue}
+\setbeamertemplate{enumerate items}[default]
+%\setbeamercolor{enumerate subitem}{fg=blue}
+\setbeamercolor{button}{bg=MyBackground,fg=blue}
+\usefonttheme{structuresmallcapsserif}
+
+%\setbeamercolor{section in toc}{fg=blue}
+%\setbeamercolor{subsection in toc}{fg=red}
+\setbeamersize{text margin left=1em,text margin right=1em} 
+
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage[
+backend=biber,
+uniquename=false,
+uniquelist=false,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{halfwideitemize}{\itemize\addtolength{\itemsep}{0.5em}}{\enditemize}
+\newenvironment{halfwideenumerate}{\enumerate\addtolength{\itemsep}{0.5em}}{\endenumerate}
+
+
+\author{Luis A. F. Alvarez}
+\title{EAE1223: Econometria III}
+\subtitle{Aula 8 - Modelos causais reduzidos}
+%\logo{}
+%\institute{}
+\date{\today}
+%\subject{}
+%\setbeamercovered{transparent}
+
+\begin{document}
+
+\begin{frame}[plain]
+	\maketitle
+\end{frame}
+
+\begin{frame}{Modelo}
+	\begin{itemize}
+		\item 	Seja $\{Y_t, \boldsymbol{X}_t\}_{t\in \mathbb{Z}}$ um processo vetorial de interesse, onde $Y_t$ é escalar e $\boldsymbol{X}_t$ é um vetor $d \times 1$.
+		\item Pesquisador postula o seguinte modelo para $Y_t$:
+		
+		\begin{equation}
+			\label{eq_structural}
+			Y_t = \alpha + \beta ' \boldsymbol{X}_t + u_t\, ,
+		\end{equation}
+		onde $\beta$ é \textbf{definido} como o efeito causal (\textit{ceteris paribus}) de manipulações hipotéticas de cada uma das entradas de $\boldsymbol{X}$ sobre $Y$, e $u$ são os demais determinantes não observados do sistema.
+		\item Perguntas desta aula:
+		\begin{itemize}
+			\item Sob quais condições estimador de MQO $\hat\beta$ estima consistentemente $\beta$?
+			\begin{itemize}
+				\item Consistência: para qualquer tolerância $\epsilon > 0$, $\lVert \hat \beta- \beta \rVert \leq \epsilon$ com alta probabilidade, para $T$ suficientemente grande.
+			\end{itemize}
+			\item Sob quais condições podemos usar a distribuição normal para fazer inferência sobre $\beta$, com base no estimador $\hat \beta$ e estatística $t$?
+		\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Caso 1: $\{Y_t,\boldsymbol{X}_t\}$ é I(0)}
+	\begin{itemize}
+		\item Se o processo $\{Y_t,\boldsymbol{X}_t\}$ é I(0), estamos no mundo da Aula 1.
+		\item Neste caso, estimador de MQO é consistente se:
+		
+		$$\operatorname{cov}(\boldsymbol{X}_t, u_t) = \boldsymbol{0} $$
+		ou seja, não há relação sistemática entre determinantes observados e não observados.
+		\item Nesse caso, podemos usar estatísticas $t$ e valores críticos normais para realizar inferência.
+		\begin{itemize}
+			\item No entanto, é apropriado usar {\color{blue}erros padrão HAC} para levar em conta heterocedasticidade e correlação serial em $u_t$.
+			\item Esses erros padrão são válidos com $T$ grande (mesmo requerimento de consistência).
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Caso 2: $\{Y_t,\boldsymbol{X}_t\}$ é I(1)}
+	\begin{itemize}
+		\item Se o processo consiste de variáveis I(1), há risco de inferência espúria.
+		\item No entanto, vimos na aula anterior as condições para que isso não ocorra, e $\hat \beta$ estime consistentemente $\beta$.
+		\item Essas condições são:
+		\begin{enumerate}
+			\item $\{u_t\}_{t \in \mathbb{Z}}$ é estacionário, isto é, há relação de cointegração em $\{Y_t,\boldsymbol{X}_t\}$. {\color{blue}que envolve $Y_t$}.
+			\item $\operatorname{cov}(\boldsymbol{X}_t, u_t)=\boldsymbol{0}, \quad \forall t$.
+		\end{enumerate}
+		\item Se as duas condições acima são satisfeitas, vimos que $\beta$ {\color{blue}tem a interpretação adicional de uma tendência de longo prazo}.
+		\item Vimos que a Condição 1 é diretamente testável via procedimento de Engle-Granger.
+		\begin{itemize}
+			\item Condição 2 é intestável, de modo geral, sem hipóteses adicionais (assim como em cursos anteriores de Econometria).
+		\end{itemize}
+		\item Para podermos realizar inferência sobre $\beta$ usando erros padrão HAC e valores críticos normais, vimos na aula anterior que precisamos da hipótese adicional:
+		\begin{enumerate}
+			\item[3.] $\operatorname{cov}(\Delta \boldsymbol{X}_t, u_s) = 0, \quad  \forall t,s$. Essa condição é testável com base no correlograma cruzado de $\Delta \boldsymbol{X}_t$ e resíduos da regressão.
+		\end{enumerate}
+	\end{itemize}
+	\end{frame}
+	
+	
+	\begin{frame}{Caso 2: $\{Y_t,\boldsymbol{X}_t\}$ é I(1) (cont.)}
+		\begin{itemize}
+			\item Caso não haja cointegração envolvendo $Y_t$, sabemos que o estimador de MQO do modelo \eqref{eq_structural} leva a conclusões espúrias.
+			\item Nesse caso, podemos considerar o estimador de MQO $\tilde \beta$ do modelo \eqref{eq_structural} em primeira diferença:
+			
+			$$\Delta Y_t = \beta' \Delta \boldsymbol{X}_t + \Delta u_t$$
+			\item O estimador de MQO deste modelo será consistente sob a hipótese de identificação alternativa:
+			$$\operatorname{cov}( \Delta \boldsymbol{X}_t, \Delta {u}_t) = \boldsymbol{0}\, ,$$
+			isto é, variações nos determinantes não observáveis são não sistematicamente relacionadas a variações nos observáveis.
+			\item Uma condição suficiente (intestável) para essa hipótese valer é que:
+			$$\operatorname{cov}(\boldsymbol{X}_t, {u}_{s})=\boldsymbol{0}, \quad  \forall t, s \in\{t-1,t,t+1\}\, .$$
+			\item Inferência nesse caso é convencional.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Caso 3: $\{Y_t,\boldsymbol{X}_t\}$ envolve variáveis I(0) e I(1)}
+		\begin{itemize}
+			\item Se $\{Y_t,\boldsymbol{X}_t\}$ envolvem uma mistura de processos I(0) e I(1), há algumas condições sob as quais é possível realizar inferência sobre um subconjunto dos parâmetros da forma convencional \citep{Sims1990}.
+			\item No entanto, a maneira mais simples de lidar com a não estacionariedade é trabalhar com o modelo em diferenças:
+				$$\Delta Y_t = \beta' \Delta \boldsymbol{X}_t + \Delta u_t\, ,$$
+				e proceder como no slide anterior.
+		\end{itemize}
+		\end{frame}
+		
+			\begin{frame}{Caso 4: $\{Y_t,\boldsymbol{X}_t\}$ envolve variáveis I(0) e \textit{trend-stationary}}
+				\begin{itemize}
+					\item Se a única fonte de não estacionariedade no modelo é deterministíca, podemos realizar inferência com base em valores críticos normais.
+					\item No entanto, é importante compreender que os efeitos estimados, nesse caso, serão \textbf{dominados} pela relação determinística entre as tendências de $Y_t$ e de $\boldsymbol{X}_t$.
+					\begin{itemize}
+						\item \textbf{Exemplo:} se $Y_t$ é \textit{trend-stationary} e $\boldsymbol{X}_t$ é I(0), $\hat \beta$ convergirá a  zero, visto que comportamento do processo $Y_t$ é {\color{blue}dominado} pela tendência.
+					\end{itemize}
+					\item Nesses casos, pode ser mais interessante considerar um modelo que postula relações causais para as variáveis \textit{detrended}, isto é, uma relação causal para os desvios da série em torno de suas tendências.
+					\item Isso pode ser implementado fazendo o \textit{detrending} prévio das séries, ou incluindo explicitamente tendência no modelo linear causal:
+					\begin{equation*}
+						y_t = \alpha + \delta t + \gamma'\boldsymbol{X}_t+\xi_t \, ,
+					\end{equation*}
+					\item Estimador é consistente e inferência é válida se fatores não observados \textit{detrended} $\xi_t$ são não correlacionados com desvios de $\boldsymbol{X}_t$ de suas tendências.  
+				\end{itemize}
+			\end{frame}
+			
+			\begin{frame}{Incluindo defasagens}
+				\begin{itemize}
+					\item Em alguns casos, a hipótese de identificação pode ser mais crível se levarmos em conta a persistência de $Y_t$.
+					\item Nesse caso, consideramos o modelo:
+					
+					$$Y_t = \alpha + \omega Y_{t-1} + \tau \boldsymbol{X}_{t}+ u_t\, ,$$
+					\item Estimador de MQO será consistente se, crucialmente
+$$\operatorname{cov}(\boldsymbol{X}_t, u_t) = \boldsymbol{0}$$
+$$\operatorname{cov}(Y_{t-1}, u_t)=0$$
+\item Segunda condição requer, no geral, que $\boldsymbol{X}_t$ não exerça efeito futuro sobre $u_t$, e que os $u_t$ sejam impredizíveis com base em seu passado, isto é:
+
+$$\operatorname{cov}(\boldsymbol{X}_s, u_t)= \boldsymbol{0}, \quad \forall s \leq t$$
+$$\operatorname{cov}(u_t,u_s)=0, \forall t,s$$
+				\end{itemize}
+			\end{frame}
+\appendix
+\begin{frame}[allowframebreaks]{Referências}
+	\printbibliography
+\end{frame}
+\end{document}
+
