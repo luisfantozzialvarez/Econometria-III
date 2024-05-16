@@ -1,0 +1,78 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{Sims1990}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6ea5ed711258737020e21f785822b8e5}{%
+           family={Sims},
+           familyi={S\bibinitperiod},
+           given={Christopher\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=2d01c3b46f4061430cc9eb2a1f6408a4}{%
+           family={Stock},
+           familyi={S\bibinitperiod},
+           given={James\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=a4050fd715c1bcb50e38ec0f1c74b6bf}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Mark\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {[Wiley, Econometric Society]}%
+      }
+      \strng{namehash}{5cb3625f82267c1e6b856a0ca44d1598}
+      \strng{fullhash}{5cb3625f82267c1e6b856a0ca44d1598}
+      \strng{bibnamehash}{5cb3625f82267c1e6b856a0ca44d1598}
+      \strng{authorbibnamehash}{5cb3625f82267c1e6b856a0ca44d1598}
+      \strng{authornamehash}{5cb3625f82267c1e6b856a0ca44d1598}
+      \strng{authorfullhash}{5cb3625f82267c1e6b856a0ca44d1598}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper considers estimation and hypothesis testing in linear time series models when some or all of the variables have unit roots. Our motivating example is a vector autoregression with some unit roots in the companion matrix, which might include polynomials in time as regressors. In the general formulation, the variable might be integrated or cointegrated of arbitrary orders, and might have drifts as well. We show that parameters that can be written as coefficients on mean zero, nonintegrated regressors have jointly normal asymptotic distributions, converging at the rate T1/2. In general, the other coefficients (including the coefficients on polynomials in time) will have nonnormal asymptotic distributions. The results provide a formal characterization of which t or F tests--such as Granger causality tests--will be asymptotically valid, and which will have nonstandard limiting distributions.}
+      \field{issn}{00129682, 14680262}
+      \field{journaltitle}{Econometrica}
+      \field{number}{1}
+      \field{title}{Inference in Linear Time Series Models with some Unit Roots}
+      \field{urlday}{15}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{58}
+      \field{year}{1990}
+      \field{urldateera}{ce}
+      \field{pages}{113\bibrangedash 144}
+      \range{pages}{32}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/2938337
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/2938337
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

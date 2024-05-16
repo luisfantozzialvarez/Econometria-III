@@ -1,0 +1,185 @@
+% !TeX document-id = {0be8c18c-9430-4e9a-bdd9-12beadebfebc}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[11pt]{beamer}
+
+\usepackage[brazilian]{babel}
+
+\uselanguage{portuguese}
+\languagepath{portuguese}
+\deftranslation[to=portuguese]{Theorem}{Teorema}
+\deftranslation[to=portuguese]{theorem}{teorema}
+\deftranslation[to=portuguese]{Example}{Exemplo}
+\deftranslation[to=portuguese]{example}{exemplo}
+\deftranslation[to=portuguese]{Lemma}{Lema}
+\deftranslation[to=portuguese]{lemma}{Lema}
+\deftranslation[to=portuguese]{Corollary}{Corolário}
+\deftranslation[to=portuguese]{corollary}{corolário}
+%\deftranslation[to=portuguese]{and}{e}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{color}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{subcaption}
+%\usepackage{appendixnumberbeamer}
+
+\newenvironment{transitionframe}{
+	\setbeamercolor{background canvas}{bg=yellow}
+	\begin{frame}}{
+	\end{frame}
+}
+\usetheme{default}
+\usefonttheme{structuresmallcapsserif}
+
+%% I use a beige off white for my background
+\definecolor{MyBackground}{RGB}{255,253,218}
+\useinnertheme[shadow]{rounded}
+\setbeamercolor{block title}{bg=MyBackground}
+\setbeamercolor{block body}{bg=MyBackground}
+\setbeamercolor{example title}{bg=MyBackground}
+\setbeamercolor{example body}{bg=MyBackground}
+
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{page number in head/foot}[appendixframenumber]
+
+%\usepackage{graphics}
+\usepackage{graphicx}
+
+\definecolor{blue_emph}{RGB}{0,114,178}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+\definecolor{purple}{RGB}{204,121,167}
+\definecolor{orange}{RGB}{230,159,0}
+\definecolor{lightblue}{RGB}{86,180,233}
+
+%\setbeamercolor{frametitle}{fg=blue}
+%\setbeamercolor{title}{fg=blue}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{itemize items}{-}
+%\setbeamercolor{itemize item}{fg=blue}
+%\setbeamercolor{itemize subitem}{fg=blue}
+\setbeamertemplate{enumerate items}[default]
+%\setbeamercolor{enumerate subitem}{fg=blue}
+\setbeamercolor{button}{bg=MyBackground,fg=blue}
+\usefonttheme{structuresmallcapsserif}
+
+%\setbeamercolor{section in toc}{fg=blue}
+%\setbeamercolor{subsection in toc}{fg=red}
+\setbeamersize{text margin left=1em,text margin right=1em} 
+
+
+\usepackage{appendixnumberbeamer}
+
+\usepackage[
+backend=biber,
+uniquename=false,
+uniquelist=false,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{halfwideitemize}{\itemize\addtolength{\itemsep}{0.5em}}{\enditemize}
+\newenvironment{halfwideenumerate}{\enumerate\addtolength{\itemsep}{0.5em}}{\endenumerate}
+
+
+\author{Luis A. F. Alvarez}
+\title{EAE1223: Econometria III}
+\subtitle{Aula 8 - Modelos vetoriais autorregressivos estruturais}
+%\logo{}
+%\institute{}
+\date{\today}
+%\subject{}
+%\setbeamercovered{transparent}
+
+\begin{document}
+
+\begin{frame}[plain]
+	\maketitle
+\end{frame}
+
+\begin{frame}{Um modelo para a descrição de uma economia}
+	\begin{itemize}
+		\item 	Seja $\{ \boldsymbol{Y}_t\}_{t\in \mathbb{Z}}$ um processo vetorial de interesse, onde $\boldsymbol{Y}_t$ consiste de $d$ variáveis econômicas, sobre as quais a teoria econômica têm algo a nos dizer sobre o comportamento conjunto.
+		\item Um {\color{blue}modelo estrutural (causal) linear} para estas variáveis consiste em um sistema de $d$ equações da forma:
+		\begin{equation} \label{eq_struct}
+			\boldsymbol{A}_0 \boldsymbol{Y}_t = \boldsymbol{a} + \sum_{j=1}^p\boldsymbol{A}_j \boldsymbol{Y}_{t-j} + \boldsymbol{\epsilon}_t\, ,
+		\end{equation}
+		onde $\boldsymbol{A}_0$ é uma matriz $d \times d$ que explicita as relações contemporâneas (causais) entre as variáveis, e $\boldsymbol{\epsilon}_t$ é um ruído branco {\color{blue}contemporaneamente não correlacionado}, isto é $$ \mathbb{V}[\boldsymbol{\epsilon}_t] = \begin{bmatrix}
+			\sigma_{1}^2 & 0 & \ldots & 0 \\
+			0 & \sigma^2_2 & \ldots & 0 \\
+			\vdots & \ldots & \ddots & \vdots \\
+			0 & 0 & \ldots & \sigma^2_d
+		\end{bmatrix}= \Omega_\epsilon $$
+		\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Choques econômicos fundamentais }
+	\begin{itemize}
+		\item A hipótese de que os erros de cada uma das equações são contemporaneamente não correlacionados supõe que o modelo que descreve a economia esteja {\color{blue}bem especificada}, de modo que o choque da $j$-ésima equação reflete a incerteza econômica fundamental associada a $Y_{jt}$.
+		\begin{itemize}
+			\item $\epsilon_{jt}$ reflete choques (surpresas ou inovações) nos determinantes essenciais de $Y_{jt}$, e não nos determinantes indiretos (via outras variáveis do sistema) de $Y_{jt}$. 
+	
+		\end{itemize}
+				\item Esse tipo de hipótese é presumida em uma das perguntas clássicas da macroeconomia: quanto da flutuação econômica pode ser atribuída à política monetária vs fatores reais?
+				\begin{itemize}
+					\item Pergunta presume que existem inovações fundamentais, contemporaneamente ortogonais (não correlacionadas), em fatores monetários e reais, que permitem pensar nesta decomposição, visto que ela não faz sentido se os fatores fundamentais não fossem fundamentais (i.e. correlacionados).
+					\item Veremos como nossa metodologia permite fazer explicitamente esta decomposição.
+				\end{itemize}
+	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo}
+	\begin{itemize}
+			\item Considere o comportamento conjunto de inflação ($\pi_t$), desemprego ($u_t$), expectativas de inflação ($\pi^e_t$) e taxa de juros nominal ($i_t$):
+	\end{itemize}
+			\begin{align}
+		\pi_t = \sum_{j={\color{blue}1}}^p \theta_j \pi_{t-j} + \sum_{j={\color{red}0}}^p \beta_j (u_{t-j}-\bar{u}_{\text{neutro}}) + \sum_{j={\color{red}0}}^p \gamma_j \pi_{t-j}^e + \epsilon_{\pi,t} \tag{CP} \\
+		u_t - \bar{u} = \sum_{j={\color{blue}1}}^p \omega_j (u_{t-j}-\bar{u}) + \sum_{j={\color{red}0}}^p \alpha_j (i_{t-j} - \pi^e_{t-j})  + \epsilon_{u,t} \tag{IS} \\  i_t = \bar{i} + \sum_{j={\color{blue}1}}^p \psi_j i_{t-j} + \sum_{j={\color{red}0}}^p \kappa_j (\pi_{t-j}-\pi_{\text{M}}) + \sum_{j={\color{red}0}}^p \phi_j (\pi_{t-j}^e-\pi_{\text{M}}) + \epsilon_{i,t}\tag{RM}\\
+		\pi^e_t = \mu \pi_{M} +  \sum_{j=1}^p \iota_j \pi^e_{t-j} + \theta_3 \sum_{j=0}^p (\nu_{1j} \pi_{t-j} + \nu_{2j} u_{t-j} + \nu_{3j} i_{t-j}) + \epsilon_{e,t} \tag{FE}
+	\end{align}
+	onde $\epsilon_{\pi,t}$ são choques de oferta (CP), $\epsilon_{u,t}$ choques de demanda (IS), $\epsilon_{i_t}$ são surpresas de política monetária (RM), e $\pi^e_t$ são ruídos na formação de expectativas.
+
+\end{frame}
+
+\begin{frame}{Representação autorregressiva do modelo linear estrutural}
+	\begin{itemize}
+		\item Se o sistema \eqref{eq_struct} oferece uma descrição {\color{blue}completa} da evolução de $\boldsymbol{Y}_t$, então, para uma dada trajetória pretérita $\{\boldsymbol{Y}_s: s \leq t-1\}$, e valores dos choques fundamentais $\boldsymbol{\epsilon}_t$, existe um único valor de $\boldsymbol{Y}_t$  que satisfaz \eqref{eq_struct}.
+		\item Nesse caso, a matriz $\boldsymbol{A}_0$ admite inversa $\boldsymbol{B}= \boldsymbol{A}_0^{-1}$, e o sistema admite {\color{blue}representação autorregressiva}:
+		
+		$$\boldsymbol{Y}_t = \underbrace{\boldsymbol{c}}_{= \boldsymbol{B}\boldsymbol{a}} + \sum_{j=1}^p \underbrace{\boldsymbol{C}_j}_{=\boldsymbol{B} \boldsymbol{A}_j} \boldsymbol{Y}_{t-j}  + \boldsymbol{B}\boldsymbol{\epsilon}_t\, .$$
+		
+		\item Modelo VAR em que o ruído branco $\boldsymbol{B}\boldsymbol{\epsilon}_t$ é uma combinação linear de choques fundamentais.
+		\item Matriz $\boldsymbol{B}$ incorpora o efeito contemporâneo de inovações fundamentais sobre as variáveis em $\boldsymbol{Y}_t$. 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Modelo SVAR(p)}
+	\begin{equation}
+		conteúdo...
+	\end{equation}
+\end{frame}
+\appendix
+\begin{frame}[allowframebreaks]{Referências}
+	\printbibliography
+\end{frame}
+\end{document}
+
