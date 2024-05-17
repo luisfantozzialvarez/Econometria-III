@@ -31,26 +31,36 @@ dados = window(dados, start = c(2003,1), end = c(2024,2))
 acf(diff(dados),lag.max=40)
 
 #Selecionando coeficientes com base no VAR em nível. Note que, como há drift,
-#devemos incluir uma constante no VAR em nível (random walk + constante => tendencia estocastica e linear no nível)
+#devemos incluir uma constante no VAR em nível (random walk + drift => tendencia estocastica e linear no nível)
 criterios = VARselect(dados, lag.max = 20, type = 'const', season=12)
 
 #Selecionando com base no BIC
 modelo_nivel = VAR(dados, type = 'const', p=2, season=12)
 summary(modelo_nivel)
+#Obs: NÃO PODEMOS OLHAR OS VALORES CRÍTICOS do summary acima, pois há risco de inferência espúria
+
+#Teste da nula de que p-ésima defasagem é zero
 LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'const', p=1, season=12)))
 print(LM>qchisq(0.95,9))
+#Rejeitamos a nula a 5%
 
 #Vamos olhar o teste de Breusch-Godfrey de não correlação serial
 serial.test(modelo_nivel, type = 'BG', lags.bg =5)
+#Muita evidência contra não autocorrelação dos erros
 
-#Aumentando
+#Aumentando defasagem para ver se melhoramos
 modelo_nivel = VAR(dados, type = 'const', p=3, season=12)
 LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'const', p=2, season=12)))
+
 print(LM>qchisq(0.95,9))
 print(LM>qchisq(0.9,9))
-serial.test(modelo_nivel, type = 'BG', lags.bg =5)
+#Teste LM não rejeita a nula a 5%, mas rejeita a 10%, o que sugere alguma evidência
+#da necessidade da terceira defasagem
 
-#p=3 parece ok
+serial.test(modelo_nivel, type = 'BG', lags.bg =5)
+#Teste BG não rejeita a nula a 5%
+
+#p=3 parece ok, visto que apresenta bom balanço entre parcimônia e não autocorrelação dos erros
 
 #Vamos trabalhar com 3 defasagens
 johansen = ca.jo(dados, type = 'eigen', ecdet = c('none'), K=3,spec = 'transitory', season=12)
