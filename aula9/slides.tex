@@ -133,9 +133,9 @@ natbib=true
 
 \begin{frame}{Choques econômicos fundamentais }
 	\begin{itemize}
-		\item A hipótese de que os erros de cada uma das equações são contemporaneamente não correlacionados supõe que o modelo que descreve a economia esteja {\color{blue}bem especificada}, de modo que o choque da $j$-ésima equação reflete a incerteza econômica fundamental associada a $Y_{jt}$.
+		\item A hipótese de que os erros de cada uma das equações são contemporaneamente não correlacionados supõe que o modelo que descreve a economia esteja {\color{blue}bem especificado}, de modo que o choque da $j$-ésima equação reflete a incerteza econômica fundamental associada a $Y_{jt}$.
 		\begin{itemize}
-			\item $\epsilon_{jt}$ reflete choques (surpresas ou inovações) nos determinantes essenciais de $Y_{jt}$, e não nos determinantes indiretos (via outras variáveis do sistema) de $Y_{jt}$. 
+			\item $\epsilon_{jt}$ reflete choques (surpresas ou inovações, não antecipadas com base no passado) nos determinantes essenciais de $Y_{jt}$, e não nos determinantes indiretos (via outras variáveis do sistema) de $Y_{jt}$. 
 	
 		\end{itemize}
 				\item Esse tipo de hipótese é presumida em uma das perguntas clássicas da macroeconomia: quanto da flutuação econômica pode ser atribuída à política monetária vs fatores reais?
@@ -154,9 +154,9 @@ natbib=true
 			\begin{align}
 		\pi_t = \sum_{j={\color{blue}1}}^p \theta_j \pi_{t-j} + \sum_{j={\color{red}0}}^p \beta_j (u_{t-j}-\bar{u}_{\text{neutro}}) + \sum_{j={\color{red}0}}^p \gamma_j \pi_{t-j}^e + \epsilon_{\pi,t} \tag{CP} \\
 		u_t - \bar{u} = \sum_{j={\color{blue}1}}^p \omega_j (u_{t-j}-\bar{u}) + \sum_{j={\color{red}0}}^p \alpha_j (i_{t-j} - \pi^e_{t-j})  + \epsilon_{u,t} \tag{IS} \\  i_t = \bar{i} + \sum_{j={\color{blue}1}}^p \psi_j i_{t-j} + \sum_{j={\color{red}0}}^p \kappa_j (\pi_{t-j}-\pi_{\text{M}}) + \sum_{j={\color{red}0}}^p \phi_j (\pi_{t-j}^e-\pi_{\text{M}}) + \epsilon_{i,t}\tag{RM}\\
-		\pi^e_t = \mu \pi_{M} +  \sum_{j=1}^p \iota_j \pi^e_{t-j} + \theta_3 \sum_{j=0}^p (\nu_{1j} \pi_{t-j} + \nu_{2j} u_{t-j} + \nu_{3j} i_{t-j}) + \epsilon_{e,t} \tag{FE}
+		\pi^e_t = \mu \pi_{M} +  \sum_{j={\color{blue}1}}^p \iota_j \pi^e_{t-j} + \theta_3 \sum_{j={\color{red}0}}^p (\nu_{1j} \pi_{t-j} + \nu_{2j} u_{t-j} + \nu_{3j} i_{t-j}) + \epsilon_{e,t} \tag{FE}
 	\end{align}
-	onde $\epsilon_{\pi,t}$ são choques de oferta (CP), $\epsilon_{u,t}$ choques de demanda (IS), $\epsilon_{i_t}$ são surpresas de política monetária (RM), e $\pi^e_t$ são ruídos na formação de expectativas.
+	onde $\epsilon_{\pi,t}$ são choques de oferta (CP), $\epsilon_{u,t}$ choques de demanda (IS), $\epsilon_{i,t}$ são surpresas de política monetária (RM), e $\epsilon_{e,t}$ são ruídos na formação de expectativas.
 
 \end{frame}
 
@@ -165,7 +165,10 @@ natbib=true
 		\item Se o sistema \eqref{eq_struct} oferece uma descrição {\color{blue}completa} da evolução de $\boldsymbol{Y}_t$, então, para uma dada trajetória pretérita $\{\boldsymbol{Y}_s: s \leq t-1\}$, e valores dos choques fundamentais $\boldsymbol{\epsilon}_t$, existe um único valor de $\boldsymbol{Y}_t$  que satisfaz \eqref{eq_struct}.
 		\item Nesse caso, a matriz $\boldsymbol{A}_0$ admite inversa $\boldsymbol{B}= \boldsymbol{A}_0^{-1}$, e o sistema admite {\color{blue}representação autorregressiva}:
 		
-		$$\boldsymbol{Y}_t = \underbrace{\boldsymbol{c}}_{= \boldsymbol{B}\boldsymbol{a}} + \sum_{j=1}^p \underbrace{\boldsymbol{C}_j}_{=\boldsymbol{B} \boldsymbol{A}_j} \boldsymbol{Y}_{t-j}  + \boldsymbol{B}\boldsymbol{\epsilon}_t\, .$$
+		\begin{equation}
+			\label{eq_arriv}
+			\boldsymbol{Y}_t = \underbrace{\boldsymbol{c}}_{= \boldsymbol{B}\boldsymbol{a}} + \sum_{j=1}^p \underbrace{\boldsymbol{C}_j}_{=\boldsymbol{B} \boldsymbol{A}_j} \boldsymbol{Y}_{t-j}  + \boldsymbol{B}\boldsymbol{\epsilon}_t\, .
+		\end{equation}
 		
 		\item Modelo VAR em que o ruído branco $\boldsymbol{B}\boldsymbol{\epsilon}_t$ é uma combinação linear de choques fundamentais.
 		\item Matriz $\boldsymbol{B}$ incorpora o efeito contemporâneo de inovações fundamentais sobre as variáveis em $\boldsymbol{Y}_t$. 
@@ -173,10 +176,35 @@ natbib=true
 \end{frame}
 
 \begin{frame}{Modelo SVAR(p)}
-	\begin{equation}
-		conteúdo...
+\begin{itemize}
+	\item 	Em diversas situações, não necessariamente queremos partir de \eqref{eq_struct} para chegar a \eqref{eq_arriv}
+	\begin{itemize}
+		\item Não necessariamente temos uma descrição completa da economia.
+		\item De modo relacionado, a formulação \eqref{eq_arriv} pode ser compatível com mais de uma formulação estrutural linear completa.
+	\end{itemize}
+	\item Nesses casos, podemos definir diretamente {\color{blue}um modelo vetorial autorregressivo (semi)estrutural de ordem $p$}, SVAR(p), como o processo
+	
+		\begin{equation}
+		\label{eq_svar}
+		\boldsymbol{Y}_t = \boldsymbol{c}+ \sum_{j=1}^p \boldsymbol{C}_j \boldsymbol{Y}_{t-j} + \boldsymbol{B}\boldsymbol{\epsilon}_t\, ,
 	\end{equation}
+	onde $\boldsymbol{\epsilon}_t$ são inovações fundamentais, isto é ruídos brancos não contemporaneamente correlacionadas, e $\boldsymbol{B}$ é a matriz que captura os efeitos contemporâneos das inovações fundamentais sobre $\boldsymbol{Y}_t$.
+\end{itemize}
 \end{frame}
+
+\begin{frame}{Função de resposta ao impulso}
+	\begin{itemize}
+		\item Os efeitos causais dinâmicos, na modelagem SVAR, são capturados pelos efeitos de surpresas nos choques fundamentais sobre o comportamento do sistema.
+		\begin{itemize}
+			\item Note que, por construção, $\boldsymbol{\epsilon}_t$ captura fatores não antecipados com base no passado. 
+			\item Como $\boldsymbol{\epsilon}_t$ é não contemporaneamente correlacionado, faz sentido pensar em surpresas em um de seus componentes, mantidos os outros constantes.
+	\end{itemize}
+	\item Formalmente, o efeito \textit{ceteris-paribus} de uma surpresa de uma unidade na $j$-ésima inovação do sistema em $t$, $\epsilon_{jt}$, sobre a $i$-ésima variável do sistema em $t+h$, $h\geq 0$, é dada pela {\color{blue}função de resposta ao impulso}
+	$$F_{h}(i|j)  = \frac{\partial Y_{i,t+h}}{\partial \epsilon_{j,t}}$$
+	\item Por exemplo, $F_{0}(i|j) = \boldsymbol{B}_{ij}$, $F_{1}(i|j) = \sum_{l=1}^d\boldsymbol{C}_{1, i,l} \boldsymbol{B}_{lj} = \sum_{l=1}^d\boldsymbol{C}_{1, i,l} F_{0}(l|j)$, $F_2(i|j) = \sum_{l=1}^d \boldsymbol{C}_{1, i,l} F_{1}(i|j) + \sum_{l=1}^d\boldsymbol{C}_{2, i,l} F_{0}(i|j)$, etc.
+	\end{itemize}
+\end{frame}
+
 \appendix
 \begin{frame}[allowframebreaks]{Referências}
 	\printbibliography
