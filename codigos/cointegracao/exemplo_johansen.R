@@ -1,5 +1,5 @@
 #Fixando ambiente
-setwd("~/Documents/GitHub/Econometria-III/codigos/cointegracao")
+setwd("~/Documentos/GitHub/Econometria-III/codigos/cointegracao")
 
 library("CADFtest")
 library("car")
@@ -28,24 +28,24 @@ dados = window(dados, start = c(2003,1), end = c(2024,2))
 #e que m1 e igp exibem drift (intercepto na primeira diferença)
 
 #Evidência de sazonalidade
-acf(diff(dados))
+acf(diff(dados),lag.max=40)
 
 #Selecionando coeficientes com base no VAR em nível. Note que, como há drift,
 #devemos incluir uma tendência linear em nível
-criterios = VARselect(dados, lag.max = 20, type = 'both', season=12)
+criterios = VARselect(dados, lag.max = 20, type = 'const', season=12)
 
 #Selecionando com base no BIC
-modelo_nivel = VAR(dados, type = 'both', p=2, season=12)
+modelo_nivel = VAR(dados, type = 'const', p=2, season=12)
 summary(modelo_nivel)
-LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'both', p=1, season=12)))
+LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'const', p=1, season=12)))
 print(LM>qchisq(0.95,9))
 
 #Vamos olhar o teste de Breusch-Godfrey de não correlação serial
 serial.test(modelo_nivel, type = 'BG', lags.bg =5)
 
 #Aumentando
-modelo_nivel = VAR(dados, type = 'both', p=3, season=12)
-LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'both', p=2, season=12)))
+modelo_nivel = VAR(dados, type = 'const', p=3, season=12)
+LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'const', p=2, season=12)))
 print(LM>qchisq(0.95,9))
 serial.test(modelo_nivel, type = 'BG', lags.bg =5)
 
