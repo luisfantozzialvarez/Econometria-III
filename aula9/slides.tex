@@ -199,15 +199,32 @@ natbib=true
 			\item Note que, por construção, $\boldsymbol{\epsilon}_t$ captura fatores não antecipados com base no passado. 
 			\item Como $\boldsymbol{\epsilon}_t$ é não contemporaneamente correlacionado, faz sentido pensar em surpresas em um de seus componentes, mantidos os outros constantes.
 	\end{itemize}
-	\item Formalmente, o efeito \textit{ceteris-paribus} de uma surpresa de uma unidade na $j$-ésima inovação do sistema em $t$, $\epsilon_{jt}$, sobre a $i$-ésima variável do sistema em $t+h$, $h\geq 0$, é dada pela {\color{blue}função de resposta ao impulso}
+	\item Formalmente, o efeito causal de uma surpresa de uma unidade na $j$-ésima inovação do sistema em $t$, $\epsilon_{jt}$, sobre a $i$-ésima variável do sistema em $t+h$, $h\geq 0$, é dada pela {\color{blue}função de resposta ao impulso}
 	$$F_{h}(i|j)  = \frac{\partial Y_{i,t+h}}{\partial \epsilon_{j,t}}$$
 	\item Por exemplo, $F_{0}(i|j) = \boldsymbol{B}_{ij}$, $F_{1}(i|j) = \sum_{l=1}^d\boldsymbol{C}_{1, i,l} \boldsymbol{B}_{lj} = \sum_{l=1}^d\boldsymbol{C}_{1, i,l} F_{0}(l|j)$, $F_2(i|j) = \sum_{l=1}^d \boldsymbol{C}_{1, i,l} F_{1}(i|j) + \sum_{l=1}^d\boldsymbol{C}_{2, i,l} F_{0}(i|j)$, etc.
 	\end{itemize}
 \end{frame}
 
-\appendix
-\begin{frame}[allowframebreaks]{Referências}
-	\printbibliography
+\begin{frame}{FRI normalizada, FRI acumulada}
+	conteúdo...
 \end{frame}
+
+
+\begin{frame}{Decomposição da variância do erro de predição}
+	conteúdo...
+\end{frame}
+
+
+\begin{frame}{SVAR(p) e VAR(p)}
+	conteúdo...
+\end{frame}
+
+\begin{frame}{O problema de identificação causal no SVAR(p)}
+	conteúdo...
+\end{frame}
+%\appendix
+%\begin{frame}[allowframebreaks]{Referências}
+%	\printbibliography
+%\end{frame}
 \end{document}
 
