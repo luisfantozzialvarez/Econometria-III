@@ -47,6 +47,7 @@ serial.test(modelo_nivel, type = 'BG', lags.bg =5)
 modelo_nivel = VAR(dados, type = 'const', p=3, season=12)
 LM = 2*(logLik(modelo_nivel)- logLik(VAR(dados, type = 'const', p=2, season=12)))
 print(LM>qchisq(0.95,9))
+print(LM>qchisq(0.9,9))
 serial.test(modelo_nivel, type = 'BG', lags.bg =5)
 
 #p=3 parece ok
