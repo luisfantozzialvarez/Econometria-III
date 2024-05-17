@@ -31,7 +31,7 @@ dados = window(dados, start = c(2003,1), end = c(2024,2))
 acf(diff(dados),lag.max=40)
 
 #Selecionando coeficientes com base no VAR em nível. Note que, como há drift,
-#devemos incluir uma tendência linear em nível
+#devemos incluir uma constante no VAR em nível (random walk + constante => tendencia estocastica e linear no nível)
 criterios = VARselect(dados, lag.max = 20, type = 'const', season=12)
 
 #Selecionando com base no BIC
