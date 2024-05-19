@@ -1,0 +1,136 @@
+% !TeX document-id = {1c0b4298-276a-4038-8e08-c4a1f4846da7}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{float}
+
+\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+
+\title{\large EAE1223: Econometria III}
+\author{\normalsize Exercícios sobre metodologia VAR}
+\date{}
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+\item Escolha uma das séries por você analisada na metodologia de Box-Jenkins.
+\begin{enumerate}
+	\item[a] Considere mais uma variável que você acredita que possa ajudar na previsão desta série. Ajuste um modelo VAR bivariado para as duas séries, devidamente estacionarizadas. Conduza todas as etapas de especificação e diagnóstico do modelo, e calcule as previsões fora da amostra. Como elas se comparam às obtidas na metodologia Box-Jenkins?
+	\item[b] Realize o teste da hipótese nula de que a inclusão das defasagens da nova variável não afeta as previsões da série original, relativamente a um modelo AR de mesma ordem que o VAR(p) por você escolhido. Qual é o nome desta hipótese nula? Qual a conclusão do teste, a 5\%?
+\end{enumerate}
+\item Com base no modelo VAR trivariado visto em aula:
+\begin{enumerate}
+	\item Acesse o site do IpeaData e colete as expectativas médias de inflação (IPCA), doze meses à frente, para o mês de \textbf{abril de 2024}.
+	\item Usando a fórmula do \textit{nowcasting} vista em aula, atualize as projeções feitas com dados até março, com base nesta divulgação e na de taxa de juros já vista em sala. Como mudam as projeções para abril e maio?
+	\item Teste, ao nível de significância de 5\%, a hipótese nula de que tanto a atualização com base na divulgação antecipada das expectativas como da Selic não impactam as projeções de inflação. Como é o nome desta hipótese? Qual a conclusão do teste?
+\end{enumerate}
+
+\item Considere um VAR(1) para um processo vetorial $\boldsymbol{Z}_t = (\boldsymbol{Y}_t', X_t)'$, com $d+1$ entradas, em que $\boldsymbol{Y}_t$ é $d\times 1$ e $X_t$ é escalar:
+\begin{align}
+\boldsymbol{Y}_t = A_{y,y}\boldsymbol{Y}_{t-1} + A_{y,x}X_{t-1} + u_{y,t}  \label{eq_full}
+\\
+X_t = A_{x,y}\boldsymbol{Y}_{t-1} + A_{x,x}X_{t-1} + u_{x,t}  \label{eq_marginal}
+\end{align}
+
+em que $\begin{pmatrix}
+	u_{y,t} \\
+	u_{x,t}
+	\end{pmatrix} \overset{iid}{\sim} \mathcal{N}\left(\begin{pmatrix}\boldsymbol{0}_{d\times 1} \\ 0\end{pmatrix},\begin{pmatrix}
+\Sigma_{y,y} & \Sigma_{y,x} \\
+\Sigma_{x,y}& \sigma_{x,x}
+	\end{pmatrix}\right)$, com $\Sigma_{y,y} = \mathbb{V}[u_{y,t}]$, $\sigma_{x,x} = \mathbb{V}[u_{x,t}]$, e $\Sigma_{y,x} = \operatorname{cov}(u_{y,t},u_{x,t}) = \Sigma_{x,y}'$.
+	
+	\begin{enumerate}
+		\item Usando a seguinte propriedade da distribuição normal:
+		$$u_{y,t} = \gamma u_{x,t} + v_t\, ,$$
+		em que $v_t \sim N(\boldsymbol{0}_{d\times 1}, \Sigma_{y,y} - \Sigma_{y,x}\sigma_{x,x}^{-1}\Sigma_{x,y})$ é independente de $u_{x,t}$, $\gamma = \Sigma_{y,x}\sigma_{x,x}^{-1}$; mostre que podemos escrever o modelo condicional para $\boldsymbol{Y}_t|X_t,\mathcal{Z}_{t-1}$ como:
+	\begin{equation}
+		\label{eq_cond}
+		\boldsymbol{Y}_t = {B}_{y,y}\boldsymbol{Y}_{t-1} +\delta_{y,0}X_t + \delta_{y,1} X_{t-1}+ v_{t}\, .
+	\end{equation}
+	
+	Expresse a relação entre os parâmetros desse modelo, $\{B_{y,y}, \delta_{y,0}, \delta_{y,1}, \mathbb{V}[v_t]\}$, e os parâmetros do VAR(1).
+	\item Argumente que, se não impomos nenhuma restrição nos parâmetros do VAR(1) que descreve $\boldsymbol{Z}_t$ (equações \eqref{eq_full}-\eqref{eq_cond}), os parâmetros do modelo condicional \eqref{eq_cond},  $\{B_{y,y}, \delta_{y,0}, \delta_{y,1}, \mathbb{V}[v_t]\}$,  podem variar independentemente dos parâmetros do modelo para $\boldsymbol{X}_t|\mathcal{Z}_{t-1}$, dado pela equação \eqref{eq_marginal}, $\{\boldsymbol{A}_{x,y}, \boldsymbol{A}_{x,x}, \sigma_{x,x}\}$. Qual é o nome desta propriedade? Qual é a implicação dela, se nosso interesse está somente em estimar os parâmetros do modelo \eqref{eq_cond}, tratando $X_t$ e $X_{t-1}$ como variáveis externas fixas no VAR de $\boldsymbol{Y}_t$?
+	\item Sob qual condição adicional podemos usar as estimativas do modelo \eqref{eq_cond}, conjuntamente a projeções externas para $\{X_t\}$, de maneira consistente e sem perda de informação relevante? Qual é o nome dessa propriedade?
+		
+	\end{enumerate}
+\item (Um modelo monetarista) Considere a seguinte descrição de uma economia:
+\begin{align}
+	i_t = r_t +\mathbb{E}_t \pi_{t+1} \label{eq_foc} \\
+	i_t = r_t + \bar\pi +  \theta (\pi_t - \bar{\pi}) + x_t  \label{eq_cb}
+\end{align}
+
+A equação \eqref{eq_foc} é a conhecida equação de Fisher, e resulta do comportamento intertemporal dos consumidores, de modo que a taxa de juros nominal, $i_t$, subtraída da expectativa de inflação com base na informação disponível em $t$, $\mathbb{E}_t \pi_{t+1}$, deve coincidir com a taxa de juros real, $r_t$, que em nossa economia monetarista é determinada por fatores reais, podendo ser descrita por:
+\begin{equation}
+r_t = \bar{r} + \beta r_{t-1} + u_t \, ,
+\end{equation}
+onde $u_t$ são choques reais que afetam o equilíbrio no mercado de fundos emprestáveis; e $|\beta| < 1$.
+
+A equação \eqref{eq_cb} é a regra de política monetária do Banco Central, onde $\bar \pi$ é a meta de inflação, $\theta$ mede a resposta da política monetária a desvios da inflação da meta, e $x_t$ são outros fatores que determinam a decisão de política monetária do banco central. Nós supomos que esses fatores seguem:
+ 
+ \begin{equation}
+ 	x_t =  \rho x_{t-1} + v_t \, ,
+ \end{equation}
+ 
+ com $|\rho| < 1$. Por fim, supomos que as inovações  $(u_t,v_t)$ se comportam como ruídos brancos independentes no tempo e contemporaneamente independentes entre si.
+
+\begin{enumerate}
+	\item Usando \eqref{eq_foc}-\eqref{eq_cb}, mostre que:
+	
+	$$\mathbb{E}_t \pi_{t+1} = (1-\theta)\bar{\pi} +\theta \pi_t + x_t\, . $$
+	\item Suponha que as expectativas são \emph{racionais}, no sentido de que $\mathbb{E}_t$ corresponde à esperança condicional do modelo, com base em todas as variáveis do sistema até $t$. Mostre que, neste caso, para todo $s > 0$:
+	
+	$$\mathbb{E}_t \pi_{t+s}  = \sum_{j=1}^{s} \theta^{s- j}  ((1-\theta)\bar{\pi} + \mathbb{E}_t[x_{t+j-1}])  +  \theta^s \pi_t   = \sum_{j=1}^{s} \theta^{s-j}  ((1-\theta)\bar{\pi} +\rho^{j-1} x_{t})  +  \theta^s \pi_t \, .$$
+	
+	\textit{Dicas:} Pela lei das expectativas iteradas $\mathbb{E}_t \mathbb{E}_{t+j} z = \mathbb{E}_t z$, para qualquer variável aleatória $z$. Além disso, para o processo AR(1) que descreve $x_t$, recorde-se que $\mathbb{E}_t x_{t+s} = \rho^s x_t$.
+	
+	\item Mostre que, se vale o \emph{princípio de Taylor}, qual seja, $\theta > 1$, e o equilíbrio apresenta expectativas não explosivas, isto é, existem $C > 0$ e $S \in \mathbb{N}$ tais que $|\mathbb{E}_t \pi_{t+s}| \leq C$ para todo $s \geq S$, então a taxa de inflação satisfaz:
+	
+	$$\pi_t = \bar \pi - \frac{1}{\theta - \rho} x_t \, .$$
+	
+	\item Mostre que $(\pi_t, i_t)$ segue um VAR(1) da forma:
+	
+	$$\begin{bmatrix}
+	\pi_t \\
+	i_t 
+	\end{bmatrix} =  \begin{pmatrix}
+	a_\pi \\
+	a_i
+	\end{pmatrix} + \begin{pmatrix}
+	b_{\pi,\pi} & b_{\pi,i} \\
+	b_{i,\pi} & b_{i,i}
+	\end{pmatrix}\begin{bmatrix}
+	\pi_{t-1}\\
+	i_{t-1}
+\end{bmatrix} + \begin{bmatrix}
+e_{\pi,t} \\
+e_{i, t}
+\end{bmatrix} \, ,$$
+onde $\begin{bmatrix}
+	e_{\pi,t} \\
+	e_{i, t}
+\end{bmatrix} $ é um ruído branco vetorial. Determine os valores dos coeficientes, como função dos parâmetros do modelo econômico, bem como a matriz de variância-covariância de $\begin{bmatrix}
+e_{\pi,t} \\
+e_{i, t}
+\end{bmatrix} $.
+\item No VAR obtido, juros Granger causa inflação? Inflação Granger causa juros? E a causalidade instantânea?
+\item A equação de movimento dos juros, no modelo VAR(1) resultante, pode ser interpretada como a regra de \textbf{decisão} do banco central? Por quê?
+\item A equação de movimento da inflação, no modelo VAR(1) resultante, é invariante a mudanças no parâmetro $\theta$ de resposta da política monetária? O que isso indica de exercícios contrafactuais que visassem a usar essa equação estimada para avaliar regras monetárias contrafactuais?
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
