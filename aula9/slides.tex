@@ -188,39 +188,149 @@ natbib=true
 		\label{eq_svar}
 		\boldsymbol{Y}_t = \boldsymbol{c}+ \sum_{j=1}^p \boldsymbol{C}_j \boldsymbol{Y}_{t-j} + \boldsymbol{B}\boldsymbol{\epsilon}_t\, ,
 	\end{equation}
-	onde $\boldsymbol{\epsilon}_t$ são inovações fundamentais, isto é ruídos brancos não contemporaneamente correlacionadas, e $\boldsymbol{B}$ é a matriz que captura os efeitos contemporâneos das inovações fundamentais sobre $\boldsymbol{Y}_t$.
+	onde $\boldsymbol{\epsilon}_t$ são inovações fundamentais, isto é ruídos brancos não contemporaneamente correlacionados, e $\boldsymbol{B}$ é a matriz que captura os efeitos contemporâneos das inovações fundamentais sobre $\boldsymbol{Y}_t$.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Função de resposta ao impulso}
 	\begin{itemize}
-		\item Os efeitos causais dinâmicos, na modelagem SVAR, são capturados pelos efeitos de surpresas nos choques fundamentais sobre o comportamento do sistema.
+		\item Os efeitos causais dinâmicos, na modelagem SVAR, são capturados pelos efeitos de surpresas dos choques fundamentais sobre o comportamento do sistema.
 		\begin{itemize}
 			\item Note que, por construção, $\boldsymbol{\epsilon}_t$ captura fatores não antecipados com base no passado. 
 			\item Como $\boldsymbol{\epsilon}_t$ é não contemporaneamente correlacionado, faz sentido pensar em surpresas em um de seus componentes, mantidos os outros constantes.
 	\end{itemize}
-	\item Formalmente, o efeito causal de uma surpresa de uma unidade na $j$-ésima inovação do sistema em $t$, $\epsilon_{jt}$, sobre a $i$-ésima variável do sistema em $t+h$, $h\geq 0$, é dada pela {\color{blue}função de resposta ao impulso}
+	\item Formalmente, o efeito causal de uma surpresa de uma unidade na $j$-ésima variável do sistema em $t$, $\epsilon_{jt}$, sobre a $i$-ésima variável do sistema em $t+h$, $h\geq 0$, é dada pela {\color{blue}função de resposta ao impulso}
 	$$F_{h}(i|j)  = \frac{\partial Y_{i,t+h}}{\partial \epsilon_{j,t}}$$
 	\item  $F_{0}(i|j) = \boldsymbol{B}_{ij}$, $F_{1}(i|j) = \sum_{l=1}^d\boldsymbol{C}_{1, i,l} \boldsymbol{B}_{lj} = \sum_{l=1}^d\boldsymbol{C}_{1, i,l} F_{0}(l|j)$, $F_2(i|j) = \sum_{l=1}^d \boldsymbol{C}_{1, i,l} F_{1}(i|j) + \sum_{l=1}^d\boldsymbol{C}_{2, i,l} F_{0}(i|j)$, etc.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{FRI normalizada, FRI acumulada}
-	conteúdo...
+\begin{itemize}
+	\item Em diversos casos, é costumeiro normalizar a FRI pelo desvio padrão dos choques, isto é, reporta-se:
+	$$F_h(i|j)/\sigma_{j,t}\,.$$
+	
+	\begin{itemize}
+		\item 	Neste caso, os coeficientes são interpretáveis como o efeito causal de uma surpresa de um desvio padrão na $j$-ésima variável.
+	\end{itemize}
+	\item Também podemos reportar a FRI acumulada:
+	
+	$$\sum_{\tau=0}^h F_\tau(i|j)\, .$$
+	
+	\begin{itemize}
+		\item Se a $i$-ésima variável está em primeiras diferenças, a FRI acumulada reporta o efeito da surpresa sobre o nível da série em $t+h$.
+		\item Alternativamente, FRI acumulada pode ser interpretada como o efeito de uma sequência de surpresas (por construção, não antecipadas) de uma unidade em $j$ por $h$ períodos sobre o sistema.
+		\begin{itemize}
+			\item Note que, pela crítica de Lucas, sabemos que isto é \textbf{diferente} do efeito de um aumento permanente de uma unidade sobre a $j$-ésima variável do sistema.
+		\end{itemize}
+	\end{itemize}
+	
+\end{itemize}
 \end{frame}
 
 
 \begin{frame}{Decomposição da variância do erro de predição}
-	conteúdo...
+		\begin{itemize}
+		\item Com base no SVAR(p), somos capazes, analogamente ao VAR(p), de calcular previsões para $T+h$, com dados até $T$, $\boldsymbol{Y}_{T+h|T}$:
+		\begin{align*}
+			\boldsymbol{Y}_{T+1|T} = \boldsymbol{c} + \sum_{j=0}^{p-1} \boldsymbol{C}_{j+1} \boldsymbol{Y}_{T-j} \\
+				\boldsymbol{Y}_{T+2|T} = \boldsymbol{c} +  {\color{red}\boldsymbol{C}_{j}\boldsymbol{Y}_{T+1|T}} +  \sum_{j=0}^{p-2} \boldsymbol{C}_{j+2} \boldsymbol{Y}_{T-j}  \\
+				vdots
+		\end{align*}
+	\end{itemize}
+	\begin{itemize}
+\item O erro de previsão no horizonte $h$ é dado por $\boldsymbol{Y}_{T+h} - \boldsymbol{Y}_{T+h|T}$.
+\item Dada a natureza estrutural dos choques, é possível mostrar que somos capazes de decompor aditivamente a {\color{blue}variância do erro de previsão de cada variável} na contribuição de cada choque:
+
+$$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d \text{contribuição do choque j}$$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Decomposição da variância do erro de predição (cont.)}
+	\begin{halfwideitemize}
+
+		\item Decomposição da variância erro de predição nos permite dizer, para cada horizonte, quantos \% da incerteza futura depende de cada uma das inovações estruturais.
+				\item Fácil de ver que a decomposição não depende de $t$, mas tão somente do horizonte e variável de interesse,
+		\item Se tomamos $h \to \infty$, temos uma decomposição da variância de longo prazo (incondicional) do sistema.
+		\begin{itemize}
+			\item Por exemplo, podemos dizer quanto da variabilidade da atividade econômica se deve a choques monetários.
+		\end{itemize}
+	\end{halfwideitemize}
 \end{frame}
 
 
 \begin{frame}{SVAR(p) e VAR(p)}
-	conteúdo...
+\begin{itemize}
+	\item Note que um SVAR(p) da forma \eqref{eq_svar} sempre define um VAR(p).
+	\item De fato, se definimimos $\boldsymbol{u}_t = \boldsymbol{B}\boldsymbol{\epsilon}_t$,  podemos escrever:
+	\begin{equation}
+		\label{eq_rvar}
+		\boldsymbol{Y}_t = \boldsymbol{c}+ \sum_{j=1}^p \boldsymbol{C}_j \boldsymbol{Y}_{t-j} + \boldsymbol{u}_t\, ,
+	\end{equation}
+	onde $\boldsymbol{u}_t$ é um {\color{blue}ruído branco contemporaneamente correlacionado}, cuja matriz de variância é dada por $\mathbb{V}[\boldsymbol{u}_t] = \boldsymbol{B}\mathbb{V}[\boldsymbol{\epsilon}_t] \boldsymbol{B}' =\Sigma$.
+	\begin{itemize}
+		\item VAR(p) em que ruído branco segue da combinação linear de choques estruturais.
+		\item Essas combinações lineares produzem um ruído branco contemporaneamente correlacionado, na medida em que choques fundamentais afetam simultaneamente mais de uma variável do sistema.
+	\end{itemize}
+	\item A um VAR(p) derivado de um SVAR(p), daremos o nome de {\color{blue}modelo vetorial em forma reduzida}.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{O problema de identificação causal no SVAR(p)}
-	conteúdo...
+\begin{itemize}
+	\item Recorde-se que, sob condições bastantes gerais, podemos estimar consistentemente os parâmetros de um VAR(p).
+	\begin{itemize}
+		\item Resultado vale para séries estacionárias, e mesmo para processos integrados (embora, nesse caso, a inferência com base em distribuições convencionais não seja válida).
+	\end{itemize}
+	\item Como os parâmetros do VAR(p) são consistentemente estimáveis, segue que, com $T$ grande, somos capazes de recuperar aproximadamente as {\color{blue}inovações reduzidas} $\{\boldsymbol{u}_t : 1 \leq t \leq T\}$. 
+	\begin{itemize}
+		\item Como essas inovações são recuperáveis com $T$ grande, também somos capazes de estimar consistentemente $\Sigma = \mathbb{V}[\boldsymbol{u}_t]$.
+	\end{itemize}
+	\item O {\color{blue}problema de identificação causal no SVAR(p)} consiste em prover condições a partir das quais sejamos capazes de {\color{blue}recuperar os choques estruturais $\boldsymbol{\epsilon}_t$ a partir da observação de $\boldsymbol{u}_t$}.
+	\begin{itemize}
+		\item Ideia é encontrar condições que nos permitam descorrelacionar os choques reduzidos em termos das inovações fundamentais.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Identificação dos choques estruturais}
+	\begin{itemize}
+		\item Para descorrelacionar $\boldsymbol{u}_t$, precisamos recuperar a matriz $\boldsymbol{B}$.
+		\item Em geral, as análises estruturais preferem ser agnósticas sobre os componentes autorregressivos do processo $\implies$ coeficientes $\boldsymbol{C}_j$ não nos trazem informação sobre $\boldsymbol{B}_j$.
+		\begin{itemize}
+			\item Componentes autorregressivos aparecem pois queremos ser relativamente agnósticos sobre a ``propagação'' de choques intertemporalmente (teoria dificilmente nos diz algo sobre isso), o que sugere não restringir sua relação com os $\boldsymbol{B}_j$.
+		\end{itemize}
+		\item Nesses casos, única informação para descorrelacionar choques deve vir da própria distribuição dos $\boldsymbol{u}_t$.
+		\item Em particular, se queremos ser também agnósticos sobre a distribuição dos choques estruturais $\boldsymbol{\epsilon}_t$, é possível mostrar que a única fonte de informações sobre $\boldsymbol{B}$ vêm da equação:
+		
+		$$\mathbb{V}[\boldsymbol{u}_t] = \boldsymbol{B}\mathbb{V}[\boldsymbol{\epsilon}_t] \boldsymbol{B}'$$
+		onde somos capazes de recuperar o lado esquerdo, com $T$ grande.
+		\begin{itemize}
+			\item Problema de identificação passa a ser separar, a partir da observação de $\mathbb{V}[\boldsymbol{u}_t]$, a variância dos choques estruturais $\mathbb{V}[\boldsymbol{\epsilon}_t]$ da matriz $\boldsymbol{B}$.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Restrições faltantes}
+	\begin{itemize}
+		\item Precisamos recuperar os parâmetros das matrizes $\mathbb{V}[\boldsymbol{\epsilon}_t]$ ($d$ parâmetros) e $\boldsymbol{B}$ ($d^2$ parâmetros) de {\color{blue}forma única} a partir de $\mathbb{V}[\boldsymbol{u}_t]$.
+		\item A observação (em amostras grandes) de $\mathbb{V}[\boldsymbol{u}_t]$ nos provê $d(d-1)/2 + d$ restrições.
+		\begin{itemize}
+			\item Diagonal principal e região abaixo dela.
+		\end{itemize}
+		\item Dessa forma, temos um sistema com $d(d-1)/2 + d$ equações e $d(d+1)$ incógnitas.
+		\begin{itemize}
+			\item Precisamos de restrições adicionais para recuperar esses parâmetros de forma única.
+		\end{itemize}
+		\item Uma normalização natural é supor que a diagonal principal de $\boldsymbol{B}$ é igual a $1$.
+		\begin{itemize}
+			\item {\color{blue}Escala dos choques estruturais corresponde às variáveis observadas}, de modo que choque de uma unidade em $\boldsymbol{\epsilon}_{j,t}$ corresponde a aumento não antecipado de uma unidade em $\boldsymbol{Y}_{j,t}$.
+		\end{itemize}
+		\item Nesse caso, temos um sistema com $d(d+1)/2$ equações e $d^2$ incógnitas.
+		\begin{itemize}
+			\item Precisamos de $d(d-1)/2$ restrições sobre os parâmetros estruturais para identificar o sistema. 
+		\end{itemize}
+		
+	\end{itemize}
 \end{frame}
 %\appendix
 %\begin{frame}[allowframebreaks]{Referências}
