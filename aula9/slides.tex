@@ -199,7 +199,7 @@ natbib=true
 			\item Note que, por construção, $\boldsymbol{\epsilon}_t$ captura fatores não antecipados com base no passado. 
 			\item Como $\boldsymbol{\epsilon}_t$ é não contemporaneamente correlacionado, faz sentido pensar em surpresas em um de seus componentes, mantidos os outros constantes.
 	\end{itemize}
-	\item Formalmente, o efeito causal de uma surpresa de uma unidade na $j$-ésima variável do sistema em $t$, $\epsilon_{jt}$, sobre a $i$-ésima variável do sistema em $t+h$, $h\geq 0$, é dada pela {\color{blue}função de resposta ao impulso}
+	\item Formalmente, o efeito causal de uma surpresa de uma unidade na $j$-ésima inovação do sistema em $t$, $\epsilon_{jt}$, sobre a $i$-ésima variável do sistema em $t+h$, $h\geq 0$, é dada pela {\color{blue}função de resposta ao impulso}
 	$$F_{h}(i|j)  = \frac{\partial Y_{i,t+h}}{\partial \epsilon_{j,t}}$$
 	\item  $F_{0}(i|j) = \boldsymbol{B}_{ij}$, $F_{1}(i|j) = \sum_{l=1}^d\boldsymbol{C}_{1, i,l} \boldsymbol{B}_{lj} = \sum_{l=1}^d\boldsymbol{C}_{1, i,l} F_{0}(l|j)$, $F_2(i|j) = \sum_{l=1}^d \boldsymbol{C}_{1, i,l} F_{1}(i|j) + \sum_{l=1}^d\boldsymbol{C}_{2, i,l} F_{0}(i|j)$, etc.
 	\end{itemize}
@@ -211,7 +211,7 @@ natbib=true
 	$$F_h(i|j)/\sigma_{j,t}\,.$$
 	
 	\begin{itemize}
-		\item 	Neste caso, os coeficientes são interpretáveis como o efeito causal de uma surpresa de um desvio padrão na $j$-ésima variável.
+		\item 	Neste caso, os coeficientes são interpretáveis como o efeito causal de uma surpresa de um desvio padrão na $j$-ésima inovação.
 	\end{itemize}
 	\item Também podemos reportar a FRI acumulada:
 	
@@ -219,7 +219,7 @@ natbib=true
 	
 	\begin{itemize}
 		\item Se a $i$-ésima variável está em primeiras diferenças, a FRI acumulada reporta o efeito da surpresa sobre o nível da série em $t+h$.
-		\item Alternativamente, FRI acumulada pode ser interpretada como o efeito de uma sequência de surpresas (por construção, não antecipadas) de uma unidade em $j$ por $h$ períodos sobre o sistema.
+		\item Alternativamente, FRI acumulada pode ser interpretada como o efeito de uma sequência de surpresas (por construção, não antecipadas) de uma unidade na $j$-ésima variável do sistema por $h$ períodos.
 		\begin{itemize}
 			\item Note que, pela crítica de Lucas, sabemos que isto é \textbf{diferente} do efeito de um aumento permanente de uma unidade sobre a $j$-ésima variável do sistema.
 		\end{itemize}
@@ -235,7 +235,7 @@ natbib=true
 		\begin{align*}
 			\boldsymbol{Y}_{T+1|T} = \boldsymbol{c} + \sum_{j=0}^{p-1} \boldsymbol{C}_{j+1} \boldsymbol{Y}_{T-j} \\
 				\boldsymbol{Y}_{T+2|T} = \boldsymbol{c} +  {\color{red}\boldsymbol{C}_{j}\boldsymbol{Y}_{T+1|T}} +  \sum_{j=0}^{p-2} \boldsymbol{C}_{j+2} \boldsymbol{Y}_{T-j}  \\
-				vdots
+				\vdots
 		\end{align*}
 	\end{itemize}
 	\begin{itemize}
@@ -249,7 +249,7 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 \begin{frame}{Decomposição da variância do erro de predição (cont.)}
 	\begin{halfwideitemize}
 
-		\item Decomposição da variância erro de predição nos permite dizer, para cada horizonte, quantos \% da incerteza futura depende de cada uma das inovações estruturais.
+		\item Decomposição da variância do erro de predição nos permite dizer, para cada horizonte, quantos \% da incerteza futura depende de cada uma das inovações estruturais.
 				\item Fácil de ver que a decomposição não depende de $t$, mas tão somente do horizonte e variável de interesse,
 		\item Se tomamos $h \to \infty$, temos uma decomposição da variância de longo prazo (incondicional) do sistema.
 		\begin{itemize}
@@ -296,12 +296,12 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 \begin{frame}{Identificação dos choques estruturais}
 	\begin{itemize}
 		\item Para descorrelacionar $\boldsymbol{u}_t$, precisamos recuperar a matriz $\boldsymbol{B}$.
-		\item Em geral, as análises estruturais preferem ser agnósticas sobre os componentes autorregressivos do processo $\implies$ coeficientes $\boldsymbol{C}_j$ não nos trazem informação sobre $\boldsymbol{B}_j$.
+		\item Em geral, as análises estruturais preferem ser agnósticas sobre os componentes autorregressivos do processo $\implies$ coeficientes $\boldsymbol{C}_j$ não nos trazem informação sobre $\boldsymbol{B}$.
 		\begin{itemize}
-			\item Componentes autorregressivos aparecem pois queremos ser relativamente agnósticos sobre a ``propagação'' de choques intertemporalmente (teoria dificilmente nos diz algo sobre isso), o que sugere não restringir sua relação com os $\boldsymbol{B}_j$.
+			\item Componentes autorregressivos aparecem pois queremos ser relativamente agnósticos sobre a ``propagação'' de choques intertemporalmente (teoria dificilmente nos diz algo sobre isso), o que sugere não restringir sua relação com os $\boldsymbol{B}$.
 		\end{itemize}
 		\item Nesses casos, única informação para descorrelacionar choques deve vir da própria distribuição dos $\boldsymbol{u}_t$.
-		\item Em particular, se queremos ser também agnósticos sobre a distribuição dos choques estruturais $\boldsymbol{\epsilon}_t$, é possível mostrar que a única fonte de informações sobre $\boldsymbol{B}$ vêm da equação:
+		\item Em particular, se queremos ser também agnósticos sobre a distribuição dos choques estruturais $\boldsymbol{\epsilon}_t$, é possível mostrar que a única fonte de informações sobre $\boldsymbol{B}$ vem da equação:
 		
 		$$\mathbb{V}[\boldsymbol{u}_t] = \boldsymbol{B}\mathbb{V}[\boldsymbol{\epsilon}_t] \boldsymbol{B}'$$
 		onde somos capazes de recuperar o lado esquerdo, com $T$ grande.
@@ -327,9 +327,98 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 		\end{itemize}
 		\item Nesse caso, temos um sistema com $d(d+1)/2$ equações e $d^2$ incógnitas.
 		\begin{itemize}
-			\item Precisamos de $d(d-1)/2$ restrições sobre os parâmetros estruturais para identificar o sistema. 
+			\item Precisamos de  {\color{blue}$d(d-1)/2$} restrições sobre os parâmetros estruturais para identificar o sistema. 
 		\end{itemize}
 		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{SVAR(p) justamente identificado}
+	\begin{itemize}
+		\item O problema de identificação do SVAR(p) pode ser visto como o problema de encontrar restrições suficientes para que seja possível definir uma função $f$ tal que:
+
+		$$(\boldsymbol{B},\mathbb{V}[\boldsymbol{\epsilon}_t])=f(\mathbb{V}[\boldsymbol{u}_t])$$
+	\vspace{-1em}
+		\begin{itemize}
+			\item Dadas restrições suficientes sobre o modelo, existe um único jeito (resumido na função $f$) de encontrar $(\boldsymbol{B},\mathbb{V}[\boldsymbol{\epsilon}_t])$ compatíveis com $\mathbb{V}[\boldsymbol{u}_t]$.
+		\end{itemize}
+		\item Se colocamos exatamente $d(d-1)/2$ restrições sobre o sistema, estamos no caso {\color{blue}justamente identificado}.
+		\begin{itemize}
+			\item Neste caso, as hipóteses de identificação não geram restrições testáveis sobre o sistema, e é possível mostrar que o estimador mais eficiente dos parâmetros estruturais é dado por:
+				$$(\widehat{\boldsymbol{B}},\widehat{\mathbb{V}[\boldsymbol{\epsilon}_t]})=f(\widehat{\mathbb{V}[\boldsymbol{u}_t]})\, ,$$
+			onde $\widehat{\mathbb{V}[\boldsymbol{u}_t]}$ é o estimador da matriz de covariância do ruído branco de um VAR(p) reduzido, estimado via máxima verossimilhança condicional (onde a verossimilhança é derivada sob a hipótese auxiliar de inovações Gaussianas).
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{SVAR(p) sobreidentificado}
+	\begin{itemize}
+		\item Se colocamos mais de $d(d-1)/2$ restrições sobre o sistema, estamos no caso {\color{blue}sobreidentificado}.
+		
+		\item Neste caso, o estimador mais eficiente consiste na máxima verossimilhança condicional (derivada sob a hipótese auxiliar de inovações Gaussianas), que impõe as restrições sobre a matriz de covariância das inovações $\boldsymbol{B}\mathbb{V}[\boldsymbol{\epsilon}_t]\boldsymbol{B}'$ diretamente na maximização.
+				\begin{itemize}
+		\item Neste caso, também é possível testar as restrições de identificação através da estatística LR:
+		$$\text{LR} = 2(\hat{L}_{\text{VAR}} - \hat{L}_{\text{SVAR}})$$
+		onde $\hat{L}_{\text{VAR}}$ é a log-verossimilhança do VAR(p) reduzido e $\hat{L}_{\text{SVAR}}$ a log-verossimilhança do SVAR(p) estimado.
+		\begin{itemize}
+			\item Sob estacionariedade e a hipótese nula de correta especificação, estatística segue $\chi^2$ com \textbf{$\boldsymbol{n^o}$ restrições} - $d(d-1)/2$ graus de liberdade. Rejeita-se a nula de correta especificação para valores altos da estatística de teste.
+		\end{itemize}
+				\end{itemize}
+		\item \textbf{Observação:} para escolhermos a ordem $p$, a não ser que a teoria econômica nos traga alguma informação, fazemos os procedimentos discutidos em aulas passada {\color{red}num VAR reduzido preliminar}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Dificuldades da estimação convencional do SVAR(p)}
+\begin{itemize}
+	\item Em diversas situações, as restrições identificadoras sobre os parâmetros estruturais tomam forma bastante complicada.
+	\begin{itemize}
+		\item Nesses casos, pode ser bastante difícil de impor as restrições na estimação dos parâmetros.
+	\end{itemize}
+	\item Além disso, nesses casos em que a forma das restrições é bastante complicada, é difícil saber se as restrições são suficientes para garantir a identificação.
+	\begin{itemize}
+		\item Restrições podem {\color{blue}auxiliar na identificação}, no sentido de que o conjunto de parâmetros estruturais $(\boldsymbol{B}, \mathbb{V}[\boldsymbol{\epsilon}_t])$ compatíveis com a forma reduzida $\mathbb{V}[\boldsymbol{u}_t]$ é diminuído sob as restrições, mas ainda pode haver mais de um par de parâmetros estruturais compatíveis com  $\mathbb{V}[\boldsymbol{u}_t]$.
+		\item Nesse caso, a inferência usual (estatísticas $t$ e $F$) {\color{blue}sobre os parâmetros} deixa de ser válidas.
+		\begin{itemize}
+			\item Teste $LR$ derivado anteriormente ainda é válido.
+		\end{itemize}
+	\end{itemize}
+	\item Nessa situação, a literatura costuma abandonar a estimação vista anteriormente e passa a adotar {\color{blue}procedimentos Bayesianos}.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estimação Bayesiana do SVAR(p)}
+	\begin{itemize}
+	 	\item Heuristicamente, abordagem Bayesiana consiste em adotar uma distribuição \textit{a priori} $\boldsymbol{p}$ sobre os parâmetros estruturais $(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B})$.
+		\begin{itemize}
+			\item Essa distribuição reflete o conjunto de valores plausíveis para os parâmetros estruturais (restrições), além de nossa incerteza teórica sobre eles.
+			\begin{itemize}
+				\item Se quisermos ser agnósticos sobre os parâmetros, adotamos distribuições a priori ``uniformes'' no conjunto de valores restritos.
+			\end{itemize}
+		\end{itemize}
+		\item Usando a regra de Bayes, podemos calcular {\color{blue}a distribuição \textit{a posteriori}}:
+		\begin{equation*}
+			\begin{aligned}
+				\boldsymbol{p}((\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B}), \{\boldsymbol{y}_t\}_{t=1}^T) \propto \\ \boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B})) \boldsymbol{p}((\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B})) 
+			\end{aligned}
+		\end{equation*}
+		onde $\boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B}))$ é a verossimilhança do modelo.
+		\item Estimativas pontuais podem ser calculadas usando a \textit{mediana} da distribuição \textit{a posteriori}, e incerteza a partir de seus quantis.
+		\item Não vamos entrar em mais detalhes sobre essa abordagem, embora enfatizaremos casos em que esses métodos são usados.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Estratégias de identificação do SVAR(p)}
+	\begin{itemize}
+		\item No que segue, discutiremos as principais abordagens para se identificar um SVAR(p).
+		\begin{enumerate}
+			\item Restrições de curto prazo.
+			\item Restrições de longo prazo.
+			\item Restrições de sinal.
+			\item Restrições narrativas.
+			\item Identificação por instrumentos externos.
+			\item Identificação por heterocedasticidade.
+		\end{enumerate}
 	\end{itemize}
 \end{frame}
 %\appendix
