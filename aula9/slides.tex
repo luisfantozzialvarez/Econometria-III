@@ -389,7 +389,7 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 
 \begin{frame}{Estimação Bayesiana do SVAR(p)}
 	\begin{itemize}
-	 	\item Heuristicamente, abordagem Bayesiana consiste em adotar uma distribuição \textit{a priori} $\boldsymbol{p}$ sobre os parâmetros estruturais $(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B})$.
+	 	\item Heuristicamente, abordagem Bayesiana consiste em adotar uma distribuição \textit{a priori} $\boldsymbol{p}$ sobre os parâmetros estruturais $(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B})$.
 		\begin{itemize}
 			\item Essa distribuição reflete o conjunto de valores plausíveis para os parâmetros estruturais (restrições), além de nossa incerteza teórica sobre eles.
 			\begin{itemize}
@@ -399,10 +399,10 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 		\item Usando a regra de Bayes, podemos calcular {\color{blue}a distribuição \textit{a posteriori}}:
 		\begin{equation*}
 			\begin{aligned}
-				\boldsymbol{p}((\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B}), \{\boldsymbol{y}_t\}_{t=1}^T) \propto \\ \boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B})) \boldsymbol{p}((\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B})) 
+				\boldsymbol{p}((\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B}), \{\boldsymbol{y}_t\}_{t=1}^T) \propto \\ \boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B})) \boldsymbol{p}((\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B})) 
 			\end{aligned}
 		\end{equation*}
-		onde $\boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \boldsymbol{V}{\boldsymbol{\epsilon}_t}, \boldsymbol{B}))$ é a verossimilhança do modelo.
+		onde $\boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t]\boldsymbol{B}))$ é a verossimilhança do modelo.
 		\item Estimativas pontuais podem ser calculadas usando a \textit{mediana} da distribuição \textit{a posteriori}, e incerteza a partir de seus quantis.
 		\item Não vamos entrar em mais detalhes sobre essa abordagem, embora enfatizaremos casos em que esses métodos são usados.
 	\end{itemize}
