@@ -19,57 +19,57 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
-    \entry{Sims1990}{article}{}
+    \entry{Christiano2005}{article}{}
       \name{author}{3}{}{%
-        {{hash=6ea5ed711258737020e21f785822b8e5}{%
-           family={Sims},
-           familyi={S\bibinitperiod},
-           given={Christopher\bibnamedelima A.},
-           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=2d01c3b46f4061430cc9eb2a1f6408a4}{%
-           family={Stock},
-           familyi={S\bibinitperiod},
-           given={James\bibnamedelima H.},
-           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=a4050fd715c1bcb50e38ec0f1c74b6bf}{%
-           family={Watson},
-           familyi={W\bibinitperiod},
-           given={Mark\bibnamedelima W.},
-           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=2efade9f4ee050a9a205d3efa326058d}{%
+           family={Christiano},
+           familyi={C\bibinitperiod},
+           given={Lawrence\bibnamedelima J.},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3c07f9d81d480d76a0e2d1ca23c79c74}{%
+           family={Eichenbaum},
+           familyi={E\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0fb95a0fee670e48e9c766ea884df6cd}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Charles\bibnamedelima L.},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {[Wiley, Econometric Society]}%
+        {The University of Chicago Press}%
       }
-      \strng{namehash}{5cb3625f82267c1e6b856a0ca44d1598}
-      \strng{fullhash}{5cb3625f82267c1e6b856a0ca44d1598}
-      \strng{bibnamehash}{5cb3625f82267c1e6b856a0ca44d1598}
-      \strng{authorbibnamehash}{5cb3625f82267c1e6b856a0ca44d1598}
-      \strng{authornamehash}{5cb3625f82267c1e6b856a0ca44d1598}
-      \strng{authorfullhash}{5cb3625f82267c1e6b856a0ca44d1598}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \strng{namehash}{fddd7d595966128b22ba82a9cb191fb0}
+      \strng{fullhash}{fddd7d595966128b22ba82a9cb191fb0}
+      \strng{bibnamehash}{fddd7d595966128b22ba82a9cb191fb0}
+      \strng{authorbibnamehash}{fddd7d595966128b22ba82a9cb191fb0}
+      \strng{authornamehash}{fddd7d595966128b22ba82a9cb191fb0}
+      \strng{authorfullhash}{fddd7d595966128b22ba82a9cb191fb0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This paper considers estimation and hypothesis testing in linear time series models when some or all of the variables have unit roots. Our motivating example is a vector autoregression with some unit roots in the companion matrix, which might include polynomials in time as regressors. In the general formulation, the variable might be integrated or cointegrated of arbitrary orders, and might have drifts as well. We show that parameters that can be written as coefficients on mean zero, nonintegrated regressors have jointly normal asymptotic distributions, converging at the rate T1/2. In general, the other coefficients (including the coefficients on polynomials in time) will have nonnormal asymptotic distributions. The results provide a formal characterization of which t or F tests--such as Granger causality tests--will be asymptotically valid, and which will have nonstandard limiting distributions.}
-      \field{issn}{00129682, 14680262}
-      \field{journaltitle}{Econometrica}
+      \field{abstract}{We present a model embodying moderate amounts of nominal rigidities that accounts for the observed inertia in inflation and persistence in output. The key features of our model are those that prevent a sharp rise in marginal costs after an expansionary shock to monetary policy. Of these features, the most important are staggered wage contracts that have an average duration of three quarters and variable capital utilization.}
+      \field{issn}{00223808, 1537534X}
+      \field{journaltitle}{Journal of Political Economy}
       \field{number}{1}
-      \field{title}{Inference in Linear Time Series Models with some Unit Roots}
-      \field{urlday}{15}
+      \field{title}{Nominal Rigidities and the Dynamic Effects of a Shock to Monetary Policy}
+      \field{urlday}{23}
       \field{urlmonth}{5}
       \field{urlyear}{2024}
-      \field{volume}{58}
-      \field{year}{1990}
+      \field{volume}{113}
+      \field{year}{2005}
       \field{urldateera}{ce}
-      \field{pages}{113\bibrangedash 144}
-      \range{pages}{32}
+      \field{pages}{1\bibrangedash 45}
+      \range{pages}{45}
       \verb{urlraw}
-      \verb http://www.jstor.org/stable/2938337
+      \verb http://www.jstor.org/stable/10.1086/426038
       \endverb
       \verb{url}
-      \verb http://www.jstor.org/stable/2938337
+      \verb http://www.jstor.org/stable/10.1086/426038
       \endverb
     \endentry
   \enddatalist

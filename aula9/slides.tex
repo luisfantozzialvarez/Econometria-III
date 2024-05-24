@@ -421,9 +421,79 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 		\end{enumerate}
 	\end{itemize}
 \end{frame}
-%\appendix
-%\begin{frame}[allowframebreaks]{Referências}
-%	\printbibliography
-%\end{frame}
+
+\begin{transitionframe}
+	\centering { \Huge Restrições de curto prazo}
+\end{transitionframe}
+
+\begin{frame}{Identificação recursiva}
+	\begin{itemize}
+		\item 
+	Suponha que sejamos capazes de ordenar as variáveis $\boldsymbol{Y}_t$ do VAR estrutural da seguinte maneira:
+	\begin{itemize}
+		\item Choques na $i$-ésima variável do sistema só exercem efeito contemporâneo sobre as variáveis $i$, $i+1$, \ldots, $d$ do sistema
+		\item  Posto de outra, forma choques contemporâneos na $i$-ésima variável não afetam contemporaneamnete as variáveis anteriores a $i$ na ordenação.
+	\end{itemize}
+		\item Neste caso, a matriz $\boldsymbol{B}$ acaba tomando a forma:
+		
+	\end{itemize}
+	
+		$$\boldsymbol{B}  = \begin{bmatrix}
+		1 & 0 & 0 & \ldots & 0 \\
+		b_{2,1} & 1 & 0 & \ldots & 0 \\
+		b_{3,1} & b_{3,2} & 1 & \ldots & 0 \\
+		\vdots &   \vdots &   \vdots &   \cdots&  0 \\
+		b_{d,1} & b_{d,2} & b_{d,3} & \cdots & 1
+	\end{bmatrix}$$
+	\begin{itemize}
+		\item Impomos exatamente $d(d-1)/2$ restrições em $\boldsymbol{B}$ $\implies$ é possível separar $\mathbb{V}[\boldsymbol{\epsilon}_t]$ de $\boldsymbol{B}$.
+		\begin{itemize}
+			\item Estimação ocorre calculando-se $\widehat{\mathbb{V}[\boldsymbol{u}_t]}$ no VAR reduzido e aplicando nessa matriz {\color{blue}a decomposição matemática de Choleski}, que nos dá um algoritmo eficiente para recuperar a matriz $\boldsymbol{B}$ de $\widehat{\mathbb{V}[\boldsymbol{u}_t]}$.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Identificação recursiva}
+	\begin{itemize}
+		\item Se queremos a resposta de todos os choques sobre todas as variáveis, devemos acertar corretamente a ordenação inteira em $\boldsymbol{Y}_t$.
+		\item Por outro lado, se nosso objetivo é tão somente calcular as FRI do choque na variável $i$ do sistema sobre as demais, devemos somente acertar quem vem antes e quem vem depois de $i$ no sistema.
+		\begin{itemize}
+			\item Ordem \textbf{dentro} do bloco anterior (posterior) a $i$ não afeta FRI ao choque $i$.
+		\end{itemize}
+		\item \textbf{Exemplo:} \citet{Christiano2005} estudam  se modelos novo-Keynesianos de equilíbrio geral são capazes de reproduzir a resposta a choques de política monetária obtidas por VAR estrutural.
+		\item Para isso, eles estimam o seguinte VAR estrutural para os Estados Unidos, com dados trimestrais de 1965T3 a 1995T3:
+		
+		$$\begin{bmatrix}
+			\boldsymbol{Y}_{1t} \\
+			\text{Juros}_{t} \\
+				\boldsymbol{Y}_{2t}
+		\end{bmatrix} = \sum_{j=1}^4 \boldsymbol{A}_j \begin{bmatrix}
+		\boldsymbol{Y}_{1t-j} \\
+		\text{Juros}_{t-j} \\
+		\boldsymbol{Y}_{2t-j}
+		\end{bmatrix} + \boldsymbol{B}\boldsymbol{\epsilon}_t$$
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo (cont.)}
+\begin{itemize}
+	\item No artigo, autores tomam $\boldsymbol{Y}_{1t}$ como PIB real, consumo real, deflator do PIB, investimento real, salário real e produtividade do trabalho. Por outro lado $\boldsymbol{Y}_{2t}$ inclui lucros reais e base monetária M2.
+	
+	\vspace{1em}
+	\begin{quote}
+		The ordering of the variables in \(\boldsymbol{Y}_{t}\) embodies two key identifying assumptions. First, the variables in \(\boldsymbol{Y}_{1 t}\) do not respond contemporaneously to a monetary policy shock. Second, the time \(t\) information set of the
+		monetary authority consists of current and lagged values of the variables
+		in \(\boldsymbol{Y}_{1 t}\) and only past values of the variables in \(\boldsymbol{Y}_{2 t}\)
+		Our decision to include all variables except for the growth rate of
+		M2 and real profits in \(\boldsymbol{Y}_{1 t}\) reflects a long-standing view that many macroeconomic variables do not respond instantaneously to policy shocks
+		(see Friedman 1968).
+	\end{quote}
+\end{itemize}
+\end{frame}
+\appendix
+\begin{frame}[allowframebreaks]{Referências}
+	\printbibliography
+\end{frame}
 \end{document}
 
