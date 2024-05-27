@@ -407,7 +407,7 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 		\item Usando a regra de Bayes, podemos calcular {\color{blue}a distribuição \textit{a posteriori}}:
 		\begin{equation*}
 			\begin{aligned}
-				\boldsymbol{p}((\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B}), \{\boldsymbol{y}_t\}_{t=1}^T) \propto \\ \boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B})) \boldsymbol{p}((\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B})) 
+				\boldsymbol{p}((\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p, \mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B})| \{\boldsymbol{y}_t\}_{t=1}^T) \propto \\ \boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B})) \times \boldsymbol{p}((\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t], \boldsymbol{B})) 
 			\end{aligned}
 		\end{equation*}
 		onde $\boldsymbol{p}(\{\boldsymbol{y}_t\}_{t=1}^T|(\boldsymbol{c}, (\boldsymbol{C}_j)_{j=1}^p,\mathbb{V}[\boldsymbol{\epsilon}_t]\boldsymbol{B}))$ é a verossimilhança do modelo.
