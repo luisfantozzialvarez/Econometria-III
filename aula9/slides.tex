@@ -82,7 +82,7 @@
 
 
 \usepackage{appendixnumberbeamer}
-
+\usepackage{pdfpages}
 \usepackage[
 backend=biber,
 uniquename=false,
@@ -106,6 +106,15 @@ natbib=true
 \date{\today}
 %\subject{}
 %\setbeamercovered{transparent}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+		\hbox{}\nobreak\hfil(#1)%
+		\parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}}
+	{\signed{\usebox\mybox}\end{quote}}
 
 \begin{document}
 
@@ -208,7 +217,7 @@ natbib=true
 \begin{frame}{FRI normalizada, FRI acumulada}
 \begin{itemize}
 	\item Em diversos casos, é costumeiro normalizar a FRI pelo desvio padrão dos choques, isto é, reporta-se:
-	$$F_h(i|j)/\sigma_{j,t}\,.$$
+	$$F_h(i|j){\color{red}\times} \sigma_{j,t}\,.$$
 	
 	\begin{itemize}
 		\item 	Neste caso, os coeficientes são interpretáveis como o efeito causal de uma surpresa de um desvio padrão na $j$-ésima inovação.
@@ -241,7 +250,6 @@ natbib=true
 	\begin{itemize}
 \item O erro de previsão no horizonte $h$ é dado por $\boldsymbol{Y}_{T+h} - \boldsymbol{Y}_{T+h|T}$.
 \item Dada a natureza estrutural dos choques, é possível mostrar que somos capazes de decompor aditivamente a {\color{blue}variância do erro de previsão de cada variável} na contribuição de cada choque:
-
 $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d \text{contribuição do choque j}$$
 	\end{itemize}
 \end{frame}
@@ -467,7 +475,7 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 			\boldsymbol{Y}_{1t} \\
 			\text{Juros}_{t} \\
 				\boldsymbol{Y}_{2t}
-		\end{bmatrix} = \sum_{j=1}^4 \boldsymbol{A}_j \begin{bmatrix}
+		\end{bmatrix} = \sum_{j=1}^4 \boldsymbol{C}_j \begin{bmatrix}
 		\boldsymbol{Y}_{1t-j} \\
 		\text{Juros}_{t-j} \\
 		\boldsymbol{Y}_{2t-j}
@@ -481,15 +489,98 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 	\item No artigo, autores tomam $\boldsymbol{Y}_{1t}$ como PIB real, consumo real, deflator do PIB, investimento real, salário real e produtividade do trabalho. Por outro lado $\boldsymbol{Y}_{2t}$ inclui lucros reais e base monetária M2.
 	
 	\vspace{1em}
-	\begin{quote}
+	\begin{aquote}{\citeauthor{Christiano2005}}
 		The ordering of the variables in \(\boldsymbol{Y}_{t}\) embodies two key identifying assumptions. First, the variables in \(\boldsymbol{Y}_{1 t}\) do not respond contemporaneously to a monetary policy shock. Second, the time \(t\) information set of the
 		monetary authority consists of current and lagged values of the variables
 		in \(\boldsymbol{Y}_{1 t}\) and only past values of the variables in \(\boldsymbol{Y}_{2 t}\)
 		Our decision to include all variables except for the growth rate of
 		M2 and real profits in \(\boldsymbol{Y}_{1 t}\) reflects a long-standing view that many macroeconomic variables do not respond instantaneously to policy shocks
 		(see Friedman 1968).
-	\end{quote}
+	\end{aquote}
 \end{itemize}
+\end{frame}
+\includepdf[pages=1-]{plots/cev2005.pdf}
+\begin{transitionframe}
+	\centering { \Huge Restrições de longo prazo}
+\end{transitionframe}
+\begin{frame}{Restrições na FRI}
+	\begin{itemize}
+		\item As restrições impostas na seção anterior restringem a resposta {\color{red}contemporânea} das variáveis aos choques fundamentais.
+		\item Denotando por $\boldsymbol{F}_h$ a matriz $d \times d$ cuja entrada $(i,j)$ corresponde à resposta da variável $i$ em $t+h$ a um choque em $j$ no período $t$, temos que as restrições de curto prazo focam no comportamento de $\boldsymbol{F}_0$.
+		\item Em diversos casos, no entanto, restrições em $\boldsymbol{F}_0$ são difíceis de serem justificadas com base na teoria econômica.
+		\item Uma alternativa é {\color{red}considerar restrições na resposta de longo prazo das variáveis aos choques}.
+	\end{itemize}
+\end{frame}
+\begin{frame}{Restrições de longo prazo}
+\begin{itemize}
+	\item Note que, num SVAR(p) estacionário, inovações em $t$ têm por construção efeito nulo no longo prazo sobre o sistema.
+	\begin{itemize}
+		\item Do contrário, processo apresentaria raiz unitária.
+	\end{itemize}
+	\item Isso significa que $\lim_{h \to \infty} \boldsymbol{F}_h = \boldsymbol{0}$, qualquer que seja o valor de $\boldsymbol{B}$ $\implies$ não há restrições para se explorar no comportamento de longo prazo  de $\boldsymbol{F}_h$ que auxiliem na identificação.
+	\item Note, no entanto, que, se o SVAR(p) contém uma ou mais variáveis em {\color{blue}primeira diferença}, faz sentido olhar par a {\color{blue}FRI acumulada}, que captura o efeito de choques sobre {\color{blue}o nível das séries diferenciadas}.
+		\item FRI acumulada é dada por:
+		$$\boldsymbol{G}_h = \sum_{\tau = 0}^h \boldsymbol{F}_h$$
+\item Possível mostrar que, num SVAR(p) estacionário, FRI acumulada de longo prazo é dada por:
+$$\boldsymbol{G}_\infty = \lim_{h \to \infty}\boldsymbol{G}_h = (\mathbb{I} - \boldsymbol{C}_1 - \boldsymbol{C}_2 \ldots - \boldsymbol{C}_p)^{-1} \boldsymbol{B}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Identificação longo prazo}
+	\begin{itemize}
+	\item Note que, da expressão de $\boldsymbol{G}_\infty$, se impusermos $d(d-1)/2$ restrições sobre $\boldsymbol{G}_\infty$, obtemos indiretamente  $d(d-1)/2$ restrições sobre $\boldsymbol{B}$.
+	\begin{itemize}
+		\item Ideia da identificação de longo prazo é gerar restrições sobre $\boldsymbol{B}$ indiretamente via $\boldsymbol{G}_\infty$ que sejam mais palatáveis economicamente.
+	\end{itemize}
+
+			\item \textbf{Exemplo:} \citet{blanchard1989dynamic} consideram o seguinte SVAR(p) \textit{trend-stationary} para a economia americana, de 1950-T2 a 1987-T4:
+			
+			$$\begin{bmatrix}
+				\Delta \log(\text{PIB})_t \\
+				u_t  			\end{bmatrix} = \boldsymbol{c}_0 +\boldsymbol{c}_1 t + \sum_{j=1}^8\boldsymbol{C}_j \begin{bmatrix}
+				\Delta \log(\text{PIB})_{t-j} \\
+				u_{t-j} 			\end{bmatrix}  + \boldsymbol{B} \begin{bmatrix}
+					\epsilon^d_t \\
+					\epsilon^s_t
+				\end{bmatrix}
+$$
+	onde $\epsilon^s_t$ e $\epsilon^d_t$ são os choques fundamentais do lado da oferta e da demanda na economia. 
+	\item {\color{red}Hipótese de identificação:} choques de demanda não exercem efeito de longo prazo sobre a atividade econômica (neutralidade da demanda agregada no longo prazo). Essa hipótese implica que:
+	$$\boldsymbol{G}_\infty  = \begin{bmatrix}
+	{\color{red}0} & g_{1,2}\\
+		g_{2,1} & g_{2,2}
+	\end{bmatrix}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{\citet{blanchard1989dynamic} : resultados}
+\centering 
+\includegraphics[scale=0.4]{plots/blanchard_quah.png}
+\end{frame}
+
+\begin{transitionframe}
+	\centering
+	{\Huge Restrições de sinal}
+\end{transitionframe}
+
+\begin{frame}{Restrições menos estringentes}
+\begin{itemize}
+	\item As restrições utilizadas anteriormente são bastante fortes, uma vez que pedem que alguma resposta seja exatamente \textbf{zero}.
+	\item Restrições mais palatáveis podem ser obtidas trabalhando-se com restrições de sinal, em que impomos que as FRI $\boldsymbol{F}_h$ em diferentes horizontes devem ter (alguns) sinais tais quais os prescritos pela teoria.
+	\begin{itemize}
+		\item Dada a natureza mais fraca dessas hipóteses, elas não necessariamente garantem identificação perfeita do sistema (e, mesmo que garantissem, a verificação de que isso de fato seria o caso é bastante complicada) $\implies$ métodos Bayesianos são preferíveis nesse caso.
+	\end{itemize}
+
+	
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo}
+	\begin{aquote}{\citeauthor{antolin2018}}
+	SVARs identified using zero restrictions have consistently found that an exogenous increase in the fed funds rate induces a reduction in real activity. This intuitive result has become the “consensus.” This consensus view, however, has been challenged by Uhlig (2005), who criticizes imposing a questionable zero restriction on the IRF of output to a monetary policy shock on impact. To solve the problem he proposes to identify a shock to mone- tary policy by imposing sign restrictions only on the IRFs of prices and non-borrowed reserves to this shock, while imposing no restrictions on the IRF of output. The lack of restrictions on the IRF of output to a monetary policy shock makes this is an attractive approach.
+\end{aquote}
 \end{frame}
 \appendix
 \begin{frame}[allowframebreaks]{Referências}

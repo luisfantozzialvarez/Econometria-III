@@ -1,15 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
-[1] Config.pm:310> INFO - Logfile is 'slides.blg'
-[203] biber-darwin:340> INFO - === Thu May 23, 2024, 23:30:10
-[242] Biber.pm:419> INFO - Reading 'slides.bcf'
-[550] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
-[597] Biber.pm:4419> INFO - Processing section 0
-[625] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
-[635] bibtex.pm:1713> INFO - LaTeX decoding ...
-[774] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
-[848] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[848] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[849] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[849] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
-[857] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[859] bbl.pm:763> INFO - Output to slides.bbl
+[0] Config.pm:310> INFO - Logfile is 'slides.blg'
+[124] biber-darwin:340> INFO - === Mon May 27, 2024, 07:34:35
+[150] Biber.pm:419> INFO - Reading 'slides.bcf'
+[265] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
+[285] Biber.pm:4419> INFO - Processing section 0
+[323] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
+[329] bibtex.pm:1713> INFO - LaTeX decoding ...
+[432] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
+[522] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[523] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[523] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[523] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[536] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
+[539] bbl.pm:763> INFO - Output to slides.bbl
+[540] Biber.pm:131> WARN - legacy month field 'October' in entry 'antolin2018' is not an integer - this will probably not sort properly.
+[540] Biber.pm:133> INFO - WARNINGS: 1

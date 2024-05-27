@@ -19,6 +19,82 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{antolin2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4299b1284e67a9f496fcb777a75cafd3}{%
+           family={Antolín-Díaz},
+           familyi={A\bibinithyphendelim D\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=605a45d2e609cefb1d5df866ca13b95c}{%
+           family={Rubio-Ramírez},
+           familyi={R\bibinithyphendelim R\bibinitperiod},
+           given={Juan\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f60de36490be5a0cad0bc946a58e8354}
+      \strng{fullhash}{f60de36490be5a0cad0bc946a58e8354}
+      \strng{bibnamehash}{f60de36490be5a0cad0bc946a58e8354}
+      \strng{authorbibnamehash}{f60de36490be5a0cad0bc946a58e8354}
+      \strng{authornamehash}{f60de36490be5a0cad0bc946a58e8354}
+      \strng{authorfullhash}{f60de36490be5a0cad0bc946a58e8354}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{Narrative Sign Restrictions for SVARs}
+      \field{volume}{108}
+      \field{year}{2018}
+      \field{pages}{2802\bibrangedash 29}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1257/aer.20161852
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.20161852
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/aer.20161852
+      \endverb
+    \endentry
+    \entry{blanchard1989dynamic}{article}{}
+      \name{author}{2}{}{%
+        {{hash=292c92d2a4fb8f51c7624312eda7493d}{%
+           family={Blanchard},
+           familyi={B\bibinitperiod},
+           given={Olivier\bibnamedelima Jean},
+           giveni={O\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=fa95478edb18387342322af871a5fda4}{%
+           family={Quah},
+           familyi={Q\bibinitperiod},
+           given={Danny},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{75047dd891e2c5d591a36c2cfff8575c}
+      \strng{fullhash}{75047dd891e2c5d591a36c2cfff8575c}
+      \strng{bibnamehash}{75047dd891e2c5d591a36c2cfff8575c}
+      \strng{authorbibnamehash}{75047dd891e2c5d591a36c2cfff8575c}
+      \strng{authornamehash}{75047dd891e2c5d591a36c2cfff8575c}
+      \strng{authorfullhash}{75047dd891e2c5d591a36c2cfff8575c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Economic Review}
+      \field{number}{4}
+      \field{title}{The Dynamic Effects of Aggregate Demand and Supply Disturbances}
+      \field{volume}{79}
+      \field{year}{1989}
+      \field{pages}{655\bibrangedash 673}
+      \range{pages}{19}
+    \endentry
     \entry{Christiano2005}{article}{}
       \name{author}{3}{}{%
         {{hash=2efade9f4ee050a9a205d3efa326058d}{%
