@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  27 MAY 2024 09:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  28 MAY 2024 09:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1808,15 +1808,82 @@ Package pdftex.def Info: plots/blanchard_quah.png  used on input line 560.
 
 ] [33
 
+] [34
+
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-88.
+<plots/uhlig.pdf, id=263, 469.755pt x 682.55pt>
+File: plots/uhlig.pdf Graphic file (type pdf)
+<use plots/uhlig.pdf>
+Package pdftex.def Info: plots/uhlig.pdf  used on input line 597.
+(pdftex.def)             Requested size: 469.75386pt x 682.54834pt.
+File: plots/uhlig.pdf Graphic file (type pdf)
+<use plots/uhlig.pdf>
+Package pdftex.def Info: plots/uhlig.pdf  used on input line 597.
+(pdftex.def)             Requested size: 469.75386pt x 682.54834pt.
+<plots/uhlig.pdf, id=266, page=1, 469.755pt x 682.55pt>
+File: plots/uhlig.pdf Graphic file (type pdf)
+<use plots/uhlig.pdf, page 1>
+Package pdftex.def Info: plots/uhlig.pdf , page1 used on input line 597.
+(pdftex.def)             Requested size: 469.75386pt x 682.54834pt.
+File: plots/uhlig.pdf Graphic file (type pdf)
+<use plots/uhlig.pdf, page 1>
+Package pdftex.def Info: plots/uhlig.pdf , page1 used on input line 597.
+(pdftex.def)             Requested size: 188.13521pt x 273.35886pt.
+File: plots/uhlig.pdf Graphic file (type pdf)
+<use plots/uhlig.pdf, page 1>
+Package pdftex.def Info: plots/uhlig.pdf , page1 used on input line 597.
+(pdftex.def)             Requested size: 188.13521pt x 273.35886pt.
+File: plots/uhlig.pdf Graphic file (type pdf)
+<use plots/uhlig.pdf, page 1>
+Package pdftex.def Info: plots/uhlig.pdf , page1 used on input line 597.
+(pdftex.def)             Requested size: 188.13521pt x 273.35886pt.
+File: plots/uhlig.pdf Graphic file (type pdf)
+<use plots/uhlig.pdf, page 1>
+Package pdftex.def Info: plots/uhlig.pdf , page1 used on input line 597.
+(pdftex.def)             Requested size: 188.13521pt x 273.35886pt.
+ [35
+
+ <./plots/uhlig.pdf>] [36] [37
+
+]
+Overfull \vbox (5.81517pt too high) detected at line 630
+ []
+
+[38
+
+] [39
+
+]
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 654.
+
+ [40
+
+]
+<plots/antonil.png, id=335, 675.52374pt x 457.71pt>
+File: plots/antonil.png Graphic file (type png)
+<use plots/antonil.png>
+Package pdftex.def Info: plots/antonil.png  used on input line 658.
+(pdftex.def)             Requested size: 337.76105pt x 228.85445pt.
+ [41
+
+ <./plots/antonil.png>] [42
+
+] [43
+
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+74.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [34
+) [44
 
- </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
+ </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [
+45
+
+
+]
 \tf@nav=\write7
 \openout7 = `slides.nav'.
 
@@ -1826,7 +1893,8 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 \tf@snm=\write9
 \openout9 = `slides.snm'.
 
- (./slides.aux)
+
+(./slides.aux)
 Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: 93AAE74C7C9D177DFE421A3AFA5CD24D;193.
 Package logreq Info: Writing requests to 'slides.run.xml'.
@@ -1834,13 +1902,13 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46520 strings out of 476025
- 1069771 string characters out of 5790017
- 1873652 words of memory out of 5000000
- 66075 multiletter control sequences out of 15000+600000
+ 46598 strings out of 476025
+ 1070951 string characters out of 5790017
+ 1873734 words of memory out of 5000000
+ 66127 multiletter control sequences out of 15000+600000
  664720 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,17n,122p,737b,1637s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,17n,122p,1131b,1637s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texli
 ve/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/te
@@ -1861,10 +1929,10 @@ cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive
 -dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts
 /type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (34 pages, 713280 bytes).
+Output written on slides.pdf (45 pages, 1059553 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 78 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 505 PDF objects out of 1000 (max. 8388607)
+ 368 compressed objects within 4 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 114 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -382,7 +382,7 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 	\begin{itemize}
 		\item Nesses casos, pode ser bastante difícil de impor as restrições na estimação dos parâmetros.
 	\end{itemize}
-	\item Além disso, nesses casos em que a forma das restrições é bastante complicada, é difícil saber se as restrições são suficientes para garantir a identificação.
+	\item Além disso, nesses casos em que a forma das restrições é bastante complicada, é difícil saber se as restrições são suficientes para garantir a identificação completa dos parâmetros estruturais.
 	\begin{itemize}
 		\item Restrições podem {\color{blue}auxiliar na identificação}, no sentido de que o conjunto de parâmetros estruturais $(\boldsymbol{B}, \mathbb{V}[\boldsymbol{\epsilon}_t])$ compatíveis com a forma reduzida $\mathbb{V}[\boldsymbol{u}_t]$ é diminuído sob as restrições, mas ainda pode haver mais de um par de parâmetros estruturais compatíveis com  $\mathbb{V}[\boldsymbol{u}_t]$.
 		\item Nesse caso, a inferência usual (estatísticas $t$ e $F$) {\color{blue}sobre os parâmetros} deixa de ser válidas.
@@ -567,10 +567,13 @@ $$
 \begin{frame}{Restrições menos estringentes}
 \begin{itemize}
 	\item As restrições utilizadas anteriormente são bastante fortes, uma vez que pedem que alguma resposta seja exatamente \textbf{zero}.
-	\item Restrições mais palatáveis podem ser obtidas trabalhando-se com restrições de sinal, em que impomos que as FRI $\boldsymbol{F}_h$ em diferentes horizontes devem ter (alguns) sinais tais quais os prescritos pela teoria.
-	\begin{itemize}
-		\item Dada a natureza mais fraca dessas hipóteses, elas não necessariamente garantem identificação perfeita do sistema (e, mesmo que garantissem, a verificação de que isso de fato seria o caso é bastante complicada) $\implies$ métodos Bayesianos são preferíveis nesse caso.
-	\end{itemize}
+	\item Restrições mais palatáveis podem ser obtidas trabalhando-se com {\color{blue}restrições de sinal}, em que impomos que as FRI $\boldsymbol{F}_h$ em diferentes horizontes devem ter (alguns) sinais tais quais os prescritos pela teoria.
+\begin{itemize}
+	\item Por exemplo, a resposta da $i$-ésima variável ao $j$-ésimo choque no horizonte $h$ deve ser não negativa, isto é $F_h(i|j)\geq 0$.
+	\item Como a matriz $\boldsymbol{F}_h$ depende de $\boldsymbol{B}$, colocamentos indiretamente restrições sobre estes coeficientes.
+\end{itemize}
+		\item Dada a natureza mais fraca dessas hipóteses, elas não necessariamente garantem identificação completa do sistema (e, mesmo que garantissem, a verificação de que isso de fato seria o caso é bastante complicada) $\implies$ métodos Bayesianos são preferíveis nesse caso.
+
 
 	
 
@@ -579,9 +582,92 @@ $$
 
 \begin{frame}{Exemplo}
 	\begin{aquote}{\citeauthor{antolin2018}}
-	SVARs identified using zero restrictions have consistently found that an exogenous increase in the fed funds rate induces a reduction in real activity. This intuitive result has become the “consensus.” This consensus view, however, has been challenged by Uhlig (2005), who criticizes imposing a questionable zero restriction on the IRF of output to a monetary policy shock on impact. To solve the problem he proposes to identify a shock to mone- tary policy by imposing sign restrictions only on the IRFs of prices and non-borrowed reserves to this shock, while imposing no restrictions on the IRF of output. The lack of restrictions on the IRF of output to a monetary policy shock makes this is an attractive approach.
+	SVARs identified using zero restrictions have consistently found that an exogenous increase in the fed funds rate induces a reduction in real activity. This intuitive result has become the “consensus.” This consensus view, however, has been challenged by Uhlig (2005), who criticizes imposing a questionable zero restriction on the IRF of output to a monetary policy shock on impact. To solve the problem he proposes to identify a shock to monetary policy by imposing sign restrictions only on the IRFs of prices and non-borrowed reserves to this shock, while imposing no restrictions on the IRF of output. The lack of restrictions on the IRF of output to a monetary policy shock makes this is an attractive approach.
 \end{aquote}
 \end{frame}
+
+\begin{frame}{\citet{uhlig2005}}
+\begin{itemize}
+	\item \citet{uhlig2005}: VAR(12), sem componentes determinísticos, com dados mensais de janeiro de 1965 a dezembro de 2003. 
+	\item Seis variáveis no sistema: PIB real (interpolado), deflator do PIB, índice de preços de commodities, reservas totais, reservas próprias e taxa de juros. Todas em $\log$ e em nível, a não ser juros que é usado diretamente em nível.
+	\item Restrições de sinal: FRIs da taxa de juros, deflator do PIB, índice de preços de commodities e reservas próprias a um choque monetário contracionista são menores ou iguais a zero, nos horizontes 0 a 5.  
+\end{itemize}
+\end{frame}
+
+\includepdf[pages=1-]{plots/uhlig.pdf}
+
+\begin{transitionframe}
+	\centering
+	{\Huge Restrições narrativas}
+\end{transitionframe}
+
+\begin{frame}{Usando episódios históricos na identificação}
+\begin{itemize}
+	\item \citet{antolin2018} sugerem um complemento a restrições de sinal, como forma de fortalecer a identificação.
+	\item Ideia é suplementar as restrições de sinais com {\color{blue}restrições narrativas}, derivadas do nosso conhecimento externo de episódios históricos.
+	\item Dois tipos de restrições:
+	\begin{enumerate}
+		\item Restrições nos \emph{sinais} dos choques estruturais: em determinados período de tempo, sabemos que alguns dos choques fundamentais tomaram determinados sinais (surpresas positivas ou negativas).
+		\item Restrições sobre a \emph{decomposição histórica} do erro de predição: seja $\boldsymbol{e}_{i,t+h|t}$ o erro de predição que se cometeria em projetar a variável $i$ em $t+h$ com base no SVAR(p) e dados até $t$. 
+		\begin{itemize}
+			\item 		Pelo que vimos anteriormente, este erro captura a mudança não antecipada (com informação até $t$) da variável $i$, entre $t$ e $t+h$.
+			\item Ideia é impor restrições sobre a contribuição dos choques nessa mudança não antecipada: por exemplo, $j$-ésimo choque foi a principal inovação a contribuir para mudança em $i$ na janela.
+		\end{itemize}
+	\end{enumerate}
+			\item As restrições não necessariamente garantem identificação completa $\implies$ métodos Bayesianos são ideais.
+\end{itemize}
+\end{frame}
+\begin{frame}{Exemplo}
+	\begin{itemize}
+		\item \citet{antolin2018} retornam à análise de \citet{uhlig2005} e suplementam suas restrições de sinal com duas restrições narrativas, com base na mudança na condução da política monetária norte-americana adotada por Paul Volcker em Outubro de 1979:
+		
+		\vspace{0.5em}
+		\begin{quote}
+			\footnotesize
+			For this reason, in this section we will use narrative sign restrictions for a sin- gle event: October 1979. The monetary policy decisions of October 6, 1979, enacted shortly after Paul Volcker became chairman of the Fed, are described by Romer and Romer (1989) as “a major anti-inflationary shock to monetary policy” and repre- sent, in our view, the clearest case in the postwar period of an exogenous monetary policy shock. Lindsey, Orphanides, and Rasche (2013) provide a detailed account of the events leading to the decision to abandon targeting the federal funds rate in favor of targeting non-borrowed reserves as the operating procedure for controlling the money supply. While macroeconomic conditions, in particular, the deterioration of the inflation outlook and the increase in the real price of oil that followed the Iranian Revolution of 1978–1979, played a large role in causing the shift, the forcefulness and the surprise character of the action and the dramatic break with established practice in the conduct of policy strongly {\color{red}suggest the occurrence of a monetary policy shock}.
+		\end{quote}
+	\end{itemize}...
+\end{frame}
+
+\begin{frame}{Choque monetário vs mudança de regime}
+	\begin{aquote}{\citeauthor{antolin2018}}
+			An argument could be made that the Volcker event is so large that it may be best modeled as a change in the monetary policy rule rather than a monetary policy shock. But Sims and Zha (2006) contend that the evidence for changes in the parameters of the monetary policy rule during the Volcker period is weak and that this period is best described as a period of high variance in the monetary policy shocks to an otherwise unchanged monetary policy rule. Primiceri (2005) reaches similar conclusions. Indeed, as Lindsey, Orphanides, and Rasche (2013) describe, contemporaneous observers accused the FOMC of adopting the new operating procedures only as a smokescreen to obscure its intention to markedly increase short- term interest rates. {\color{red}We side with this view and regard the episode as a large shock within a stable monetary rule}.
+	\end{aquote}
+	
+\end{frame}
+
+\begin{frame}{Restrições utilizadas}
+	\begin{itemize}
+		\item \citet{antolin2018} valem-se de duas restrições narrativas:
+		
+		\vspace{1em}
+		
+		\begin{quote}
+			
+			\textbf{Narrative Sign Restriction 4 [1]:} The monetary policy shock for the observation corresponding to October 1979 must be of positive value.
+			
+			
+		\textbf{Narrative Sign Restriction 5 [2]: }For the observation corresponding to October 1979, a monetary policy shock is the overwhelming driver of the unexpected move- ment in the federal funds rate. In other words, the absolute value of the contribution of monetary policy shocks to the unexpected movement in the federal funds rate is larger than the sum of the absolute value of the contributions of all other structural shocks.
+		\end{quote}
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Resultados}
+\centering \includegraphics[scale=0.5]{plots/antonil.png}
+\end{frame}
+
+
+\begin{transitionframe}
+	\centering { \Huge Identificação por instrumentos externos}
+\end{transitionframe}
+
+
+\begin{transitionframe}
+	\centering { \Huge Identificação por heterocedasticidade}
+\end{transitionframe}
+
+
 \appendix
 \begin{frame}[allowframebreaks]{Referências}
 	\printbibliography

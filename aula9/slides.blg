@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'slides.blg'
-[124] biber-darwin:340> INFO - === Mon May 27, 2024, 07:34:35
-[150] Biber.pm:419> INFO - Reading 'slides.bcf'
-[265] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
-[285] Biber.pm:4419> INFO - Processing section 0
-[323] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
-[329] bibtex.pm:1713> INFO - LaTeX decoding ...
-[432] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
-[522] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[523] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[523] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[523] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
-[536] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[539] bbl.pm:763> INFO - Output to slides.bbl
-[540] Biber.pm:131> WARN - legacy month field 'October' in entry 'antolin2018' is not an integer - this will probably not sort properly.
-[540] Biber.pm:133> INFO - WARNINGS: 1
+[101] biber-darwin:340> INFO - === Mon May 27, 2024, 11:52:39
+[123] Biber.pm:419> INFO - Reading 'slides.bcf'
+[238] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[258] Biber.pm:4419> INFO - Processing section 0
+[273] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
+[277] bibtex.pm:1713> INFO - LaTeX decoding ...
+[354] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
+[430] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[431] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[431] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[431] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[445] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
+[448] bbl.pm:763> INFO - Output to slides.bbl
+[449] Biber.pm:131> WARN - legacy month field 'October' in entry 'antolin2018' is not an integer - this will probably not sort properly.
+[449] Biber.pm:133> INFO - WARNINGS: 1

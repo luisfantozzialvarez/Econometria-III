@@ -148,6 +148,46 @@
       \verb http://www.jstor.org/stable/10.1086/426038
       \endverb
     \endentry
+    \entry{uhlig2005}{article}{}
+      \name{author}{1}{}{%
+        {{hash=23c65b2fd3969e3b79f89556ae2384b8}{%
+           family={Uhlig},
+           familyi={U\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{fullhash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{bibnamehash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{authorbibnamehash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{authornamehash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \strng{authorfullhash}{23c65b2fd3969e3b79f89556ae2384b8}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper proposes to estimate the effects of monetary policy shocks by a new agnostic method, imposing sign restrictions on the impulse responses of prices, nonborrowed reserves and the federal funds rate in response to a monetary policy shock. No restrictions are imposed on the response of real GDP to answer the key question in the title. I find that “contractionary” monetary policy shocks have no clear effect on real GDP, even though prices move only gradually in response to a monetary policy shock. Neutrality of monetary policy shocks is not inconsistent with the data.}
+      \field{issn}{0304-3932}
+      \field{journaltitle}{Journal of Monetary Economics}
+      \field{number}{2}
+      \field{title}{What are the effects of monetary policy on output? Results from an agnostic identification procedure}
+      \field{volume}{52}
+      \field{year}{2005}
+      \field{pages}{381\bibrangedash 419}
+      \range{pages}{39}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jmoneco.2004.05.007
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0304393205000073
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0304393205000073
+      \endverb
+      \keyw{Vector autoregression,Monetary policy shocks,Identification,Monetary neutrality}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
