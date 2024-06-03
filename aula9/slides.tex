@@ -100,7 +100,7 @@ natbib=true
 
 \author{Luis A. F. Alvarez}
 \title{EAE1223: Econometria III}
-\subtitle{Aula 8 - Modelos vetoriais autorregressivos estruturais}
+\subtitle{Aula 9 - Modelos vetoriais autorregressivos estruturais}
 %\logo{}
 %\institute{}
 \date{\today}
@@ -520,7 +520,7 @@ $$\mathbb{V}[\boldsymbol{Y}_{i,T+h} - \boldsymbol{Y}_{i, T+h|T}] = \sum_{j=1}^d 
 	\item Isso significa que $\lim_{h \to \infty} \boldsymbol{F}_h = \boldsymbol{0}$, qualquer que seja o valor de $\boldsymbol{B}$ $\implies$ não há restrições para se explorar no comportamento de longo prazo  de $\boldsymbol{F}_h$ que auxiliem na identificação.
 	\item Note, no entanto, que, se o SVAR(p) contém uma ou mais variáveis em {\color{blue}primeira diferença}, faz sentido olhar par a {\color{blue}FRI acumulada}, que captura o efeito de choques sobre {\color{blue}o nível das séries diferenciadas}.
 		\item FRI acumulada é dada por:
-		$$\boldsymbol{G}_h = \sum_{\tau = 0}^h \boldsymbol{F}_h$$
+		$$\boldsymbol{G}_h = \sum_{\tau = 0}^h \boldsymbol{F}_\tau$$
 \item Possível mostrar que, num SVAR(p) estacionário, FRI acumulada de longo prazo é dada por:
 $$\boldsymbol{G}_\infty = \lim_{h \to \infty}\boldsymbol{G}_h = (\mathbb{I} - \boldsymbol{C}_1 - \boldsymbol{C}_2 \ldots - \boldsymbol{C}_p)^{-1} \boldsymbol{B}$$
 \end{itemize}
@@ -537,9 +537,9 @@ $$\boldsymbol{G}_\infty = \lim_{h \to \infty}\boldsymbol{G}_h = (\mathbb{I} - \b
 			
 			$$\begin{bmatrix}
 				\Delta \log(\text{PIB})_t \\
-				u_t  			\end{bmatrix} = \boldsymbol{c}_0 +\boldsymbol{c}_1 t + \sum_{j=1}^8\boldsymbol{C}_j \begin{bmatrix}
+				\text{tx\_desemprego}_t  			\end{bmatrix} = \boldsymbol{c}_0 +\boldsymbol{c}_1 t + \sum_{j=1}^8\boldsymbol{C}_j \begin{bmatrix}
 				\Delta \log(\text{PIB})_{t-j} \\
-				u_{t-j} 			\end{bmatrix}  + \boldsymbol{B} \begin{bmatrix}
+				\text{tx\_desemprego}_{t-j} 			\end{bmatrix}  + \boldsymbol{B} \begin{bmatrix}
 					\epsilon^d_t \\
 					\epsilon^s_t
 				\end{bmatrix}
@@ -590,7 +590,7 @@ $$
 \begin{itemize}
 	\item \citet{uhlig2005}: VAR(12), sem componentes determinísticos, com dados mensais de janeiro de 1965 a dezembro de 2003. 
 	\item Seis variáveis no sistema: PIB real (interpolado), deflator do PIB, índice de preços de commodities, reservas totais, reservas próprias e taxa de juros. Todas em $\log$ e em nível, a não ser juros que é usado diretamente em nível.
-	\item Restrições de sinal: FRIs da taxa de juros, deflator do PIB, índice de preços de commodities e reservas próprias a um choque monetário contracionista são menores ou iguais a zero, nos horizontes 0 a 5.  
+	\item Restrições de sinal: FRIs do deflator do PIB, índice de preços de commodities e reservas próprias a um choque monetário contracionista são menores ou iguais a zero, nos horizontes 0 a 5.  FRIs da taxa de juros a um choque monetário contracionista são não negativas, dos horizontes 0 a 5.
 \end{itemize}
 \end{frame}
 
@@ -608,7 +608,7 @@ $$
 	\item Dois tipos de restrições:
 	\begin{enumerate}
 		\item Restrições nos \emph{sinais} dos choques estruturais: em determinados período de tempo, sabemos que alguns dos choques fundamentais tomaram determinados sinais (surpresas positivas ou negativas).
-		\item Restrições sobre a \emph{decomposição histórica} do erro de predição: seja $\boldsymbol{e}_{i,t+h|t}$ o erro de predição que se cometeria em projetar a variável $i$ em $t+h$ com base no SVAR(p) e dados até $t$. 
+		\item Restrições sobre a \emph{decomposição histórica} do erro de predição: seja $\boldsymbol{e}_{i,t+h|t} = Y_{i,t+h}-Y_{i,t+h|t}$ o erro de predição que se cometeria em projetar a variável $i$ em $t+h$ com base no SVAR(p) e dados até $t$. 
 		\begin{itemize}
 			\item 		Pelo que vimos anteriormente, este erro captura a mudança não antecipada (com informação até $t$) da variável $i$, entre $t$ e $t+h$.
 			\item Ideia é impor restrições sobre a contribuição dos choques nessa mudança não antecipada: por exemplo, $j$-ésimo choque foi a principal inovação a contribuir para mudança em $i$ na janela.
