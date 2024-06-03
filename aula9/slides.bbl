@@ -148,6 +148,230 @@
       \verb http://www.jstor.org/stable/10.1086/426038
       \endverb
     \endentry
+    \entry{Gertler2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=732a7645c3f5314d26682b07972f06a2}{%
+           family={Gertler},
+           familyi={G\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=75f6d47bff4a3d2b5ce170696229ff4c}{%
+           family={Karadi},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{adbf98ee88d39e2a5cc0cf895a952f4f}
+      \strng{fullhash}{adbf98ee88d39e2a5cc0cf895a952f4f}
+      \strng{bibnamehash}{adbf98ee88d39e2a5cc0cf895a952f4f}
+      \strng{authorbibnamehash}{adbf98ee88d39e2a5cc0cf895a952f4f}
+      \strng{authornamehash}{adbf98ee88d39e2a5cc0cf895a952f4f}
+      \strng{authorfullhash}{adbf98ee88d39e2a5cc0cf895a952f4f}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Journal: Macroeconomics}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Monetary Policy Surprises, Credit Costs, and Economic Activity}
+      \field{volume}{7}
+      \field{year}{2015}
+      \field{pages}{44\bibrangedash 76}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1257/mac.20130329
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/mac.20130329
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/mac.20130329
+      \endverb
+    \endentry
+    \entry{Miranda2021}{article}{}
+      \name{author}{2}{}{%
+        {{hash=37efedf923539510d6ed724a30065437}{%
+           family={Miranda-Agrippino},
+           familyi={M\bibinithyphendelim A\bibinitperiod},
+           given={Silvia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=46c1d0058ff1b716ed23d356bc14cdd5}{%
+           family={Ricco},
+           familyi={R\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{69c465056283b8d339c99db24b68a27a}
+      \strng{fullhash}{69c465056283b8d339c99db24b68a27a}
+      \strng{bibnamehash}{69c465056283b8d339c99db24b68a27a}
+      \strng{authorbibnamehash}{69c465056283b8d339c99db24b68a27a}
+      \strng{authornamehash}{69c465056283b8d339c99db24b68a27a}
+      \strng{authorfullhash}{69c465056283b8d339c99db24b68a27a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Journal: Macroeconomics}
+      \field{month}{7}
+      \field{number}{3}
+      \field{title}{The Transmission of Monetary Policy Shocks}
+      \field{volume}{13}
+      \field{year}{2021}
+      \field{pages}{74\bibrangedash 107}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1257/mac.20180124
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/mac.20180124
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/mac.20180124
+      \endverb
+    \endentry
+    \entry{plagborg2021}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5f6cf2ac45cd8a96f620c751c55b8bc3}{%
+           family={Plagborg-Møller},
+           familyi={P\bibinithyphendelim M\bibinitperiod},
+           given={Mikkel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fe94a35dfe4f638fa771a91a015f09a4}{%
+           family={Wolf},
+           familyi={W\bibinitperiod},
+           given={Christian\bibnamedelima K.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{655911429432172cc2f4aa224ade936b}
+      \strng{fullhash}{655911429432172cc2f4aa224ade936b}
+      \strng{bibnamehash}{655911429432172cc2f4aa224ade936b}
+      \strng{authorbibnamehash}{655911429432172cc2f4aa224ade936b}
+      \strng{authornamehash}{655911429432172cc2f4aa224ade936b}
+      \strng{authorfullhash}{655911429432172cc2f4aa224ade936b}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We prove that local projections (LPs) and Vector Autoregressions (VARs) estimate the same impulse responses. This nonparametric result only requires unrestricted lag structures. We discuss several implications: (i) LP and VAR estimators are not conceptually separate procedures; instead, they are simply two dimension reduction techniques with common estimand but different finite-sample properties. (ii) VAR-based structural identification—including short-run, long-run, or sign restrictions—can equivalently be performed using LPs, and vice versa. (iii) Structural estimation with an instrument (proxy) can be carried out by ordering the instrument first in a recursive VAR, even under noninvertibility. (iv) Linear VARs are as robust to nonlinearities as linear LPs.}
+      \field{journaltitle}{Econometrica}
+      \field{number}{2}
+      \field{title}{Local Projections and VARs Estimate the Same Impulse Responses}
+      \field{volume}{89}
+      \field{year}{2021}
+      \field{pages}{955\bibrangedash 980}
+      \range{pages}{26}
+      \verb{doi}
+      \verb https://doi.org/10.3982/ECTA17813
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.3982/ECTA17813
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA17813
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA17813
+      \endverb
+      \keyw{External instrument,impulse response function,local projection,proxy variable,structural vector autoregression}
+    \endentry
+    \entry{Romer2004}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9647e38c0677f1047fd2d726ef323e55}{%
+           family={Romer},
+           familyi={R\bibinitperiod},
+           given={Christina\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=c33e264a77812518e81754d198493aef}{%
+           family={Romer},
+           familyi={R\bibinitperiod},
+           given={David\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{015867a7c8d14b89326cbfc24095f9f5}
+      \strng{fullhash}{015867a7c8d14b89326cbfc24095f9f5}
+      \strng{bibnamehash}{015867a7c8d14b89326cbfc24095f9f5}
+      \strng{authorbibnamehash}{015867a7c8d14b89326cbfc24095f9f5}
+      \strng{authornamehash}{015867a7c8d14b89326cbfc24095f9f5}
+      \strng{authorfullhash}{015867a7c8d14b89326cbfc24095f9f5}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{9}
+      \field{number}{4}
+      \field{title}{A New Measure of Monetary Shocks: Derivation and Implications}
+      \field{volume}{94}
+      \field{year}{2004}
+      \field{pages}{1055\bibrangedash 1084}
+      \range{pages}{30}
+      \verb{doi}
+      \verb 10.1257/0002828042002651
+      \endverb
+      \verb{urlraw}
+      \verb https://www.aeaweb.org/articles?id=10.1257/0002828042002651
+      \endverb
+      \verb{url}
+      \verb https://www.aeaweb.org/articles?id=10.1257/0002828042002651
+      \endverb
+    \endentry
+    \entry{Stock2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2d01c3b46f4061430cc9eb2a1f6408a4}{%
+           family={Stock},
+           familyi={S\bibinitperiod},
+           given={James\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=a4050fd715c1bcb50e38ec0f1c74b6bf}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Mark\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{73bd348d7c311859349e1b99e53d984a}
+      \strng{fullhash}{73bd348d7c311859349e1b99e53d984a}
+      \strng{bibnamehash}{73bd348d7c311859349e1b99e53d984a}
+      \strng{authorbibnamehash}{73bd348d7c311859349e1b99e53d984a}
+      \strng{authornamehash}{73bd348d7c311859349e1b99e53d984a}
+      \strng{authorfullhash}{73bd348d7c311859349e1b99e53d984a}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{External sources of as‐if randomness — that is, external instruments — can be used to identify the dynamic causal effects of macroeconomic shocks. One method is a one‐step instrumental variables regression (local projections – IV); a more efficient two‐step method involves a vector autoregression. We show that, under a restrictive instrument validity condition, the one‐step method is valid even if the vector autoregression is not invertible, so comparing the two estimates provides a test of invertibility. If, however, lagged endogenous variables are needed as control variables in the one‐step method, then the conditions for validity of the two methods are the same.}}
+      \field{issn}{0013-0133}
+      \field{journaltitle}{The Economic Journal}
+      \field{month}{05}
+      \field{number}{610}
+      \field{title}{{Identification and Estimation of Dynamic Causal Effects in Macroeconomics Using External Instruments}}
+      \field{volume}{128}
+      \field{year}{2018}
+      \field{pages}{917\bibrangedash 948}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1111/ecoj.12593
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/ej/article-pdf/128/610/917/26398109/ej0917.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1111/ecoj.12593
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1111/ecoj.12593
+      \endverb
+    \endentry
     \entry{uhlig2005}{article}{}
       \name{author}{1}{}{%
         {{hash=23c65b2fd3969e3b79f89556ae2384b8}{%

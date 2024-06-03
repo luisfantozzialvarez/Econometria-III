@@ -662,11 +662,147 @@ $$
 	\centering { \Huge Identificação por instrumentos externos}
 \end{transitionframe}
 
+\begin{frame}{Uma \textit{proxy} para o choque}
+	\begin{itemize}
+		\item A abordagem de identificação de um SVAR através de instrumentos externos nos permite identificar a {\color{blue}FRI a um dos choques}, sob a hipótese de que observamos uma {\color{blue}boa \textit{proxy} para ele}. 
+		\item Uma boa \textit{proxy} para o choque $\epsilon_{jt}$ é uma série de tempo $\{Z_t\}_t$, com as seguintes propriedade:
+		\begin{enumerate}
+			\item 	(Relevância)	$\operatorname{cor}(Z_t, \epsilon_{jt}) = \rho \neq 0$.
+			\item (Exclusão) $\operatorname{cor}(Z_t, \epsilon_{it})  = 0, \quad \forall i \neq j$.
+		\end{enumerate}
+	\item Instrumento externo é uma boa \textit{proxy} para a inovação fundamental se a prediz, mas não exibe associação com as demais inovações fundamentais.
+	\item Sob as duas hipóteses anteriores, e a normalização $b_{jj} = 1$, temos que as respostas contemporâneas de cada variável $i$ do sistema ao choque $j$ são identificáveis como:
+	$$F_{0}(i|j) = b_{ij} = \frac{\operatorname{cov}(u_{i,t}, Z_{t})}{\operatorname{cov}(u_{j,t}, Z_{t})} $$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Estimação com instrumento externo}
+	\begin{itemize}
+		\item O resultado anterior sugere o seguinte procedimento para estimar as FRI a um choque $j$ sob a presença de um instrumento externo.
+		\begin{enumerate}
+			\item Estimar um VAR(p) reduzido, e guardar seus resíduos $\hat{\boldsymbol{u}}_t$.
+			\item Estimar a resposta contemporânea dos choques como $\hat b_{ij}$, onde  o $\hat b_{ij}$ é o estimador de variável instrumental do efeito de $\hat u_{j,t}$ sobre $\hat u_{i,t}$, usando $Z_t$ como instrumento.
+			\item Usando o estimador da resposta contemporânea e a propagação dos choques estimada pelo VAR(p), calcular recursivamente a FRI.
+		\end{enumerate}
+		\item Inferência estatística (quantificação da incerteza) para esse estimador não é imediata.
+		\begin{itemize}
+			\item \citet{Stock2018} proveem métodos para se levar em conta a incerteza estatística das duas etapas de estimação no cálculo de erros-padrão.
+		\end{itemize}		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Instrumento interno}
+\begin{itemize}
+		\item Se pudermos fortalecer a hipótese de identificação do instrumento para:
+	$$\operatorname{cov}(Z_t, \epsilon_{is}|Z_{t-1},\boldsymbol{Y}_{t-1}, Z_{t-2},\boldsymbol{Y}_{t-2},\ldots)  \neq 0 \iff  i =j \text{ e } s = t$$
+	então as FRI ao choque $i$ podem ser estimadas incluindo-se $Z_t$ como a {\color{blue}primeira variável} em um VAR(p) reduzido com $\boldsymbol{Y}_t$; calculando, por Choleski, FRI {\color{blue}preliminares} de cada variável a um choque no instrumento, $\tilde{F}_{h}(i|Z)$, e estimando a resposta de $i$ ao choque $j$ em $h$ como:
+	$$\hat F_{h}(i|j) = \frac{\tilde{F}_{h}(i|Z)}{\tilde{F}_{0}(j|Z)}  $$
+	\item Abordagem de {\color{blue}instrumento interno}.
+	\begin{itemize}
+		\item Quantificação de incerteza é mais simples.
+		\item Metodologia é robusta a problemas de {\color{blue}invertibilidade}, i.e. se modelo estrutural completo que temos na cabeça envolve mais variáveis do que as efetivamente incluídas no SVAR \citep{plagborg2021}.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Instrumentos externos para política monetária}
+	\begin{itemize}
+		\item  Literatura consolidada em macroeconometria visa a estimar os efeitos de surpresas não antecipadas na política monetária através de construção de mensurações diretas do que seria a surpresa.
+		\begin{itemize}
+			\item \citet{Romer2004}: série de surpresa monetária a partir das atas internas do Federal Reserve americano e sua meta de taxa de juros, implícita ou explícita, nas discussões ({\color{blue}\textit{instrumento narrativo}}). 
+			\begin{itemize}
+				\item Para separar o que é surpresa do sistemático, utiliza-se o resíduo de uma regressão da variação da meta taxa de juros (série narrativa) na variação das projeções internas do Fed, de modo a capturar o componente surpresa (não sistemático) da política.
+			\end{itemize}
+						\item \citet{Gertler2015}: série de surpresa monetária é calculada a partir da variação, em alta frequência, das curvas de juros futuras no mercado financeiro, em torno da janela de anúncio da política monetária americana ({\color{blue}\textit{instrumento de alta frequência}}).
+						\begin{itemize}
+							\item Sob não arbitragem e uma janela de curta duração, variação é atribuível ao componente não antecipado da política monetária.
+						\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Separando surpresa monetária de choques informacionais}
+	\begin{wideitemize}
+		\item \citet{Miranda2021} apresentam algumas críticas aos instrumentos externos usados na literatura.
+		\begin{itemize}
+			\item Instrumento narrativo de \citet{Romer2004} é serialmente autocorrelacionado e sistematicamente associado com mudanças antecipadas de política monetária (\textit{forward guidance}), o que indica que ele não é uma boa proxy para a surpresa monetária.
+			\item Instrumento de alta frequência de  \citet{Gertler2015} é predizível com base nas projeções internas do Fed, o que sugere que anúncios de política monetária contém um {\color{blue}componente informacional}, para além do choque monetária
+		\end{itemize} 
+			\item Para capturar o choque monetário, separando-o da informação acerca da economia divulgada pelo Fed, \citet{Miranda2021} trabalham com o resíduo da série de \citet{Gertler2015} numa regressão das projeções internas do Fed.
+	\end{wideitemize}
+	\end{frame}
+	
+	\begin{frame}{Resultados}
+		\centering
+		\includegraphics[scale=0.3]{plots/miranda.png}
+	\end{frame}
 
 \begin{transitionframe}
 	\centering { \Huge Identificação por heterocedasticidade}
 \end{transitionframe}
 
+\begin{frame}{Ideia de identificação por heterocedasticidade}
+	\begin{itemize}
+		\item A ideia desta estratégia de identificação consiste em argumentar que existem regimes na economia em que a volatilidade relativa dos choques muda, mas que os parâmetros estruturais correspondentes à resposta aos choques permanecem os mesmos.
+		\begin{itemize}
+		\item Sob essa hipótese, é possível usar a variação na volatilidade como ``instrumento'' para recuperar as respostas aos choques.
+	\end{itemize}
+		\item Como exemplo, suponha que temos um SVAR(p) bivariado.
+		\item Nesse caso, sob a normalização de que $b_{i,i} = 1$, o problema de identificação consiste em recuperar $b_{1,2}$ e $b_{2,1}$, separando-os da variância dos choques estruturais.
+		\begin{itemize}
+			\item A princípio, temos quatro parâmetros e somente três equações dadas por $\mathbb{V}[\boldsymbol{u}_t]$, i.e. falta uma restrição.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Mudança de regime e identificação}
+	\begin{itemize}
+		\item Suponha que existe um período de tempo $T^*$, que {\color{blue}define uma mudança de regime}.
+		\begin{itemize}
+				\item No regime $t < T^*$, os choques fundamentais tem variância $\sigma_{1}^2(1)$ e $\sigma_{2}^2(1)$.
+		\item No regime $t \geq T^*$, os choques fundamentais têm variância $\sigma_{1}^2(2)$ e $\sigma_{2}^2(2)$.
+		\end{itemize}
+		\item Sob a hipótese de que $b_{1,2}$ e $b_{2,1}$ mantém-se {\color{blue}invariantes} entre os regimes, temos que a matriz de variância-covariância dos erros em forma-reduzida, nos regimes 1 e 2, nos recupera:
+		
+		$$\mathbb{V}[\boldsymbol{u}_t|t<T^*] = \begin{bmatrix}
+			1 & b_{1,2} \\
+			b_{2,1} & 1 
+		\end{bmatrix} \begin{bmatrix}
+		\sigma^2_1(1) & 0  \\ 
+		0 & \sigma^2_2(1)
+		\end{bmatrix}  \begin{bmatrix}
+		1 & b_{2,1} \\
+	 b_{1,2}  	& 1 
+		\end{bmatrix} $$ 
+		
+			$$\mathbb{V}[\boldsymbol{u}_t|t\geq T^*] = \begin{bmatrix}
+			1 & b_{1,2} \\
+			b_{2,1} & 1 
+		\end{bmatrix} \begin{bmatrix}
+			\sigma^2_1(2) & 0  \\ 
+			0 & \sigma^2_2(2)
+		\end{bmatrix}  \begin{bmatrix}
+			1 & b_{2,1} \\
+			b_{1,2}  	& 1 
+		\end{bmatrix} $$ 
+			\item Sistema com seis parâmetros e seis restrições!
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Identificação por heterocedasticidade}
+	\begin{itemize}
+		\item É possível mostrar que o sistema anterior tem solução única se, e somente se, $\frac{\sigma^2_1(2)}{\sigma^2_1(1)} < \frac{\sigma^2_2(2)}{\sigma^2_2(1)}$ ou $\frac{\sigma^2_1(2)}{\sigma^2_1(1)} > \frac{\sigma^2_2(2)}{\sigma^2_2(1)}$.
+		\begin{itemize}
+			\item Isto é, se a importância relativa dos choques fundamentais muda entre os regimes.
+		\end{itemize}
+		\item Num SVAR(p) com mais de duas variáveis, de modo geral, precisamos de mais de duas mudanças de regime para identificar os parâmetros.
+		\begin{itemize}
+			\item Estimação pode ser feita por máxima verossimilhança condicional, impondo a estrutura de quebra no sistema.
+		\end{itemize}
+		\item No entanto, no caso particular em que, num SVAR(p) genérico, temos somente uma mudança de regime, {\color{blue}mas sabemos que a variância de \textbf{somente um} dos choques muda entre regimes} (por exemplo, o primeiro), é possível identificar a FRI desse choque, pois, nesse caso:
+		$$b_{i,1} = \frac{\operatorname{cov}(u_{i,t}, u_{1,t}|t\geq T^*)- \operatorname{cov}(u_{i,t}, u_{1,t}|t< T^*)}{\mathbb{V}[u_{1,t}|t\geq T^*]-\mathbb{V}[u_{1,t}|t< T^*]}$$
+	\end{itemize}
+\end{frame}
 
 \appendix
 \begin{frame}[allowframebreaks]{Referências}
