@@ -412,6 +412,47 @@
       \endverb
       \keyw{Vector autoregression,Monetary policy shocks,Identification,Monetary neutrality}
     \endentry
+    \entry{Wright2012}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3dd0466987f8b46207bad516d8f85045}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Jonathan\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{3dd0466987f8b46207bad516d8f85045}
+      \strng{fullhash}{3dd0466987f8b46207bad516d8f85045}
+      \strng{bibnamehash}{3dd0466987f8b46207bad516d8f85045}
+      \strng{authorbibnamehash}{3dd0466987f8b46207bad516d8f85045}
+      \strng{authornamehash}{3dd0466987f8b46207bad516d8f85045}
+      \strng{authorfullhash}{3dd0466987f8b46207bad516d8f85045}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article uses a structural VAR with daily data to identify the effects of monetary policy shocks on various longer term interest rates since the federal funds rate has been stuck at the zero lower bound. The VAR is identified using the assumption that monetary policy shocks are heteroskedastic: monetary policy shocks have especially high variance on days of FOMC meetings and certain speeches, while there is otherwise nothing unusual about these days. A complementary high-frequency event-study approach is also used. I find that stimulative monetary policy shocks lower Treasury and corporate bond yields but the effects die off fairly fast.}
+      \field{journaltitle}{The Economic Journal}
+      \field{number}{564}
+      \field{title}{What does Monetary Policy do to Long-term Interest Rates at the Zero Lower Bound?*}
+      \field{volume}{122}
+      \field{year}{2012}
+      \field{pages}{F447\bibrangedash F466}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.1111/j.1468-0297.2012.02556.x
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1468-0297.2012.02556.x
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0297.2012.02556.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0297.2012.02556.x
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

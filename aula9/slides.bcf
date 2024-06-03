@@ -2383,6 +2383,7 @@
     <bcf:citekey order="19" intorder="1">Gertler2015</bcf:citekey>
     <bcf:citekey order="20" intorder="1">Miranda2021</bcf:citekey>
     <bcf:citekey order="21" intorder="1">Gertler2015</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Wright2012</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

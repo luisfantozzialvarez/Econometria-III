@@ -626,7 +626,7 @@ $$
 			\footnotesize
 			For this reason, in this section we will use narrative sign restrictions for a sin- gle event: October 1979. The monetary policy decisions of October 6, 1979, enacted shortly after Paul Volcker became chairman of the Fed, are described by Romer and Romer (1989) as “a major anti-inflationary shock to monetary policy” and repre- sent, in our view, the clearest case in the postwar period of an exogenous monetary policy shock. Lindsey, Orphanides, and Rasche (2013) provide a detailed account of the events leading to the decision to abandon targeting the federal funds rate in favor of targeting non-borrowed reserves as the operating procedure for controlling the money supply. While macroeconomic conditions, in particular, the deterioration of the inflation outlook and the increase in the real price of oil that followed the Iranian Revolution of 1978–1979, played a large role in causing the shift, the forcefulness and the surprise character of the action and the dramatic break with established practice in the conduct of policy strongly {\color{red}suggest the occurrence of a monetary policy shock}.
 		\end{quote}
-	\end{itemize}...
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Choque monetário vs mudança de regime}
@@ -802,6 +802,25 @@ $$
 		\item No entanto, no caso particular em que, num SVAR(p) genérico, temos somente uma mudança de regime, {\color{blue}mas sabemos que a variância de \textbf{somente um} dos choques muda entre regimes} (por exemplo, o primeiro), é possível identificar a FRI desse choque, pois, nesse caso:
 		$$b_{i,1} = \frac{\operatorname{cov}(u_{i,t}, u_{1,t}|t\geq T^*)- \operatorname{cov}(u_{i,t}, u_{1,t}|t< T^*)}{\mathbb{V}[u_{1,t}|t\geq T^*]-\mathbb{V}[u_{1,t}|t< T^*]}$$
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo}
+\begin{itemize}
+	\item 	\citet{Wright2012} estuda a transmissão da política monetária sobre os preços de ativos nos Estados Unidos.
+	\item VAR(p) com dados diários de seis preços financeiros: títulos públicos de maturidade de dez e dois anos, taxa de inflação anual média \textit{breakeven} no horizonte de cinco anos, taxa de inflação anual média \textit{breakeven} para os cinco anos após os próximos dez anos, taxas de juros de dívidas corporativa de nota BAA e AAA. Janela de novembro de 2008 a setembro de 2011.
+	\begin{itemize}
+		\item Ideia é entender transmissão de política monetária num regime de juro de curto prazo zero.
+	\end{itemize}
+	\item Estratégia de identificação: nos dias de anúncio de política monetária, a variância dos choque monetário é maior do que nos dias sem anúncio, e a variância dos demais choques estruturais mantém-se constante.
+	\begin{itemize}
+		\item Dois regimes intermitentes no tempo, mas argumento de identificação é idêntico ao discutido anteriormente.
+	\end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Resultados}
+\centering
+\includegraphics[scale=0.5]{plots/wright.png}
 \end{frame}
 
 \appendix

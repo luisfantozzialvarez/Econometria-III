@@ -1,20 +1,20 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'slides.blg'
-[88] biber-darwin:340> INFO - === Sun Jun  2, 2024, 21:45:47
-[112] Biber.pm:419> INFO - Reading 'slides.bcf'
-[265] Biber.pm:979> INFO - Found 9 citekeys in bib section 0
-[308] Biber.pm:4419> INFO - Processing section 0
-[325] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
-[330] bibtex.pm:1713> INFO - LaTeX decoding ...
-[407] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
-[513] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[513] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[513] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[513] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
-[534] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[540] bbl.pm:763> INFO - Output to slides.bbl
-[540] Biber.pm:131> WARN - legacy month field 'October' in entry 'antolin2018' is not an integer - this will probably not sort properly.
-[540] Biber.pm:131> WARN - legacy month field 'September' in entry 'Romer2004' is not an integer - this will probably not sort properly.
-[540] Biber.pm:131> WARN - legacy month field 'January' in entry 'Gertler2015' is not an integer - this will probably not sort properly.
-[540] Biber.pm:131> WARN - legacy month field 'July' in entry 'Miranda2021' is not an integer - this will probably not sort properly.
-[540] Biber.pm:133> INFO - WARNINGS: 4
+[82] biber-darwin:340> INFO - === Mon Jun  3, 2024, 13:58:34
+[103] Biber.pm:419> INFO - Reading 'slides.bcf'
+[200] Biber.pm:979> INFO - Found 10 citekeys in bib section 0
+[216] Biber.pm:4419> INFO - Processing section 0
+[229] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
+[233] bibtex.pm:1713> INFO - LaTeX decoding ...
+[309] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
+[414] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[414] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[414] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[414] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[435] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
+[442] bbl.pm:763> INFO - Output to slides.bbl
+[442] Biber.pm:131> WARN - legacy month field 'October' in entry 'antolin2018' is not an integer - this will probably not sort properly.
+[442] Biber.pm:131> WARN - legacy month field 'September' in entry 'Romer2004' is not an integer - this will probably not sort properly.
+[442] Biber.pm:131> WARN - legacy month field 'January' in entry 'Gertler2015' is not an integer - this will probably not sort properly.
+[442] Biber.pm:131> WARN - legacy month field 'July' in entry 'Miranda2021' is not an integer - this will probably not sort properly.
+[442] Biber.pm:133> INFO - WARNINGS: 4
