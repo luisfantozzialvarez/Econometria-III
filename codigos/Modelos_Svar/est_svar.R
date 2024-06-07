@@ -1,4 +1,4 @@
-setwd("~/Documents/GitHub/Econometria-III/codigos/Modelos_Svar")
+setwd("~/Documentos/GitHub/Econometria-III/codigos/Modelos_Svar")
 
 library(vars)
 
@@ -31,7 +31,7 @@ acf(diff(ibc),lag.max=40)
 
 # Ajustamos um VAR com variação do ibc, câmbio, e as demais variáveis em nível, tendência linear e 
 # dummies sazonais
-dados = cbind(diff(ibc),ipca,selic,expectativa_12,expectativa_6,diff(cambio_nominal))
+dados = cbind(100*diff(ibc),ipca,selic,expectativa_12,expectativa_6,100*diff(cambio_nominal))
 dados = window(dados, start = c(2003,02))
 
 VARselect(dados, lag.max =ceiling(12*(nrow(dados)/100)^(1/4)), type = "both", season=12)
@@ -52,9 +52,12 @@ fri = irf(var_reduzido, impulse = "selic", n.ahead = 36, ci = 0.95, runs = 1000 
 
 plot(fri, 'single')
 
+#Decomposição da variância do erro de predição
+decomp = fevd(var_reduzido, n.ahead = 1000)
+
 
 #Blanchard-Quah
-dados_bq = cbind(diff(ibc), diff(desemprego))
+dados_bq = cbind(100*diff(ibc), diff(desemprego))
 dados_bq = window(dados_bq, start= c(2012,04))
 
 VARselect(dados_bq, lag.max=ceiling(12*(nrow(dados_bq)/100)^(1/4)), type='none',season=12)
