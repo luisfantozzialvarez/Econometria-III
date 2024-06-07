@@ -29,9 +29,9 @@ cambio_nominal  = log(cambio_nominal)
 acf(diff(ibc),lag.max=40)
 # ibc apresenta sazonalidade.
 
-# Ajustamos um VAR com variação do ibc e as demais variáveis em nível, tendência linear e 
+# Ajustamos um VAR com variação do ibc, câmbio, e as demais variáveis em nível, tendência linear e 
 # dummies sazonais
-dados = cbind(diff(ibc),  ipca,selic,expectativa_12,expectativa_6,diff(cambio_nominal))
+dados = cbind(diff(ibc),ipca,selic,expectativa_12,expectativa_6,diff(cambio_nominal))
 dados = window(dados, start = c(2003,02))
 
 VARselect(dados, lag.max =ceiling(12*(nrow(dados)/100)^(1/4)), type = "both", season=12)
@@ -41,7 +41,7 @@ VARselect(dados, lag.max =ceiling(12*(nrow(dados)/100)^(1/4)), type = "both", se
 #Vamos identificar a FRI do choque monetário, sob identificação recursiva.
 #No nosso caso, pol monetária reage contemporaneamente a choques na IS e na PC,
 # mas atividade e inflação não respondem a choques monetários contemporaneamente
-#Além disso, expectativas e câmbiorespondem contemporaneamente a choques monetários, mas
+#Além disso, expectativas e câmbio respondem contemporaneamente a choques monetários, mas
 #a política monetária só reage de forma defasada às expectativas e ao câmbio
 
 var_reduzido = VAR(dados, 4, type = "both",season=12)
@@ -50,19 +50,21 @@ var_reduzido = VAR(dados, 4, type = "both",season=12)
 set.seed(123)
 fri = irf(var_reduzido, impulse = "selic", n.ahead = 36, ci = 0.95, runs = 1000 )
 
-plot(fri)
+plot(fri, 'single')
 
 
-#Blanchard Quah brasileiro
+#Blanchard-Quah
 dados_bq = cbind(diff(ibc), diff(desemprego))
 dados_bq = window(dados_bq, start= c(2012,04))
 
 VARselect(dados_bq, lag.max=ceiling(12*(nrow(dados_bq)/100)^(1/4)), type='none',season=12)
-var_bq = VAR(dados_bq,4,season=12)
+var_bq = VAR(dados_bq,4,season=12, type = 'none')
 
 mod = BQ(var_bq)
 
+#Fixando semente para as simulações usadas no cálculo dos intervalos de confiança
+set.seed(123)
 fri = irf(mod, n.ahead = 48, ci = 0.95, runs = 1000, cumulative = T )
-plot(fri)
+plot(fri, 'single')
 
 
