@@ -165,7 +165,7 @@ natbib=true
 \begin{itemize}
 	\item Considere um modelo ARMA(p,q) estacionário:
 	$$\Phi(L)Y_t = \Theta(L)\epsilon_t \, .$$
-	\item Se os ruídos brancos $\{\epsilon_{i,t}\}$ são \textbf{iid}, então, $\mathbb{V}[Y_{t+1}|\mathcal{F}_t] = \mathbb{V}[\epsilon_{t+1}|\mathcal{F}_t] = \mathbb{V}[\epsilon_{t+1}]  = \sigma^2_{\epsilon}$.
+	\item Se os ruídos brancos $\{\epsilon_{t}\}_t$ são \textbf{iid}, então, $\mathbb{V}[Y_{t+1}|\mathcal{F}_t] = \mathbb{V}[\epsilon_{t+1}|\mathcal{F}_t] = \mathbb{V}[\epsilon_{t+1}]  = \sigma^2_{\epsilon}$.
 	\begin{itemize}
 		\item Modelo exibe homoscedasticidade condicional.
 	\end{itemize}
@@ -193,7 +193,7 @@ natbib=true
 \begin{frame}{Detectando heteroscedasticidade condicional}
 \begin{itemize}
 	\item Com base num modelo ARMA(p,q) estimado, como detectar a presença de heterocedasticidade condicional?
-	\item Note que, do último item anterior, caso haja homoscedasticidade condicional, i.e. $\sigma^2_t=\sigma^2_{t-s}$, $\forall s$, então $\operatorname{cov}(\epsilon_t^2, \epsilon_{t-s}^2)= 0$.
+	\item Note que, do último item anterior, caso haja homoscedasticidade condicional, i.e. $\sigma^2_t=\sigma^2_{t-s} = \phi^2$, $\forall s$, então $\operatorname{cov}(\epsilon_t^2, \epsilon_{t-s}^2)= 0$.
 	\begin{itemize}
 		\item Se há heteroscedasticidade condicional, então, no geral $\operatorname{cov}(\epsilon_t^2, \epsilon_{t-s}^2) \neq 0$.
 	\end{itemize}
@@ -210,7 +210,7 @@ natbib=true
 	\item O modelo mais simples para heteroscedasticidade condicional é conhecido como {\color{blue}ARCH(m)}. Este modelo impõe que:
 	
 	$$\sigma^2_t = \omega_0 +\sum_{l=1}^m \omega_l \epsilon_{t-l}^2 \, ,$$
-	com $\omega_j \geq 0$, $j=0,1\ldots, m$, e os parâmetros  $\psi_j$ restritos de tal forma que variância incondicional seja finita.
+	com $\omega_j \geq 0$, $j=0,1\ldots, m$, e os parâmetros  $\omega_j$ restritos de tal forma que variância incondicional seja finita.
 	\item Neste modelo, volatilidade de $\epsilon_t$ depende do que ocorreu com o quadrado  de $\epsilon_t$ nos $t$ últimos períodos.
 	
 \end{itemize}
