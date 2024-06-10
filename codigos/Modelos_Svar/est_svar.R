@@ -1,4 +1,4 @@
-setwd("~/Documentos/GitHub/Econometria-III/codigos/Modelos_Svar")
+setwd("~/Documents/GitHub/Econometria-III/codigos/Modelos_Svar")
 
 library(vars)
 
@@ -31,7 +31,11 @@ acf(diff(ibc),lag.max=40)
 
 # Ajustamos um VAR com variação do ibc, câmbio, e as demais variáveis em nível, tendência linear e 
 # dummies sazonais
-dados = cbind(100*diff(ibc),ipca,selic,expectativa_12,expectativa_6,100*diff(cambio_nominal))
+d_cambio = 100*diff(cambio_nominal)
+d_ibc = 100*diff(ibc)
+
+#Já colocamos na ordem para a identificação recursiva (mais abaixo)
+dados = cbind(d_ibc,ipca,selic,expectativa_12,expectativa_6, d_cambio)
 dados = window(dados, start = c(2003,02))
 
 VARselect(dados, lag.max =ceiling(12*(nrow(dados)/100)^(1/4)), type = "both", season=12)
@@ -39,7 +43,7 @@ VARselect(dados, lag.max =ceiling(12*(nrow(dados)/100)^(1/4)), type = "both", se
 
 #Vamos trabalhar com a defasagem 4, escolhida pelo AIC (vale fazer testes)
 #Vamos identificar a FRI do choque monetário, sob identificação recursiva.
-#No nosso caso, pol monetária reage contemporaneamente a choques na IS e na PC,
+#No nosso caso, pol monetária reage contemporaneamente à inflação e atividade,
 # mas atividade e inflação não respondem a choques monetários contemporaneamente
 #Além disso, expectativas e câmbio respondem contemporaneamente a choques monetários, mas
 #a política monetária só reage de forma defasada às expectativas e ao câmbio
@@ -49,15 +53,25 @@ var_reduzido = VAR(dados, 4, type = "both",season=12)
 #Fixando semente para as simulações usadas no cálculo dos intervalos de confiança
 set.seed(123)
 fri = irf(var_reduzido, impulse = "selic", n.ahead = 36, ci = 0.95, runs = 1000 )
+plot(fri, 'single')
+
+#Para olhar a resposta EM NÍVEL da atividade, fazemos
+set.seed(123)
+fri = irf(var_reduzido, impulse = "selic", response = "d_ibc", 
+          cumulative = T, n.ahead = 36, ci = 0.95, runs = 1000 )
 
 plot(fri, 'single')
 
-#Decomposição da variância do erro de predição
+#Decomposição da variância do erro de predição:
+# vamos olhar para a variação explicada pelos choques monetários. A variância dos
+# outros choques dependerá também da ordenação correta DENTRO dos blocos anterior
+# e posterior à taxa de juros no modelo.
 decomp = fevd(var_reduzido, n.ahead = 1000)
 
 
 #Blanchard-Quah
-dados_bq = cbind(100*diff(ibc), diff(desemprego))
+d_desemprego = diff(desemprego)
+dados_bq = cbind(d_ibc, d_desemprego)
 dados_bq = window(dados_bq, start= c(2012,04))
 
 VARselect(dados_bq, lag.max=ceiling(12*(nrow(dados_bq)/100)^(1/4)), type='none',season=12)
