@@ -11,8 +11,8 @@ library(parallel)
 #pseas_max: ordem máxima do AR sazonal a ser testado
 #qseas_max: ordem máxima do MA sazonal a ser testado
 #Dseas: ordem de integração sazonal
-#include.constant: incluir intercepto no modelo ARIMA (em diferença se d>0)?
-#include.trend: incluir tendência no modelo ARIMA (em diferença se d>0)?
+#include.constant: incluir intercepto no modelo ARIMA (drift se d=1)?
+#include.trend: incluir tendência no modelo ARIMA (drift se d=1)?
 #signif: nível de significância para testar significância dos coeficientes
 #lags.lbox: vetor com número de defasagens para os testes de Ljung-Box
 #cores: número de processos paralelos a serem executados
