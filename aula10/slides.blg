@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'slides.blg'
-[86] biber-darwin:340> INFO - === Sun Jun  9, 2024, 11:23:33
-[104] Biber.pm:419> INFO - Reading 'slides.bcf'
-[202] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
-[219] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[219] bbl.pm:763> INFO - Output to slides.bbl
-[220] Biber.pm:131> WARN - The file 'slides.bcf' does not contain any citations!
-[220] Biber.pm:133> INFO - WARNINGS: 1
+[75] biber:340> INFO - === ter jun 11, 2024, 11:56:22
+[89] Biber.pm:419> INFO - Reading 'slides.bcf'
+[152] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[165] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
+[165] bbl.pm:763> INFO - Output to slides.bbl
+[165] Biber.pm:131> WARN - The file 'slides.bcf' does not contain any citations!
+[165] Biber.pm:133> INFO - WARNINGS: 1

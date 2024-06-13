@@ -152,7 +152,7 @@ natbib=true
 	\begin{halfwideenumerate}
 
 		\item Ganhos de eficiência: métodos de estimação derivados sob a hipótese de erros iid (o que exclui homoscedasticidade condicional) são {\color{blue}ineficientes} sob a presença de heteroscedasticidade condicional.
-		\item Inferência: similarmente, métodos de inferência derivados sob a hipótese de erros iid são no geral {\color{blue}inválidos} sob a presença de intervalos de predição.
+		\item Inferência: similarmente, métodos de inferência derivados sob a hipótese de erros iid são no geral {\color{blue}inválidos} sob a presença de intervalos de heteroscedasticidade condicional.
 		\item  Por fim, nosso interesse pode residir em {\color{blue}estimar} a volatilidade fora da amostra, condicional à informação disponível até hoje.
 		\begin{itemize}
 			\item Importante na construção de carteiras de ativos e análises de risco.
@@ -193,15 +193,15 @@ natbib=true
 \begin{frame}{Detectando heteroscedasticidade condicional}
 \begin{itemize}
 	\item Com base num modelo ARMA(p,q) estimado, como detectar a presença de heterocedasticidade condicional?
-	\item Note que, do último item anterior, caso haja homoscedasticidade condicional, i.e. $\sigma^2_t=\sigma^2_{t-s} = \phi^2$, $\forall s$, então $\operatorname{cov}(\epsilon_t^2, \epsilon_{t-s}^2)= 0$.
+	\item Note que, do último item anterior, caso haja homoscedasticidade condicional, i.e. $\sigma^2_t=\sigma^2_{t-s} = \phi^2$, $\forall s \neq 0$, então $\operatorname{cov}(\epsilon_t^2, \epsilon_{t-s}^2)= 0$.
 	\begin{itemize}
 		\item Se há heteroscedasticidade condicional, então, no geral $\operatorname{cov}(\epsilon_t^2, \epsilon_{t-s}^2) \neq 0$.
 	\end{itemize}
 	\item Isso sugere testar a hipótese nula de homoscedasticidade condicional aplicando-se um {\color{blue}teste de Ljung-Box no quadrado dos resíduos} do modelo ARMA(p,q).
 	\item Um teste alternativo segue da observação de que, sob homocedasticidade, $\mathbb{E}[\epsilon_t^2|\mathcal{F}_{t-1}]$ é constante e não depende de $\mathcal{F}_{t-1}$.
 	\item Isso sugere usar os resíduos quadrados para ajustar um modelo linear:
-	$$ \epsilon_t^2  = \psi_0 + \sum_{l=1}^p \psi_l \epsilon_{t-l}^2 + \xi_t$$
-	e testar a nula  conjunta de que $\psi_1 = \psi_2 =\ldots = \psi_p=0$ usando um teste $F$.
+	$$ \epsilon_t^2  = \psi_0 + \sum_{l=1}^k \psi_l \epsilon_{t-l}^2 + \xi_t$$
+	e testar a nula  conjunta de que $\psi_1 = \psi_2 =\ldots = \psi_k=0$ usando um teste $F$.
 \end{itemize}
 \end{frame}
 
@@ -210,7 +210,7 @@ natbib=true
 	\item O modelo mais simples para heteroscedasticidade condicional é conhecido como {\color{blue}ARCH(m)}. Este modelo impõe que:
 	
 	$$\sigma^2_t = \omega_0 +\sum_{l=1}^m \omega_l \epsilon_{t-l}^2 \, ,$$
-	com $\omega_j \geq 0$, $j=0,1\ldots, m$, e os parâmetros  $\omega_j$ restritos de tal forma que variância incondicional seja finita.
+	com $\omega_j \geq 0$, $j=0,1\ldots, m$, e os parâmetros  $\omega_j$ restritos de tal forma que a variância incondicional seja finita.
 	\item Neste modelo, volatilidade de $\epsilon_t$ depende do que ocorreu com o quadrado  de $\epsilon_t$ nos $t$ últimos períodos.
 	
 \end{itemize}
@@ -218,7 +218,7 @@ natbib=true
 
 \begin{frame}{Identificação da ordem do modelo ARCH}
 	\begin{itemize}
-		\item Note que, como $\sigma^2_t= \mathbb{E}[\epsilon^2_t|\mathcal{F}_{t-1}]$, um modelo ARCH(m) consiste em efetivamente num modelo AR(m) para o erro quadrado.
+		\item Note que, como $\sigma^2_t= \mathbb{E}[\epsilon^2_t|\mathcal{F}_{t-1}]$, um modelo ARCH(m) consiste efetivamente num modelo AR(m) para o erro quadrado.
 		\item Isso sugere usar os resíduos quadrados do modelo ARMA estimado para detectar  a ordem $m$ do ARCH.
 		\begin{itemize}
 			\item Encontramos $m$ olhando para a ordem de truncagem da FACP dos resíduos quadrados.
