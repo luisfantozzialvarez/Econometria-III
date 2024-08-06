@@ -1,11 +1,12 @@
 library(lmtest)
 library(sandwich)
 library(forecast)
+library(tseries)
 
 #Para os modelos Garch
 library(rugarch)
 
-setwd("~/Documents/GitHub/Econometria-III/codigos/Arch_Garch")
+setwd("~/Documentos/GitHub/Econometria-III/codigos/Arch_Garch")
 
 ibov = read.csv('ibovespa.csv')
 
@@ -34,7 +35,7 @@ coeftest(lm(d_ibov~1), vcov. = vcovHAC)
 #Vamos considerar todos os ARMA(p,q), 0<=p<=10, 0<=q<=10, sem intercepto
 source("../Box_jenkins/box_jenkins_parallel.R")
 
-tabela = arima.est.parallel(d_ibov, 10, 10, 0, include.constant = F)
+tabela = arima.est.parallel(d_ibov, 7, 7, 0, include.constant = F)
 #Removendo modelos que não convergiram
 tabela = tabela[tabela$Converged,]
 
@@ -60,6 +61,8 @@ arch.test <- function(x, lag.max)
 
 arch.test(res, 12)
 
+acf(res^2)
+
 #Evidência forte de heterocedasticidade condicional
 
 #Vamos começar por um modelo ARCH(m)
@@ -68,30 +71,65 @@ pacf(res^2)
 #Vamos considerar ARCH(10)
 model = ugarchfit(ugarchspec(variance.model = list(model='sGARCH', garchOrder =c(10,0)),
                              mean.model = list(armaOrder = c(7,0), include.mean = F),
-                             distribution.model = 'norm'), d_ibov)
+                             distribution.model = 'norm'), data.frame(d_ibov, row.names = datas))
 
 print(model)
 
+#Modelo parece funcionar bem em termos das covariâncias de nu_t e nu_t^2
+#Vamos checar normalidade
+nu = residuals(model, standardize = T)
+
+jarque.bera.test(nu)
+#Claramente rejeitamos a nula de normalidade, portanto, devemos interpretar
+#o estimador como uma pseudo máxima verossimilhança, em que temos estimadores consistentes,
+#para os parâmetros da média e variância condicionais, mas análises de risco 
+#não devem ser baseadas na normal
+
+#QQ-plot e densidades para visualização
+plot(model,which =8)
+plot(model, which =9)
+
+#Caudas mais pesadas que a normal
+
 #Volatilidade implícita do modelo na amostra
-plot(datas,as.numeric(sigma(model)),type='l')
+plot(sigma(model),type='l')
+
+#Volatilidade e retornos
+plot(model, which = 3)
+
+#Use plot(model) e selecione uma das opções para mais informação
+
 
 forecasts = ugarchforecast(model, n.ahead= 10)
+
+print(forecasts)
+
+plot(forecasts, which = 1)
+plot(forecasts, which = 3)
 
 
 #Vamos considerar um GARCH(2,1)
 model2 = ugarchfit(ugarchspec(variance.model = list(model='sGARCH', garchOrder =c(2,2)),
                              mean.model = list(armaOrder = c(7,0), include.mean = F),
-                             distribution.model = 'norm'), d_ibov)
+                             distribution.model = 'norm'), data.frame(d_ibov, row.names = datas))
 
 print(model2)
 
+#Note que esse modelo possui menor BIC que o anterior
+
+
+plot(model,which =8)
+plot(model, which =9)
 
 #Volatilidade implícita do modelo na amostra
-plot(datas,as.numeric(sigma(model2)),type='l')
+plot(sigma(model2))
+
 
 
 #Predições fora da amostra
 forecasts = ugarchforecast(model2, n.ahead= 10)
 
+plot(forecasts, which = 1)
+plot(forecasts, which = 3)
 
 
