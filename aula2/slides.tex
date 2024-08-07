@@ -92,6 +92,16 @@ natbib=true
 \newenvironment{halfwideitemize}{\itemize\addtolength{\itemsep}{0.5em}}{\enditemize}
 \newenvironment{halfwideenumerate}{\enumerate\addtolength{\itemsep}{0.5em}}{\endenumerate}
 
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+		\hbox{}\nobreak\hfil(#1)%
+		\parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}}
+	{\signed{\usebox\mybox}\end{quote}}
+
+
 
 \author{Luis A. F. Alvarez}
 \title{EAE1223: Econometria III}
@@ -154,6 +164,12 @@ natbib=true
 		\end{halfwideitemize}
 	\end{frame}
 	
+	\begin{frame}{Processo estocástico e incerteza}
+		\begin{aquote}{\cite{Haavelmo1944}}
+			From this point of view we may consider the total number of possible observations [no nosso, uma trajetória possível $\{ X_t(\omega): t \in \mathcal{T} \}$] as result of a sampling procedure, which Nature is carrying out, and which we
+			merely watch as passive observers.
+		\end{aquote}
+	\end{frame}
 	\begin{frame}{Série de tempo estritamente estacionária}
 		\begin{itemize}
 			\item Uma série de tempo $\{X_t: t \in \mathcal{T}\}$ é dita estritamente estacionária se, para todo $t \in \mathcal{T}$, $j\in \mathbb{N}$:
@@ -326,17 +342,30 @@ natbib=true
 	\end{frame}
 
 	\begin{frame}{AR(p) em notação polinomial}
-	\begin{itemize}
+	\begin{wideitemize}
 	\item Usando a notação aprendida anteriormente, podemos reescrever o AR(p) como:
 	\begin{equation}
 		\label{eq_sol}
 		\phi(L)Z_t = \alpha + u_t \, , 
 	\end{equation}
 	onde $\phi(L) = 1 - \beta_1L - \beta_2 L^2 \ldots - \beta_p L^p$, e $\{u\}_{t \in \mathbb{Z}}$ é ruído branco.
-	\end{itemize}
+	\item A equação \eqref{eq_sol} define uma equação a diferenças  com parte estocástica.
+		\item Nesse ambiente, dizemos que um processo $\{Z_t\}_{t \in \mathbb{Z}}$ é uma {\color{blue}solução} a \eqref{eq_sol} se $\{Z_t\}_{t \in \mathbb{Z}}$ satisfaz \eqref{eq_sol} e, para todo $t$, $Z_t$ é uma função tão somente dos $u_\tau$ de períodos anteriores a $t$, i.e. $\tau \leq t$.
+		\begin{halfwideitemize}
+			\item Nossa definição de solução se restringe a processos em que o que ocorre com $Z_t$ é somente função do que já ocorreu no passado ou que ocorre no presente, mas não do futuro.
+			\begin{itemize}
+				\item No jargão probabilístico, nosso conceito de solução se restringe a processo ```causais'', onde ``causalidade'' aqui não é no sentido econométrico, e tão somente um jeito de dizer que a solução respeita a ordenação natural do tempo.
+			\end{itemize}
+		\end{halfwideitemize}
+	\end{wideitemize}
+	
+
 		
-		\begin{block}{Proposição}
-			Existe um processo $\{Z_t\}_{t \in \mathbb{Z}}$ fracamente estacionário que satisfaz \eqref{eq_sol}, se, e somente se, as $p$ raízes da equação $\phi(x) = 0$ se encontram \textbf{fora} do círculo unitário, isto é:
+	
+	\end{frame}
+	\begin{frame}{Caracterizando as soluções}
+			\begin{block}{Proposição}
+			Existe um processo $\{Z_t\}_{t \in \mathbb{Z}}$ fracamente estacionário que é solução a \eqref{eq_sol}, se, e somente se, as $p$ raízes da equação $\phi(x) = 0$ se encontram \textbf{fora} do círculo unitário, isto é:
 			$$\phi(x) = 0 \implies |x| > 1 \, .$$
 			
 			Neste caso, o processo fracamente estacionário que satisfaz \eqref{eq_sol} é único, e pode ser escrito como:
@@ -344,7 +373,6 @@ natbib=true
 			$$Z_t = \phi^{-1}(L)(\alpha + u_t) =  \tau + \sum_{j=0}^\infty \omega_j u_{t-j}$$
 		\end{block}
 	\end{frame}
-	
 	\begin{frame}{Estacionariedade do AR(p)}
 \begin{itemize}
 	\item A proposição anterior nos provê uma caracterização para a existência de um $\{Z_t\}_t$ estacionário que satisfaz \eqref{eq_sol}, em termos das {\color{blue}raízes do polinômio característico} $\phi(x)$.

@@ -16,5 +16,52 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{Haavelmo1944}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=50beac29154cfda3b77a2b40a8679b08}{%
+           family={Haavelmo},
+           familyi={H\bibinitperiod},
+           given={Trygve},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {[Wiley, Econometric Society]}%
+      }
+      \strng{namehash}{50beac29154cfda3b77a2b40a8679b08}
+      \strng{fullhash}{50beac29154cfda3b77a2b40a8679b08}
+      \strng{bibnamehash}{50beac29154cfda3b77a2b40a8679b08}
+      \strng{authorbibnamehash}{50beac29154cfda3b77a2b40a8679b08}
+      \strng{authornamehash}{50beac29154cfda3b77a2b40a8679b08}
+      \strng{authorfullhash}{50beac29154cfda3b77a2b40a8679b08}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00129682, 14680262}
+      \field{journaltitle}{Econometrica}
+      \field{title}{The Probability Approach in Econometrics}
+      \field{urlday}{6}
+      \field{urlmonth}{8}
+      \field{urlyear}{2024}
+      \field{volume}{12}
+      \field{year}{1944}
+      \field{urldateera}{ce}
+      \field{pages}{iii\bibrangedash 115}
+      \range{pages}{113}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/1906935
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/1906935
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
