@@ -1,0 +1,105 @@
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{float}
+\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+
+\title{\large EAE1223: Econometria III}
+\author{\normalsize Exercícios sobre Raízes Unitárias}
+\date{}
+\begin{document}
+	\maketitle
+	\paragraph{Parte 1}\begin{enumerate}
+		
+		\item Dada uma série de tempo $Y_t$ com 230 observações, considere a estimação da seguinte especificação
+		\begin{equation}
+			\Delta Y_t = \alpha + \gamma \cdot Y_{t-1} + \sum_{s=1}^k \beta_k \cdot \Delta Y_{t-s} + u_t
+		\end{equation}
+		Na tabela abaixo, reportamos três quantidades: (1) o p-valor de $H_0: \gamma = 0$ contra $H_1: \gamma < 0$ baseado na estatística $\hat{t}$ e nos valores críticos tabulados por Dickey e Fuller; (2) a estatística $F$ do teste da nula conjunta $(\alpha, \gamma) = (0,0)$; (3) o p-valor de $H_0: \gamma = 0$ contra $H_1: \gamma < 0$ baseado na estatística $\hat{t}$ e em valores críticos normais.
+		
+		
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{c|c}
+					
+					$p_{t,DF}$&0.8998    \\
+					\hline
+					$\hat{F}$&1.0292    \\
+					\hline
+					$p_{t,\text{Normal}}$&0.5606\\
+				\end{tabular}
+			\end{center}
+		\end{table}
+		No que segue, indique as conclusões do procedimento sequencial visto em aula, para um nível de significância de 10\%.
+		\begin{enumerate}
+			\item[(A)] Concluímos que a série \textbf{não} apresenta raiz unitária.
+			\item[(B)] Concluímos que a série \textbf{apresenta} raiz unitária.
+			\item[(C)] Concluímos que o modelo \textbf{não apresenta intercepto}. Nesse caso, devemos proceder à estimação do modelo sem intercepto, e realizar o teste $t$ baseado em valores críticos tabulados por Dickey e Fuller nesse modelo.
+			\item[(D)] Nenhuma das alternativas anteriores.
+		\end{enumerate}
+
+	
+	
+	\item  Dada uma série de tempo $Y_{t}$ com 120 observações, considere a estimação da seguinte especificação:
+	
+	\begin{equation*}
+		\Delta Y_{t}=\alpha+\beta t+\gamma \cdot Y_{t-1}+\sum_{s=1}^{k} \beta_{k} \cdot \Delta Y_{t-s}+u_{t} \, ,
+	\end{equation*}
+	onde o modelo é estimado através de mínimos quadrados ordinários, e $k$ é selecionado usando o critério MAIC.
+	
+	Na tabela abaixo, reportamos três quantidades: (1) o p-valor de $H_{0}: \gamma=0$ contra $H_{1}: \gamma<0$ baseado na estatística $\hat{t}$ e nos valores críticos tabulados por Dickey e Fuller; (2) a estatística $F$ do teste da nula conjunta $(\beta, \gamma)=(0,0)$; e (3) o p-valor de $H_{0}: \gamma=0$ contra $H_{1}: \gamma<0$ baseado na estatística $\hat{t}$ e em valores críticos normais.
+	
+	\begin{center}
+		\begin{tabular}{c|c}
+			$p_{t, D F}$ & 0.254 \\
+			\hline
+			$\hat{F}$ & 9.033 \\
+			\hline
+			$p_{t, \text { Normal }}$ & 0.035 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	No que segue, indique qual das alternativas descreve as conclusões do procedimento sequencial visto em aula, para um nível de significância de $5 \%$. Justifique sua escolha.
+	
+	\begin{itemize}
+		\item[(a)] Concluímos que a série não apresenta raiz unitária.
+		
+		\item[(b)] Concluímos que a série apresenta raiz unitária.
+		
+		\item[(c)] Concluímos que o modelo não apresenta tendência linear. Nesse caso, devemos proceder à estimação do modelo com intercepto e sem tendência linear, e realizar o teste $t$ baseado em valores críticos tabulados por Dickey e Fuller nesse modelo.
+		
+		\item[(d)] Nenhuma das alternativas anteriores.
+	\end{itemize}
+		\item Indique se as afirmações abaixo são verdadeiras ou falsas. Justifique sua resposta.
+	
+	\begin{itemize}
+		\item[(a)] A metodologia de Elliott, Rothenberg e Stock provê um teste da nula de uma raiz unitária mais poderoso que o teste ADF, quando o modelo não apresenta componentes determinísticos.
+		\item[(b)] A metodologia de Dickey-Pantulla para detectar se uma série é I(2), I(1) e I(0) consiste em, sequencialmente, rodar o teste ADF com a série original, e, se a nula não for rejeitada, rodamos novamente o teste ADF, agora testando a presença de raiz unitária na série em primeira diferença.
+	\end{itemize}
+\end{enumerate}
+\paragraph{Parte 2}
+Usando as duas séries que você analisou na lista de exercícios anterior.
+\begin{enumerate}
+	\item Para cada uma das séries, realize o procedimento sequencial descrito nos \textit{slides} para testar a presença de raiz unitária. Conduza os testes ao nível de significância de $10\%$. Qual a conclusão dos procedimentos?
+	\item Para cada uma das séries, realize o teste de tendência determinística descrito nos \textit{slides}, já usando a série transformada obtida com base na conclusão dos testes no item anterior. Conduza os testes ao nível de significância de $10\%$.  Qual a conclusão de cada teste?
+	
+	\item Repita os dois itens anteriores a 5\% de significância. As conclusões mudaram?
+\end{enumerate}
+			
+\end{document}
