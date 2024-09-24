@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'slides.blg'
-[76] biber:340> INFO - === qua abr 10, 2024, 17:31:07
-[89] Biber.pm:419> INFO - Reading 'slides.bcf'
-[152] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
-[164] Biber.pm:4419> INFO - Processing section 0
-[173] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
-[176] bibtex.pm:1713> INFO - LaTeX decoding ...
-[212] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
-[257] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[257] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[257] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[257] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
-[264] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[266] bbl.pm:763> INFO - Output to slides.bbl
+[141] biber:340> INFO - === qui set 19, 2024, 16:39:15
+[175] Biber.pm:419> INFO - Reading 'slides.bcf'
+[288] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
+[309] Biber.pm:4419> INFO - Processing section 0
+[335] Biber.pm:4610> INFO - Looking for bibtex file '../bibliography.bib' for section 0
+[342] bibtex.pm:1713> INFO - LaTeX decoding ...
+[451] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
+[531] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[531] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[531] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[531] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[545] bbl.pm:660> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
+[547] bbl.pm:763> INFO - Output to slides.bbl
