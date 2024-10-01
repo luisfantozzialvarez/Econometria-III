@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  23 SEP 2024 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.1)  1 OCT 2024 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -728,14 +728,24 @@ Overfull \hbox (20.8635pt too wide) in paragraph at lines 50--51
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./figuras
-/fac_facp_1.png> <./figuras/fac_facp_2.png>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 9
-5.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
+/fac_facp_1.png> <./figuras/fac_facp_2.png>] [2]
+<figuras/lb.png, id=34, 522.95375pt x 186.6975pt>
+File: figuras/lb.png Graphic file (type png)
+<use figuras/lb.png>
+Package pdftex.def Info: figuras/lb.png  used on input line 102.
+(pdftex.def)             Requested size: 261.47623pt x 93.34851pt.
+<figuras/jb.pdf, id=35, 361.35pt x 361.35pt>
+File: figuras/jb.pdf Graphic file (type pdf)
+<use figuras/jb.pdf>
+Package pdftex.def Info: figuras/jb.pdf  used on input line 110.
+(pdftex.def)             Requested size: 216.81168pt x 216.81168pt.
+ [3 <./figuras/lb.png> <./figuras/jb.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+20.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [2] [3]
-(./document.aux)
+)
+[4] (./document.aux)
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'document.run.xml'.
@@ -743,10 +753,10 @@ Package logreq Info: Writing requests to 'document.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18763 strings out of 476025
- 327256 string characters out of 5790017
+ 18778 strings out of 476025
+ 327528 string characters out of 5790017
  1862388 words of memory out of 5000000
- 38963 multiletter control sequences out of 15000+600000
+ 38975 multiletter control sequences out of 15000+600000
  524235 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,8n,76p,681b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -767,10 +777,10 @@ e/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/
 2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/20
 23/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2023
 /texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on document.pdf (3 pages, 234101 bytes).
+Output written on document.pdf (4 pages, 315364 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

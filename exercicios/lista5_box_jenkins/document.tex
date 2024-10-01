@@ -89,8 +89,33 @@ natbib=true
 	
 	\paragraph{Parte 2}
 	\begin{enumerate}
+		\item[4] Verdadeiro ou falso? Justifique.
 		
-\item[4] Para cada uma das séries de tempo analisadas por vocês nos exercícios sobre raiz unitária.
+		\begin{quote}
+			O critério MAIC de Ng e Perron difere do critério de informação AIC para avaliação da qualidade preditiva de um modelo, no sentido em que a medida do erro de previsão, no MAIC, é calculada sob a hipótese nula de raiz unitária, enquanto o critério AIC utiliza a soma dos quadrados dos resíduos do modelo irrestrito estimado.
+		\end{quote}
+		\item[5] Você é um pesquisador interessado em projetar uma série I(1) de interesse. Você decide utilizar a metodologia de Box-Jenkins como ponto de partida, e se encontra na etapa de diagnóstico dos modelos candidatos. 
+		\begin{itemize}
+			\item[(a)] Um de seus modelos candidatos é um ARIMA(1,1,1). Ao analisar os resíduos do modelo estimado, você se depara com o seguinte resultado:
+			
+			\begin{figure}[H]				
+				\centering \includegraphics[scale=0.5]{figuras/lb.png}
+			\end{figure}
+			
+			Qual é a hipótese nula do teste apresentado acima? E a alternativa? Você rejeita a nula a 5\% de significância? Quais as implicações desse resultado, em termos da qualidade preditiva do modelo estimado?
+			
+			\item[(b)] Você encontra um modelo que parece satisfazer os principais critérios de qualidade preditiva. No entanto, ao rodar o teste de Jarque-Bera, você encontra um $p$-valor de $0.000001$. Intrigado com o resultado, você constrói um histograma dos resíduos, sobre o qual sobrepõe a distribuição normal cuja média e variância coincidem com a dos resíduos.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.6]{figuras/jb.pdf}
+			\end{figure}
+			
+			
+			Qual é a hipótese nula do teste de Jarque-Bera? E a alternativa? A 5\% de significância, você rejeita a hipótese nula? Com base no gráfico acima, indique o motivo suspeito pelo qual você obteve a referida conclusão no teste. Quais as implicações do resultado do teste para a estimação do seu modelo?
+			
+		\end{itemize}
+		
+\item[6] Para cada uma das séries de tempo analisadas por vocês nos exercícios sobre raiz unitária.
 \begin{enumerate}
 	\item Divida o conjunto de dados em duas janelas, primeira em segunda, em que a primeira contém 4/5 dos períodos de tempo, e a segunda contém a quinta parte final. \textit{Dica:} use o comando \texttt{window} visto em aula.
 	\item Com base na primeira janela, realize a etapa de identificação da metodologia de Box-Jenkins. Quais são os modelos candidatos? Por quê?
@@ -99,9 +124,10 @@ natbib=true
 	\item Agora, para cada período na segunda janela, compute a previsão um passo à frente, com base nos dados até o período imediatamente anterior, para cada modelo Arima por você selecionado na primeira janela. Calcule o erro quadrático médio, um passo à frente, com base nos erros dessas previsões. Dentre os modelos por você estimados, qual se saiu melhor? Suas conclusões batem com o desempenho calculado no item anterior? Qual a diferença entre as métricas?
 \end{enumerate}
 
-		\item[5] Dizemos que uma variável aleatória segue distribuição $\text{Laplace}(c,d)$ se admite densidade:
 
-	$$f(x) = \frac{1}{2d_0}\exp(-|x-c|/d) \, .$$
+		\item[7] Dizemos que uma variável aleatória segue distribuição $\text{Laplace}(c,d)$ se admite densidade:
+
+	$$f(x) = \frac{1}{2}\exp(-|x-c|/d) \, .$$
 	Nesse caso, a média da variável aleatória é $c$, e sua variância é $2d^2$.
 
 	 Mostre que o estimador de máxima verossimilhança do parâmetro $\rho_0$ de um AR(1) (sem intercepto) com ruído branco $\epsilon_t \overset{\text{iid}}{\sim}\text{Laplace}(0,d_0)$, que maximiza a log-verossimilhança da distribuição de $Y_2,\ldots, Y_T$ condicional a $Y_1$, é idêntico ao estimador $\hat \rho$ que minimiza:
