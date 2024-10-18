@@ -117,7 +117,7 @@ modelo = VAR(dados[,1:3],type = 'both', p = 2)
 
 summary(modelo)
 help(roots)
-any(roots(modelo)>1)
+any(roots(modelo)>=1)
 #Processo estimado não apresenta raiz unitária
 
 #Vamos fazer o teste de razão de verossimilhança
@@ -136,7 +136,7 @@ modelo = VAR(dados[,1:3],type = 'both', p = 14)
 
 summary(modelo)
 help(roots)
-any(roots(modelo)>1)
+any(roots(modelo)>=1)
 #Processo estimado não apresenta raiz unitária
 
 #Vamos fazer o teste de razão de verossimilhança
