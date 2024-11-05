@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/global//global/global}
-    \entry{EngleGranger1987}{article}{}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{EngleGranger1987}{article}{}{}
       \name{author}{2}{}{%
         {{hash=d491df6781389ebb4ef255c1ec0ca7ed}{%
            family={Engle},
@@ -37,10 +37,12 @@
       }
       \strng{namehash}{dd8df6c93e06c74f74a730192afa1433}
       \strng{fullhash}{dd8df6c93e06c74f74a730192afa1433}
+      \strng{fullhashraw}{dd8df6c93e06c74f74a730192afa1433}
       \strng{bibnamehash}{dd8df6c93e06c74f74a730192afa1433}
       \strng{authorbibnamehash}{dd8df6c93e06c74f74a730192afa1433}
       \strng{authornamehash}{dd8df6c93e06c74f74a730192afa1433}
       \strng{authorfullhash}{dd8df6c93e06c74f74a730192afa1433}
+      \strng{authorfullhashraw}{dd8df6c93e06c74f74a730192afa1433}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
@@ -67,7 +69,7 @@
       \verb http://www.jstor.org/stable/1913236
       \endverb
     \endentry
-    \entry{Johansen1991}{article}{}
+    \entry{Johansen1991}{article}{}{}
       \name{author}{1}{}{%
         {{hash=fa1655c028c92b8ef87d909112f82026}{%
            family={Johansen},
@@ -80,10 +82,12 @@
       }
       \strng{namehash}{fa1655c028c92b8ef87d909112f82026}
       \strng{fullhash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{fullhashraw}{fa1655c028c92b8ef87d909112f82026}
       \strng{bibnamehash}{fa1655c028c92b8ef87d909112f82026}
       \strng{authorbibnamehash}{fa1655c028c92b8ef87d909112f82026}
       \strng{authornamehash}{fa1655c028c92b8ef87d909112f82026}
       \strng{authorfullhash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{authorfullhashraw}{fa1655c028c92b8ef87d909112f82026}
       \field{extraname}{1}
       \field{sortinit}{J}
       \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
@@ -111,7 +115,7 @@
       \verb http://www.jstor.org/stable/2938278
       \endverb
     \endentry
-    \entry{Johansen1995}{book}{}
+    \entry{Johansen1995}{book}{}{}
       \name{author}{1}{}{%
         {{hash=fa1655c028c92b8ef87d909112f82026}{%
            family={Johansen},
@@ -124,10 +128,12 @@
       }
       \strng{namehash}{fa1655c028c92b8ef87d909112f82026}
       \strng{fullhash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{fullhashraw}{fa1655c028c92b8ef87d909112f82026}
       \strng{bibnamehash}{fa1655c028c92b8ef87d909112f82026}
       \strng{authorbibnamehash}{fa1655c028c92b8ef87d909112f82026}
       \strng{authornamehash}{fa1655c028c92b8ef87d909112f82026}
       \strng{authorfullhash}{fa1655c028c92b8ef87d909112f82026}
+      \strng{authorfullhashraw}{fa1655c028c92b8ef87d909112f82026}
       \field{extraname}{2}
       \field{sortinit}{J}
       \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
@@ -150,7 +156,7 @@
       \verb https://doi.org/10.1093/0198774508.001.0001
       \endverb
     \endentry
-    \entry{Phillips1990}{article}{}
+    \entry{Phillips1990}{article}{}{}
       \name{author}{2}{}{%
         {{hash=09f90d13f3b581831038af16bc9981ba}{%
            family={Phillips},
@@ -168,10 +174,12 @@
       }
       \strng{namehash}{d3ed826612be7b986ecc59bfb101b385}
       \strng{fullhash}{d3ed826612be7b986ecc59bfb101b385}
+      \strng{fullhashraw}{d3ed826612be7b986ecc59bfb101b385}
       \strng{bibnamehash}{d3ed826612be7b986ecc59bfb101b385}
       \strng{authorbibnamehash}{d3ed826612be7b986ecc59bfb101b385}
       \strng{authornamehash}{d3ed826612be7b986ecc59bfb101b385}
       \strng{authorfullhash}{d3ed826612be7b986ecc59bfb101b385}
+      \strng{authorfullhashraw}{d3ed826612be7b986ecc59bfb101b385}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{extradatescope}{labelyear}
@@ -198,7 +206,7 @@
       \verb http://www.jstor.org/stable/2938339
       \endverb
     \endentry
-    \entry{Phillips1988}{article}{}
+    \entry{Phillips1988}{article}{}{}
       \name{author}{2}{}{%
         {{hash=10ed28fafaff02f63917d3120eec9502}{%
            family={Phillips},
@@ -216,10 +224,12 @@
       }
       \strng{namehash}{f15d1fdf4339186c3a5838e857992628}
       \strng{fullhash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{fullhashraw}{f15d1fdf4339186c3a5838e857992628}
       \strng{bibnamehash}{f15d1fdf4339186c3a5838e857992628}
       \strng{authorbibnamehash}{f15d1fdf4339186c3a5838e857992628}
       \strng{authornamehash}{f15d1fdf4339186c3a5838e857992628}
       \strng{authorfullhash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{authorfullhashraw}{f15d1fdf4339186c3a5838e857992628}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{extradatescope}{labelyear}

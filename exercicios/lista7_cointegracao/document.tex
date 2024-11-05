@@ -1,0 +1,43 @@
+% !TeX document-id = {1c0b4298-276a-4038-8e08-c4a1f4846da7}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{float}
+
+\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+
+\title{\large EAE1223: Econometria III}
+\author{\normalsize Exercícios sobre cointegração}
+\date{}
+\begin{document}
+	\maketitle
+	
+A subpasta \texttt{dados} contém séries econômicas para o IPCA (número índice, 100 = dezembro/1993), índice de preços aos consumidores nos Estados Unidos (número índice, 100= janeiro/1955) e taxa de câmbio nominal real-dólar.
+	
+	
+	\begin{enumerate}
+		\item Carregue o conjunto de dados. Restrinja-os a \textbf{janeiro de 2001} em diante. Rode os testes de não estacionariedade no \textbf{logaritmo} de cada uma das séries. Qual a conclusão dos testes? Cabe pensar em cointegração, neste caso? Por quê?
+		
+		\item Qual a conclusão da metodologia de Engle-Granger no conjunto de dados (em log)? Você pode fazer inferência no melhor preditor linear com base no estimador de MQO utilizado no teste? Por quê? Se a afirmativa for positiva, verifique se os coeficientes correspondem à paridade do poder de compra.
+		
+		\item Execute a metodologia de Johansen para o conjunto de dados. Qual é a conclusão da metodologia? Caso haja alguma relação de cointegração, teste se alguma das relações corresponde à paridade do poder de compra. \textit{Dica:} caso haja somente uma relação de cointegração, usar o comando \texttt{blrtest} visto em aula. Caso haja mais de uma, usar o comando \texttt{bh5lrtest} (veja \texttt{help(bh5lrtest)} para mais detalhes).
+		
+		\item Utilize o modelo multivariado apropriado para projetar a taxa de câmbio nos próximos doze meses.
+\end{enumerate}
+
+\end{document}
