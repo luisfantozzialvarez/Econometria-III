@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'document.blg'
+[84] biber:340> INFO - === ter jun  4, 2024, 11:43:29
+[98] Biber.pm:419> INFO - Reading 'document.bcf'
+[163] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
+[175] Biber.pm:4419> INFO - Processing section 0
+[185] Biber.pm:4610> INFO - Looking for bibtex file 'bib.bib' for section 0
+[186] bibtex.pm:1713> INFO - LaTeX decoding ...
+[188] bibtex.pm:1519> INFO - Found BibTeX data source 'bib.bib'
+[225] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[225] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[225] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[225] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[234] bbl.pm:660> INFO - Writing 'document.bbl' with encoding 'UTF-8'
+[235] bbl.pm:763> INFO - Output to document.bbl
+[235] Biber.pm:131> WARN - legacy month field 'April' in entry 'Kanzig2021' is not an integer - this will probably not sort properly.
+[235] Biber.pm:133> INFO - WARNINGS: 1
