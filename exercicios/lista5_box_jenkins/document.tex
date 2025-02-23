@@ -124,14 +124,28 @@ natbib=true
 	\item Agora, para cada período na segunda janela, compute a previsão um passo à frente, com base nos dados até o período imediatamente anterior, para cada modelo Arima por você selecionado na primeira janela. Calcule o erro quadrático médio, um passo à frente, com base nos erros dessas previsões. Dentre os modelos por você estimados, qual se saiu melhor? Suas conclusões batem com o desempenho calculado no item anterior? Qual a diferença entre as métricas?
 \end{enumerate}
 
+	
+\item[7]  Observando a FAC e FACP da série de tempo \emph{mensal} estacionária abaixo, indique qual processo SARIMA é o mais adequado de haver gerado os dados. Justifique sua resposta.
 
-		\item[7] Dizemos que uma variável aleatória segue distribuição $\text{Laplace}(c,d)$ se admite densidade:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.45]{acf_bw.pdf}
+	\includegraphics[scale=0.45]{pacf_bw.pdf}
+\end{figure}
+
+
+		\item[8] Dizemos que uma variável aleatória segue distribuição $\text{Laplace}(c,d)$ se admite densidade:
 
 	$$f(x) = \frac{1}{2}\exp(-|x-c|/d) \, .$$
 	Nesse caso, a média da variável aleatória é $c$, e sua variância é $2d^2$.
 
 	 Mostre que o estimador de máxima verossimilhança do parâmetro $\rho_0$ de um AR(1) (sem intercepto) com ruído branco $\epsilon_t \overset{\text{iid}}{\sim}\text{Laplace}(0,d_0)$, que maximiza a log-verossimilhança da distribuição de $Y_2,\ldots, Y_T$ condicional a $Y_1$, é idêntico ao estimador $\hat \rho$ que minimiza:
 	$$\min_{b \in \mathbb{R}}\sum_{t=2}^T |Y_t - b Y_{t-1}|$$
+	
+	
+		
+	
+
 \end{enumerate}
 
 \end{document}
