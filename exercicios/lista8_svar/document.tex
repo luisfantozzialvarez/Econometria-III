@@ -1,0 +1,60 @@
+% !TeX document-id = {1c0b4298-276a-4038-8e08-c4a1f4846da7}
+% !TeX TXS-program:bibliography = txs:///biber
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{float}
+
+\usepackage[
+backend=biber,
+style=authoryear,
+natbib=true
+]{biblatex}
+\addbibresource{../bibliography.bib}
+
+
+\title{\large EAE1223: Econometria III}
+\author{\normalsize Exercícios sobre SVAR}
+\date{}
+\begin{document}
+	\maketitle
+	Na subpasta \texttt{dados}, vocês encontrarão séries representando a taxa de câmbio nominal (unidades monetárias por dólar americano) e a taxa de câmbio real Brasil-Estados Unidos (número índice, média de 2010 = 100). Denotemos a primeira série por $s_t$ e a segunda por $e_t$.
+
+\begin{enumerate}
+	\item Carregue os dados e restrinja-os ao período de janeiro de 2002 a junho de 2023. Ajuste um modelo VAR(p) bivariado, \textbf{sem componentes determinísticos}, para a variação do log das séries, isto é $\Delta \log(s_t)$ e $\Delta \log(e_t)$.
+	
+	\vspace{2em}
+	 Considere o seguinte modelo causal estrutural:
+$$\begin{bmatrix}
+	\Delta \log(s_t) \\
+	\Delta \log(e_t)
+\end{bmatrix} = \sum_{j=1}^p \boldsymbol{C}_j \begin{bmatrix}
+\Delta \log(s_{t-j}) \\
+\Delta \log(e_{t-j})
+\end{bmatrix} + \boldsymbol{B}\begin{bmatrix}
+\epsilon^n_t \\
+\epsilon^r_t
+\end{bmatrix}\,,$$
+onde $\epsilon^n_t$ representam inovações monetário-financeiras que afetam o mercado de câmbio, e $\epsilon^r_t$ fatores fundamentais reais que afetam os termos de troca. Os choques são não contemporaneamente correlacionados, refletindo sua natureza fundamental (causal). Nós normalizamos a primeira inovação para que esteja na escala do câmbio nominal, $b_{1,1}=1$, e a segunda para que esteja na escala do câmbio real $b_{2,2}=1$.
+
+\item Considere, inicialmente, a identificação dos parâmetros estruturais sob a hipótese de que choques reais não afetam a taxa de câmbio nominal contemporaneamente (isto é, que a resposta do câmbio nominal a choques reais ocorre somente de forma defasada no tempo). Escreva essa hipótese de identificação em termos de parâmetros estruturais do modelo. Estime as FRI aos choques sob essa hipótese (normalize as respostas para que correspondam a um desvio padrão de cada inovação). Interprete seus resultados. Calcule a decomposição da variância do erro de previsão no longo prazo (decomposição da variância total). Quantos \% de cada série é explicada por choques reais e nominais?
+
+\item  Considere, alternativamente, a identificação dos parâmetros estruturais sob a hipótese de que choques nominais não afetam o \textbf{nível} da taxa de câmbio real no longo prazo (neutralidade monetário-financeira no longo prazo). Escreva essa hipótese de identificação em termos de parâmetros estruturais do modelo. Repita as análises anteriores.
+
+\vspace{2em}
+\textbf{Bônus:} O repositório \url{https://github.com/dkaenzig/oilsupplynews} contém uma série de choques construídos a partir de variação em alta dos preços futuros do petróleo em torno de anúncios da OPEP, organização que representa os principais países produtores de petróleo. Faça o \textit{download} dessa série.
+
+\item Vamos usar a série de choques como instrumento \textit{interno} para o choque real $\epsilon^r_t$. Qual é a hipótese de identificação, nesse caso? Estime a resposta ao choque real através da abordagem de instrumentos internos vista em aula.
+
+\end{enumerate}
+
+
+\end{document}

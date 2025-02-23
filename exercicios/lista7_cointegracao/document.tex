@@ -27,7 +27,7 @@ natbib=true
 \begin{document}
 	\maketitle
 	
-A subpasta \texttt{dados} contém séries econômicas para o IPCA (número índice, 100 = dezembro/1993), índice de preços aos consumidores nos Estados Unidos (número índice, 100= janeiro/1955) e taxa de câmbio nominal real-dólar.
+\paragraph{Questão 1} A subpasta \texttt{dados} contém séries econômicas para o IPCA (número índice, 100 = dezembro/1993), índice de preços aos consumidores nos Estados Unidos (número índice, 100= janeiro/1955) e taxa de câmbio nominal real-dólar.
 	
 	
 	\begin{enumerate}
@@ -39,5 +39,33 @@ A subpasta \texttt{dados} contém séries econômicas para o IPCA (número índi
 		
 		\item Utilize o modelo multivariado apropriado para projetar a taxa de câmbio nos próximos doze meses.
 \end{enumerate}
+
+	\paragraph{Questão 2} Indique se as alternativas são verdadeiras ou falsas. Justifique sua resposta.
+
+\begin{itemize}
+	\item[(a)] Se rejeitamos a nula do teste de Portmanteau, então temos evidência de que pelo menos um dos coeficientes da última defasagem do VAR(p) é diferente de zero.
+	\item[(b)] Se, num modelo VAR(p), uma variável $X$ não Granger causa uma variável $Y$, então a divulgação \textit{antecipada} do valor de $X$ para um período de tempo $T$ não gera ganhos preditivos passíveis de serem incorporados na atualização das projeções do modelo para $Y$ no período de tempo $T$, isto é, não há ganhos de realizar a atualização de \textit{nowcasting}.
+	\item[(c)] Quando há três ou mais variáveis integradas de interesse, a metodologia de Engle-Granger é restritiva, no sentido de que a escolha de qual variável colocamos do lado esquerdo da equação envolve uma restrição sobre quem necessariamente deve aparecer na relação de cointegração, caso ela exista. 
+	\item[(d)] Se rejeitamos a nula do procedimento de Engle-Granger, então as estimativas do modelo linear utilizado na metodologia não são espúrias, refletindo uma relação de longo prazo entre as variáveis.
+	\item[(e)] O teorema de representação de Granger nos diz que, se um conjunto de variáveis integradas $\boldsymbol{X}_t$ pode ser representado por um VAR(p), então ele também admite uma representação de correção de erros, no sentido de que as variações de curto prazo $\Delta \boldsymbol{X}_t$ respondem a desvios das variáveis de suas relações de longo prazo.
+	
+	
+\end{itemize}
+
+
+\paragraph{Questão 3} A tabela a seguir nos dá as estatísticas de teste do máximo autovalor para um sistema integrado, bem como os valores críticos dos testes, a diferentes níveis de significância. Qual é a conclusão do procedimento de Johansen, a 5\% de significância, neste caso? E a 10\%? Tomando a conclusão do procedimento a 5\%, quais são as implicações do resultado para a previsão multivariada do sistema?
+
+$$
+\begin{array}{lrrrr}
+	\hline \text { Rank } & \text { Test Statistic } & 10 \% & 5 \% & 1 \% \\
+	\hline r<=4 & 5.19 & 6.50 & 8.18 & 11.65 \\
+	r<=3 & 6.48 & 12.91 & 14.90 & 19.19 \\
+	r<=2 & 17.59 & 18.90 & 21.07 & 25.75 \\
+	r<=1 & 20.16 & 24.78 & 27.14 & 32.14 \\
+	r=0 & 31.33 & 30.84 & 33.32 & 38.78 \\
+	\hline
+\end{array}
+$$
+
 
 \end{document}
