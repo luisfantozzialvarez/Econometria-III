@@ -428,7 +428,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 		\end{equation*}
 				\begin{itemize}
 		\item Note que não tentamos prever as $p$ primeiras observações, para as quais não temos todas as defasagens.
-		\item Estimadores $	(\hat\alpha,\hat{\beta}_1,\ldots, \hat\beta_p) $ coincidem com o estimador de máxima verossimilhança que usa a distribuição de $(Y_{p+1},Y_{p+2}\ldots Y_{T})$ {\color{blue}condicional} a $(Y_1,Y_2,\ldots,Y_p)$, tomando o ruído branco como $\epsilon_{it}\overset{\text{iid}}{\sim} N(0,\sigma^2)$.
+		\item Estimadores $	(\hat\alpha,\hat{\beta}_1,\ldots, \hat\beta_p) $ coincidem com o estimador de máxima verossimilhança que usa a distribuição de $(Y_{p+1},Y_{p+2}\ldots Y_{T})$ {\color{blue}condicional} a $(Y_1,Y_2,\ldots,Y_p)$, tomando o ruído branco como $\epsilon_{t}\overset{\text{iid}}{\sim} N(0,\sigma^2)$.
 		 \end{itemize}
 \end{frame}
 \begin{frame}{Estimação condicional do MA(1)}
@@ -453,7 +453,7 @@ $$\Phi(L) Y_t =  \alpha + \gamma t + \Psi(L)\epsilon_t \, .$$
 \begin{itemize}
 	\item Estimação se dá através de algoritmos para mínimos quadrados não lineares (não há  expressão fechada para o mínimo).
 \end{itemize}
-\item Observe também que a primeira observação não contribui à estimação de $c$, visto que $(Y_t - a - c\tilde{\epsilon}_0)^2 = (Y_t - a)^2$.
+\item Observe também que a primeira observação não contribui à estimação de $c$, visto que $(Y_1 - a - c\tilde{\epsilon}_0)^2 = (Y_1 - a)^2$.
 \item Se o MA(1) é {\color{blue}invertível}, então, com $T$ grande, efeito do chute inicial sobre a função objetivo desaparece.
 \begin{itemize}
 	\item Contribuição do chute inicial ao erro de previsão em $t$ é da ordem de $c^t$, que desaparece quando $|c| < 1$. 
