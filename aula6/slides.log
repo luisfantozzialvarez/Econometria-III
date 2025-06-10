@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.6)  10 JUN 2025 20:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.6)  10 JUN 2025 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1459,8 +1459,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `slides.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'slides.bbl' found.
 
+
+Package biblatex Warning: File 'slides.bbl' is wrong format version - expected 
+3.2.
+
+Package biblatex Info: ... file 'slides.bbl' found.
 (./slides.bbl)
 Package biblatex Info: Reference section=0 on input line 108.
 Package biblatex Info: Reference segment=0 on input line 108.
@@ -1768,8 +1772,17 @@ OMS/lmsy/m/n/10 jZ[]\OT1/lmss/m/n/10 ; \OML/lmm/m/it/10 ^^R[]\OT1/lmss/m/n/10 ]
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                slides
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'slides.run.xml'.
 \openout1 = `slides.run.xml'.
 
@@ -1803,7 +1816,7 @@ exmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/f
 onts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/
 public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on slides.pdf (32 pages, 366877 bytes).
+Output written on slides.pdf (32 pages, 366875 bytes).
 PDF statistics:
  335 PDF objects out of 1000 (max. 8388607)
  241 compressed objects within 3 object streams
