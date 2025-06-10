@@ -477,8 +477,26 @@ $$\begin{pmatrix}
 		\begin{itemize}
 			\item No caso, não há perda de informação relevante em estimar $\psi$ somente considerando o modelo $\boldsymbol{Z}_t^1|\boldsymbol{Z}^2_t,\mathcal{Z}_{t-1}$, tratando $\boldsymbol{Z}^2_t$ como fixo.
 
+
 		\end{itemize}
 	\end{itemize}
+\end{frame}
+\begin{frame}{Exogeneidade fraca no VaR(p)}
+\begin{itemize}
+ 			\item Se $\boldsymbol{Z}_t$ segue um VAR(p) e nosso interesse consiste em estudar a evolução de $\boldsymbol{Z}^1_t$ no tempo, exogeneidade fraca implica que não há perda de eficiência estatística em estimar o modelo que trata $\boldsymbol{Z}^2_t$ como uma {\color{red}variável externa} no modelo:
+	$$\boldsymbol{Z}^1_t = \boldsymbol{b}_0  + \sum_{j=1}^p \boldsymbol{B}_j \boldsymbol{Z}^1_{t-j} + {\color{red}\sum_{l={\color{magenta}0}}^p \boldsymbol{C}_l \boldsymbol{Z}^2_{t-l}} + \boldsymbol{v}^1_t$$
+	\begin{itemize}
+		\item Se os coeficientes do modelo VAR(p) original para $\boldsymbol{Z}_t$ são irrestritos, então um subconjunto de variáveis $\boldsymbol{Z}^2_t$ sempre será fracamente exógeno.
+	\end{itemize}
+	\item Note, entretanto, que se formos usar a equação acima para previsão, precisaríamos ter projeções para trajetória de $\boldsymbol{Z}^2_t$ fora da amostra.
+
+	\begin{itemize}
+		\item Será que poderíamos usar projeções externas para $\boldsymbol{Z}^2_t$, por exemplo aquelas obtidas com base na estimação de um modelo com dados históricos de  $\boldsymbol{Z}^2_t$  ou mesmo aquelas divulgadas por um órgão externo, de maneira estatisticamente consistente?
+		\begin{itemize}
+			\item Esse é o conceito de \textbf{exogeneidade forte} que estudaremos agora. 
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Exogeneidade forte}
