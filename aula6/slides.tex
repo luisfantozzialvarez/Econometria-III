@@ -250,7 +250,7 @@ $$\begin{pmatrix}
 		\item Isto é, estimamos os parâmetros da $j$-ésima equação resolvendo:
 		
 		$$\min_{b_{0,j}, \{b_{j,k,l}\}_{k,l}} \sum_{t=p+1}^T\left(\boldsymbol{X}_{j,t} - b_{0,j} - \sum_{k=1}^d \sum_{l=1}^p b_{j,k,l}X_{k,t-l}\right)^2$$
-		\item Para cada equação, rodamos uma regressão com $T$ observações e $p\times d +1$ parâmetros.
+		\item Para cada equação, rodamos uma regressão com $T-p$ observações e $p\times d +1$ parâmetros.
 	\end{itemize}
 
 \end{frame}
