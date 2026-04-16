@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/global//global/global}
-    \entry{Chernozhukov2021}{article}{}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{Chernozhukov2021}{article}{}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=c75cbe2cefd1e532f636a50892605d06}{%
            family={Chernozhukov},
@@ -42,10 +42,12 @@
       }
       \strng{namehash}{f1ebf25917fbb4d8a17355c154422b4b}
       \strng{fullhash}{f1ebf25917fbb4d8a17355c154422b4b}
+      \strng{fullhashraw}{f1ebf25917fbb4d8a17355c154422b4b}
       \strng{bibnamehash}{f1ebf25917fbb4d8a17355c154422b4b}
       \strng{authorbibnamehash}{f1ebf25917fbb4d8a17355c154422b4b}
       \strng{authornamehash}{f1ebf25917fbb4d8a17355c154422b4b}
       \strng{authorfullhash}{f1ebf25917fbb4d8a17355c154422b4b}
+      \strng{authorfullhashraw}{f1ebf25917fbb4d8a17355c154422b4b}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{extradatescope}{labelyear}
@@ -73,7 +75,7 @@
       \endverb
       \keyw{Covid-19,Causal impact,Masks,Policies,Behavior}
     \endentry
-    \entry{Dickey1979}{article}{}
+    \entry{Dickey1979}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=f71b803d01236b0fcd2bb3e25e740864}{%
            family={Dickey},
@@ -93,10 +95,12 @@
       }
       \strng{namehash}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{fullhash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{fullhashraw}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{bibnamehash}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{authorbibnamehash}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{authornamehash}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{authorfullhash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{authorfullhashraw}{bcf86ed68621816d8a6e135ace8b77cc}
       \field{extraname}{1}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
@@ -120,7 +124,7 @@
       \verb http://www.jstor.org/stable/2286348
       \endverb
     \endentry
-    \entry{Dickey1981}{article}{}
+    \entry{Dickey1981}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=f71b803d01236b0fcd2bb3e25e740864}{%
            family={Dickey},
@@ -140,10 +144,12 @@
       }
       \strng{namehash}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{fullhash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{fullhashraw}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{bibnamehash}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{authorbibnamehash}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{authornamehash}{bcf86ed68621816d8a6e135ace8b77cc}
       \strng{authorfullhash}{bcf86ed68621816d8a6e135ace8b77cc}
+      \strng{authorfullhashraw}{bcf86ed68621816d8a6e135ace8b77cc}
       \field{extraname}{2}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
@@ -167,7 +173,7 @@
       \verb http://www.jstor.org/stable/1912517
       \endverb
     \endentry
-    \entry{Dickey1987}{article}{}
+    \entry{Dickey1987}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=f71b803d01236b0fcd2bb3e25e740864}{%
            family={Dickey},
@@ -187,10 +193,12 @@
       }
       \strng{namehash}{b0c5b98e1a135f14d70cfa8a0b9b2b93}
       \strng{fullhash}{b0c5b98e1a135f14d70cfa8a0b9b2b93}
+      \strng{fullhashraw}{b0c5b98e1a135f14d70cfa8a0b9b2b93}
       \strng{bibnamehash}{b0c5b98e1a135f14d70cfa8a0b9b2b93}
       \strng{authorbibnamehash}{b0c5b98e1a135f14d70cfa8a0b9b2b93}
       \strng{authornamehash}{b0c5b98e1a135f14d70cfa8a0b9b2b93}
       \strng{authorfullhash}{b0c5b98e1a135f14d70cfa8a0b9b2b93}
+      \strng{authorfullhashraw}{b0c5b98e1a135f14d70cfa8a0b9b2b93}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{extradatescope}{labelyear}
@@ -217,7 +225,7 @@
       \verb http://www.jstor.org/stable/1391997
       \endverb
     \endentry
-    \entry{Elliott1996}{article}{}
+    \entry{Elliott1996}{article}{}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=c2cc8268c25e80d6a91d1c3a54e0d2f7}{%
            family={Elliott},
@@ -243,10 +251,12 @@
       }
       \strng{namehash}{8e9ea96b983b75cb6345a4e10df010fb}
       \strng{fullhash}{8e9ea96b983b75cb6345a4e10df010fb}
+      \strng{fullhashraw}{8e9ea96b983b75cb6345a4e10df010fb}
       \strng{bibnamehash}{8e9ea96b983b75cb6345a4e10df010fb}
       \strng{authorbibnamehash}{8e9ea96b983b75cb6345a4e10df010fb}
       \strng{authornamehash}{8e9ea96b983b75cb6345a4e10df010fb}
       \strng{authorfullhash}{8e9ea96b983b75cb6345a4e10df010fb}
+      \strng{authorfullhashraw}{8e9ea96b983b75cb6345a4e10df010fb}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
@@ -273,7 +283,7 @@
       \verb http://www.jstor.org/stable/2171846
       \endverb
     \endentry
-    \entry{Enders2014}{book}{}
+    \entry{Enders2014}{book}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=bc17552e86456060317297d380a91882}{%
            family={Enders},
@@ -290,10 +300,12 @@
       }
       \strng{namehash}{bc17552e86456060317297d380a91882}
       \strng{fullhash}{bc17552e86456060317297d380a91882}
+      \strng{fullhashraw}{bc17552e86456060317297d380a91882}
       \strng{bibnamehash}{bc17552e86456060317297d380a91882}
       \strng{authorbibnamehash}{bc17552e86456060317297d380a91882}
       \strng{authornamehash}{bc17552e86456060317297d380a91882}
       \strng{authorfullhash}{bc17552e86456060317297d380a91882}
+      \strng{authorfullhashraw}{bc17552e86456060317297d380a91882}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
@@ -306,7 +318,7 @@
       \field{title}{Applied Econometric Time Series}
       \field{year}{2014}
     \endentry
-    \entry{Newey1987}{article}{}
+    \entry{Newey1987}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=058d74ae5e89fbd5a49ebdbe97b4c922}{%
            family={Newey},
@@ -326,10 +338,12 @@
       }
       \strng{namehash}{d3fa486ef38e9026d7e9a49009f51077}
       \strng{fullhash}{d3fa486ef38e9026d7e9a49009f51077}
+      \strng{fullhashraw}{d3fa486ef38e9026d7e9a49009f51077}
       \strng{bibnamehash}{d3fa486ef38e9026d7e9a49009f51077}
       \strng{authorbibnamehash}{d3fa486ef38e9026d7e9a49009f51077}
       \strng{authornamehash}{d3fa486ef38e9026d7e9a49009f51077}
       \strng{authorfullhash}{d3fa486ef38e9026d7e9a49009f51077}
+      \strng{authorfullhashraw}{d3fa486ef38e9026d7e9a49009f51077}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{extradatescope}{labelyear}
@@ -355,7 +369,7 @@
       \verb http://www.jstor.org/stable/1913610
       \endverb
     \endentry
-    \entry{Ng2001}{article}{}
+    \entry{Ng2001}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=3d9598cb5e0ac67e52bb26096e0fd043}{%
            family={Ng},
@@ -372,10 +386,12 @@
       }
       \strng{namehash}{472e686b01cc84aef192284afb380e26}
       \strng{fullhash}{472e686b01cc84aef192284afb380e26}
+      \strng{fullhashraw}{472e686b01cc84aef192284afb380e26}
       \strng{bibnamehash}{472e686b01cc84aef192284afb380e26}
       \strng{authorbibnamehash}{472e686b01cc84aef192284afb380e26}
       \strng{authornamehash}{472e686b01cc84aef192284afb380e26}
       \strng{authorfullhash}{472e686b01cc84aef192284afb380e26}
+      \strng{authorfullhashraw}{472e686b01cc84aef192284afb380e26}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{extradatescope}{labelyear}
@@ -404,7 +420,7 @@
       \endverb
       \keyw{Integrated processes,truncation lag,GLS detrending,information criteria}
     \endentry
-    \entry{Phillips1988}{article}{}
+    \entry{Phillips1988}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=10ed28fafaff02f63917d3120eec9502}{%
            family={Phillips},
@@ -424,10 +440,12 @@
       }
       \strng{namehash}{f15d1fdf4339186c3a5838e857992628}
       \strng{fullhash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{fullhashraw}{f15d1fdf4339186c3a5838e857992628}
       \strng{bibnamehash}{f15d1fdf4339186c3a5838e857992628}
       \strng{authorbibnamehash}{f15d1fdf4339186c3a5838e857992628}
       \strng{authornamehash}{f15d1fdf4339186c3a5838e857992628}
       \strng{authorfullhash}{f15d1fdf4339186c3a5838e857992628}
+      \strng{authorfullhashraw}{f15d1fdf4339186c3a5838e857992628}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{extradatescope}{labelyear}
@@ -454,7 +472,7 @@
       \verb http://www.jstor.org/stable/2336182
       \endverb
     \endentry
-    \entry{Said1984}{article}{}
+    \entry{Said1984}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=a7898955bc599034a9ed8cc9496b1fa2}{%
            family={Said},
@@ -474,10 +492,12 @@
       }
       \strng{namehash}{de954acd134c94ef8d4aeda4793128dc}
       \strng{fullhash}{de954acd134c94ef8d4aeda4793128dc}
+      \strng{fullhashraw}{de954acd134c94ef8d4aeda4793128dc}
       \strng{bibnamehash}{de954acd134c94ef8d4aeda4793128dc}
       \strng{authorbibnamehash}{de954acd134c94ef8d4aeda4793128dc}
       \strng{authornamehash}{de954acd134c94ef8d4aeda4793128dc}
       \strng{authorfullhash}{de954acd134c94ef8d4aeda4793128dc}
+      \strng{authorfullhashraw}{de954acd134c94ef8d4aeda4793128dc}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}

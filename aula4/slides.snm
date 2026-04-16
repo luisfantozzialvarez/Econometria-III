@@ -3,6 +3,8 @@
 \beamer@slide {main_text}{7}
 \beamer@slide {eq_drift}{8}
 \beamer@slide {eq_trend}{9}
+\beamer@slide {main_adf}{12}
 \beamer@slide {eq_full}{12}
 \beamer@slide {eq_trend_test}{20}
 \beamer@slide {app_donsker}{27}
+\beamer@slide {app_adf}{32}

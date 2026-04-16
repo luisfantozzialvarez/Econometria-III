@@ -238,12 +238,14 @@ natbib=true
 \end{frame}
 
 \begin{frame}{Teste Dickey-Fuller aumentado}
+	\label{main_adf}
 	\begin{halfwideitemize}
 		\item A construção das estatísticas de teste nos modelos anteriores supõe que os erros $\{\epsilon_t\}$ comportem-se como ruídos brancos.
 		\begin{halfwideitemize}
-			\item Em particular, os erros não podem ser autocorrelacionados. 
+			\item No caso geral, $\epsilon_t\sim I(0)$, mas erros podem ser autocorrelacionados. \hyperlink{app_adf}{\beamergotobutton{Detalhes}} 
 		\end{halfwideitemize}
 		\item \citet{Said1984} sugerem aumentar os modelos \eqref{eq_no}-\eqref{eq_trend} incluindo defasagens:
+		\vspace{-0.5em}
 		\begin{equation}
 			\label{eq_full}
 			\begin{aligned}
@@ -531,5 +533,29 @@ natbib=true
 		$$T(\hat{\gamma} -  \gamma) \Rightarrow \frac{B^2(1) -1}{2\int_0^1 B^2(u) du}$$
 	\end{itemize}
 	\hfill \hyperlink{main_text}{\beamerreturnbutton{Retornar à aula}} 
+\end{frame}
+
+\begin{frame}{Motivação do teste ADF}
+	\footnotesize
+	\label{app_adf}
+	\begin{itemize}
+		\item No caso geral de um ARMA(p,q) sem componentes determinísticos, teste da hipótese nula de uma raiz unitária contra alternativa de nenhuma raiz dentro do círculo, consiste, no modelo:
+		
+		$$\Phi(L)(1-\phi L)y_t = \Theta(L)v_t\, ,$$
+		em que $\Phi(L)$ exibe todas raízes fora do círculo e $v_t$ é ruído branco, em se testar:
+		
+		$$H_0: \phi = 1$$
+		contra a alternativa:
+		$$H_1: \phi < 1\, ,$$
+		Como $\Phi(L)$ tem todas as raízes foram do círculo, segue que $(1-\phi L)y_t$ é um MA($\infty$), donde obtemos a especificação:
+		\begin{equation*}
+			\begin{aligned}
+				(1-\phi L)y_t =  \sum_{j=1}^\infty \pi_j v_{t-j} \implies 
+				\Delta y_t = \underbrace{\gamma}_{=\phi-1} y_{t-1} + \underbrace{v_t + \sum_{j=1}^\infty \pi_j v_{t-j}}_{=\text{erro}_t}
+			\end{aligned}
+		\end{equation*}
+		\item Ideia de \citet{Dickey1987}: se polinômio $\Theta$ apresenta todas as raízes fora do círculo, então dependência em $\sum_{j=1}^\infty \pi_j \epsilon_{t-j}$ é bem aproximável, sob a nula, por termo da forma $\sum_{j=1}^k \rho_j \Delta y_{t-j}$ para algum $k$. \hfill  \hyperlink{main_adf}{\beamerreturnbutton{Retornar à aula}} 
+	\end{itemize}
+
 \end{frame}
 \end{document}
