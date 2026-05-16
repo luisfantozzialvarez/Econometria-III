@@ -1,15 +1,15 @@
-[0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is 'slides.blg'
-[144] biber:340> INFO - === seg mai 12, 2025, 09:15:53
-[185] Biber.pm:420> INFO - Reading 'slides.bcf'
-[298] Biber.pm:994> INFO - Found 2 citekeys in bib section 0
-[325] Biber.pm:4463> INFO - Processing section 0
-[352] Biber.pm:4654> INFO - Looking for bibtex file '../bibliography.bib' for section 0
-[359] bibtex.pm:1713> INFO - LaTeX decoding ...
-[470] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
-[550] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[550] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[551] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
-[551] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
-[565] bbl.pm:676> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
-[569] bbl.pm:779> INFO - Output to slides.bbl
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'slides.blg'
+[29] biber:342> INFO - === sex mai 15, 2026, 21:13:28
+[40] Biber.pm:421> INFO - Reading 'slides.bcf'
+[66] Biber.pm:1002> INFO - Found 2 citekeys in bib section 0
+[73] Biber.pm:4487> INFO - Processing section 0
+[78] Biber.pm:4678> INFO - Looking for bibtex file '../bibliography.bib' for section 0
+[79] bibtex.pm:1713> INFO - LaTeX decoding ...
+[97] bibtex.pm:1519> INFO - Found BibTeX data source '../bibliography.bib'
+[116] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[116] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[116] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'pt-BR'
+[116] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[120] bbl.pm:676> INFO - Writing 'slides.bbl' with encoding 'UTF-8'
+[121] bbl.pm:779> INFO - Output to slides.bbl

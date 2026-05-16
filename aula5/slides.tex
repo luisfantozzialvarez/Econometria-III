@@ -479,13 +479,13 @@ onde $\tilde{\epsilon}_t(a,\boldsymbol{b},\boldsymbol{c})$ são definidos recurs
 		\item Na estimação condicional, perdemos informação nas $p+q$ primeiras observações.
 		\item Se fizermos uma hipótese distributiva sobre os ruídos brancos, somos capazes de caracterizar a distribuição das $p$+$q$ primeiras observações.
 		\begin{itemize}
-			\item Por exemplo, se $\epsilon_t \overset{\text{iid}}{\sim} N(0,\sigma^2)$ e $Y_t$ seguir um AR(1) estacionário, então $Y_1 \sim N(\alpha/(1-\alpha), \sigma^2/(1-\rho^2))$.
+			\item Por exemplo, se $\epsilon_t \overset{\text{iid}}{\sim} N(0,\sigma^2)$ e $Y_t$ seguir um AR(1) estacionário, então $Y_1 \sim N(\alpha/(1-\rho), \sigma^2/(1-\rho^2))$.
 		\end{itemize}
 		\item A estimação {\color{blue}incondicional} de um ARMA(p,q) se dá pela máxima verossimilhança que usa a distribuição conjunta de $\{Y_1,\ldots, Y_T\}$, sob a hipótese auxiliar de que  $\epsilon_t \overset{\text{iid}}{\sim} N(0,\sigma^2)$.
 		\begin{itemize}
 			\item Método padrão na função \texttt{arima} do \texttt{R}.
 		\end{itemize}
-		\item Se ruído branco de fato é Gaussiano, estimador é {\color{blue}eficiente}: dentre todos os estimadores de um ARMA(p,q) Gaussiano, estimador é o de menor variância.
+		\item Se ruído branco de fato é Gaussiano, estimador é {\color{blue}eficiente}: dentre todos os estimadores consistente dos parâmetros um ARMA(p,q) Gaussiano, estimador é o de menor variância.
 		\item Mesmo que o ruído branco não seja Gaussiano, estimador ainda é {\color{blue}consistente} para os parâmetros de um ARMA(p,q).
  	\end{itemize}
 \end{frame}
